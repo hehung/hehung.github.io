@@ -1,8 +1,0 @@
-[
-  {
-    "title": "Hello World",
-    "columnImg": "https://res.cloudinary.com/liuzhihang/image/upload/v1568885863/feature/2019-09-08-peW4w2_dx42ug.jpg",
-    "path": "2018/16107.html",
-    "description": "使用ELK搭建监控系统, 搭建聚合日志平台, Elasticsearch相关原理学习等等"
-  }
-]
