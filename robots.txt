@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /2019/
+Allow: /archives/
+Allow: /categories/
+Allow: /about/
+
+Disallow: /contact/
+Disallow: /friends/
+Disallow: /tags/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/

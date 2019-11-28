@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+  <title>Hehung&#39;s Blog</title>
+  
+  <subtitle>生命不息 折腾不止</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://hehung.top/"/>
+  <updated>2019-11-28T14:25:47.308Z</updated>
+  <id>http://hehung.top/</id>
+  
+  <author>
+    <name>hehung</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lpc11U68利用RTC实现闹钟小应用</title>
+    <link href="http://hehung.top/2019/2019-11-27-title"/>
+    <id>http://hehung.top/2019/2019-11-27-title</id>
+    <published>2019-11-27T14:00:00.000Z</published>
+    <updated>2019-11-28T14:25:47.308Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。&lt;br&gt;帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+    
+      <category term="RTC" scheme="http://hehung.top/tags/RTC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lpc11U68 RTC时钟芯片的使用</title>
+    <link href="http://hehung.top/2019/2019-11-27-title"/>
+    <id>http://hehung.top/2019/2019-11-27-title</id>
+    <published>2019-11-27T13:59:00.000Z</published>
+    <updated>2019-11-28T14:25:44.940Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;该文实现了时间的设置和显示，包括年月日，时分秒等，提供下详细的代码。&lt;br&gt;帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+    
+      <category term="RTC" scheme="http://hehung.top/tags/RTC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lpc11U68 IIC控制OLED</title>
+    <link href="http://hehung.top/2019/2019-11-27-title"/>
+    <id>http://hehung.top/2019/2019-11-27-title</id>
+    <published>2019-11-27T13:58:03.000Z</published>
+    <updated>2019-11-28T14:25:40.314Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：&lt;br&gt;&lt;a href=&quot;http://www.nxpic.org/module/forum/thread-615608-1-1.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
+    
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lpc11U68串口控制RGB LED</title>
+    <link href="http://hehung.top/2019/2019-11-27-title"/>
+    <id>http://hehung.top/2019/2019-11-27-title</id>
+    <published>2019-11-27T13:57:03.000Z</published>
+    <updated>2019-11-28T14:25:26.565Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;该程序实现的功能是串口接受到一串数据之后，根据第一位数据来进行判断控制RGB
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+    
+      <category term="串口" scheme="http://hehung.top/tags/%E4%B8%B2%E5%8F%A3/"/>
+    
+      <category term="LED" scheme="http://hehung.top/tags/LED/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lpc11U68上手体验及串口通信</title>
+    <link href="http://hehung.top/2019/2019-11-24-title"/>
+    <id>http://hehung.top/2019/2019-11-24-title</id>
+    <published>2019-11-24T13:11:03.000Z</published>
+    <updated>2019-11-28T14:25:25.791Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不多少了，可以点击跳转官网中查看：&lt;a href=&quot;https://www.nxpic.org/page/LPC11U68&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+    
+      <category term="串口" scheme="http://hehung.top/tags/%E4%B8%B2%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32使用之OLED显示屏驱动</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T11:49:01.000Z</published>
+    <updated>2019-11-28T14:26:24.681Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;现在开始使用普中的STM32进行研究学习了，STM32的使用方式与51单片机还是有许多的相似之处的，但是STM32的功能更强大，ADC，定时器，flash等等，先不多说了，开始进入主题：使用IIC操作OLED进行显示。&lt;/p&gt;
+&lt;/blockquo
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="http://hehung.top/categories/STM32/"/>
+    
+    
+      <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
+    
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32使用之驱动流水灯</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T11:11:00.000Z</published>
+    <updated>2019-11-28T14:26:20.921Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="http://hehung.top/categories/STM32/"/>
+    
+    
+      <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机驱动DS1302实时时钟芯片</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T10:14:00.000Z</published>
+    <updated>2019-11-28T14:26:16.434Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;很多初学51单片机的小伙伴都喜欢用定时器作为时间模拟显示，这是可以的，对于精度要求不是很高的场合是可以使用的，但是当精度要求很高的时候，使用定时器就不定了，因为51单片机的定时器的精度本来就不高，我们可以使用常见的时钟芯片：DS1302来进行时间的
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="DS1302" scheme="http://hehung.top/tags/DS1302/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机驱动步进电机</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T09:17:20.000Z</published>
+    <updated>2019-11-28T14:26:11.835Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="步进电机" scheme="http://hehung.top/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机PWM驱动LED</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T08:50:00.000Z</published>
+    <updated>2019-11-28T14:26:07.832Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速度驱动等都会用到，51单片机没有继承PWM模块，所以需要使用定时器进行模拟，本文就讲述如何使用定时器来模拟PWM功能实现对LED的亮度的控制。以前发帖在电子芯巴克。原帖子链接：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="PWM" scheme="http://hehung.top/tags/PWM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机驱动LCD1602</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T08:34:30.000Z</published>
+    <updated>2019-11-28T14:26:03.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;单片机中用到数据显示的时候使用LCD1602的时候还是挺多的，本文讲解了对LCD1602的使用操作。以前发帖在电子芯巴克。原帖子链接：&lt;a href=&quot;https://bbs.icxbk.com/thread-100298-1-1.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="LCD1602" scheme="http://hehung.top/tags/LCD1602/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机DS18B20获取温度</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T07:44:30.000Z</published>
+    <updated>2019-11-28T14:25:58.029Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：&lt;a href=&quot;https://bbs.icxbk.com/thread-100156-1-1.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="DS18B20" scheme="http://hehung.top/tags/DS18B20/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机数码管显示</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T06:30:30.000Z</published>
+    <updated>2019-11-28T14:25:53.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：&lt;a href=&quot;https://bbs.icxbk.com/thread-100110-1-1.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="数码管" scheme="http://hehung.top/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机开发环境搭建+流水灯</title>
+    <link href="http://hehung.top/2019/2019-11-23-title"/>
+    <id>http://hehung.top/2019/2019-11-23-title</id>
+    <published>2019-11-23T01:20:30.000Z</published>
+    <updated>2019-11-28T14:25:30.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;以前在论坛上获取了一块51单片机的板子，集成了ARM+51单片机两种芯片，包括很多的外设和资料。在使用过程中写了部分教程，如果要看原贴：&lt;a href=&quot;https://bbs.icxbk.com/thread-100061-1-1.html&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="Keil" scheme="http://hehung.top/tags/Keil/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python获取5天的天气</title>
+    <link href="http://hehung.top/2019/2019-11-20-title"/>
+    <id>http://hehung.top/2019/2019-11-20-title</id>
+    <published>2019-11-20T14:10:30.000Z</published>
+    <updated>2019-11-28T14:26:30.266Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;以前在学习python的时候用python做了一个可以获取5天天气的一个程序，分享在了CSDN的博客上，现在转载到我的个人博客，原链接请点击：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://hehung.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://hehung.top/tags/python/"/>
+    
+      <category term="requests" scheme="http://hehung.top/tags/requests/"/>
+    
+      <category term="json" scheme="http://hehung.top/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>51单片机的音乐盒(c语言)</title>
+    <link href="http://hehung.top/2019/2019-11-16-title"/>
+    <id>http://hehung.top/2019/2019-11-16-title</id>
+    <published>2019-11-16T13:20:30.000Z</published>
+    <updated>2019-11-28T14:26:51.265Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="51单片机" scheme="http://hehung.top/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+      <category term="电路设计" scheme="http://hehung.top/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于stm32的心率监控装置</title>
+    <link href="http://hehung.top/2019/2019-11-16-title"/>
+    <id>http://hehung.top/2019/2019-11-16-title</id>
+    <published>2019-11-16T13:20:30.000Z</published>
+    <updated>2019-11-28T14:26:39.995Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="STM32" scheme="http://hehung.top/categories/STM32/"/>
+    
+    
+      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
+    
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="心率监控" scheme="http://hehung.top/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的博客搭建好了</title>
+    <link href="http://hehung.top/2019/2019-11-16-title"/>
+    <id>http://hehung.top/2019/2019-11-16-title</id>
+    <published>2019-11-16T12:39:26.000Z</published>
+    <updated>2019-11-28T14:26:46.081Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://hehung.top/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://hehung.top/tags/hexo/"/>
+    
+      <category term="github" scheme="http://hehung.top/tags/github/"/>
+    
+      <category term="coding" scheme="http://hehung.top/tags/coding/"/>
+    
+  </entry>
+  
+</feed>
