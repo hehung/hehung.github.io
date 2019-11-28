@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hehung.top/"/>
-  <updated>2019-11-28T14:25:47.308Z</updated>
+  <updated>2019-11-28T14:30:21.638Z</updated>
   <id>http://hehung.top/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LPC双核挑战赛之餐厅服务机器人</title>
+    <link href="http://hehung.top/2019/2019-11-28-title"/>
+    <id>http://hehung.top/2019/2019-11-28-title</id>
+    <published>2019-11-28T13:25:21.000Z</published>
+    <updated>2019-11-28T14:30:21.638Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到的比赛，然后参加的。&lt;br&gt;当时是在NXP论坛上参加的，所以帖子也是发布在NXP论坛上的，可以通过后面的链接进入：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="LPC54114" scheme="http://hehung.top/tags/LPC54114/"/>
+    
+      <category term="ADC" scheme="http://hehung.top/tags/ADC/"/>
+    
+      <category term="ESP8266" scheme="http://hehung.top/tags/ESP8266/"/>
+    
+  </entry>
+  
+  <entry>
     <title>lpc11U68利用RTC实现闹钟小应用</title>
     <link href="http://hehung.top/2019/2019-11-27-title"/>
     <id>http://hehung.top/2019/2019-11-27-title</id>
     <published>2019-11-27T14:00:00.000Z</published>
-    <updated>2019-11-28T14:25:47.308Z</updated>
+    <updated>2019-11-28T14:27:57.837Z</updated>
     
     <summary type="html">
     
@@ -53,7 +87,7 @@
     <link href="http://hehung.top/2019/2019-11-27-title"/>
     <id>http://hehung.top/2019/2019-11-27-title</id>
     <published>2019-11-27T13:59:00.000Z</published>
-    <updated>2019-11-28T14:25:44.940Z</updated>
+    <updated>2019-11-28T14:27:57.835Z</updated>
     
     <summary type="html">
     
@@ -83,7 +117,7 @@
     <link href="http://hehung.top/2019/2019-11-27-title"/>
     <id>http://hehung.top/2019/2019-11-27-title</id>
     <published>2019-11-27T13:58:03.000Z</published>
-    <updated>2019-11-28T14:25:40.314Z</updated>
+    <updated>2019-11-28T14:27:57.833Z</updated>
     
     <summary type="html">
     
@@ -115,7 +149,7 @@
     <link href="http://hehung.top/2019/2019-11-27-title"/>
     <id>http://hehung.top/2019/2019-11-27-title</id>
     <published>2019-11-27T13:57:03.000Z</published>
-    <updated>2019-11-28T14:25:26.565Z</updated>
+    <updated>2019-11-28T14:27:57.838Z</updated>
     
     <summary type="html">
     
@@ -147,7 +181,7 @@
     <link href="http://hehung.top/2019/2019-11-24-title"/>
     <id>http://hehung.top/2019/2019-11-24-title</id>
     <published>2019-11-24T13:11:03.000Z</published>
-    <updated>2019-11-28T14:25:25.791Z</updated>
+    <updated>2019-11-28T14:27:57.836Z</updated>
     
     <summary type="html">
     
@@ -177,7 +211,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T11:49:01.000Z</published>
-    <updated>2019-11-28T14:26:24.681Z</updated>
+    <updated>2019-11-28T14:27:57.831Z</updated>
     
     <summary type="html">
     
@@ -210,7 +244,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T11:11:00.000Z</published>
-    <updated>2019-11-28T14:26:20.921Z</updated>
+    <updated>2019-11-28T14:27:57.832Z</updated>
     
     <summary type="html">
     
@@ -240,7 +274,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T10:14:00.000Z</published>
-    <updated>2019-11-28T14:26:16.434Z</updated>
+    <updated>2019-11-28T14:27:57.841Z</updated>
     
     <summary type="html">
     
@@ -272,7 +306,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T09:17:20.000Z</published>
-    <updated>2019-11-28T14:26:11.835Z</updated>
+    <updated>2019-11-28T14:27:57.830Z</updated>
     
     <summary type="html">
     
@@ -304,7 +338,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T08:50:00.000Z</published>
-    <updated>2019-11-28T14:26:07.832Z</updated>
+    <updated>2019-11-28T14:27:57.828Z</updated>
     
     <summary type="html">
     
@@ -336,7 +370,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T08:34:30.000Z</published>
-    <updated>2019-11-28T14:26:03.004Z</updated>
+    <updated>2019-11-28T14:27:57.829Z</updated>
     
     <summary type="html">
     
@@ -368,7 +402,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T07:44:30.000Z</published>
-    <updated>2019-11-28T14:25:58.029Z</updated>
+    <updated>2019-11-28T14:27:57.821Z</updated>
     
     <summary type="html">
     
@@ -400,7 +434,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T06:30:30.000Z</published>
-    <updated>2019-11-28T14:25:53.751Z</updated>
+    <updated>2019-11-28T14:27:57.826Z</updated>
     
     <summary type="html">
     
@@ -432,7 +466,7 @@
     <link href="http://hehung.top/2019/2019-11-23-title"/>
     <id>http://hehung.top/2019/2019-11-23-title</id>
     <published>2019-11-23T01:20:30.000Z</published>
-    <updated>2019-11-28T14:25:30.482Z</updated>
+    <updated>2019-11-28T14:27:57.825Z</updated>
     
     <summary type="html">
     
@@ -464,7 +498,7 @@
     <link href="http://hehung.top/2019/2019-11-20-title"/>
     <id>http://hehung.top/2019/2019-11-20-title</id>
     <published>2019-11-20T14:10:30.000Z</published>
-    <updated>2019-11-28T14:26:30.266Z</updated>
+    <updated>2019-11-28T14:27:57.839Z</updated>
     
     <summary type="html">
     
@@ -496,7 +530,7 @@
     <link href="http://hehung.top/2019/2019-11-16-title"/>
     <id>http://hehung.top/2019/2019-11-16-title</id>
     <published>2019-11-16T13:20:30.000Z</published>
-    <updated>2019-11-28T14:26:51.265Z</updated>
+    <updated>2019-11-28T14:27:57.823Z</updated>
     
     <summary type="html">
     
@@ -527,7 +561,7 @@
     <link href="http://hehung.top/2019/2019-11-16-title"/>
     <id>http://hehung.top/2019/2019-11-16-title</id>
     <published>2019-11-16T13:20:30.000Z</published>
-    <updated>2019-11-28T14:26:39.995Z</updated>
+    <updated>2019-11-28T14:27:57.842Z</updated>
     
     <summary type="html">
     
@@ -560,7 +594,7 @@
     <link href="http://hehung.top/2019/2019-11-16-title"/>
     <id>http://hehung.top/2019/2019-11-16-title</id>
     <published>2019-11-16T12:39:26.000Z</published>
-    <updated>2019-11-28T14:26:46.081Z</updated>
+    <updated>2019-11-28T14:27:57.840Z</updated>
     
     <summary type="html">
     
