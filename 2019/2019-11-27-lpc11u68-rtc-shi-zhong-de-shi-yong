@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的博客搭建好了, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
-    <meta name="description" content="前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下">
+    <meta name="keywords" content="lpc11U68 RTC时钟芯片的使用, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="description" content="
+该文实现了时间的设置和显示，包括年月日，时分秒等，提供下详细的代码。帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看lpc11U68的RTC如何使用
+
+
+        document.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>我的博客搭建好了 | Hehung&#39;s Blog</title>
+    <title>lpc11U68 RTC时钟芯片的使用 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,13 +248,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201812/09/140430zsbzlgbxxrf4lp7z.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        我的博客搭建好了
+                        lpc11U68 RTC时钟芯片的使用
                     </div>
                 </div>
             </div>
@@ -362,16 +366,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/LPC11U68/">
+                                <span class="chip bg-color">LPC11U68</span>
                             </a>
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
-                            </a>
-                        
-                            <a href="/tags/coding/">
-                                <span class="chip bg-color">coding</span>
+                            <a href="/tags/RTC/">
+                                <span class="chip bg-color">RTC</span>
                             </a>
                         
                     </div>
@@ -382,8 +382,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                LPC系列
                             </a>
                         
                     </div>
@@ -395,7 +395,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-16
+                    2019-11-27
                 </div>
                 
 
@@ -409,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    407
+                    129
                 </div>
                 
 
@@ -432,11 +432,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近<br>看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下载相应的node.js和npm插件，搭建了本地环境，然后使用git部署到github和coding上。</p>
-<h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><p>　　按照了hexo之后的默认主题太丑了，所以理所应当的是要换个主题，<br>在theme里面找了一圈，发现了现在用的这个主题比较炫酷，所以就采用了这个主题来作为我博客的主题了，哈哈哈哈😜。</p>
-<p>　　最开始看到这个主题确实觉得太炫酷了。对于一个不会前端的人<br>而言，如果自己要做一个这样的主题肯定是不现实的，在这里感谢主题的开发者们了。</p>
-<h1 id="之后呢"><a href="#之后呢" class="headerlink" title="之后呢"></a>之后呢</h1><p>　　有了自己的博客之后，当然就是进行一个多多在自己的博客上发表<br>文章了，我也会学习学习前端技术，争取能够自己改善这个主题的布局，变成一个属于自己的特殊的主题🤔。</p>
-<p>好了，这是敌我的第一篇文章，就到这里了。</p>
+                <blockquote>
+<p>该文实现了时间的设置和显示，包括年月日，时分秒等，提供下详细的代码。<br>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615759-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看lpc11U68的RTC如何使用</a></p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -480,7 +478,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-16-title">http://hehung.top/2019/2019-11-16-title</a>
+                    <a href="http://hehung.top/2019/2019-11-27-lpc11u68-rtc-shi-zhong-de-shi-yong">http://hehung.top/2019/2019-11-27-lpc11u68-rtc-shi-zhong-de-shi-yong</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,16 +516,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/LPC11U68/">
+                                    <span class="chip bg-color">LPC11U68</span>
                                 </a>
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
-                                </a>
-                            
-                                <a href="/tags/coding/">
-                                    <span class="chip bg-color">coding</span>
+                                <a href="/tags/RTC/">
+                                    <span class="chip bg-color">RTC</span>
                                 </a>
                             
                         </div>
@@ -960,30 +954,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-16-title">
+                <a href="/2019/2019-11-27-lpc11u68-shi-xian-nao-zhong-xiao-ying-yong">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/img/whole_device.jpg" class="responsive-img" alt="基于stm32的心率监控装置">
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png" class="responsive-img" alt="lpc11U68利用RTC实现闹钟小应用">
                         
-                        <span class="card-title">基于stm32的心率监控装置</span>
+                        <span class="card-title">lpc11U68利用RTC实现闹钟小应用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于stm32的心率监控装置。以STM32作为主控，OLED作为显示屏，结合心率传感器和按键完成的一个可以实时监控心率的设备，支持心率图形的显示。
+                            RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
                                 </a>
                             
                             
@@ -993,20 +987,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
-                    </a>
-                    
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
-                    </a>
-                    
                     <a href="/tags/OLED/">
                         <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
-                        <span class="chip bg-color">心率监控</span>
+                    <a href="/tags/LPC11U68/">
+                        <span class="chip bg-color">LPC11U68</span>
+                    </a>
+                    
+                    <a href="/tags/RTC/">
+                        <span class="chip bg-color">RTC</span>
                     </a>
                     
                 </div>
@@ -1017,54 +1007,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-16-title">
+                <a href="/2019/2019-11-27-lpc11u68-iic-kong-zhi-oled-xian-shi">
                     <div class="card-image">
                         
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201811/24/123018nmmsdt0mg0l3s5hg.png" class="responsive-img" alt="lpc11U68 IIC控制OLED">
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="我的博客搭建好了">
-                        
-                        <span class="card-title">我的博客搭建好了</span>
+                        <span class="card-title">lpc11U68 IIC控制OLED</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下
+                            使用lpc11U68的IIC控制OLED显示中文字符，该文使用了模拟IIC通信协议，控制OLED显示中文。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/OLED/">
+                        <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/IIC/">
+                        <span class="chip bg-color">IIC</span>
                     </a>
                     
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
+                    <a href="/tags/LPC11U68/">
+                        <span class="chip bg-color">LPC11U68</span>
                     </a>
                     
                 </div>

@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="lpc11U68上手体验及串口通信, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
-    <meta name="description" content="
-LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不多少了，可以点击跳转官网中查看：点我跳转。LPC11U68单片机最开始是在NXP社区试用的，所以在恩智浦社区发布了试用分享。点击跳转：1开箱点击调转：2串口通信
-
-资料搜集l">
+    <meta name="keywords" content="基于stm32的心率监控装置, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="description" content="前言　　该文主要讲述了以前用STM32实现的一个心率传感装置的制作过程和最终实现的效果，这是我在大四毕业的时候帮别人做的一个毕业设计的小作品，最初的文章是发表在电子发烧友上面的，现转载到我的个人博客来。原链接请点击此处：点我跳转
+介绍　　最">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>lpc11U68上手体验及串口通信 | Hehung&#39;s Blog</title>
+    <title>基于stm32的心率监控装置 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,13 +245,13 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_positive.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/img/whole_device.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        lpc11U68上手体验及串口通信
+                        基于stm32的心率监控装置
                     </div>
                 </div>
             </div>
@@ -365,12 +363,20 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LPC11U68/">
-                                <span class="chip bg-color">LPC11U68</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                <span class="chip bg-color">串口</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
+                            </a>
+                        
+                            <a href="/tags/OLED/">
+                                <span class="chip bg-color">OLED</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
+                                <span class="chip bg-color">心率监控</span>
                             </a>
                         
                     </div>
@@ -381,8 +387,8 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                LPC系列
+                            <a href="/categories/STM32/" class="post-category">
+                                STM32
                             </a>
                         
                     </div>
@@ -394,7 +400,7 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-24
+                    2019-11-16
                 </div>
                 
 
@@ -408,14 +414,14 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    840
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 				
@@ -431,39 +437,147 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不多少了，可以点击跳转官网中查看：<a href="https://www.nxpic.org/page/LPC11U68" target="_blank" rel="noopener">点我跳转</a>。<br>LPC11U68单片机最开始是在NXP社区试用的，所以在恩智浦社区发布了试用分享。<br>点击跳转：<a href="http://www.nxpic.org/module/forum/thread-615519-1-1.html" target="_blank" rel="noopener">1开箱</a><br>点击调转：<a href="http://www.nxpic.org/module/forum/thread-615522-1-1.html" target="_blank" rel="noopener">2串口通信</a></p>
-</blockquote>
-<h1 id="资料搜集"><a href="#资料搜集" class="headerlink" title="资料搜集"></a>资料搜集</h1><h2 id="lpc11u68外观展示"><a href="#lpc11u68外观展示" class="headerlink" title="lpc11u68外观展示"></a>lpc11u68外观展示</h2><p>  如下图，这块板子做的还是挺好看的，大小就是一张身份证的大小，采用了Arduino的封装，可以直接与arduino的板子一起使用吧，同时还提供了芯片的引脚的位置，但是并没有焊接引脚，需要自己找排针焊接，我觉得官方应该提供排针的，不然这东西还真的不好找。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_positive.png" alt="lpc11u68正面" title="lpc11u68正面"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_negative.png" alt="lpc11u68反面" title="lpc11u68反面"></p>
-<h2 id="资料搜集-1"><a href="#资料搜集-1" class="headerlink" title="资料搜集"></a>资料搜集</h2><p>  单片机开发最重要的就是要搜集资料，所以在开始开发之前是要搜集关于lpc11u68的资料。在这里汇集了很多网友试用的时候发布的帖子。<br>  <a href="http://www.nxpic.org/module/forum/thread-615222-1-1.html" target="_blank" rel="noopener">点我跳转到资料汇集页面</a></p>
-<h1 id="固件更新"><a href="#固件更新" class="headerlink" title="固件更新"></a>固件更新</h1><p>  主要去官网下载SDK包，原理图和KEIL软件。搜集完了必要的资料之后可以开始上手实践了。</p>
-<p>  但是还是遇到了一些问题，找了一根数据线插上，准备下载程序的时候才发现电脑发现不了端口，然后在看了其他网友的帖子才发现是需要更新固件的原因。固件更新的方法也很简单。可以参考：<a href="http://www.nxpic.org/module/forum/thread-615218-1-1.html" target="_blank" rel="noopener">点我了解固件更新方法</a></p>
-<p>  但是有一点需要注意：<font color="red">需要将JP1的跳线帽拔下来,短接JP3，才能够成功</font>最开始的时候没有拔掉JP1，导致一直更新不了。</p>
-<p>  更新了成功了固件之后，就可以只用JLINK模式进行下载程序了，如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/original.png" alt="LED程序演示" title="LED程序演示"></p>
-<h1 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h1><blockquote>
-<p>学习了一下按键，LED和串口，这些都在例程中就有的，调用的函数都在Broad.c这个函数里面，可以直接调用，还是比较方便的。按键和LED就不说了，这个是比较简单的，直接讲一下如何操作串口4。</p>
-</blockquote>
-<h2 id="串口通信函数"><a href="#串口通信函数" class="headerlink" title="串口通信函数"></a>串口通信函数</h2><p>  在例程中已经有了USB串口的发送和接收函数，就先说一下这两个函数的用法，看下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code1.png" alt="串口通信函数" title="串口通信函数"></p>
-<p>  使用这两个函数可以方便的进行数据的传输和发送，可以用于调试。<br>接收到数据之后就马上返回到串口。</p>
-<h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p>  串口4的电路图如下面所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/circuit_diagram.png" alt="串口4引脚图" title="串口4引脚图"></p>
-<p>  线路连接图如下所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/wire_connect.png" alt="线路连接图" title="线路连接图"></p>
-<h2 id="程序修改"><a href="#程序修改" class="headerlink" title="程序修改"></a>程序修改</h2><p>  对于串口4，我是用的是工具包中的程序改造的。如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/tool_pack.png" alt="SDK路径" title="SDK路径"></p>
-<p>  对于串口4，我是用的是工具包中的程序改造的。如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code2.png" alt="修改串口数" title="修改串口数"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code3.png" alt="修改串口引脚" title="修改串口引脚"></p>
-<p>  然后改造了函数，改造成了接收什么就返回给串口</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code4.png" alt="修改串口通信方式" title="修改串口通信方式"></p>
-<p>  完成上面的操作之后就可以进行正常的通信了。</p>
-<h1 id="演示结果"><a href="#演示结果" class="headerlink" title="演示结果"></a>演示结果</h1><p>  下面是演示结果：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/uart_communication.png" alt="串口通信演示" title="串口通信演示"></p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上附件，已经创建好了工程，可以参考：<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_UART.zip" target="_blank" rel="noopener">点我下载附件</a></p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　该文主要讲述了以前用STM32实现的一个心率传感装置的制作过程和最终实现的效果，这是我在大四毕业的时候帮别人做的一个毕业设计的小作品，最初的文章是发表在电子发烧友上面的，现转载到我的个人博客来。<br>原链接请点击此处：<a href="http://bbs.elecfans.com/forum.php?mod=viewthread&amp;tid=1600343&amp;page=1#pid7932932" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>　　最近做了一个机遇STM32的心率监测装置，使用了一块oled屏幕进行检测到的心率的波形的显示。<br>心率监测传感器使用的传感器是pulse sensor，是一款比较便宜的传感器。显示屏采用的是128X64的oled显示器。</p>
+<p>　　首先放上成品图，不然你们是没有兴趣看的。^_^<br><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Heart_rate_oscillogram.gif" alt="心率动态显示" title="心率动态显示"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Heart_rate_data.gif" alt="心率数据" title="心率数据"></p>
+<h1 id="开发环境与开发器件"><a href="#开发环境与开发器件" class="headerlink" title="开发环境与开发器件"></a>开发环境与开发器件</h1><p>　　开发环境：<br>　　1、win10 +MDK keil5.24<br>　　２、ST-LINK下载器（不一定需要这个，J-LINK和串口下载都是可以的）</p>
+<p>　　我是用的是STM32F103C8T6最小系统板，价格比较便宜并且功能足够强大。<br>　　元器件有：<br>　　==&gt;pulse sensor心率传感器<br>　　==&gt;IIC OLED显示屏<br>　　==&gt;按键2个<br>　　==&gt;LED1个<br>　　==&gt;蜂鸣器1个</p>
+<h1 id="电路设计"><a href="#电路设计" class="headerlink" title="电路设计"></a>电路设计</h1><p>　　在硬件结构方面还是比较简单的，连线比较简单，就是在软件方面花费了我一些时间，算法处理和波形系那是还是花了一些时间采写好的。<br>　　放上电路连接图：<br><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Schematic.jpg" alt="电路图" title="电路图"></p>
+<h1 id="软件实现"><a href="#软件实现" class="headerlink" title="软件实现"></a>软件实现</h1><h2 id="OLED"><a href="#OLED" class="headerlink" title="OLED"></a>OLED</h2><p>　　OLED方面我采用的是IIC操作的OLED，因为IIC操作简单，只需要两根线（我直接使用的PA7和PA8）。使用了软件IIC，直接移植的正点原子的官方例程的IIC，OLED显示也是移植的正点原子的程序，只是做了改进，可以显示汉字（正点原子的官方例程中OLED程序不能显示汉字，我对代码进行升级，可以显示汉字），还增加了自动在数字前面补0的功能。</p>
+<p>　　由于程序比较大，这里只放了重点的代码，在后面也提供源码。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//OLED波形显示函数</span>
+<span class="token keyword">void</span> <span class="token function">OLED_Waveform_display</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i<span class="token punctuation">;</span>        
+        u8 n<span class="token punctuation">;</span>
+
+        <span class="token function">IF</span><span class="token punctuation">(</span>waveform_flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                waveform_flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                        <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>n<span class="token operator">&lt;</span><span class="token number">64</span><span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                                <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token comment" spellcheck="true">//波形线补点操作，如果不用，可以注释掉,将#if 1改为#if 0</span>
+                        <span class="token comment" spellcheck="true">//引用波形补点函数可以是波形看起来是连续的</span>
+                        <span class="token macro property">#<span class="token directive keyword">if</span> 1</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">myabs</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>waveform<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">{</span>
+                                        <span class="token keyword">if</span><span class="token punctuation">(</span>waveform <span class="token operator">></span> waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                                        <span class="token punctuation">{</span>
+                                                <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>n<span class="token operator">&lt;</span>waveform<span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                                                <span class="token punctuation">{</span>
+                                                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                                                <span class="token punctuation">}</span>
+                                        <span class="token punctuation">}</span><span class="token keyword">else</span>
+                                        <span class="token punctuation">{</span>
+                                                <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span>waveform<span class="token punctuation">;</span>n<span class="token operator">&lt;</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                                                <span class="token punctuation">{</span>
+                                                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                                                <span class="token punctuation">}</span>
+                                        <span class="token punctuation">}</span>
+
+                                <span class="token punctuation">}</span>                        
+                        <span class="token punctuation">}</span>
+                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>waveform<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+                <span class="token punctuation">}</span>
+                <span class="token function">OLED_Refresh_Gram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                                <span class="token comment" spellcheck="true">//更新显示到OLED</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="pulse-sensor心率传感器"><a href="#pulse-sensor心率传感器" class="headerlink" title="pulse sensor心率传感器"></a>pulse sensor心率传感器</h2><p>　　pulse sensor心率传感器采用ADC进行数据采集，使用到了ADC0（PA0）。通过配置ADC引脚完成ADC的采集，通过实验，可以正常的采集到数据。当人的手指放上之后用示波器可以看到心跳的电压变化。</p>
+<h3 id="操作说明书"><a href="#操作说明书" class="headerlink" title="操作说明书"></a>操作说明书</h3><p>　　说明书密码（xinghuidianzi）：<br>  Pulse Sensor使用说明书V5.5（密码xinghuidianzi）<br><a href="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/doc/Pulse_Sensor使用说明书V5.5_密码xinghuidianzi.pdf" target="_blank" rel="noopener" title="点此处下载">点此处下载</a></p>
+<h3 id="心率监测算法实现"><a href="#心率监测算法实现" class="headerlink" title="心率监测算法实现"></a>心率监测算法实现</h3><p>　　心率算法就是检测心率波形的峰值，检测到  有60000ms 除以两个峰值时间（ms）就是心率值，说起来比较简单，但是操作起来有各种干扰，通过官方的例程上进行修改，最终成功测出心率值，还是比较准确的</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//心率采集与计算处理</span>
+<span class="token keyword">void</span> <span class="token function">HeartRate_deal</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> runningTotal<span class="token punctuation">;</span>
+        u8 i<span class="token punctuation">;</span>
+
+        Num <span class="token operator">=</span> sampleCounter <span class="token operator">-</span> lastBeattime<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//监控最后一次节拍后的时间，以避免噪声</span>
+
+        <span class="token comment" spellcheck="true">//找到脉冲波的波峰和波谷</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> thresh <span class="token operator">&amp;&amp;</span> Num <span class="token operator">></span> <span class="token punctuation">(</span>IBI<span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//为了避免需要等待3/5个IBI的时间</span>
+        <span class="token punctuation">{</span>       
+                <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> T<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>                                                        <span class="token comment" spellcheck="true">//T是阈值</span>
+                        T <span class="token operator">=</span> Signal<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//跟踪脉搏波的最低点，改变阈值</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">></span> thresh <span class="token operator">&amp;&amp;</span> Signal <span class="token operator">></span> P<span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//采样值大于阈值并且采样值大于峰值</span>
+        <span class="token punctuation">{</span>          
+                P <span class="token operator">=</span> Signal<span class="token punctuation">;</span>                             <span class="token comment" spellcheck="true">//P是峰值，改变峰值</span>
+        <span class="token punctuation">}</span> 
+        <span class="token comment" spellcheck="true">//现在开始寻找心跳节拍</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token number">250</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//避免高频噪声</span>
+        <span class="token punctuation">{</span>                                   
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Signal <span class="token operator">></span> thresh<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>Pulse <span class="token operator">==</span> false<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token punctuation">(</span>IBI<span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>        
+                        Pulse <span class="token operator">=</span> true<span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//当有脉冲的时候就设置脉冲信号。</span>
+<span class="token comment" spellcheck="true">//                                LED_ON();                                                                        //打开LED，表示已经有脉冲了</span>
+                        IBI <span class="token operator">=</span> sampleCounter <span class="token operator">-</span> lastBeatTime<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//测量节拍的ms级的时间</span>
+                        lastBeatTime <span class="token operator">=</span> sampleCounter<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//记录下一个脉冲的时间。</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>secondBeat<span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//如果这是第二个节拍，如果secondBeat == TRUE，表示是第二个节拍</span>
+                        <span class="token punctuation">{</span>                        
+                                secondBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//清除secondBeat节拍标志</span>
+                                <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//在启动时，种子的运行总数得到一个实现的BPM。</span>
+                                <span class="token punctuation">{</span>             
+                                        rate <span class="token operator">=</span> IBI<span class="token punctuation">;</span>                      
+                                <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>firstBeat<span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//如果这是第一次发现节拍，如果firstBeat == TRUE。</span>
+                        <span class="token punctuation">{</span>                         
+                                firstBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//清除firstBeat标志</span>
+                                secondBeat <span class="token operator">=</span> true<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//设置secongBeat标志</span>
+                                <span class="token keyword">return</span><span class="token punctuation">;</span>                              <span class="token comment" spellcheck="true">//IBI值是不可靠的，所以放弃它。</span>
+                        <span class="token punctuation">}</span>   
+                        <span class="token comment" spellcheck="true">//保留最后10个IBI值的运行总数。</span>
+                        runningTotal <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//清除runningTotal变量</span>
+
+                        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//转换数据到rate数组中</span>
+                        <span class="token punctuation">{</span>                
+                                rate <span class="token operator">=</span> rate<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//去掉旧的的IBI值。 </span>
+                                runningTotal <span class="token operator">+</span><span class="token operator">=</span> rate<span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//添加9个以前的老的IBI值。</span>
+                        <span class="token punctuation">}</span>
+
+                        rate<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> IBI<span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">//将最新的IBI添加到速率数组中。</span>
+                        runningTotal <span class="token operator">+</span><span class="token operator">=</span> rate<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//添加最新的IBI到runningTotal。</span>
+                        runningTotal <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//平均最后10个IBI值。</span>
+                        BPM <span class="token operator">=</span> <span class="token number">60000</span><span class="token operator">/</span>runningTotal<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//一分钟有多少拍。即心率BPM</span>
+                        QS <span class="token operator">=</span> true<span class="token punctuation">;</span>                              <span class="token comment" spellcheck="true">//设置量化自我标志Quantified Self标志</span>
+                        <span class="token comment" spellcheck="true">//在这个ISR（中断服务程序）中，QS标志没有被清除。</span>
+                <span class="token punctuation">}</span>                      
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> thresh <span class="token operator">&amp;&amp;</span> Pulse <span class="token operator">==</span> true<span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//当值下降时，节拍就结束了。</span>
+        <span class="token punctuation">{</span>   
+<span class="token comment" spellcheck="true">//                        LED_OFF();                                                                //关闭LED</span>
+                Pulse <span class="token operator">=</span> false<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//重设脉冲标记，这样方便下一次的计数</span>
+                amp <span class="token operator">=</span> P <span class="token operator">-</span> T<span class="token punctuation">;</span>                           <span class="token comment" spellcheck="true">//得到脉冲波的振幅。</span>
+                thresh <span class="token operator">=</span> amp<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">+</span> T<span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">//设置thresh为振幅的50%。</span>
+                P <span class="token operator">=</span> thresh<span class="token punctuation">;</span>                            <span class="token comment" spellcheck="true">//重新设置下一个时间</span>
+                T <span class="token operator">=</span> thresh<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token number">2500</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//如果2.5秒过去了还没有节拍</span>
+        <span class="token punctuation">{</span>                           
+                thresh <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">//设置默认阈值</span>
+                P <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//设置默认P值</span>
+                T <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//设置默认T值</span>
+                lastBeatTime <span class="token operator">=</span> sampleCounter<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//把最后的节拍跟上来。       </span>
+                firstBeat <span class="token operator">=</span> true<span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//设置firstBeat为true方便下一次处理</span>
+                secondBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                    
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　我将采集工作与算法处理都放在了定时器里面，初始化了一个2ms的定时器中断，这个工作都是每2ms进行一次</p>
+<p>　　LED、按键和蜂鸣器就不用多说了，很简单，蜂鸣器需要一个三极管进行信号放大，不然的话是驱动不了的。<br>　　　　1、按下按键1，可以进行界面的切换，在界面1的时候回显示西女排的数据值，ADC值等信息。<br>　　　　2、在界面2的时候就是显示波形，在人的手没有放上的时候一般不会显示，手放上之后就会显示心率（人的手放上之后，芯片会有一段时间的空白期(采集到的数据为0)，我就是根据这段时间来判断时候有手放上）<br>　　　　3、当采集到的心率值不在规定的范围之内时蜂鸣器就会报警<br>　　　　4、按下按键2之后蜂鸣器停止报警，知道再次检测到人手放在传感器上面。</p>
+<h1 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Test.jpg" alt="测试" title="测试"></p>
+<h1 id="代码下载"><a href="#代码下载" class="headerlink" title="代码下载"></a>代码下载</h1><p>　　我已经将代码都整理好了，可以在上面直接下载。<br>　　点击此处直接下载：<br><a href="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/基于stm32的心率监控装置.zip" target="_blank" rel="noopener" title="点我下载">点我下载</a><br>　　<br>　　去github：<a href="https://github.com/hehung/STM32-heart-rate-monitoring" target="_blank" rel="noopener" title="点我去github">点我去github</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -507,7 +621,7 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-24-title">http://hehung.top/2019/2019-11-24-title</a>
+                    <a href="http://hehung.top/2019/2019-11-16-ji-yu-stm32-de-xin-lu-jian-kong-she-bei">http://hehung.top/2019/2019-11-16-ji-yu-stm32-de-xin-lu-jian-kong-she-bei</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,12 +659,20 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LPC11U68/">
-                                    <span class="chip bg-color">LPC11U68</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                    <span class="chip bg-color">串口</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
+                                </a>
+                            
+                                <a href="/tags/OLED/">
+                                    <span class="chip bg-color">OLED</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
+                                    <span class="chip bg-color">心率监控</span>
                                 </a>
                             
                         </div>
@@ -983,31 +1105,30 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-27-title">
+                <a href="/2019/2019-11-16-51-dan-pian-ji-de-yin-le-he-c-yu-yan">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/成品展示１.jpg" class="responsive-img" alt="51单片机的音乐盒(c语言)">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="lpc11U68串口控制RGB LED">
-                        
-                        <span class="card-title">lpc11U68串口控制RGB LED</span>
+                        <span class="card-title">51单片机的音乐盒(c语言)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LPC11U68带有三个LED，本文讲述了如何通过串口来控制LED，包括控制每个LED的亮灭以及三种颜色的LED交替显示。
+                            使用51单片机做的一个可以播放几种音乐的音乐播放器，能够实现音乐切换，暂停，播放等功能。包含电路设计，焊接与源码分享。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1017,16 +1138,16 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LPC11U68/">
-                        <span class="chip bg-color">LPC11U68</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">51单片机</span>
                     </a>
                     
-                    <a href="/tags/LED/">
-                        <span class="chip bg-color">LED</span>
+                    <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">电路设计</span>
                     </a>
                     
                 </div>
@@ -1040,30 +1161,31 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-title">
+                <a href="/2019/2019-11-16-wo-de-bo-ke-da-jian-hao-liao">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/display_oled.jpg" class="responsive-img" alt="STM32使用之OLED显示屏驱动">
                         
-                        <span class="card-title">STM32使用之OLED显示屏驱动</span>
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="我的博客搭建好了">
+                        
+                        <span class="card-title">我的博客搭建好了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            OLED12864是一个基于OLED技术的128X64的显示屏，通过IIC进行驱动，本文介绍了如何通过STM32来驱动OLED模块。
+                            前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
@@ -1073,16 +1195,16 @@ LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/OLED/">
-                        <span class="chip bg-color">OLED</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
-                    <a href="/tags/IIC/">
-                        <span class="chip bg-color">IIC</span>
+                    <a href="/tags/coding/">
+                        <span class="chip bg-color">coding</span>
                     </a>
                     
                 </div>

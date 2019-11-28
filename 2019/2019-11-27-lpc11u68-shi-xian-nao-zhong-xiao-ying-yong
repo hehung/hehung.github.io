@@ -4,12 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="lpc11U68串口控制RGB LED, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="lpc11U68利用RTC实现闹钟小应用, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-该程序实现的功能是串口接受到一串数据之后，根据第一位数据来进行判断控制RGB LED，控制很简单，和按键控制并没有什么区别。
-
-
-帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看串口如何控">
+该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看lpc11U68的RTC如">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>lpc11U68串口控制RGB LED | Hehung&#39;s Blog</title>
+    <title>lpc11U68利用RTC实现闹钟小应用 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -248,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        lpc11U68串口控制RGB LED
+                        lpc11U68利用RTC实现闹钟小应用
                     </div>
                 </div>
             </div>
@@ -366,16 +363,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/OLED/">
+                                <span class="chip bg-color">OLED</span>
+                            </a>
+                        
                             <a href="/tags/LPC11U68/">
                                 <span class="chip bg-color">LPC11U68</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                <span class="chip bg-color">串口</span>
-                            </a>
-                        
-                            <a href="/tags/LED/">
-                                <span class="chip bg-color">LED</span>
+                            <a href="/tags/RTC/">
+                                <span class="chip bg-color">RTC</span>
                             </a>
                         
                     </div>
@@ -413,7 +410,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    153
+                    146
                 </div>
                 
 
@@ -437,10 +434,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>该程序实现的功能是串口接受到一串数据之后，根据第一位数据来进行判断控制RGB LED，控制很简单，和按键控制并没有什么区别。</p>
-</blockquote>
-<blockquote>
-<p>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615527-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看串口如何控制LED</a></p>
+<p>该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。<br>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615806-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看lpc11U68的RTC如何使用</a></p>
 </blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -485,7 +479,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-27-title">http://hehung.top/2019/2019-11-27-title</a>
+                    <a href="http://hehung.top/2019/2019-11-27-lpc11u68-shi-xian-nao-zhong-xiao-ying-yong">http://hehung.top/2019/2019-11-27-lpc11u68-shi-xian-nao-zhong-xiao-ying-yong</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -523,16 +517,16 @@
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/OLED/">
+                                    <span class="chip bg-color">OLED</span>
+                                </a>
+                            
                                 <a href="/tags/LPC11U68/">
                                     <span class="chip bg-color">LPC11U68</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                    <span class="chip bg-color">串口</span>
-                                </a>
-                            
-                                <a href="/tags/LED/">
-                                    <span class="chip bg-color">LED</span>
+                                <a href="/tags/RTC/">
+                                    <span class="chip bg-color">RTC</span>
                                 </a>
                             
                         </div>
@@ -965,23 +959,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-27-title">
+                <a href="/2019/2019-11-28-lpc-shuang-he-tiao-zhan-sai-zhi-can-ting-fu-wu-ji-qi-ren">
                     <div class="card-image">
                         
-                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201811/24/123018nmmsdt0mg0l3s5hg.png" class="responsive-img" alt="lpc11U68 IIC控制OLED">
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" class="responsive-img" alt="LPC双核挑战赛之餐厅服务机器人">
                         
-                        <span class="card-title">lpc11U68 IIC控制OLED</span>
+                        <span class="card-title">LPC双核挑战赛之餐厅服务机器人</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用lpc11U68的IIC控制OLED显示中文字符，该文使用了模拟IIC通信协议，控制OLED显示中文。
+                            2018年参加了NXP的plc双核比赛，做了一个送餐机器人，基于磁感线寻迹，能够进行网络通信，点菜，计算价格等功能。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-28
                         </span>
                         <span class="publish-author">
                             
@@ -1002,12 +996,16 @@
                         <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/IIC/">
-                        <span class="chip bg-color">IIC</span>
+                    <a href="/tags/LPC54114/">
+                        <span class="chip bg-color">LPC54114</span>
                     </a>
                     
-                    <a href="/tags/LPC11U68/">
-                        <span class="chip bg-color">LPC11U68</span>
+                    <a href="/tags/ADC/">
+                        <span class="chip bg-color">ADC</span>
+                    </a>
+                    
+                    <a href="/tags/ESP8266/">
+                        <span class="chip bg-color">ESP8266</span>
                     </a>
                     
                 </div>
@@ -1021,23 +1019,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-24-title">
+                <a href="/2019/2019-11-27-lpc11u68-rtc-shi-zhong-de-shi-yong">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_positive.png" class="responsive-img" alt="lpc11U68上手体验及串口通信">
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/09/140430zsbzlgbxxrf4lp7z.png" class="responsive-img" alt="lpc11U68 RTC时钟芯片的使用">
                         
-                        <span class="card-title">lpc11U68上手体验及串口通信</span>
+                        <span class="card-title">lpc11U68 RTC时钟芯片的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            恩智浦LPC11U68单片机基于Cortex-M0+内核，本文接上了固件升级以及串口通信操作。
+                            RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
                             </span>
                         <span class="publish-author">
                             
@@ -1058,8 +1056,8 @@
                         <span class="chip bg-color">LPC11U68</span>
                     </a>
                     
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/RTC/">
+                        <span class="chip bg-color">RTC</span>
                     </a>
                     
                 </div>
