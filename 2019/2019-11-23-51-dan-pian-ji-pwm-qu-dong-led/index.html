@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机开发环境搭建+流水灯, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机PWM驱动LED, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-以前在论坛上获取了一块51单片机的板子，集成了ARM+51单片机两种芯片，包括很多的外设和资料。在使用过程中写了部分教程，如果要看原贴：点我跳转
-
-创建51单片机工程  编译器选用的是keil 5，keil5相对于keil4更加的好用，同">
+PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速度驱动等都会用到，51单片机没有继承PWM模块，所以需要使用定时器进行模拟，本文就讲述如何使用定时器来模拟PWM功能实现对LED的亮度的控制。以前发帖在电子芯巴克。原帖子链接：点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机开发环境搭建+流水灯 | Hehung&#39;s Blog</title>
+    <title>51单片机PWM驱动LED | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机开发环境搭建+流水灯
+                        51单片机PWM驱动LED
                     </div>
                 </div>
             </div>
@@ -373,8 +371,8 @@
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/Keil/">
-                                <span class="chip bg-color">Keil</span>
+                            <a href="/tags/PWM/">
+                                <span class="chip bg-color">PWM</span>
                             </a>
                         
                     </div>
@@ -412,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    910
+                    584
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 				
@@ -436,64 +434,92 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>以前在论坛上获取了一块51单片机的板子，集成了ARM+51单片机两种芯片，包括很多的外设和资料。在使用过程中写了部分教程，如果要看原贴：<a href="https://bbs.icxbk.com/thread-100061-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速度驱动等都会用到，51单片机没有继承PWM模块，所以需要使用定时器进行模拟，本文就讲述如何使用定时器来模拟PWM功能实现对LED的亮度的控制。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100307-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="创建51单片机工程"><a href="#创建51单片机工程" class="headerlink" title="创建51单片机工程"></a>创建51单片机工程</h1><p>  编译器选用的是keil 5，keil5相对于keil4更加的好用，同时支持stm32编程，但是keil5原始的下载安装包中是不带有51单片机的pack包的，所以需要自己在官网上下载一个C51的pack包，安装之后就可以正常给51单片机编程了。<br>下面开始讲解工程创建。</p>
-<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>  如下图所示，选择Project =&gt; New jVision Project…</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/create_project1.png" alt="新建项目" title="新建项目"></p>
-<h2 id="输入工程名字"><a href="#输入工程名字" class="headerlink" title="输入工程名字"></a>输入工程名字</h2><p>  选择一个路径保存你新建的工程，然后输入工程的名字，如下图所示：</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%B7%A5%E7%A8%8B%E5%88%9B%E5%BB%BA2.png" alt="选择项目路径与名字" title="选择项目路径与名字"></p>
-<h2 id="单片机型号选择"><a href="#单片机型号选择" class="headerlink" title="单片机型号选择"></a>单片机型号选择</h2><p>  选择单片机的型号，如下图，选择AT89C52，如果用的是STC89系列的51单片机，也需要选择这个，因为编译器里面没有STC89C51的选项，并且这里的操作方式和使用MDK4的时候是不一样的。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E9%80%89%E6%8B%A9%E5%8D%95%E7%89%87%E6%9C%BA%E5%9E%8B%E5%8F%B7.png" alt="选择单片机型号" title="选择单片机型号"></p>
-<h2 id="新建一个空白文件"><a href="#新建一个空白文件" class="headerlink" title="新建一个空白文件"></a>新建一个空白文件</h2><p>  点击下图所示的图标，新建一个空白编辑界面，这个就是要用到的.c文件。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6.png" alt="新建一个空白文件" title="新建一个空白文件"></p>
-<h2 id="另存为-c文件"><a href="#另存为-c文件" class="headerlink" title="另存为.c文件"></a>另存为.c文件</h2><p>  点击另存为，给新建的空杯文件输入一个名字，注意：名字后面的.c不要漏写。等会写的代码就会存放在这个文件里面，一般与工程保存在同一个文件目录下。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E7%BB%99%E6%96%87%E4%BB%B6%E6%94%B9%E5%90%8D.png" alt="另存为空白文件" title="另存为空白文件"></p>
-<h2 id="将-c文件加入工程"><a href="#将-c文件加入工程" class="headerlink" title="将.c文件加入工程"></a>将.c文件加入工程</h2><p>  新建的空白文件还没有加入到工程中，所以需要将该文件加入到工程中，如下图所示，双击Source Group，在弹出的选择框中选择新建的.c文件</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%B0%86%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E7%A8%8B.png" alt="将新建文件加入工程" title="将新建文件加入工程"></p>
-<h1 id="代码编辑与下载"><a href="#代码编辑与下载" class="headerlink" title="代码编辑与下载"></a>代码编辑与下载</h1><h2 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h2><p>  文件加入工程之后就是编写代码了。</p>
-<p>  因为给单片机编程是要根据你的单片机电路的实际布局来编写的，因为我的单片机的8路LED都是接在P0口上的，所以在程序中用P0来控制LED的亮灭。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  本文中使用的是定时器0，通过配置定时器0为定时模式就可以了，然后在程序中打开定时器，定时时间间隔设置的小一点，设置的太大会造成不流畅的情况。</p>
+<p>  我在程序中设置的是0.01ms，周期为100，通过变量duty就可以改变占空比。如果要控制舵机运动的话，可以将定时时间设置成0.2ms，这样100次就是20ms，因为舵机控制需要周期为20ms的方波驱动，然后通过设置占空比就可以控制舵机运动了。</p>
+<h1 id="51单片机PWM原理"><a href="#51单片机PWM原理" class="headerlink" title="51单片机PWM原理"></a>51单片机PWM原理</h1><p>  因为51单片机没有硬件PWM，所以采用定时器0来控制，控制原理就是通过周期性的输出高低电平来控制输出高电平和低电平的时间，周期一般要小于30ms，因为人的眼睛的刷新频率就差不多是30ms，如果大于30ms就会出现闪烁的效果，达不到理想的效果。</p>
+<p>  使用PWM还需要知道一个知识点就是占空比，占空比就是在一个周期中输出的高电平占整个周期的比值。</p>
+<p>  这个需要看驱动的LED是阴极驱动还是阳极驱动，如果是阴极驱动，占空比越大，LED亮度越低反之越高，阳极控制的相反。</p>
+<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  接下来就是写程序了。</p>
 <pre class="line-numbers language-C"><code class="language-C">#include <reg52.h>
 
 #define uchar unsigned char
-#define uint unsigned int
+#define uint  unsigned int
 
-//写一个延时函数
-void delay(uint ms)
-{
-    uchar i;
-    for(;ms>0;ms--)
-        for(i=110;i>0;i--);
-}
+sbit pwm = P3^7;                //定义PWM引脚为P3.7
+uchar duty = 100;
+
+void timer0_Init(void);
+void Set_Duty(void);
+void delay_ms(uint ms);
 
 int main()
 {
-    uchar kk = 0x01;
+        int i;
 
-    P0 = kk;        
-    while(1)
-    {
-        kk <<= 1;        //左移，如果右移可以改为kk >>= 1;
-        if(kk == 0)
+        timer0_Init();
+
+        while(1)
         {
-            kk = 0x01;
+                for(i=100;i>0;i-=1)
+                {
+                        duty = i;
+                        delay_ms(1);
+                }        
+                for(i=0;i<10;i+=1)
+                {
+                        duty = i;
+                        delay_ms(1);
+                }
         }
+}
 
-        P0 = kk;
-        delay(1000);
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>  程序编写完成之后就是编译了，顺利编译通过就表示没有语法错误了，现在开始下一步，生成hex文件。</p>
-<h2 id="hex文件生成"><a href="#hex文件生成" class="headerlink" title="hex文件生成"></a>hex文件生成</h2><p>  如下图所示。选择该图标，在弹出的对话框中选择Output，将创建HEX文件的对话框前面打上对勾，这样再次编译工程之后就可以在指定目录下生成一个.hex文件。这是一种16进制的文件，直接下载到单片机中运行即可。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90hex%E6%96%87%E4%BB%B6.png" alt="选择生成hex文件" title="选择生成hex文件"></p>
-<h2 id="下载软件到单片机"><a href="#下载软件到单片机" class="headerlink" title="下载软件到单片机"></a>下载软件到单片机</h2><p>  打开stc-isp-15xx-v6.86F.exe软件，选择相应的单片机型号，我这里得单片机是89C516，这块单片机我以前都没见过，试了很多种型号的都下载不了，最后在89c58里面才找到这个型号。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6.png" alt="使用工具下载软件" title="使用工具下载软件"></p>
-<p>如果使用同样型号的单片机的小伙伴可以看下图：</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%8D%95%E7%89%87%E6%9C%BA%E5%9E%8B%E5%8F%B7%E9%80%89%E6%8B%A9.png" alt="单片机型号选择" title="单片机型号选择"></p>
-<h1 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h1><p>  将程序下载到单片机之后就可以查看运行效果了，如下图所示：</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.gif" alt="运行效果" title="运行效果"></p>
-<p>  附上我的接线图</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%8F%92%E7%BA%BF%E8%BF%9E%E6%8E%A5.jpg" alt="插线连接" title="插线连接"></p>
+//延时函数
+void delay_ms(int ms)
+{
+        uint i;
+        for(;ms>0;ms--)
+                for(i=0;i<110;i++);
+}
+
+//定时器0初始化
+void timer0_Init(void)
+{
+        TMOD|=0X01;                        //选择为定时器0模式，工作方式1，仅用TR0打开启动。
+
+        TH0=(65536-20)/256;        //给定时器赋初值，50us
+        TL0=(65536-20)%256;        
+        ET0=1;                                //允许定时器中断0
+        EA=1;                                //打开总中断
+        TR0=1;                                //打开定时器                        
+}
+
+//使用定时0模拟PWM
+void timer0() interrupt 1
+{        
+        static uint pwm_count = 0;
+
+        TH0=(65536-10)/256;        //给定时器赋初值，50us
+        TL0=(65536-10)%256;        
+
+        pwm_count ++;        
+
+        if(pwm_count >= 100)
+        {
+                pwm_count = 0;
+        }else if(pwm_count <= duty)
+        {
+                pwm = 0;
+        }else
+        {
+                pwm = 1;
+        }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>程序说明：duty变量就是占空比的控制变量，通过调节该值可以控制占空比大小，该值最大为100。</p>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  如下图，可以看到LED呈现明暗的变化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" alt="运行结果" title="运行结果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" alt="运行结果" title="运行结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -537,7 +563,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-kai-fa-huan-jing-da-jian-liu-shui-deng">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-kai-fa-huan-jing-da-jian-liu-shui-deng</a>
+                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-pwm-qu-dong-led/">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-pwm-qu-dong-led/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,8 +609,8 @@ int main()
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/Keil/">
-                                    <span class="chip bg-color">Keil</span>
+                                <a href="/tags/PWM/">
+                                    <span class="chip bg-color">PWM</span>
                                 </a>
                             
                         </div>
@@ -1017,18 +1043,18 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi">
+                <a href="/2019/2019-11-23-51-dan-pian-ji-qu-dong-bu-jin-dian-ji/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg" class="responsive-img" alt="51单片机数码管显示">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg" class="responsive-img" alt="51单片机驱动步进电机">
                         
-                        <span class="card-title">51单片机数码管显示</span>
+                        <span class="card-title">51单片机驱动步进电机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成的一个控制数码管显示的程序，数码管会从右向左滚动显示1-F这些数字和字母。
+                            51单片机对步进电机的控制，步进电机的最大特点就是速度可控和步数精确，可以实现很慢的转速，对于精确转速和位置控制的设备可以使用。
                         
                     </div>
                     <div class="publish-info">
@@ -1058,8 +1084,8 @@ int main()
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                        <span class="chip bg-color">数码管</span>
+                    <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
+                        <span class="chip bg-color">步进电机</span>
                     </a>
                     
                 </div>
@@ -1073,31 +1099,30 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-20-python-li-yong-json-huo-qu-5-tian-de-tian-qi">
+                <a href="/2019/2019-11-23-51-dan-pian-ji-qu-dong-lcd1602/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg" class="responsive-img" alt="51单片机驱动LCD1602">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python获取5天的天气">
-                        
-                        <span class="card-title">python获取5天的天气</span>
+                        <span class="card-title">51单片机驱动LCD1602</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            利用python获取天气，使用requests模块获取天气json文件，解析json文件提取5天的天气信息以及穿衣指数。
+                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1107,16 +1132,16 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/requests/">
-                        <span class="chip bg-color">requests</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/json/">
-                        <span class="chip bg-color">json</span>
+                    <a href="/tags/LCD1602/">
+                        <span class="chip bg-color">LCD1602</span>
                     </a>
                     
                 </div>

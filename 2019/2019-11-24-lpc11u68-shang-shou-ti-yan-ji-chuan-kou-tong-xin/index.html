@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机数码管显示, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="lpc11U68上手体验及串口通信, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：点我跳转
+LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不多少了，可以点击跳转官网中查看：点我跳转。LPC11U68单片机最开始是在NXP社区试用的，所以在恩智浦社区发布了试用分享。点击跳转：1开箱点击调转：2串口通信
 
-效果展示  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，  由于使用手机自带的gif拍摄的图">
+资料搜集l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机数码管显示 | Hehung&#39;s Blog</title>
+    <title>lpc11U68上手体验及串口通信 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_positive.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机数码管显示
+                        lpc11U68上手体验及串口通信
                     </div>
                 </div>
             </div>
@@ -365,16 +365,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                <span class="chip bg-color">单片机</span>
+                            <a href="/tags/LPC11U68/">
+                                <span class="chip bg-color">LPC11U68</span>
                             </a>
                         
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">C语言</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                                <span class="chip bg-color">数码管</span>
+                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                                <span class="chip bg-color">串口</span>
                             </a>
                         
                     </div>
@@ -385,8 +381,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                51单片机
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                LPC系列
                             </a>
                         
                     </div>
@@ -398,7 +394,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-11-24
                 </div>
                 
 
@@ -412,14 +408,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    840
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 				
@@ -436,114 +432,38 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：<a href="https://bbs.icxbk.com/thread-100110-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>LPC11U68是恩智浦推出的一块低功耗的单片机，对于其介绍就不多少了，可以点击跳转官网中查看：<a href="https://www.nxpic.org/page/LPC11U68" target="_blank" rel="noopener">点我跳转</a>。<br>LPC11U68单片机最开始是在NXP社区试用的，所以在恩智浦社区发布了试用分享。<br>点击跳转：<a href="http://www.nxpic.org/module/forum/thread-615519-1-1.html" target="_blank" rel="noopener">1开箱</a><br>点击调转：<a href="http://www.nxpic.org/module/forum/thread-615522-1-1.html" target="_blank" rel="noopener">2串口通信</a></p>
 </blockquote>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，<br>  由于使用手机自带的gif拍摄的图片，只能拍摄很短的gif图片，所以就多放了几张。<br>  我是向左滚动的滚动的时间大约500ms左右，随便写的，并不准确，会循环连续的滚动，图中不太容易看出效果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/2.gif" alt="运行效果" title="运行效果"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/3.gif" alt="运行效果" title="运行效果"></p>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  在单片机开发中，能看懂原理图是非常重要的，因为单片机的开发一般都是对外设的驱动，知道电路如何连接，才能很好的控制。</p>
-<p>  首先打开原理图，可以看到原理图中所有的数码管都是接在J16上的，而J16又是通过译码器连接到J6，单片机上的A,B,C引脚。所以通过A,B,C可以控制数码管得位选。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/4.png" alt="原理图" title="原理图"></p>
-<p>  同时，原理图还说明了数码管是共阴的，也就是阴极都是连在一起的，如果要控制数码管亮的话，就需要在阳极给高电位，也就是给1。</p>
-<p>  这里说一下我的数码管的链接引脚：<br>A ===  P1.0<br>B ===  P1.1<br>C ===  P1.2<br>然后就是J12口是控制段选的，J12通过P0口控制。</p>
-<h1 id="数码管控制原理"><a href="#数码管控制原理" class="headerlink" title="数码管控制原理"></a>数码管控制原理</h1><h2 id="位选和段选"><a href="#位选和段选" class="headerlink" title="位选和段选"></a>位选和段选</h2><p>  因为单片机的控制引脚有限，一个数码管在操作的时候会使用8个IO口进行控制，为了减少IO口的开销，在电路设计上就是用了段选和位选来用相同的IO口数对多个数码管进行操作。</p>
-<p>  对多个数码管操作的时候有段选和位选：位选就是选择某一个数码管，对其进行操作；段选就是选择数码管的某一段操作，一般数码管有7段，如果数码管有小数点的话就会有8段，就可以通过8个IO口对数码管的每一段的亮灭进行控制。</p>
-<h2 id="位选控制"><a href="#位选控制" class="headerlink" title="位选控制"></a>位选控制</h2><p>  位选是如何工作的呢？这里有8个数码管，但是只有三个控制引脚，因为有译码器，所以给这三个引脚不同的值就会控制打开不同的数码管，比如：</p>
-<ul>
-<li>A=0，B=0，C=0就是控制第1个数码管</li>
-<li>A=0，B=0，C=1就是控制第2个数码管</li>
-<li>…</li>
-</ul>
-<h2 id="段选控制"><a href="#段选控制" class="headerlink" title="段选控制"></a>段选控制</h2><p>  段选使用8个IO口进行控制。如原理图中所示的J12，因为数码管是共阴的，所以控制IO输出为1就会使相应的一段变亮。</p>
-<p>  原理图中对数码管的的每一段都有标注a,b,c,d,e,f,g,dp。如果将J12连接到P0，也就是P0.7控制a，P0.6控制b … P0.0控制dp。</p>
-<p>  所以，如果要控制数码管显示数字，应该给IO口P0赋值下列数字：</p>
-<ul>
-<li>0 – 0x3f </li>
-<li>1 – 0x06 </li>
-<li>2 – 0x5b</li>
-<li>3 – 0x4f</li>
-<li>4 – 0x66</li>
-<li>5 – 0x6d</li>
-<li>6 – 0x7d</li>
-<li>7 – 0x07</li>
-<li>8 – 0x7f</li>
-<li>9 – 0x6f</li>
-<li>A – 0x77</li>
-<li>B – 0x7c</li>
-<li>C – 0x39</li>
-<li>D – 0x5e</li>
-<li>E – 0x79</li>
-<li>F – 0x71 </li>
-</ul>
-<h1 id="程序编辑"><a href="#程序编辑" class="headerlink" title="程序编辑"></a>程序编辑</h1><p>  知道了原理图的连接和控制原理，现在就可以对数码管的显示进行程序程序的编写了。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
-
-#define uchar unsigned char
-#define uint unsigned int
-#define SMG P0                //定义数码管的段选端口
-
-//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
-sbit LA=P1^0;                
-sbit LB=P1^1;
-sbit LC=P1^2;
-
-//下面的数组可以显示0-F
-uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
-
-//函数声明
-void delay(int ms);
-void change(int what);
-
-//延时函数(短延时)
-void delay(int ms)
-{
-        for(;ms>0;ms--);
-}
-
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
-
-int main()
-{
-        uchar i;
-        uchar j=0;
-        uint time=50;
-
-        while(1)
-        {
-                for(;time>0;time--)
-                {
-                        for(i=1;i<=8;i++)
-                        {
-                                change(i);
-                                SMG = number[(j+i)%16];                //使之可以滚动显示的处理        
-                                delay(100);
-                                SMG = 0;
-                                delay(50);         //消除暗影
-                        }                
-                }
-                time = 50;
-                j++;
-                if(j>17)
-                        j = 0;
-        }
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上述程序就是实现了对8个数码管显示0-F的滚动显示程序。</p>
+<h1 id="资料搜集"><a href="#资料搜集" class="headerlink" title="资料搜集"></a>资料搜集</h1><h2 id="lpc11u68外观展示"><a href="#lpc11u68外观展示" class="headerlink" title="lpc11u68外观展示"></a>lpc11u68外观展示</h2><p>  如下图，这块板子做的还是挺好看的，大小就是一张身份证的大小，采用了Arduino的封装，可以直接与arduino的板子一起使用吧，同时还提供了芯片的引脚的位置，但是并没有焊接引脚，需要自己找排针焊接，我觉得官方应该提供排针的，不然这东西还真的不好找。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_positive.png" alt="lpc11u68正面" title="lpc11u68正面"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_negative.png" alt="lpc11u68反面" title="lpc11u68反面"></p>
+<h2 id="资料搜集-1"><a href="#资料搜集-1" class="headerlink" title="资料搜集"></a>资料搜集</h2><p>  单片机开发最重要的就是要搜集资料，所以在开始开发之前是要搜集关于lpc11u68的资料。在这里汇集了很多网友试用的时候发布的帖子。<br>  <a href="http://www.nxpic.org/module/forum/thread-615222-1-1.html" target="_blank" rel="noopener">点我跳转到资料汇集页面</a></p>
+<h1 id="固件更新"><a href="#固件更新" class="headerlink" title="固件更新"></a>固件更新</h1><p>  主要去官网下载SDK包，原理图和KEIL软件。搜集完了必要的资料之后可以开始上手实践了。</p>
+<p>  但是还是遇到了一些问题，找了一根数据线插上，准备下载程序的时候才发现电脑发现不了端口，然后在看了其他网友的帖子才发现是需要更新固件的原因。固件更新的方法也很简单。可以参考：<a href="http://www.nxpic.org/module/forum/thread-615218-1-1.html" target="_blank" rel="noopener">点我了解固件更新方法</a></p>
+<p>  但是有一点需要注意：<font color="red">需要将JP1的跳线帽拔下来,短接JP3，才能够成功</font>最开始的时候没有拔掉JP1，导致一直更新不了。</p>
+<p>  更新了成功了固件之后，就可以只用JLINK模式进行下载程序了，如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/original.png" alt="LED程序演示" title="LED程序演示"></p>
+<h1 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h1><blockquote>
+<p>学习了一下按键，LED和串口，这些都在例程中就有的，调用的函数都在Broad.c这个函数里面，可以直接调用，还是比较方便的。按键和LED就不说了，这个是比较简单的，直接讲一下如何操作串口4。</p>
+</blockquote>
+<h2 id="串口通信函数"><a href="#串口通信函数" class="headerlink" title="串口通信函数"></a>串口通信函数</h2><p>  在例程中已经有了USB串口的发送和接收函数，就先说一下这两个函数的用法，看下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code1.png" alt="串口通信函数" title="串口通信函数"></p>
+<p>  使用这两个函数可以方便的进行数据的传输和发送，可以用于调试。<br>接收到数据之后就马上返回到串口。</p>
+<h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p>  串口4的电路图如下面所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/circuit_diagram.png" alt="串口4引脚图" title="串口4引脚图"></p>
+<p>  线路连接图如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/wire_connect.png" alt="线路连接图" title="线路连接图"></p>
+<h2 id="程序修改"><a href="#程序修改" class="headerlink" title="程序修改"></a>程序修改</h2><p>  对于串口4，我是用的是工具包中的程序改造的。如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/tool_pack.png" alt="SDK路径" title="SDK路径"></p>
+<p>  对于串口4，我是用的是工具包中的程序改造的。如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code2.png" alt="修改串口数" title="修改串口数"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code3.png" alt="修改串口引脚" title="修改串口引脚"></p>
+<p>  然后改造了函数，改造成了接收什么就返回给串口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/code4.png" alt="修改串口通信方式" title="修改串口通信方式"></p>
+<p>  完成上面的操作之后就可以进行正常的通信了。</p>
+<h1 id="演示结果"><a href="#演示结果" class="headerlink" title="演示结果"></a>演示结果</h1><p>  下面是演示结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/uart_communication.png" alt="串口通信演示" title="串口通信演示"></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上附件，已经创建好了工程，可以参考：<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/lpc11U68/Uart_comm/LPC11U68_UART.zip" target="_blank" rel="noopener">点我下载附件</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -587,7 +507,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi</a>
+                    <a href="http://hehung.top/2019/2019-11-24-lpc11u68-shang-shou-ti-yan-ji-chuan-kou-tong-xin/">http://hehung.top/2019/2019-11-24-lpc11u68-shang-shou-ti-yan-ji-chuan-kou-tong-xin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,16 +545,12 @@ int main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                    <span class="chip bg-color">单片机</span>
+                                <a href="/tags/LPC11U68/">
+                                    <span class="chip bg-color">LPC11U68</span>
                                 </a>
                             
-                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">C语言</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                                    <span class="chip bg-color">数码管</span>
+                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                                    <span class="chip bg-color">串口</span>
                                 </a>
                             
                         </div>
@@ -1067,30 +983,31 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-ds18b20-wen-du-huo-qu">
+                <a href="/2019/2019-11-27-lpc11u68-chuan-kou-kong-zhi-rgb-led/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg" class="responsive-img" alt="51单片机DS18B20获取温度">
                         
-                        <span class="card-title">51单片机DS18B20获取温度</span>
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="lpc11U68串口控制RGB LED">
+                        
+                        <span class="card-title">lpc11U68串口控制RGB LED</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
+                            LPC11U68带有三个LED，本文讲述了如何通过串口来控制LED，包括控制每个LED的亮灭以及三种颜色的LED交替显示。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
                                 </a>
                             
                             
@@ -1100,16 +1017,16 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/LPC11U68/">
+                        <span class="chip bg-color">LPC11U68</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                        <span class="chip bg-color">串口</span>
                     </a>
                     
-                    <a href="/tags/DS18B20/">
-                        <span class="chip bg-color">DS18B20</span>
+                    <a href="/tags/LED/">
+                        <span class="chip bg-color">LED</span>
                     </a>
                     
                 </div>
@@ -1123,18 +1040,18 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-kai-fa-huan-jing-da-jian-liu-shui-deng">
+                <a href="/2019/2019-11-23-stm32-shi-yong-zhi-oled-qu-dong/">
                     <div class="card-image">
                         
-                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/display_oled.jpg" class="responsive-img" alt="STM32使用之OLED显示屏驱动">
                         
-                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
+                        <span class="card-title">STM32使用之OLED显示屏驱动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
+                            OLED12864是一个基于OLED技术的128X64的显示屏，通过IIC进行驱动，本文介绍了如何通过STM32来驱动OLED模块。
                         
                     </div>
                     <div class="publish-info">
@@ -1145,8 +1062,8 @@ int main()
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/STM32/" class="post-category">
+                                    STM32
                                 </a>
                             
                             
@@ -1156,16 +1073,16 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/IIC/">
+                        <span class="chip bg-color">IIC</span>
                     </a>
                     
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
+                    <a href="/tags/OLED/">
+                        <span class="chip bg-color">OLED</span>
                     </a>
                     
                 </div>
