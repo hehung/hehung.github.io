@@ -4,6 +4,97 @@
   
     
     <entry>
+      <title>2017贸泽智造大赛-手势控制机械臂</title>
+      <link href="/2019/2019-11-29-2017-mao-ze-zhi-zao-da-sai-shou-shi-kong-zhi-ji-jie-bi/"/>
+      <url>/2019/2019-11-29-2017-mao-ze-zhi-zao-da-sai-shou-shi-kong-zhi-ji-jie-bi/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://www.cirmall.com/bbs/thread-99386-1-1.html" target="_blank" rel="noopener">http://www.cirmall.com/bbs/thread-99386-1-1.html</a></p><p>这是2017年的时候参加的贸泽电子智造大赛的时候发布的帖子，当时得了一个三等奖，😄。</p><p>该比赛有许多优秀的作品，点击后面的连接进行跳转：<a href="http://www.cirmall.com/bbs/forum.php?mod=viewthread&amp;ordertype=2&amp;tid=99672" target="_blank" rel="noopener">点我查看优秀的项目</a></p><h1 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h1><p>  本系统是采用CC3220s与LPC54608制作的手势控制的机械臂系统。可以完成通过简单的手势对机械臂的控制。手势识别指令采用的是MPU6050以及CC3220S自带的BMA222加速度计组合采集的。CC3220S作为手势端，将采集到的角度值进行分析、滤波、修正之后通过蓝牙发送给LPC54608，其中LPC54608作为控制端，与舵机相连，接收手势命令，通过滤波、限幅与消抖之后控制舵机，进而完成机械臂的运动。通信采用蓝牙进行，CC3220S将需要传输的数据进行处理封装、打包，通过串口进行发送，LPC54608将接收到的数据进行解析，防止出错。近实物验证，功能能够实现。</p><h1 id="作品实物"><a href="#作品实物" class="headerlink" title="作品实物"></a>作品实物</h1><h2 id="整体系统"><a href="#整体系统" class="headerlink" title="整体系统"></a>整体系统</h2><p>   在这些行图中，包含了整个系统的组成图片（4自由度机械臂，LPC54608，CC3220S，MPU6050，蓝牙模块等）</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131054nll1cbljcmaljmmq.png" alt="整体图片" title="整体图片"></p><h2 id="CC3220S的用处"><a href="#CC3220S的用处" class="headerlink" title="CC3220S的用处"></a>CC3220S的用处</h2><p>   CC3220S采集MPU6050与BMA222的数据，进行转换，封装。然后通过蓝牙模块发送出去，其中用到的模块都有标注，LED灯组用来显示连接状态，绿灯与黄灯表明IIC通信是都正常，在正常情况之下常亮，当IIC拦截不正常时会熄灭。红色的LED用来标志状态（<font color="blue">LED说明：此LED有三种闪烁状态，机械臂动作时闪烁周期是1秒，机械手动作时闪烁周期是2秒，空闲阶段闪烁周期是3秒</font>），开关用来进行不同功能的控制转换（开关用途：本来机械臂的机械手是想通过弯曲度传感器来进行识别的，弯曲传感器实际上是一种可变电阻，不同的弯曲度的电阻值不一样，通过采集AD值既可以进行弯曲度的识别了，但是目前在实习，弯曲传感器放在了学校忘带，所以在这里我就<font color="blue">采用了mpu6050来才做，然后用图中所示的开关进行模式切换，区别是控制机械臂还是控制机械手</font>）。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131056nox0kok052od1xm9.png" alt="CC3220S" title="CC3220S"></p><h2 id="LPC54608的作用"><a href="#LPC54608的作用" class="headerlink" title="LPC54608的作用"></a>LPC54608的作用</h2><p>   LPC54608接受来自CC3220S的数据，结果解析出具体角度数据，然后通过各种数据处理将数值转换成舵机控制数据，控制舵机的转动。同时液晶屏会实时显示接收到的数据，方便调试工作。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131058k7t5mjv7t7vyr4rx.png" alt="LPC54608" title="LPC54608"></p><h2 id="机械臂"><a href="#机械臂" class="headerlink" title="机械臂"></a>机械臂</h2><p>  机械臂采用了4自由度的小型机械臂，控制舵机的型号是MG90S（控制力度太小，灵敏度太低，别问我为什么选择这个机械臂，想着下学期就要毕业了，提前到公司实习一下，结果这一实习，直接就要吃土了，省吃俭用，靠着蚂蚁花呗才买了一个这个机械臂，没办法呀，自己挖的坑，怎么也得跳进去呀，只能将就着用这个机械臂了。这里还要吐槽一下，组装机械臂花了半天也就算了，调试的时候花了n天，力度还小的不行，灵敏度也特差，小范围的值变动根本就不动作，只能将就着用了）</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131100n6zvhavp86xh9az6.png" alt="机械臂" title="机械臂"></p><h1 id="调试过程"><a href="#调试过程" class="headerlink" title="调试过程"></a>调试过程</h1><p>  放上一些在软件调试过程中的一些图片</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131101q44oohlrrs0ukrkr.png" alt="调试过程" title="调试过程"></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131101zybtat3z48e39mj9.png" alt="调试过程" title="调试过程"></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131102b6zd93ddmze30qdr.png" alt="调试过程" title="调试过程"></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131103m0f8djgjgobtd3f4.png" alt="调试过程" title="调试过程"></p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>演示视频以前是存在优酷的，但是现在貌似都访问不了了。</p><ol><li>手势控制端CC3220S组成及介绍</li></ol><p>说明：本来这个系统是应该直接待在手上的，但是由于体积有点大，带上之后不好操作，而且我也没有手套。所以我就直接拿着拿着演示了。<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE1ODM4MA==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE1ODM4MA==/v.swf</a></p><ol start="2"><li>机械臂控制端LPC54608组成及介绍</li></ol><p>说明：这是LPC54608的控制演示，图中可以看到屏幕显示接收到的数据，只有成功接收后才会显示数据，数据不正确的话是不会读取的，会直接跑跑去不解析。<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE2Mzg5Mg==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE2Mzg5Mg==/v.swf</a></p><ol start="3"><li>系统工作演示</li></ol><p>说明：这是系统工作时的演示视频。从视频中可以看出机械臂运动的不是很流畅，其实硬件原因占很大一部分，前面已经说过了，买的这个机械臂我也很后悔，但是没办法，这能将就着调试。这个械臂的最大的缺点就是灵敏度太差，所以会出现运动不流畅的现象，其次就是力度太小，稍微受电力就会出现不能运动的现象。当然，说了这么多，具体的原因还是在我自己。<a href="http://player.youku.com/player.php/sid/XMzM5NTE4ODY3Mg==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE4ODY3Mg==/v.swf</a></p><ol start="3"><li>系统工作演示</li></ol><p>说明：这个视频看看就行<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE3NjA0NA==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE3NjA0NA==/v.swf</a></p><h1 id="项目文档"><a href="#项目文档" class="headerlink" title="项目文档"></a>项目文档</h1><p>由于文件大小大于了规定大小，所以采用了百度云上传的文件</p><p>链接：<a href="https://pan.baidu.com/s/1htn39sS" target="_blank" rel="noopener">https://pan.baidu.com/s/1htn39sS</a>     密码：7pl5</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 比赛 </category>
+          
+          <category> LPC系列 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LPC54608 </tag>
+            
+            <tag> CC3220S </tag>
+            
+            <tag> 机械臂 </tag>
+            
+            <tag> 串口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>涂鸦TYDE3.0开发板开箱与程序下载</title>
+      <link href="/2019/2019-11-29-tu-ya-tyde3.0-kai-fa-ban-kai-xiang-yu-cheng-xu-xia-zai/"/>
+      <url>/2019/2019-11-29-tu-ya-tyde3.0-kai-fa-ban-kai-xiang-yu-cheng-xu-xia-zai/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p> 涂鸦TYDE3.0是一块基于物联网的开发板，2018年的时候在爱板网上试用申请的。查看原网址：<a href="http://www.cirmall.com/bbs/thread-99261-1-1.html" target="_blank" rel="noopener">点我跳转查看原帖</a></p></blockquote><h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p>  直接上图。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" alt="正面" title="正面"></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111823m3x4b442bvv6jt62.png" alt="反面" title="反面"></p><p>  开发板的结构很简介明了，给人看到的第一印象是好多引脚，结果仔细一看，有三组的引脚都是下载口，可以支持多种下载模式。还有wifi模块也很显眼。<br>  另外还有一个USB口，一个RGB彩色灯，两个复位按键，两个BOOT按键以及连个用户自定义按键。<br>  3个LED灯。这些都是传统的物联网开发板的标配，但是有一点很好地就是没有引脚在旁边都给了名字说明，不用再胡原理图一个一个的找对应的引脚了，有时候找一个引脚真的很头疼。</p><p>  开发板的背部的设计简单明了。整个开发板给人的印象还不错，在加上STM32的主控，对于多数的物联网开发已经足够，运行速度也能得到保障。</p><h1 id="例程下载"><a href="#例程下载" class="headerlink" title="例程下载"></a>例程下载</h1><h2 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h2><p>  到官网下载必要工具。</p><p><a href="https://docs.tuya.com/cn/mcu/download.html" target="_blank" rel="noopener">点我跳转到官网下载</a></p><p>  反正我将这个页面能下载的都下载了一遍。说一说必要下载的工具，看下图。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105303lhf7hah060abd3dh.png" alt="必要的工具" title="必要的工具"></p><p>  安装Flash Loader Demo，这个过程很简单，一路next就行了。然后将下载的名为1476783423-tuya_dev_demo_v3的压缩包解压就是我们要下载的官方最开始的例程。</p><h2 id="下载工具下载程序"><a href="#下载工具下载程序" class="headerlink" title="下载工具下载程序"></a>下载工具下载程序</h2><p>  参考 <a href="http://www.eeboard.com/bbs/thread-98467-1-1.html" target="_blank" rel="noopener">http://www.eeboard.com/bbs/thread-98467-1-1.html</a> 这个帖子，挺详细的。</p><p>1、首先是跳线帽的链接。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="跳线帽连接" title="跳线帽连接"></p><p>  先按住BOOT，再按住RESET,然后先松开RESET，再松开BOOT就可以进行下载模式了，不行的话就多试几次。<br>  知道能不能下载的最重要的一点就是打开Flash Loader Demo，点击NEXT，看看会不会出现下面的界面。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="未连接界面" title="未连接界面"></p><p>  如果卡住的话就不行再试一次，直到正常进行下一页面。一般情况下操作正常就可以正常下载了。</p><p>2、然后一路NEXT，选择下载的bin程序</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105305xv136usvka3yykkb.png" alt="选择bin文件" title="选择bin文件"></p><p>3、点击NEXT，等待几十秒就会下载成功</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306ke2202f6a220za3o.png" alt="程序下载中..." title="程序下载中..."></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306sz3cccczfxmzfzjc.png" alt="程序下载完成" title="程序下载完成"></p><h2 id="使用keil下载下载程序"><a href="#使用keil下载下载程序" class="headerlink" title="使用keil下载下载程序"></a>使用keil下载下载程序</h2><p>1、打开例程</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105656iururgtx9vpxjnj0.png" alt="选择例程" title="选择例程"></p><p>2、安装ST_link驱动程序</p><p>  我在网上随便下载了一个win版本的，可以正常使用，直接安装好了就行。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105937tatrnj4qtt7a2ju8.png" alt="选择ST-Link安装包" title="选择ST-Link安装包"></p><p>3、打开工程</p><p>  如果没有安装stm32f103xxx的pdf的话就会自动弹出选择安装，直接默认安装就可以了，这个过程会比较慢，大概会等十几分钟。</p><p>  然后执行下面过程，重要</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110350hao2a33u3ufcc8c1.png" alt="选择下载器" title="选择下载器"></p><p>3、现在就可以成功下载了，按如下方式操作</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110552zs9kq9t7qkrfr7pz.png" alt="下载" title="下载"></p><p>  可以看到已经在正常下载了。<br>  注意：使用ST-Link下载需要一个ST-Link下载器</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/111034wd1ovfbbfs4b98fb.png" alt="下载软件" title="下载软件"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 涂鸦 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LPC54608 </tag>
+            
+            <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LPCXpreso54608开箱运行与keil下的例程烧写</title>
+      <link href="/2019/2019-11-29-lpcxpreso54608-kai-xiang-yun-xing-yu-keil-xia-de-li-cheng-shao-xie/"/>
+      <url>/2019/2019-11-29-lpcxpreso54608-kai-xiang-yun-xing-yu-keil-xia-de-li-cheng-shao-xie/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。<br>最开是的帖子是发布在爱板网的。<a href="http://www.cirmall.com/bbs/thread-98217-1-1.html" target="_blank" rel="noopener">点我跳转到爱板网查看原帖</a></p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  恩智浦的LPCXpresso54608开发板，外观看起来非常好看，搭载一块4.3寸的液晶屏。</p><p>  通过了解，LPPCXpresso54608新一代基于ARM Cortex-M4的LPC546x系列高性能微控制器。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png" alt="板卡说明" title="板卡说明"></p><p>  插上电源线，可以看到板载的例程，例程可玩性还是很高的，可以体验到一些此开发板的性能。在例程中，我们可以看到，在使用了华丽的界面的情况之下，CPU的占用率依然很低，由此可见你这块开发板的性能。</p><h1 id="资料收集"><a href="#资料收集" class="headerlink" title="资料收集"></a>资料收集</h1><p>  现在玩过了开发板的板载程序之后，就是着手的实际操作了。但是第一次用NXP的开发板，还是不知道该从哪个地方着手。</p><p>  先去官网逛一圈，登上恩智浦的官方网站：<a href="http://www.nxp.com" target="_blank" rel="noopener">http://www.nxp.com</a><br>  然后搜索LPCXpresso54608就可以找到这块开发板的资料,链接如下：<a href="https://www.nxp.com/cn/support/developer-resources/hardware-development-tools/lpcxpresso-boards/lpcxpresso-development-board-for-lpc5460x-mcus:OM13092?lang=cn" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104243d75vqszjjbp52x91.png" alt="官网界面" title="官网界面"></p><p>  在软件和工具中可以找到该开发板的各种软件工具。</p><p>  官网中还有快速入门视频教程，有三个视频，但是一般加载不了，只能加载一点，估计是网站在国外的原因，使用vpn应该可以，但是视频也是英文的，对于我这种英文渣来说，一句都听不懂。</p><h1 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h1><p>  后面提供了工具的下载链接。<a href="https://www.nxp.com/cn/support/developer-resources/hardware-development-tools/lpcxpresso-boards/lpcxpresso-development-board-for-lpc5460x-mcus:OM13092?tab=Design_Tools_Tab" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p><p>  下面就是需要的开发工具</p><p>  1、开发IDE有三种：官方的MCUXpresso，IAR， keil<br>由于以前没有使用过MCUXpresso，使用过IAR（飞思卡尔k60）和keil（52单片机和STM32），其中对keil使用比较熟悉，所以我就选择了keil<br>  2、SDK：SDK_2.3.0_LPCXpresso54608这个肯定是不可或缺的，其中包含很多例程。<br>  3、MCUXpresso Config Tools：引脚配置工具。<br>  4、使用第三方的开发软件还要用到LPCSCRYPT，下载下来直接安装就可。</p><h1 id="Keil开发环境搭建"><a href="#Keil开发环境搭建" class="headerlink" title="Keil开发环境搭建"></a>Keil开发环境搭建</h1><h2 id="SDK下载"><a href="#SDK下载" class="headerlink" title="SDK下载"></a>SDK下载</h2><p>  keil软件在这里就不过多的介绍了，不会用的自行百度或者使用其他的开发工具（IAR或者MCUXpress）</p><p>  PS：在这里不得不多说一句，一定要使用keil uVision5，低版本的不支持嵌入式的开发板。</p><p>  将下载的SDK解压大一个目录中，方便使用。我是解压到了D:\nxp\SDK_2.3.0_LPCXpresso54608</p><h2 id="keil依赖包安装"><a href="#keil依赖包安装" class="headerlink" title="keil依赖包安装"></a>keil依赖包安装</h2><p>（1）、点击pack installer，一般在中间位置</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104243rhg38eacht22e2aq.png" alt="依赖包安装" title="依赖包安装"></p><p>（2）、在Devices下的搜索框中输入lpc，可以快速搜索到</p><p>（3）选择LPC54000 Series</p><p>（4）在Packs可以看到有Keil：：LPC54000_DFP,就就是安装这个包，点击右面的Install就行安装，慢慢等待，一般国内的网都比较慢。可能还会出现无法连接的情况，多试几次，我就是试了好几次才成功安装的。</p><p>（5）安装好了之后图标就会变成绿色，如下图所示：</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104244yi4s8cy0dszjtdzt.png" alt="安装完成" title="安装完成"></p><h2 id="例程运行"><a href="#例程运行" class="headerlink" title="例程运行"></a>例程运行</h2><p>  上面安装好了以来软件包了之后，就可以进行开发了。是不是有点小激动。打开keil，点击File–&gt;Open,或者直接ctrl+O打开一个文件<br>D:\nxp\SDK_2.3.0_LPCXpresso54608\boards\lpcxpresso54608\demo_apps\hello_world\mdk<br>  我选择的是hello_world，一般都是从  “你好，世界” 开始的，嘿嘿。</p><p>  <font color="red">注意：这是一个串口程序，需要提前准备一个串口软件。也可以选择其他例程。</font></p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104245qbebgcoe6o9sbobr.png" alt="SDK程序的选择" title="SDK程序的选择"></p><p>  一定要选择后缀名为<em>.uvproj,</em>.uvprojx 或者 *，不然的话什么都看不见，然后选择hello_world.uvprojx打开。</p><p>  点击Build和rebuild进行编译链接</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104245qyuzuad36q9z36yq.png" alt="编译和链接程序" title="编译和链接程序"></p><h2 id="下载设置"><a href="#下载设置" class="headerlink" title="下载设置"></a>下载设置</h2><p>  打开Options for Target….，然后选择Debug，如图所示：</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104246wbxqiehqgllb4qlg.png" alt="下载方式设置" title="下载方式设置"></p><p>  点击Settings，发现CMSIS-DAP下什么都没有。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104246pbwbk1kkjjawwzax.png" alt="没有下载器" title="没有下载器"></p><p>  可以查看官方的文档，是因为要将跳线帽去掉才可以进行选择，将如图所示的跳线帽去掉。</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104725z1nir1ddoxyxduf1.jpg" alt="官方文档找解决方案" title="官方文档找解决方案"></p><p>  跳线帽设置</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104247e9ldo7xiry37rz1n.png" alt="跳线帽设置" title="跳线帽设置"></p><p>  现在关闭Settings窗口在重新打开，会出现LPC-LINK2 CMSIS-DAP，现在就可以正常下载程序了。</p><p>  <font color="red">注意:USB线要插在Debug Link引脚，就是只有一个USB口的那个口。</font></p><p>  点击LOAD按钮进行程序的下载.</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104248bs4xi3ihecfqnzk2.png" alt="下载程序" title="下载程序"></p><p>  现在你会发现除了屏幕是白色的意外还是没有什么变化，还需要点一下开发板上的复位按钮，Target Reset按钮，即SW1按钮。然后打开一个串口调试助手。</p><p>  打开串口，然后发送一个字符串，开发板也会返回一个字符串</p><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  按照上面的方式完成相应的操作之后就可以开始正常的开发自己的程序了。</p><p>  下面是下载的例程的运行结果：</p><p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104249g7j6bbn6k7o6qru6.png" alt="运行结果" title="运行结果"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> LPC系列 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LPC54608 </tag>
+            
+            <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LPC双核挑战赛之餐厅服务机器人</title>
       <link href="/2019/2019-11-28-lpc-shuang-he-tiao-zhan-sai-zhi-can-ting-fu-wu-ji-qi-ren/"/>
       <url>/2019/2019-11-28-lpc-shuang-he-tiao-zhan-sai-zhi-can-ting-fu-wu-ji-qi-ren/</url>
@@ -14,6 +105,8 @@
       <categories>
           
           <category> LPC系列 </category>
+          
+          <category> 比赛 </category>
           
       </categories>
       
@@ -51,9 +144,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> OLED </tag>
+            
+            <tag> LPC11U68 </tag>
             
             <tag> RTC </tag>
             
@@ -107,11 +200,11 @@
       
         <tags>
             
+            <tag> OLED </tag>
+            
             <tag> IIC </tag>
             
             <tag> LPC11U68 </tag>
-            
-            <tag> OLED </tag>
             
         </tags>
       
@@ -136,9 +229,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> 串口 </tag>
+            
+            <tag> LPC11U68 </tag>
             
             <tag> LED </tag>
             
@@ -165,9 +258,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> 串口 </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       
@@ -194,9 +287,9 @@
             
             <tag> STM32 </tag>
             
-            <tag> IIC </tag>
-            
             <tag> OLED </tag>
+            
+            <tag> IIC </tag>
             
         </tags>
       
