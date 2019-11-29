@@ -4,8 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的博客搭建好了, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
-    <meta name="description" content="前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下">
+    <meta name="keywords" content="51单片机DS18B20获取温度, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="description" content="
+DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：点我跳转
+
+原理图  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。
+
+  下面是数码管的原">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>我的博客搭建好了 | Hehung&#39;s Blog</title>
+    <title>51单片机DS18B20获取温度 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -244,13 +249,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        我的博客搭建好了
+                        51单片机DS18B20获取温度
                     </div>
                 </div>
             </div>
@@ -362,16 +367,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                <span class="chip bg-color">单片机</span>
                             </a>
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/coding/">
-                                <span class="chip bg-color">coding</span>
+                            <a href="/tags/DS18B20/">
+                                <span class="chip bg-color">DS18B20</span>
                             </a>
                         
                     </div>
@@ -382,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                51单片机
                             </a>
                         
                     </div>
@@ -395,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-16
+                    2019-11-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    407
+                    933
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 				
@@ -432,11 +437,172 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近<br>看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下载相应的node.js和npm插件，搭建了本地环境，然后使用git部署到github和coding上。</p>
-<h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><p>　　按照了hexo之后的默认主题太丑了，所以理所应当的是要换个主题，<br>在theme里面找了一圈，发现了现在用的这个主题比较炫酷，所以就采用了这个主题来作为我博客的主题了，哈哈哈哈😜。</p>
-<p>　　最开始看到这个主题确实觉得太炫酷了。对于一个不会前端的人<br>而言，如果自己要做一个这样的主题肯定是不现实的，在这里感谢主题的开发者们了。</p>
-<h1 id="之后呢"><a href="#之后呢" class="headerlink" title="之后呢"></a>之后呢</h1><p>　　有了自己的博客之后，当然就是进行一个多多在自己的博客上发表<br>文章了，我也会学习学习前端技术，争取能够自己改善这个主题的布局，变成一个属于自己的特殊的主题🤔。</p>
-<p>好了，这是敌我的第一篇文章，就到这里了。</p>
+                <blockquote>
+<p>DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100156-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+</blockquote>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20.png" alt="DS18B20接线图" title="DS18B20接线图"></p>
+<p>  下面是数码管的原理图，因为温度数据要通过数码管显示出来。数码管的教程在前面已经写过了，在这里不再做介绍：<a href="http://hehung.top/archives/9ea6.html">点我查看数码管操作</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Tube.png" alt="数码管原理图" title="数码管原理图"></p>
+<p>  从上面的原理图中可以看到，DS18B20的引脚是P3.7<br>  数码管接法：</p>
+<ul>
+<li>J12 —  P0</li>
+<li>A — P1.0</li>
+<li>B — P1.1 </li>
+<li>C — P1.2</li>
+</ul>
+<p>  其中A,B,C是数码管的位选端口，在上一篇帖子里我已经说明了</p>
+<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  知道了原理图，接下来就是写程序了。<br>  本来像这种函数比较多的程序一般都是要写在不同的文件里面的，使用模块化编程的。但是我为了简单，就写在了一个文件里。<br>  我觉得代码还是写的比较规范的，注释也清楚，有需要的小伙伴直接拿去改下端口就可以用。</p>
+<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
+
+#define uchar unsigned char
+#define uint unsigned int
+#define SMG P0                //定义数码管的段选端口
+
+//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
+sbit LA=P1^0;                
+sbit LB=P1^1;
+sbit LC=P1^2;
+
+sbit dq=P3^7;        //DS18B20的引脚
+
+//下面的数组可以显示0-F
+uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
+                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+
+//函数声明
+void delay(int ms);                                                //延时函数
+void change(int what);                                        //位选函数
+void ds18b20_init();                                        //DS18B20初始化函数
+void ds18b20_write_data(uchar dat);                //DS18B20写命令函数
+uchar ds18b20_read_data();                                //DS18B20读数据函数
+void ds18b20_read_temp(int *temp,int *xiao);        //DS18B20读温度函数
+void display(int temp, int xiao);                //数码管显示函数
+
+//主函数
+void main()
+{
+        int temp,xiao;                //定义温度的整数和小数变量
+        ds18b20_init();                //初始化
+
+        while(1)
+        {
+                ds18b20_read_temp(&temp, &xiao);
+                display(temp, xiao);
+        }
+}
+
+//延时函数(短延时)
+void delay(int ms)
+{
+        while(ms--);
+}
+
+//该函数可以选择某一个数码管显示
+void change(int what)
+{
+        switch(what)
+        {
+                case 1:LC=0;LB=0;LA=0;break;
+                case 2:LC=0;LB=0;LA=1;break;
+                case 3:LC=0;LB=1;LA=0;break;
+                case 4:LC=0;LB=1;LA=1;break;
+                case 5:LC=1;LB=0;LA=0;break;
+                case 6:LC=1;LB=0;LA=1;break;
+                case 7:LC=1;LB=1;LA=0;break;
+                case 8:LC=1;LB=1;LA=1;break;                
+        }
+}
+
+//初始化函数
+void ds18b20_init()
+{
+            dq=1;
+         delay(5);
+         dq=0;
+         delay(400);
+         dq=1;
+         delay(300);
+}
+void ds18b20_write_data(uchar dat)
+{
+     uchar i;
+         for(i=0;i<8;i++)
+         {
+             dq=0;
+                 dq=dat&0x01;
+                 delay(2);
+                 dq=1;
+                 dat>>=1;
+         } 
+         delay(4);    
+}
+uchar ds18b20_read_data()
+{
+          uchar i,v;
+          for(i=0;i<8;i++)
+          {
+              dq=0;
+                  v>>=1;
+                  dq=1;
+                  if(dq)
+                     v|=0x80;
+                  delay(4);
+          }
+          return v;
+}
+void ds18b20_read_temp(int *temp,int *xiao)
+{          
+         uchar a,b;
+     ds18b20_init();
+         ds18b20_write_data(0xcc);
+         ds18b20_write_data(0x44);
+         delay(200);
+
+         ds18b20_init();
+         ds18b20_write_data(0xcc);
+         ds18b20_write_data(0xbe);                //读温度
+         a=ds18b20_read_data();          //读出温度低位
+         b=ds18b20_read_data();           //读出温度高位
+         b<<=4;
+         b+=(a&0xf0)>>4;
+         *temp=b;                                //温度整数部分
+         *xiao=a&0x0f;                        
+         *xiao=*xiao/1.6;                //温度小数部分
+}
+
+void display(int temp, int xiao)
+{
+        change(1);
+        SMG=number[temp/10];
+        delay(100);
+        SMG = 0;
+        delay(30);         //消除暗影
+
+        change(2);
+        SMG=number[temp%10];
+        delay(100);
+        SMG = 0;
+        delay(30);         //消除暗影
+
+        change(3);
+        SMG=~0x7f;
+        delay(100);
+        SMG = 0;
+        delay(30);         //消除暗影
+
+        change(4);
+        SMG=number[xiao];
+        delay(100);
+        SMG = 0;
+        delay(30);         //消除暗影
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，首先要知道DS18B20长得什么样的，在单片机的位置，如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20_in_board.png" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
+<p>  可以想办法给DS18B20加热，温度数值就会增加。<br>  如下图，我是用手给它捏住，它的温度就会上升。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic1.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic2.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -480,7 +646,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2447383181.html">http://hehung.top/2019/2447383181.html</a>
+                    <a href="http://hehung.top/2019/959f1fc5.html">http://hehung.top/2019/959f1fc5.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,16 +684,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                    <span class="chip bg-color">单片机</span>
                                 </a>
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/coding/">
-                                    <span class="chip bg-color">coding</span>
+                                <a href="/tags/DS18B20/">
+                                    <span class="chip bg-color">DS18B20</span>
                                 </a>
                             
                         </div>
@@ -960,30 +1126,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/3852955646.html">
+                <a href="/2019/b115335.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/img/whole_device.jpg" class="responsive-img" alt="基于stm32的心率监控装置">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg" class="responsive-img" alt="51单片机驱动LCD1602">
                         
-                        <span class="card-title">基于stm32的心率监控装置</span>
+                        <span class="card-title">51单片机驱动LCD1602</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于stm32的心率监控装置。以STM32作为主控，OLED作为显示屏，结合心率传感器和按键完成的一个可以实时监控心率的设备，支持心率图形的显示。
+                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -993,20 +1159,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
+                    </a>
+                    
                     <a href="/tags/C%E8%AF%AD%E8%A8%80/">
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
-                    </a>
-                    
-                    <a href="/tags/OLED/">
-                        <span class="chip bg-color">OLED</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
-                        <span class="chip bg-color">心率监控</span>
+                    <a href="/tags/LCD1602/">
+                        <span class="chip bg-color">LCD1602</span>
                     </a>
                     
                 </div>
@@ -1017,54 +1179,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2447383181.html">
+                <a href="/2019/aa7cc8bc.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg" class="responsive-img" alt="51单片机数码管显示">
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="我的博客搭建好了">
-                        
-                        <span class="card-title">我的博客搭建好了</span>
+                        <span class="card-title">51单片机数码管显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下
+                            使用51单片机完成的一个控制数码管显示的程序，数码管会从右向左滚动显示1-F这些数字和字母。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
+                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                        <span class="chip bg-color">数码管</span>
                     </a>
                     
                 </div>

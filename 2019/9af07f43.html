@@ -4,12 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32使用之驱动流水灯, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="lpc11U68利用RTC实现闹钟小应用, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。
-
-
-以前发帖在电子芯巴克。">
+该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看lpc11U68的RTC如">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>STM32使用之驱动流水灯 | Hehung&#39;s Blog</title>
+    <title>lpc11U68利用RTC实现闹钟小应用 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -248,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        STM32使用之驱动流水灯
+                        lpc11U68利用RTC实现闹钟小应用
                     </div>
                 </div>
             </div>
@@ -366,8 +363,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/STM32/">
-                                <span class="chip bg-color">STM32</span>
+                            <a href="/tags/OLED/">
+                                <span class="chip bg-color">OLED</span>
+                            </a>
+                        
+                            <a href="/tags/LPC11U68/">
+                                <span class="chip bg-color">LPC11U68</span>
+                            </a>
+                        
+                            <a href="/tags/RTC/">
+                                <span class="chip bg-color">RTC</span>
                             </a>
                         
                     </div>
@@ -378,8 +383,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/STM32/" class="post-category">
-                                STM32
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                LPC系列
                             </a>
                         
                     </div>
@@ -391,28 +396,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-11-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    846
+                    146
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 				
@@ -429,35 +434,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。</p>
+<p>该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。<br>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615806-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看lpc11U68的RTC如何使用</a></p>
 </blockquote>
-<blockquote>
-<p>以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100338-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
-</blockquote>
-<h1 id="STM32核心"><a href="#STM32核心" class="headerlink" title="STM32核心"></a>STM32核心</h1><p>  这个STM32的最小系统板长这样</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg" alt="STM32核心" title="STM32核心"></p>
-<p>  方向插对，之后就可以正常的进行开发了，从图中可以看到明显的J_LINK插口，可以方便的使用J_LINK进行程序的下载，但是一个J_LINK也是极贵的所，所以本文选择使用USB串口下载程序。</p>
-<h1 id="程序下载"><a href="#程序下载" class="headerlink" title="程序下载"></a>程序下载</h1><h2 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h2><p>  如下图所示，<font color="red">stm32最小系统上的RTS与DTR粉笔与开发板上面的RTS与DTR相连接</font></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_Download_Pin.jpg" alt="连接USB下载线" title="连接USB下载线"></p>
-<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><p>  连接好后就可以通过USB下载程序了，与51单片机的使用方式是一样的，利用hex文件下载软件，直接下载hx文件吗，官方已经给我们提供了一个普中的下载软件。</p>
-<p>  软件的名字叫做：PZ-ISP普中自动下载软件.exe，提供给你们附件如下，有需要的小伙伴可以下载使用.<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载普中开发板下载器</a></p>
-<h2 id="下载方式"><a href="#下载方式" class="headerlink" title="下载方式"></a>下载方式</h2><p>  具体的下载方式如下所示：<br>  <font color="red">这里还有以下是需要注意的，就是供电跳线帽要打到3.3V的位置，因为STM32是3.3V供电的，如果不改变跳线帽的话可能回烧坏stm32。</font></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/Download_setting.jpg" alt="下载方式" title="下载方式"></p>
-<ul>
-<li>打开下载器软件，连接USB线。</li>
-<li>选择单片机型号，如下图所示；</li>
-<li>选择串口，这个一般是不需要选择的，如果没有显示可用的串口的话，应该是驱动没有安装好，下载一个USB_ttl驱动安装就可以了；</li>
-<li>选择波特率115200；</li>
-<li>选择hex文件，编译程序生成的hex文件；</li>
-<li>最后就是下载程序了，直接点击下载即可，在程序代码量比较下的时候，直接使用USB进行下载还是挺快的，但是当程序变得很大的时候，下载就会很慢，有可能还会达到几分钟。所以有JLINK的伙伴还是使用J_LINK进行下载吧。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/download_select.jpg" alt="选择单片机型号" title="选择单片机型号"></p>
-<p>  程序下载好了就可以进行演示查看了，我选择的是流水灯的程序。直接使用的官方的流水灯程序。P0口连线如下：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/wire_connect.jpg" alt="连线" title="连线"></p>
-<p>emsp; 其实STM32的开发与51单片机的的开发还是比较相似的，只不过STM32的运行速度很快，而STM32还提供许多内置设备，如PWM，AD/DA等。还有一点就是STM32进行GPIO扣得初始化还是比较复杂的。</p>
-<p>emsp; <font color="red" size="2">开发STM32必须使用KEIL5(MDK5)软件进行，并且软件是不内置芯片支持库的，需要自行安装，可以到官网去下载stm32f103的支持包就可以正常的编译程序了，不然程序只能查看是不能进行编译运行的。</font></p>
-<h1 id="演示结果展示"><a href="#演示结果展示" class="headerlink" title="演示结果展示"></a>演示结果展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display1.gif" alt="演示效果" title="演示效果"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display2.gif" alt="演示效果" title="演示效果"></p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载STM32流水灯程序</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -501,7 +479,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2983120822.html">http://hehung.top/2019/2983120822.html</a>
+                    <a href="http://hehung.top/2019/9af07f43.html">http://hehung.top/2019/9af07f43.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +517,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/STM32/">
-                                    <span class="chip bg-color">STM32</span>
+                                <a href="/tags/OLED/">
+                                    <span class="chip bg-color">OLED</span>
+                                </a>
+                            
+                                <a href="/tags/LPC11U68/">
+                                    <span class="chip bg-color">LPC11U68</span>
+                                </a>
+                            
+                                <a href="/tags/RTC/">
+                                    <span class="chip bg-color">RTC</span>
                                 </a>
                             
                         </div>
@@ -973,30 +959,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/1695708248.html">
+                <a href="/2019/45279adc.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/display_oled.jpg" class="responsive-img" alt="STM32使用之OLED显示屏驱动">
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" class="responsive-img" alt="LPC双核挑战赛之餐厅服务机器人">
                         
-                        <span class="card-title">STM32使用之OLED显示屏驱动</span>
+                        <span class="card-title">LPC双核挑战赛之餐厅服务机器人</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            OLED12864是一个基于OLED技术的128X64的显示屏，通过IIC进行驱动，本文介绍了如何通过STM32来驱动OLED模块。
+                            2018年参加了NXP的plc双核比赛，做了一个送餐机器人，基于磁感线寻迹，能够进行网络通信，点菜，计算价格等功能。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
+                                </a>
+                            
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/%E6%AF%94%E8%B5%9B/" class="post-category">
+                                    比赛
                                 </a>
                             
                             
@@ -1006,16 +996,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
-                    </a>
-                    
                     <a href="/tags/OLED/">
                         <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/IIC/">
-                        <span class="chip bg-color">IIC</span>
+                    <a href="/tags/LPC54114/">
+                        <span class="chip bg-color">LPC54114</span>
+                    </a>
+                    
+                    <a href="/tags/ADC/">
+                        <span class="chip bg-color">ADC</span>
+                    </a>
+                    
+                    <a href="/tags/ESP8266/">
+                        <span class="chip bg-color">ESP8266</span>
                     </a>
                     
                 </div>
@@ -1029,30 +1023,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/438600446.html">
+                <a href="/2019/77fecb7c.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/09/140430zsbzlgbxxrf4lp7z.png" class="responsive-img" alt="lpc11U68 RTC时钟芯片的使用">
                         
-                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
+                        <span class="card-title">lpc11U68 RTC时钟芯片的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
+                            RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
                                 </a>
                             
                             
@@ -1062,16 +1056,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/LPC11U68/">
+                        <span class="chip bg-color">LPC11U68</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
-                    </a>
-                    
-                    <a href="/tags/DS1302/">
-                        <span class="chip bg-color">DS1302</span>
+                    <a href="/tags/RTC/">
+                        <span class="chip bg-color">RTC</span>
                     </a>
                     
                 </div>

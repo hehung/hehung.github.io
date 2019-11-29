@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机PWM驱动LED, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机数码管显示, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速度驱动等都会用到，51单片机没有继承PWM模块，所以需要使用定时器进行模拟，本文就讲述如何使用定时器来模拟PWM功能实现对LED的亮度的控制。以前发帖在电子芯巴克。原帖子链接：点">
+上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：点我跳转
+
+效果展示  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，  由于使用手机自带的gif拍摄的图">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@ PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机PWM驱动LED | Hehung&#39;s Blog</title>
+    <title>51单片机数码管显示 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,13 +247,13 @@ PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机PWM驱动LED
+                        51单片机数码管显示
                     </div>
                 </div>
             </div>
@@ -371,8 +373,8 @@ PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速�
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/PWM/">
-                                <span class="chip bg-color">PWM</span>
+                            <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                <span class="chip bg-color">数码管</span>
                             </a>
                         
                     </div>
@@ -403,21 +405,21 @@ PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    584
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 				
@@ -434,92 +436,114 @@ PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>PWM控制广泛的运用在单片机领域，LED灯光亮度驱动，电机速度驱动等都会用到，51单片机没有继承PWM模块，所以需要使用定时器进行模拟，本文就讲述如何使用定时器来模拟PWM功能实现对LED的亮度的控制。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100307-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：<a href="https://bbs.icxbk.com/thread-100110-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  本文中使用的是定时器0，通过配置定时器0为定时模式就可以了，然后在程序中打开定时器，定时时间间隔设置的小一点，设置的太大会造成不流畅的情况。</p>
-<p>  我在程序中设置的是0.01ms，周期为100，通过变量duty就可以改变占空比。如果要控制舵机运动的话，可以将定时时间设置成0.2ms，这样100次就是20ms，因为舵机控制需要周期为20ms的方波驱动，然后通过设置占空比就可以控制舵机运动了。</p>
-<h1 id="51单片机PWM原理"><a href="#51单片机PWM原理" class="headerlink" title="51单片机PWM原理"></a>51单片机PWM原理</h1><p>  因为51单片机没有硬件PWM，所以采用定时器0来控制，控制原理就是通过周期性的输出高低电平来控制输出高电平和低电平的时间，周期一般要小于30ms，因为人的眼睛的刷新频率就差不多是30ms，如果大于30ms就会出现闪烁的效果，达不到理想的效果。</p>
-<p>  使用PWM还需要知道一个知识点就是占空比，占空比就是在一个周期中输出的高电平占整个周期的比值。</p>
-<p>  这个需要看驱动的LED是阴极驱动还是阳极驱动，如果是阴极驱动，占空比越大，LED亮度越低反之越高，阳极控制的相反。</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  接下来就是写程序了。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include <reg52.h>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，<br>  由于使用手机自带的gif拍摄的图片，只能拍摄很短的gif图片，所以就多放了几张。<br>  我是向左滚动的滚动的时间大约500ms左右，随便写的，并不准确，会循环连续的滚动，图中不太容易看出效果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/2.gif" alt="运行效果" title="运行效果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/3.gif" alt="运行效果" title="运行效果"></p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  在单片机开发中，能看懂原理图是非常重要的，因为单片机的开发一般都是对外设的驱动，知道电路如何连接，才能很好的控制。</p>
+<p>  首先打开原理图，可以看到原理图中所有的数码管都是接在J16上的，而J16又是通过译码器连接到J6，单片机上的A,B,C引脚。所以通过A,B,C可以控制数码管得位选。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/4.png" alt="原理图" title="原理图"></p>
+<p>  同时，原理图还说明了数码管是共阴的，也就是阴极都是连在一起的，如果要控制数码管亮的话，就需要在阳极给高电位，也就是给1。</p>
+<p>  这里说一下我的数码管的链接引脚：<br>A ===  P1.0<br>B ===  P1.1<br>C ===  P1.2<br>然后就是J12口是控制段选的，J12通过P0口控制。</p>
+<h1 id="数码管控制原理"><a href="#数码管控制原理" class="headerlink" title="数码管控制原理"></a>数码管控制原理</h1><h2 id="位选和段选"><a href="#位选和段选" class="headerlink" title="位选和段选"></a>位选和段选</h2><p>  因为单片机的控制引脚有限，一个数码管在操作的时候会使用8个IO口进行控制，为了减少IO口的开销，在电路设计上就是用了段选和位选来用相同的IO口数对多个数码管进行操作。</p>
+<p>  对多个数码管操作的时候有段选和位选：位选就是选择某一个数码管，对其进行操作；段选就是选择数码管的某一段操作，一般数码管有7段，如果数码管有小数点的话就会有8段，就可以通过8个IO口对数码管的每一段的亮灭进行控制。</p>
+<h2 id="位选控制"><a href="#位选控制" class="headerlink" title="位选控制"></a>位选控制</h2><p>  位选是如何工作的呢？这里有8个数码管，但是只有三个控制引脚，因为有译码器，所以给这三个引脚不同的值就会控制打开不同的数码管，比如：</p>
+<ul>
+<li>A=0，B=0，C=0就是控制第1个数码管</li>
+<li>A=0，B=0，C=1就是控制第2个数码管</li>
+<li>…</li>
+</ul>
+<h2 id="段选控制"><a href="#段选控制" class="headerlink" title="段选控制"></a>段选控制</h2><p>  段选使用8个IO口进行控制。如原理图中所示的J12，因为数码管是共阴的，所以控制IO输出为1就会使相应的一段变亮。</p>
+<p>  原理图中对数码管的的每一段都有标注a,b,c,d,e,f,g,dp。如果将J12连接到P0，也就是P0.7控制a，P0.6控制b … P0.0控制dp。</p>
+<p>  所以，如果要控制数码管显示数字，应该给IO口P0赋值下列数字：</p>
+<ul>
+<li>0 – 0x3f </li>
+<li>1 – 0x06 </li>
+<li>2 – 0x5b</li>
+<li>3 – 0x4f</li>
+<li>4 – 0x66</li>
+<li>5 – 0x6d</li>
+<li>6 – 0x7d</li>
+<li>7 – 0x07</li>
+<li>8 – 0x7f</li>
+<li>9 – 0x6f</li>
+<li>A – 0x77</li>
+<li>B – 0x7c</li>
+<li>C – 0x39</li>
+<li>D – 0x5e</li>
+<li>E – 0x79</li>
+<li>F – 0x71 </li>
+</ul>
+<h1 id="程序编辑"><a href="#程序编辑" class="headerlink" title="程序编辑"></a>程序编辑</h1><p>  知道了原理图的连接和控制原理，现在就可以对数码管的显示进行程序程序的编写了。</p>
+<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
 
 #define uchar unsigned char
-#define uint  unsigned int
+#define uint unsigned int
+#define SMG P0                //定义数码管的段选端口
 
-sbit pwm = P3^7;                //定义PWM引脚为P3.7
-uchar duty = 100;
+//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
+sbit LA=P1^0;                
+sbit LB=P1^1;
+sbit LC=P1^2;
 
-void timer0_Init(void);
-void Set_Duty(void);
-void delay_ms(uint ms);
+//下面的数组可以显示0-F
+uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
+                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+
+//函数声明
+void delay(int ms);
+void change(int what);
+
+//延时函数(短延时)
+void delay(int ms)
+{
+        for(;ms>0;ms--);
+}
+
+//该函数可以选择某一个数码管显示
+void change(int what)
+{
+        switch(what)
+        {
+                case 1:LC=0;LB=0;LA=0;break;
+                case 2:LC=0;LB=0;LA=1;break;
+                case 3:LC=0;LB=1;LA=0;break;
+                case 4:LC=0;LB=1;LA=1;break;
+                case 5:LC=1;LB=0;LA=0;break;
+                case 6:LC=1;LB=0;LA=1;break;
+                case 7:LC=1;LB=1;LA=0;break;
+                case 8:LC=1;LB=1;LA=1;break;                
+        }
+}
 
 int main()
 {
-        int i;
-
-        timer0_Init();
+        uchar i;
+        uchar j=0;
+        uint time=50;
 
         while(1)
         {
-                for(i=100;i>0;i-=1)
+                for(;time>0;time--)
                 {
-                        duty = i;
-                        delay_ms(1);
-                }        
-                for(i=0;i<10;i+=1)
-                {
-                        duty = i;
-                        delay_ms(1);
+                        for(i=1;i<=8;i++)
+                        {
+                                change(i);
+                                SMG = number[(j+i)%16];                //使之可以滚动显示的处理        
+                                delay(100);
+                                SMG = 0;
+                                delay(50);         //消除暗影
+                        }                
                 }
+                time = 50;
+                j++;
+                if(j>17)
+                        j = 0;
         }
-}
 
-//延时函数
-void delay_ms(int ms)
-{
-        uint i;
-        for(;ms>0;ms--)
-                for(i=0;i<110;i++);
-}
-
-//定时器0初始化
-void timer0_Init(void)
-{
-        TMOD|=0X01;                        //选择为定时器0模式，工作方式1，仅用TR0打开启动。
-
-        TH0=(65536-20)/256;        //给定时器赋初值，50us
-        TL0=(65536-20)%256;        
-        ET0=1;                                //允许定时器中断0
-        EA=1;                                //打开总中断
-        TR0=1;                                //打开定时器                        
-}
-
-//使用定时0模拟PWM
-void timer0() interrupt 1
-{        
-        static uint pwm_count = 0;
-
-        TH0=(65536-10)/256;        //给定时器赋初值，50us
-        TL0=(65536-10)%256;        
-
-        pwm_count ++;        
-
-        if(pwm_count >= 100)
-        {
-                pwm_count = 0;
-        }else if(pwm_count <= duty)
-        {
-                pwm = 0;
-        }else
-        {
-                pwm = 1;
-        }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>程序说明：duty变量就是占空比的控制变量，通过调节该值可以控制占空比大小，该值最大为100。</p>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  如下图，可以看到LED呈现明暗的变化</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" alt="运行结果" title="运行结果"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" alt="运行结果" title="运行结果"></p>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上述程序就是实现了对8个数码管显示0-F的滚动显示程序。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -563,7 +587,7 @@ void timer0() interrupt 1
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/3607312496.html">http://hehung.top/2019/3607312496.html</a>
+                    <a href="http://hehung.top/2019/aa7cc8bc.html">http://hehung.top/2019/aa7cc8bc.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -609,8 +633,8 @@ void timer0() interrupt 1
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/PWM/">
-                                    <span class="chip bg-color">PWM</span>
+                                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                    <span class="chip bg-color">数码管</span>
                                 </a>
                             
                         </div>
@@ -1043,18 +1067,18 @@ void timer0() interrupt 1
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/291745225.html">
+                <a href="/2019/959f1fc5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg" class="responsive-img" alt="51单片机驱动步进电机">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg" class="responsive-img" alt="51单片机DS18B20获取温度">
                         
-                        <span class="card-title">51单片机驱动步进电机</span>
+                        <span class="card-title">51单片机DS18B20获取温度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            51单片机对步进电机的控制，步进电机的最大特点就是速度可控和步数精确，可以实现很慢的转速，对于精确转速和位置控制的设备可以使用。
+                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
                         
                     </div>
                     <div class="publish-info">
@@ -1084,8 +1108,8 @@ void timer0() interrupt 1
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                        <span class="chip bg-color">步进电机</span>
+                    <a href="/tags/DS18B20/">
+                        <span class="chip bg-color">DS18B20</span>
                     </a>
                     
                 </div>
@@ -1099,18 +1123,18 @@ void timer0() interrupt 1
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/185684789.html">
+                <a href="/2019/d646b561.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg" class="responsive-img" alt="51单片机驱动LCD1602">
+                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
                         
-                        <span class="card-title">51单片机驱动LCD1602</span>
+                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
+                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
                         
                     </div>
                     <div class="publish-info">
@@ -1140,8 +1164,8 @@ void timer0() interrupt 1
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/LCD1602/">
-                        <span class="chip bg-color">LCD1602</span>
+                    <a href="/tags/Keil/">
+                        <span class="chip bg-color">Keil</span>
                     </a>
                     
                 </div>

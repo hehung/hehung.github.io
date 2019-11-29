@@ -4,14 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="涂鸦TYDE3.0开发板开箱与程序下载, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="STM32使用之驱动流水灯, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
- 涂鸦TYDE3.0是一块基于物联网的开发板，2018年的时候在爱板网上试用申请的。查看原网址：点我跳转查看原帖
-
-开箱  直接上图。
+普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。
 
 
-  开发板的结构很简介明了，给人看到的第一印象是好多引脚，结果仔细一看，有三组的引脚都是下载口，可">
+以前发帖在电子芯巴克。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>涂鸦TYDE3.0开发板开箱与程序下载 | Hehung&#39;s Blog</title>
+    <title>STM32使用之驱动流水灯 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -250,13 +248,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        涂鸦TYDE3.0开发板开箱与程序下载
+                        STM32使用之驱动流水灯
                     </div>
                 </div>
             </div>
@@ -368,16 +366,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LPC54608/">
-                                <span class="chip bg-color">LPC54608</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                <span class="chip bg-color">串口</span>
-                            </a>
-                        
-                            <a href="/tags/Keil/">
-                                <span class="chip bg-color">Keil</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
                             </a>
                         
                     </div>
@@ -388,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B6%82%E9%B8%A6/" class="post-category">
-                                涂鸦
+                            <a href="/categories/STM32/" class="post-category">
+                                STM32
                             </a>
                         
                     </div>
@@ -401,7 +391,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-11-23
                 </div>
                 
 
@@ -415,14 +405,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    775
+                    846
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 				
@@ -439,42 +429,35 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p> 涂鸦TYDE3.0是一块基于物联网的开发板，2018年的时候在爱板网上试用申请的。查看原网址：<a href="http://www.cirmall.com/bbs/thread-99261-1-1.html" target="_blank" rel="noopener">点我跳转查看原帖</a></p>
+<p>普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。</p>
 </blockquote>
-<h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p>  直接上图。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" alt="正面" title="正面"></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111823m3x4b442bvv6jt62.png" alt="反面" title="反面"></p>
-<p>  开发板的结构很简介明了，给人看到的第一印象是好多引脚，结果仔细一看，有三组的引脚都是下载口，可以支持多种下载模式。还有wifi模块也很显眼。<br>  另外还有一个USB口，一个RGB彩色灯，两个复位按键，两个BOOT按键以及连个用户自定义按键。<br>  3个LED灯。这些都是传统的物联网开发板的标配，但是有一点很好地就是没有引脚在旁边都给了名字说明，不用再胡原理图一个一个的找对应的引脚了，有时候找一个引脚真的很头疼。</p>
-<p>  开发板的背部的设计简单明了。整个开发板给人的印象还不错，在加上STM32的主控，对于多数的物联网开发已经足够，运行速度也能得到保障。</p>
-<h1 id="例程下载"><a href="#例程下载" class="headerlink" title="例程下载"></a>例程下载</h1><h2 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h2><p>  到官网下载必要工具。</p>
-<p><a href="https://docs.tuya.com/cn/mcu/download.html" target="_blank" rel="noopener">点我跳转到官网下载</a></p>
-<p>  反正我将这个页面能下载的都下载了一遍。说一说必要下载的工具，看下图。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105303lhf7hah060abd3dh.png" alt="必要的工具" title="必要的工具"></p>
-<p>  安装Flash Loader Demo，这个过程很简单，一路next就行了。然后将下载的名为1476783423-tuya_dev_demo_v3的压缩包解压就是我们要下载的官方最开始的例程。</p>
-<h2 id="下载工具下载程序"><a href="#下载工具下载程序" class="headerlink" title="下载工具下载程序"></a>下载工具下载程序</h2><p>  参考 <a href="http://www.eeboard.com/bbs/thread-98467-1-1.html" target="_blank" rel="noopener">http://www.eeboard.com/bbs/thread-98467-1-1.html</a> 这个帖子，挺详细的。</p>
-<p>1、首先是跳线帽的链接。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="跳线帽连接" title="跳线帽连接"></p>
-<p>  先按住BOOT，再按住RESET,然后先松开RESET，再松开BOOT就可以进行下载模式了，不行的话就多试几次。<br>  知道能不能下载的最重要的一点就是打开Flash Loader Demo，点击NEXT，看看会不会出现下面的界面。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="未连接界面" title="未连接界面"></p>
-<p>  如果卡住的话就不行再试一次，直到正常进行下一页面。一般情况下操作正常就可以正常下载了。</p>
-<p>2、然后一路NEXT，选择下载的bin程序</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105305xv136usvka3yykkb.png" alt="选择bin文件" title="选择bin文件"></p>
-<p>3、点击NEXT，等待几十秒就会下载成功</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306ke2202f6a220za3o.png" alt="程序下载中..." title="程序下载中..."></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306sz3cccczfxmzfzjc.png" alt="程序下载完成" title="程序下载完成"></p>
-<h2 id="使用keil下载下载程序"><a href="#使用keil下载下载程序" class="headerlink" title="使用keil下载下载程序"></a>使用keil下载下载程序</h2><p>1、打开例程</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105656iururgtx9vpxjnj0.png" alt="选择例程" title="选择例程"></p>
-<p>2、安装ST_link驱动程序</p>
-<p>  我在网上随便下载了一个win版本的，可以正常使用，直接安装好了就行。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105937tatrnj4qtt7a2ju8.png" alt="选择ST-Link安装包" title="选择ST-Link安装包"></p>
-<p>3、打开工程</p>
-<p>  如果没有安装stm32f103xxx的pdf的话就会自动弹出选择安装，直接默认安装就可以了，这个过程会比较慢，大概会等十几分钟。</p>
-<p>  然后执行下面过程，重要</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110350hao2a33u3ufcc8c1.png" alt="选择下载器" title="选择下载器"></p>
-<p>3、现在就可以成功下载了，按如下方式操作</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110552zs9kq9t7qkrfr7pz.png" alt="下载" title="下载"></p>
-<p>  可以看到已经在正常下载了。<br>  注意：使用ST-Link下载需要一个ST-Link下载器</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/111034wd1ovfbbfs4b98fb.png" alt="下载软件" title="下载软件"></p>
+<blockquote>
+<p>以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100338-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+</blockquote>
+<h1 id="STM32核心"><a href="#STM32核心" class="headerlink" title="STM32核心"></a>STM32核心</h1><p>  这个STM32的最小系统板长这样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg" alt="STM32核心" title="STM32核心"></p>
+<p>  方向插对，之后就可以正常的进行开发了，从图中可以看到明显的J_LINK插口，可以方便的使用J_LINK进行程序的下载，但是一个J_LINK也是极贵的所，所以本文选择使用USB串口下载程序。</p>
+<h1 id="程序下载"><a href="#程序下载" class="headerlink" title="程序下载"></a>程序下载</h1><h2 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h2><p>  如下图所示，<font color="red">stm32最小系统上的RTS与DTR粉笔与开发板上面的RTS与DTR相连接</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_Download_Pin.jpg" alt="连接USB下载线" title="连接USB下载线"></p>
+<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><p>  连接好后就可以通过USB下载程序了，与51单片机的使用方式是一样的，利用hex文件下载软件，直接下载hx文件吗，官方已经给我们提供了一个普中的下载软件。</p>
+<p>  软件的名字叫做：PZ-ISP普中自动下载软件.exe，提供给你们附件如下，有需要的小伙伴可以下载使用.<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载普中开发板下载器</a></p>
+<h2 id="下载方式"><a href="#下载方式" class="headerlink" title="下载方式"></a>下载方式</h2><p>  具体的下载方式如下所示：<br>  <font color="red">这里还有以下是需要注意的，就是供电跳线帽要打到3.3V的位置，因为STM32是3.3V供电的，如果不改变跳线帽的话可能回烧坏stm32。</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/Download_setting.jpg" alt="下载方式" title="下载方式"></p>
+<ul>
+<li>打开下载器软件，连接USB线。</li>
+<li>选择单片机型号，如下图所示；</li>
+<li>选择串口，这个一般是不需要选择的，如果没有显示可用的串口的话，应该是驱动没有安装好，下载一个USB_ttl驱动安装就可以了；</li>
+<li>选择波特率115200；</li>
+<li>选择hex文件，编译程序生成的hex文件；</li>
+<li>最后就是下载程序了，直接点击下载即可，在程序代码量比较下的时候，直接使用USB进行下载还是挺快的，但是当程序变得很大的时候，下载就会很慢，有可能还会达到几分钟。所以有JLINK的伙伴还是使用J_LINK进行下载吧。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/download_select.jpg" alt="选择单片机型号" title="选择单片机型号"></p>
+<p>  程序下载好了就可以进行演示查看了，我选择的是流水灯的程序。直接使用的官方的流水灯程序。P0口连线如下：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/wire_connect.jpg" alt="连线" title="连线"></p>
+<p>emsp; 其实STM32的开发与51单片机的的开发还是比较相似的，只不过STM32的运行速度很快，而STM32还提供许多内置设备，如PWM，AD/DA等。还有一点就是STM32进行GPIO扣得初始化还是比较复杂的。</p>
+<p>emsp; <font color="red" size="2">开发STM32必须使用KEIL5(MDK5)软件进行，并且软件是不内置芯片支持库的，需要自行安装，可以到官网去下载stm32f103的支持包就可以正常的编译程序了，不然程序只能查看是不能进行编译运行的。</font></p>
+<h1 id="演示结果展示"><a href="#演示结果展示" class="headerlink" title="演示结果展示"></a>演示结果展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display1.gif" alt="演示效果" title="演示效果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display2.gif" alt="演示效果" title="演示效果"></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载STM32流水灯程序</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -518,7 +501,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/1626373890.html">http://hehung.top/2019/1626373890.html</a>
+                    <a href="http://hehung.top/2019/b1cecfb6.html">http://hehung.top/2019/b1cecfb6.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,16 +539,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LPC54608/">
-                                    <span class="chip bg-color">LPC54608</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                    <span class="chip bg-color">串口</span>
-                                </a>
-                            
-                                <a href="/tags/Keil/">
-                                    <span class="chip bg-color">Keil</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
                                 </a>
                             
                         </div>
@@ -998,34 +973,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/4223528083.html">
+                <a href="/2019/65127458.html">
                     <div class="card-image">
                         
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131054nll1cbljcmaljmmq.png" class="responsive-img" alt="2017贸泽智造大赛-手势控制机械臂">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/display_oled.jpg" class="responsive-img" alt="STM32使用之OLED显示屏驱动">
                         
-                        <span class="card-title">2017贸泽智造大赛-手势控制机械臂</span>
+                        <span class="card-title">STM32使用之OLED显示屏驱动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是2017年的时候参加的网络上贸泽智创大赛时做的作品，以LPC54608与CC3220S作为主控，通过蓝牙通信，使用手套控制机械臂的移动。
+                            OLED12864是一个基于OLED技术的128X64的显示屏，通过IIC进行驱动，本文介绍了如何通过STM32来驱动OLED模块。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
-                                    比赛
-                                </a>
-                            
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/STM32/" class="post-category">
+                                    STM32
                                 </a>
                             
                             
@@ -1035,20 +1006,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
                     </a>
                     
-                    <a href="/tags/CC3220S/">
-                        <span class="chip bg-color">CC3220S</span>
+                    <a href="/tags/OLED/">
+                        <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/">
-                        <span class="chip bg-color">机械臂</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/IIC/">
+                        <span class="chip bg-color">IIC</span>
                     </a>
                     
                 </div>
@@ -1062,30 +1029,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2756375817.html">
+                <a href="/2019/1a2482fe.html">
                     <div class="card-image">
                         
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png" class="responsive-img" alt="LPCXpreso54608开箱运行与keil下的例程烧写">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
                         
-                        <span class="card-title">LPCXpreso54608开箱运行与keil下的例程烧写</span>
+                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。
+                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1095,16 +1062,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
+                    <a href="/tags/DS1302/">
+                        <span class="chip bg-color">DS1302</span>
                     </a>
                     
                 </div>

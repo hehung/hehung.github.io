@@ -4,12 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="lpc11U68 RTC时钟芯片的使用, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="python获取5天的天气, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-该文实现了时间的设置和显示，包括年月日，时分秒等，提供下详细的代码。帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看lpc11U68的RTC如何使用
+以前在学习python的时候用python做了一个可以获取5天天气的一个程序，分享在了CSDN的博客上，现在转载到我的个人博客，原链接请点击：点我跳转
 
-
-        document.">
+获取天气网址介绍今天学了学python的json操作，然后就想弄个获取天气的程序试试">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>lpc11U68 RTC时钟芯片的使用 | Hehung&#39;s Blog</title>
+    <title>python获取5天的天气 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -248,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201812/09/140430zsbzlgbxxrf4lp7z.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        lpc11U68 RTC时钟芯片的使用
+                        python获取5天的天气
                     </div>
                 </div>
             </div>
@@ -366,12 +365,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LPC11U68/">
-                                <span class="chip bg-color">LPC11U68</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/RTC/">
-                                <span class="chip bg-color">RTC</span>
+                            <a href="/tags/requests/">
+                                <span class="chip bg-color">requests</span>
+                            </a>
+                        
+                            <a href="/tags/json/">
+                                <span class="chip bg-color">json</span>
                             </a>
                         
                     </div>
@@ -382,8 +385,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                LPC系列
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -395,28 +398,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-27
+                    2019-11-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 				
@@ -433,8 +436,92 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>该文实现了时间的设置和显示，包括年月日，时分秒等，提供下详细的代码。<br>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615759-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看lpc11U68的RTC如何使用</a></p>
+<p>以前在学习python的时候用python做了一个可以获取5天天气的一个程序，分享在了CSDN的博客上，现在转载到我的个人博客，原链接请点击：<a href="https://blog.csdn.net/hehung/article/details/78229098" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
 </blockquote>
+<h1 id="获取天气网址介绍"><a href="#获取天气网址介绍" class="headerlink" title="获取天气网址介绍"></a>获取天气网址介绍</h1><p>今天学了学python的json操作，然后就想弄个获取天气的程序试试。</p>
+<p>但是要就行天气获取，就要找到天气的json接口文件。在网上搜集了一圈，发现下面的网址可以提供5天的天气查询的json，很实用。</p>
+<h2 id="获取天气网址"><a href="#获取天气网址" class="headerlink" title="获取天气网址"></a>获取天气网址</h2><p>网址：?<a href="http://wthrcdn.etouch.cn/weather_mini?city=北京" target="_blank" rel="noopener">http://wthrcdn.etouch.cn/weather_mini?city=北京</a></p>
+<p>注意：这个网址的后面的地名可以自己更改，如<a href="http://wthrcdn.etouch.cn/weather_mini?city=上海" target="_blank" rel="noopener">http://wthrcdn.etouch.cn/weather_mini?city=上海</a></p>
+<p>对了，如果打开的页面是乱码，那是因为问个的显示编码方式不对，在网页单击鼠标右键，选择编码 ?，选择?Unicode（UTF-8），用的浏览器不一样，操作方式应该不一样，只要将网站的显示页面的编码方式改成utf-8就行了</p>
+<p>如下图，查找的深圳的天气，直接将后面的北京改成深圳就ok了<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E6%9F%A5%E8%AF%A2%E5%A4%A9%E6%B0%94.png" alt="天气网址" title="天气网址"></p>
+<p>这样子看这个文档很不方便，眼睛都看花了，下面我们就用python程序的pprint模块来美化一些这个字典</p>
+<h1 id="程序实现"><a href="#程序实现" class="headerlink" title="程序实现"></a>程序实现</h1><h2 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json<span class="token punctuation">,</span> requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这两个模块是必须的:<br>1、json可以用来将网页的json解析成python能识别的字典表示。<br>2、requests模块用来获取下载网站，即json的网站页面，用来方便处理。</p>
+<h2 id="导入链接，获取页面"><a href="#导入链接，获取页面" class="headerlink" title="导入链接，获取页面"></a>导入链接，获取页面</h2><p>获取天气查询时候返回的json文本，主要就是对这个文本信息进行处理分析。</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherJsonUrl <span class="token operator">=</span> <span class="token string">"http://wthrcdn.etouch.cn/weather_mini?city=北京"</span>  <span class="token comment" spellcheck="true">#将链接定义为一个字符串</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>weatherJsonUrl<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">#获取并下载页面，其内容会保存在respons.text成员变量里面</span>
+response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#这句代码的意思如果请求失败的话就会抛出异常，请求正常就上面也不会做</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="解析json文件"><a href="#解析json文件" class="headerlink" title="解析json文件"></a>解析json文件</h2><p>需要解析的变量就是上一步的成员变量respons.text。<br>如下所示：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#将json文件格式导入成python的格式</span>
+weatherData <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="使用漂亮打印打印转换后的python字典-weatherData变量"><a href="#使用漂亮打印打印转换后的python字典-weatherData变量" class="headerlink" title="使用漂亮打印打印转换后的python字典(weatherData变量)"></a>使用漂亮打印打印转换后的python字典(weatherData变量)</h2><p>最后我们需要使用print查看一下数据，但是使用原来的语言自带的print不是很方便，看着很难识别字符，所以使用一个模块pprint。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pprint               <span class="token comment" spellcheck="true">#导入pprint模块</span>
+pprint<span class="token punctuation">.</span>pprint<span class="token punctuation">(</span>weatherData<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#漂亮打印出天气字典</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>执行结果如下图所示：（我只截取了一部分图形，太长了）:<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%8E%B7%E5%8F%96%E7%9A%84%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE.png" alt="获取的json数据" title="获取的json数据"></p>
+<p>从上面的图形可以看出‘data’是字典的第一个键，其值也是一个字典，这个字典中键’forecast’才是表示天气信息的。</p>
+<p>‘date’:表示日期 ……等 。这些应该都看得懂，就不浪费时间解释了……</p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>接下来就是对这个字典（weatherData）的数据进行处理<br>就是平时处理字典与列表的方式即可。</p>
+<p>举例：</p>
+<p>获取今天的天气：</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#输出>> '晴'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取今天的温度：</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'wendu'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#输出>> '16'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>原理还是很简单的，用到的只是也不是很多，就是字典数据的处理，json的获取等。</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>下面分享获取天气的源码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!python3</span>
+<span class="token comment" spellcheck="true">#coding:utf-8</span>
+<span class="token keyword">import</span> json<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> requests
+
+<span class="token comment" spellcheck="true">#输入地点</span>
+weatherPlace <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入天气地点："</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> weatherPlace <span class="token operator">==</span> <span class="token string">'E'</span> <span class="token operator">or</span> weatherPlace <span class="token operator">==</span> <span class="token string">'e'</span><span class="token punctuation">:</span>
+    sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">#关闭程序</span>
+<span class="token comment" spellcheck="true">#下载天气JSON</span>
+weatherJsonUrl <span class="token operator">=</span> <span class="token string">"http://wthrcdn.etouch.cn/weather_mini?city=%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>weatherPlace<span class="token punctuation">)</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>weatherJsonUrl<span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"网址请求出错"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#将json文件格式导入成python的格式</span>
+weatherData <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#以好看的形式打印字典与列表表格</span>
+<span class="token comment" spellcheck="true">#import pprint</span>
+<span class="token comment" spellcheck="true">#pprint.pprint(weatherData)</span>
+
+w <span class="token operator">=</span> weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"地点：%s"</span> <span class="token operator">%</span> w<span class="token punctuation">[</span><span class="token string">'city'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#日期</span>
+date_a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#最高温与最低温</span>
+highTemp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+lowTemp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#天气</span>
+weather <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#进行五天的天气遍历</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    date_a<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    highTemp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'high'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    lowTemp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'low'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    weather<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#输出</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"日期："</span> <span class="token operator">+</span> date_a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t温度：最"</span> <span class="token operator">+</span> lowTemp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'℃~最'</span> <span class="token operator">+</span> highTemp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'℃'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t天气："</span> <span class="token operator">+</span> weather<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n今日着装："</span> <span class="token operator">+</span> w<span class="token punctuation">[</span><span class="token string">'ganmao'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"当前温度："</span> <span class="token operator">+</span> w<span class="token punctuation">[</span><span class="token string">'wendu'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"℃"</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>上述代码在运行的时候要输入 &gt;&gt;  地名 &lt;&lt;  ，如下图：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%BE%93%E5%85%A5%E5%9C%B0%E7%82%B9.png" alt="输入地点" title="输入地点"></p>
+<p>运行结果如下图所示：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果" title="运行结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -478,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2013186940.html">http://hehung.top/2019/2013186940.html</a>
+                    <a href="http://hehung.top/2019/51fc7eef.html">http://hehung.top/2019/51fc7eef.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,12 +603,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LPC11U68/">
-                                    <span class="chip bg-color">LPC11U68</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/RTC/">
-                                    <span class="chip bg-color">RTC</span>
+                                <a href="/tags/requests/">
+                                    <span class="chip bg-color">requests</span>
+                                </a>
+                            
+                                <a href="/tags/json/">
+                                    <span class="chip bg-color">json</span>
                                 </a>
                             
                         </div>
@@ -954,30 +1045,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2599452483.html">
+                <a href="/2019/d646b561.html">
                     <div class="card-image">
                         
-                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png" class="responsive-img" alt="lpc11U68利用RTC实现闹钟小应用">
+                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
                         
-                        <span class="card-title">lpc11U68利用RTC实现闹钟小应用</span>
+                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
+                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -987,16 +1078,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/OLED/">
-                        <span class="chip bg-color">OLED</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/LPC11U68/">
-                        <span class="chip bg-color">LPC11U68</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/RTC/">
-                        <span class="chip bg-color">RTC</span>
+                    <a href="/tags/Keil/">
+                        <span class="chip bg-color">Keil</span>
                     </a>
                     
                 </div>
@@ -1010,30 +1101,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2646345200.html">
+                <a href="/2019/be57a96f.html">
                     <div class="card-image">
                         
-                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201811/24/123018nmmsdt0mg0l3s5hg.png" class="responsive-img" alt="lpc11U68 IIC控制OLED">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/成品展示１.jpg" class="responsive-img" alt="51单片机的音乐盒(c语言)">
                         
-                        <span class="card-title">lpc11U68 IIC控制OLED</span>
+                        <span class="card-title">51单片机的音乐盒(c语言)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用lpc11U68的IIC控制OLED显示中文字符，该文使用了模拟IIC通信协议，控制OLED显示中文。
+                            使用51单片机做的一个可以播放几种音乐的音乐播放器，能够实现音乐切换，暂停，播放等功能。包含电路设计，焊接与源码分享。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1043,16 +1134,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/OLED/">
-                        <span class="chip bg-color">OLED</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/IIC/">
-                        <span class="chip bg-color">IIC</span>
+                    <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">51单片机</span>
                     </a>
                     
-                    <a href="/tags/LPC11U68/">
-                        <span class="chip bg-color">LPC11U68</span>
+                    <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">电路设计</span>
                     </a>
                     
                 </div>

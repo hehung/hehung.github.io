@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机DS18B20获取温度, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机驱动LCD1602, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：点我跳转
+单片机中用到数据显示的时候使用LCD1602的时候还是挺多的，本文讲解了对LCD1602的使用操作。以前发帖在电子芯巴克。原帖子链接：点我跳转
 
-原理图  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。
+原理图  首先查看原理图。
 
-  下面是数码管的原">
+  从上面的原理图中可以看出，LCD1602是使用P0操作的，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机DS18B20获取温度 | Hehung&#39;s Blog</title>
+    <title>51单片机驱动LCD1602 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -249,13 +249,13 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机DS18B20获取温度
+                        51单片机驱动LCD1602
                     </div>
                 </div>
             </div>
@@ -375,8 +375,8 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/DS18B20/">
-                                <span class="chip bg-color">DS18B20</span>
+                            <a href="/tags/LCD1602/">
+                                <span class="chip bg-color">LCD1602</span>
                             </a>
                         
                     </div>
@@ -407,21 +407,21 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    933
+                    445
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 				
@@ -438,171 +438,104 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100156-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>单片机中用到数据显示的时候使用LCD1602的时候还是挺多的，本文讲解了对LCD1602的使用操作。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100298-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20.png" alt="DS18B20接线图" title="DS18B20接线图"></p>
-<p>  下面是数码管的原理图，因为温度数据要通过数码管显示出来。数码管的教程在前面已经写过了，在这里不再做介绍：<a href="http://hehung.top/archives/9ea6.html">点我查看数码管操作</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Tube.png" alt="数码管原理图" title="数码管原理图"></p>
-<p>  从上面的原理图中可以看到，DS18B20的引脚是P3.7<br>  数码管接法：</p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/LCD1602.png" alt="原理图" title="原理图"></p>
+<p>  从上面的原理图中可以看出，LCD1602是使用P0操作的，还有一个电位器可以用来调节显示亮度。</p>
+<p>  三个读/写时序操作引脚需要自己根据自己的实际情况连接，我是连接在下面三个引脚上的</p>
 <ul>
-<li>J12 —  P0</li>
-<li>A — P1.0</li>
-<li>B — P1.1 </li>
-<li>C — P1.2</li>
+<li>rs ====&gt; P2^6</li>
+<li>rw====&gt; P2^5</li>
+<li>e  ====&gt; P2^7</li>
 </ul>
-<p>  其中A,B,C是数码管的位选端口，在上一篇帖子里我已经说明了</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  知道了原理图，接下来就是写程序了。<br>  本来像这种函数比较多的程序一般都是要写在不同的文件里面的，使用模块化编程的。但是我为了简单，就写在了一个文件里。<br>  我觉得代码还是写的比较规范的，注释也清楚，有需要的小伙伴直接拿去改下端口就可以用。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
-
+<p>  LCD1602在开发板上的显示如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/LCD1602_conect.png" alt="LCD1602" title="LCD1602"></p>
+<h1 id="LCD1602时序"><a href="#LCD1602时序" class="headerlink" title="LCD1602时序"></a>LCD1602时序</h1><h2 id="写时序"><a href="#写时序" class="headerlink" title="写时序"></a>写时序</h2><p>  写时序如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/Write_time_seq.png" alt="写时序图" title="写时序图"></p>
+<p>  首先要对寄存器的选择和读、写操作选择进行配置。<br>  RS是寄存器选择，rs = 1对数据进行操作；rs = 0对指令进行操作。<br>  接着对读写操作选择进行配置，rw = 0 写操作。<br>  打开使能端，输入使能信号 e = 1。<br>  数据总线，对DB0~DB7（就是P0）赋值，进行数据的传输。</p>
+<h2 id="读时序"><a href="#读时序" class="headerlink" title="读时序"></a>读时序</h2><p>  读时序如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/Read_time_seq.png" alt="读时序图" title="读时序图"></p>
+<p>  理解方式与上面写时序是一样的。</p>
+<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  知道了原理图，接下来就是写程序了。</p>
+<pre class="line-numbers language-C"><code class="language-C"> #include<reg52.h>
 #define uchar unsigned char
 #define uint unsigned int
-#define SMG P0                //定义数码管的段选端口
+sbit rs=P2^6;
+sbit rw=P2^5;
+sbit e=P2^7;
 
-//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
-sbit LA=P1^0;                
-sbit LB=P1^1;
-sbit LC=P1^2;
+uchar xs1[]=" hello,welcome you! ";
+uchar xs2[]="    I am happy!     ";
 
-sbit dq=P3^7;        //DS18B20的引脚
+uchar table[]={0x01,0x03,0x07,0x08,0x1f,0x3f,0x7f,0xff};
 
-//下面的数组可以显示0-F
-uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
 
-//函数声明
-void delay(int ms);                                                //延时函数
-void change(int what);                                        //位选函数
-void ds18b20_init();                                        //DS18B20初始化函数
-void ds18b20_write_data(uchar dat);                //DS18B20写命令函数
-uchar ds18b20_read_data();                                //DS18B20读数据函数
-void ds18b20_read_temp(int *temp,int *xiao);        //DS18B20读温度函数
-void display(int temp, int xiao);                //数码管显示函数
-
-//主函数
+void yan(uint ms)
+{
+     uint w;
+         for(;ms>0;ms--)
+            for(w=110;w>0;w--);
+}
+void xzl(uchar com)
+{
+     e=0;
+     rs=0;
+         rw=0;
+         P0=com;
+         yan(1);
+         e=1;
+         yan(2);
+         e=0;
+}
+void xsj(uchar dat)
+{
+         e=0;
+     rs=1;
+         rw=0;
+         P0=dat;
+         yan(1);
+         e=1;
+         yan(2);
+         e=0;
+}
+void init()
+{
+         xzl(0x38);
+         xzl(0x08);
+         xzl(0x01);
+         xzl(0x06);
+         xzl(0x0c);
+} 
 void main()
 {
-        int temp,xiao;                //定义温度的整数和小数变量
-        ds18b20_init();                //初始化
-
-        while(1)
-        {
-                ds18b20_read_temp(&temp, &xiao);
-                display(temp, xiao);
-        }
-}
-
-//延时函数(短延时)
-void delay(int ms)
-{
-        while(ms--);
-}
-
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
-
-//初始化函数
-void ds18b20_init()
-{
-            dq=1;
-         delay(5);
-         dq=0;
-         delay(400);
-         dq=1;
-         delay(300);
-}
-void ds18b20_write_data(uchar dat)
-{
      uchar i;
-         for(i=0;i<8;i++)
+     init();
+         xzl(0x80+0x16);
+         for(i=0;i<16;i++)
          {
-             dq=0;
-                 dq=dat&0x01;
-                 delay(2);
-                 dq=1;
-                 dat>>=1;
-         } 
-         delay(4);    
-}
-uchar ds18b20_read_data()
-{
-          uchar i,v;
-          for(i=0;i<8;i++)
+             xsj(xs1[i]);                //显示第一行数据
+                 yan(30);
+         }
+         xzl(0x80+0x40+0x16);
+         for(i=0;i<16;i++)
+         {
+             xsj(xs2[i]);                //显示第二行数据
+                 yan(30);
+         }
+          while(1)
           {
-              dq=0;
-                  v>>=1;
-                  dq=1;
-                  if(dq)
-                     v|=0x80;
-                  delay(4);
-          }
-          return v;
-}
-void ds18b20_read_temp(int *temp,int *xiao)
-{          
-         uchar a,b;
-     ds18b20_init();
-         ds18b20_write_data(0xcc);
-         ds18b20_write_data(0x44);
-         delay(200);
-
-         ds18b20_init();
-         ds18b20_write_data(0xcc);
-         ds18b20_write_data(0xbe);                //读温度
-         a=ds18b20_read_data();          //读出温度低位
-         b=ds18b20_read_data();           //读出温度高位
-         b<<=4;
-         b+=(a&0xf0)>>4;
-         *temp=b;                                //温度整数部分
-         *xiao=a&0x0f;                        
-         *xiao=*xiao/1.6;                //温度小数部分
-}
-
-void display(int temp, int xiao)
-{
-        change(1);
-        SMG=number[temp/10];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(2);
-        SMG=number[temp%10];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(3);
-        SMG=~0x7f;
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(4);
-        SMG=number[xiao];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，首先要知道DS18B20长得什么样的，在单片机的位置，如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20_in_board.png" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
-<p>  可以想办法给DS18B20加热，温度数值就会增加。<br>  如下图，我是用手给它捏住，它的温度就会上升。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic1.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic2.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
+                 for(i=0;i<40;i++)
+                 {
+                      xzl(0x1c);                //右移命令
+                          yan(300);
+                 }          
+          }                  
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，由于使用了右移命令，所以文字连续向右移动，感兴趣的小伙伴可以试一下，如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/Display1.gif" alt="运行结果" title="运行结果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display2.gif" alt="运行结果" title="运行结果"></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/LCD1602液晶完整中文资料.pdf" target="_blank" rel="noopener">点我下载LCD1602液晶完整中文资料</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -646,7 +579,7 @@ void display(int temp, int xiao)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2510233541.html">http://hehung.top/2019/2510233541.html</a>
+                    <a href="http://hehung.top/2019/b115335.html">http://hehung.top/2019/b115335.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,8 +625,8 @@ void display(int temp, int xiao)
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/DS18B20/">
-                                    <span class="chip bg-color">DS18B20</span>
+                                <a href="/tags/LCD1602/">
+                                    <span class="chip bg-color">LCD1602</span>
                                 </a>
                             
                         </div>
@@ -1126,18 +1059,18 @@ void display(int temp, int xiao)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/185684789.html">
+                <a href="/2019/d7033870.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg" class="responsive-img" alt="51单片机驱动LCD1602">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" class="responsive-img" alt="51单片机PWM驱动LED">
                         
-                        <span class="card-title">51单片机驱动LCD1602</span>
+                        <span class="card-title">51单片机PWM驱动LED</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
+                            使用51单片机的定时器模拟PWM功能，实现LED的不同亮度的控制。
                         
                     </div>
                     <div class="publish-info">
@@ -1167,8 +1100,8 @@ void display(int temp, int xiao)
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/LCD1602/">
-                        <span class="chip bg-color">LCD1602</span>
+                    <a href="/tags/PWM/">
+                        <span class="chip bg-color">PWM</span>
                     </a>
                     
                 </div>
@@ -1182,18 +1115,18 @@ void display(int temp, int xiao)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2860304572.html">
+                <a href="/2019/959f1fc5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg" class="responsive-img" alt="51单片机数码管显示">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg" class="responsive-img" alt="51单片机DS18B20获取温度">
                         
-                        <span class="card-title">51单片机数码管显示</span>
+                        <span class="card-title">51单片机DS18B20获取温度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成的一个控制数码管显示的程序，数码管会从右向左滚动显示1-F这些数字和字母。
+                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
                         
                     </div>
                     <div class="publish-info">
@@ -1223,8 +1156,8 @@ void display(int temp, int xiao)
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                        <span class="chip bg-color">数码管</span>
+                    <a href="/tags/DS18B20/">
+                        <span class="chip bg-color">DS18B20</span>
                     </a>
                     
                 </div>

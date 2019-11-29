@@ -4,13 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机驱动步进电机, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
-    <meta name="description" content="
-拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：点我跳转
-
-原理图  首先查看原理图。
-
-">
+    <meta name="keywords" content="基于stm32的心率监控装置, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="description" content="前言　　该文主要讲述了以前用STM32实现的一个心率传感装置的制作过程和最终实现的效果，这是我在大四毕业的时候帮别人做的一个毕业设计的小作品，最初的文章是发表在电子发烧友上面的，现转载到我的个人博客来。原链接请点击此处：点我跳转
+介绍　　最">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机驱动步进电机 | Hehung&#39;s Blog</title>
+    <title>基于stm32的心率监控装置 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -249,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/img/whole_device.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机驱动步进电机
+                        基于stm32的心率监控装置
                     </div>
                 </div>
             </div>
@@ -367,16 +363,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                <span class="chip bg-color">单片机</span>
-                            </a>
-                        
                             <a href="/tags/C%E8%AF%AD%E8%A8%80/">
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                                <span class="chip bg-color">步进电机</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
+                            </a>
+                        
+                            <a href="/tags/OLED/">
+                                <span class="chip bg-color">OLED</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
+                                <span class="chip bg-color">心率监控</span>
                             </a>
                         
                     </div>
@@ -387,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                51单片机
+                            <a href="/categories/STM32/" class="post-category">
+                                STM32
                             </a>
                         
                     </div>
@@ -400,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-11-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    799
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 				
@@ -437,160 +437,147 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100298-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
-</blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/Stepper_motor_Schematic.png" alt="原理图" title="原理图"></p>
-<p>  从上面的原理图中可以看出，该步进电机是四线双极性步进电机，需要四根线控制。</p>
-<p>  在开发板上的接线图如下所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/connect_to_micro_controller.jpg" alt="线路连接" title="线路连接"></p>
-<h1 id="步进电机控制方式"><a href="#步进电机控制方式" class="headerlink" title="步进电机控制方式"></a>步进电机控制方式</h1><p>  这种步进电机可以正反转运动，同时还有三种控制方式：</p>
-<p>1.单相四拍通电驱动时序<br>正转： A- B  A  B-<br>反转： B-  A  B  A-</p>
-<p>2.双相通电四拍驱动时序<br>正转：A-B   AB   AB-  A-B-<br>反转：A-B-  AB-  AB   A-B</p>
-<p>3.半步八拍驱动时序<br>反转：A-  A-B  B  AB  A  AB-  B-  A-B-<br>正转：A-B-  B-  AB-  A  AB  B  A-B  A-</p>
-<p>  上面的控制原理中，A，A_，B，B_分别表示4根控制线。</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  下面是主要代码。</p>
-<h2 id="单相四拍控制方式"><a href="#单相四拍控制方式" class="headerlink" title="单相四拍控制方式"></a>单相四拍控制方式</h2><p>是单相四拍方式,反转（逆时针），如果想正转，安装上方的工作顺序自行切换就可以了。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include "reg52.h"                        
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　该文主要讲述了以前用STM32实现的一个心率传感装置的制作过程和最终实现的效果，这是我在大四毕业的时候帮别人做的一个毕业设计的小作品，最初的文章是发表在电子发烧友上面的，现转载到我的个人博客来。<br>原链接请点击此处：<a href="http://bbs.elecfans.com/forum.php?mod=viewthread&amp;tid=1600343&amp;page=1#pid7932932" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>　　最近做了一个机遇STM32的心率监测装置，使用了一块oled屏幕进行检测到的心率的波形的显示。<br>心率监测传感器使用的传感器是pulse sensor，是一款比较便宜的传感器。显示屏采用的是128X64的oled显示器。</p>
+<p>　　首先放上成品图，不然你们是没有兴趣看的。^_^<br><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Heart_rate_oscillogram.gif" alt="心率动态显示" title="心率动态显示"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Heart_rate_data.gif" alt="心率数据" title="心率数据"></p>
+<h1 id="开发环境与开发器件"><a href="#开发环境与开发器件" class="headerlink" title="开发环境与开发器件"></a>开发环境与开发器件</h1><p>　　开发环境：<br>　　1、win10 +MDK keil5.24<br>　　２、ST-LINK下载器（不一定需要这个，J-LINK和串口下载都是可以的）</p>
+<p>　　我是用的是STM32F103C8T6最小系统板，价格比较便宜并且功能足够强大。<br>　　元器件有：<br>　　==&gt;pulse sensor心率传感器<br>　　==&gt;IIC OLED显示屏<br>　　==&gt;按键2个<br>　　==&gt;LED1个<br>　　==&gt;蜂鸣器1个</p>
+<h1 id="电路设计"><a href="#电路设计" class="headerlink" title="电路设计"></a>电路设计</h1><p>　　在硬件结构方面还是比较简单的，连线比较简单，就是在软件方面花费了我一些时间，算法处理和波形系那是还是花了一些时间采写好的。<br>　　放上电路连接图：<br><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Schematic.jpg" alt="电路图" title="电路图"></p>
+<h1 id="软件实现"><a href="#软件实现" class="headerlink" title="软件实现"></a>软件实现</h1><h2 id="OLED"><a href="#OLED" class="headerlink" title="OLED"></a>OLED</h2><p>　　OLED方面我采用的是IIC操作的OLED，因为IIC操作简单，只需要两根线（我直接使用的PA7和PA8）。使用了软件IIC，直接移植的正点原子的官方例程的IIC，OLED显示也是移植的正点原子的程序，只是做了改进，可以显示汉字（正点原子的官方例程中OLED程序不能显示汉字，我对代码进行升级，可以显示汉字），还增加了自动在数字前面补0的功能。</p>
+<p>　　由于程序比较大，这里只放了重点的代码，在后面也提供源码。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//OLED波形显示函数</span>
+<span class="token keyword">void</span> <span class="token function">OLED_Waveform_display</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i<span class="token punctuation">;</span>        
+        u8 n<span class="token punctuation">;</span>
 
+        <span class="token function">IF</span><span class="token punctuation">(</span>waveform_flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                waveform_flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                        <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>n<span class="token operator">&lt;</span><span class="token number">64</span><span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                                <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token comment" spellcheck="true">//波形线补点操作，如果不用，可以注释掉,将#if 1改为#if 0</span>
+                        <span class="token comment" spellcheck="true">//引用波形补点函数可以是波形看起来是连续的</span>
+                        <span class="token macro property">#<span class="token directive keyword">if</span> 1</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">myabs</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>waveform<span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">{</span>
+                                        <span class="token keyword">if</span><span class="token punctuation">(</span>waveform <span class="token operator">></span> waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                                        <span class="token punctuation">{</span>
+                                                <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>n<span class="token operator">&lt;</span>waveform<span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                                                <span class="token punctuation">{</span>
+                                                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                                                <span class="token punctuation">}</span>
+                                        <span class="token punctuation">}</span><span class="token keyword">else</span>
+                                        <span class="token punctuation">{</span>
+                                                <span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span>waveform<span class="token punctuation">;</span>n<span class="token operator">&lt;</span>waveform<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>n<span class="token operator">++</span><span class="token punctuation">)</span>
+                                                <span class="token punctuation">{</span>
+                                                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                                                <span class="token punctuation">}</span>
+                                        <span class="token punctuation">}</span>
 
-#define uchar unsigned char 
-#define uint  unsigned int
+                                <span class="token punctuation">}</span>                        
+                        <span class="token punctuation">}</span>
+                        <span class="token function">OLED_DrawPoint</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>waveform<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//在相应的像素点上打印</span>
+                        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+                <span class="token punctuation">}</span>
+                <span class="token function">OLED_Refresh_Gram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                                <span class="token comment" spellcheck="true">//更新显示到OLED</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="pulse-sensor心率传感器"><a href="#pulse-sensor心率传感器" class="headerlink" title="pulse sensor心率传感器"></a>pulse sensor心率传感器</h2><p>　　pulse sensor心率传感器采用ADC进行数据采集，使用到了ADC0（PA0）。通过配置ADC引脚完成ADC的采集，通过实验，可以正常的采集到数据。当人的手指放上之后用示波器可以看到心跳的电压变化。</p>
+<h3 id="操作说明书"><a href="#操作说明书" class="headerlink" title="操作说明书"></a>操作说明书</h3><p>　　说明书密码（xinghuidianzi）：<br>  Pulse Sensor使用说明书V5.5（密码xinghuidianzi）<br><a href="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/doc/Pulse_Sensor使用说明书V5.5_密码xinghuidianzi.pdf" target="_blank" rel="noopener" title="点此处下载">点此处下载</a></p>
+<h3 id="心率监测算法实现"><a href="#心率监测算法实现" class="headerlink" title="心率监测算法实现"></a>心率监测算法实现</h3><p>　　心率算法就是检测心率波形的峰值，检测到  有60000ms 除以两个峰值时间（ms）就是心率值，说起来比较简单，但是操作起来有各种干扰，通过官方的例程上进行修改，最终成功测出心率值，还是比较准确的</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">//心率采集与计算处理</span>
+<span class="token keyword">void</span> <span class="token function">HeartRate_deal</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> runningTotal<span class="token punctuation">;</span>
+        u8 i<span class="token punctuation">;</span>
 
-sbit SA = P1^0;
-sbit SA_ = P1^1;
-sbit SB = P1^2;
-sbit SB_ = P1^3;         
+        Num <span class="token operator">=</span> sampleCounter <span class="token operator">-</span> lastBeattime<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//监控最后一次节拍后的时间，以避免噪声</span>
 
-#define time 2000 
+        <span class="token comment" spellcheck="true">//找到脉冲波的波峰和波谷</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> thresh <span class="token operator">&amp;&amp;</span> Num <span class="token operator">></span> <span class="token punctuation">(</span>IBI<span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true">//为了避免需要等待3/5个IBI的时间</span>
+        <span class="token punctuation">{</span>       
+                <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> T<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>                                                        <span class="token comment" spellcheck="true">//T是阈值</span>
+                        T <span class="token operator">=</span> Signal<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//跟踪脉搏波的最低点，改变阈值</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>Signal <span class="token operator">></span> thresh <span class="token operator">&amp;&amp;</span> Signal <span class="token operator">></span> P<span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//采样值大于阈值并且采样值大于峰值</span>
+        <span class="token punctuation">{</span>          
+                P <span class="token operator">=</span> Signal<span class="token punctuation">;</span>                             <span class="token comment" spellcheck="true">//P是峰值，改变峰值</span>
+        <span class="token punctuation">}</span> 
+        <span class="token comment" spellcheck="true">//现在开始寻找心跳节拍</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token number">250</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//避免高频噪声</span>
+        <span class="token punctuation">{</span>                                   
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>Signal <span class="token operator">></span> thresh<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>Pulse <span class="token operator">==</span> false<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token punctuation">(</span>IBI<span class="token operator">/</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>        
+                        Pulse <span class="token operator">=</span> true<span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//当有脉冲的时候就设置脉冲信号。</span>
+<span class="token comment" spellcheck="true">//                                LED_ON();                                                                        //打开LED，表示已经有脉冲了</span>
+                        IBI <span class="token operator">=</span> sampleCounter <span class="token operator">-</span> lastBeatTime<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">//测量节拍的ms级的时间</span>
+                        lastBeatTime <span class="token operator">=</span> sampleCounter<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//记录下一个脉冲的时间。</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>secondBeat<span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//如果这是第二个节拍，如果secondBeat == TRUE，表示是第二个节拍</span>
+                        <span class="token punctuation">{</span>                        
+                                secondBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//清除secondBeat节拍标志</span>
+                                <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//在启动时，种子的运行总数得到一个实现的BPM。</span>
+                                <span class="token punctuation">{</span>             
+                                        rate <span class="token operator">=</span> IBI<span class="token punctuation">;</span>                      
+                                <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">if</span><span class="token punctuation">(</span>firstBeat<span class="token punctuation">)</span>                        <span class="token comment" spellcheck="true">//如果这是第一次发现节拍，如果firstBeat == TRUE。</span>
+                        <span class="token punctuation">{</span>                         
+                                firstBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//清除firstBeat标志</span>
+                                secondBeat <span class="token operator">=</span> true<span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">//设置secongBeat标志</span>
+                                <span class="token keyword">return</span><span class="token punctuation">;</span>                              <span class="token comment" spellcheck="true">//IBI值是不可靠的，所以放弃它。</span>
+                        <span class="token punctuation">}</span>   
+                        <span class="token comment" spellcheck="true">//保留最后10个IBI值的运行总数。</span>
+                        runningTotal <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//清除runningTotal变量</span>
 
-void step_Motor(void);
-void delay(uint ms);
-void step_Motor2(void);
-void step_Motor3(void);
+                        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//转换数据到rate数组中</span>
+                        <span class="token punctuation">{</span>                
+                                rate <span class="token operator">=</span> rate<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                  <span class="token comment" spellcheck="true">//去掉旧的的IBI值。 </span>
+                                runningTotal <span class="token operator">+</span><span class="token operator">=</span> rate<span class="token punctuation">;</span>              <span class="token comment" spellcheck="true">//添加9个以前的老的IBI值。</span>
+                        <span class="token punctuation">}</span>
 
-void main()
-{        
+                        rate<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> IBI<span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">//将最新的IBI添加到速率数组中。</span>
+                        runningTotal <span class="token operator">+</span><span class="token operator">=</span> rate<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//添加最新的IBI到runningTotal。</span>
+                        runningTotal <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//平均最后10个IBI值。</span>
+                        BPM <span class="token operator">=</span> <span class="token number">60000</span><span class="token operator">/</span>runningTotal<span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">//一分钟有多少拍。即心率BPM</span>
+                        QS <span class="token operator">=</span> true<span class="token punctuation">;</span>                              <span class="token comment" spellcheck="true">//设置量化自我标志Quantified Self标志</span>
+                        <span class="token comment" spellcheck="true">//在这个ISR（中断服务程序）中，QS标志没有被清除。</span>
+                <span class="token punctuation">}</span>                      
+        <span class="token punctuation">}</span>
 
-        while(1)
-        {        
-                step_Motor();                
-        }
-}
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Signal <span class="token operator">&lt;</span> thresh <span class="token operator">&amp;&amp;</span> Pulse <span class="token operator">==</span> true<span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">//当值下降时，节拍就结束了。</span>
+        <span class="token punctuation">{</span>   
+<span class="token comment" spellcheck="true">//                        LED_OFF();                                                                //关闭LED</span>
+                Pulse <span class="token operator">=</span> false<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">//重设脉冲标记，这样方便下一次的计数</span>
+                amp <span class="token operator">=</span> P <span class="token operator">-</span> T<span class="token punctuation">;</span>                           <span class="token comment" spellcheck="true">//得到脉冲波的振幅。</span>
+                thresh <span class="token operator">=</span> amp<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">+</span> T<span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">//设置thresh为振幅的50%。</span>
+                P <span class="token operator">=</span> thresh<span class="token punctuation">;</span>                            <span class="token comment" spellcheck="true">//重新设置下一个时间</span>
+                T <span class="token operator">=</span> thresh<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-void step_Motor(void)
-{
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="双相通电四拍驱动时序"><a href="#双相通电四拍驱动时序" class="headerlink" title="双相通电四拍驱动时序"></a>双相通电四拍驱动时序</h2><p>  如下，只提供主要操作代码</p>
-<pre class="line-numbers language-C"><code class="language-C">void step_Motor2(void)
-{
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 0;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="半步八拍（正转，顺时针）"><a href="#半步八拍（正转，顺时针）" class="headerlink" title="半步八拍（正转，顺时针）"></a>半步八拍（正转，顺时针）</h2><p>  如下，只提供主要操作代码</p>
-<pre class="line-numbers language-C"><code class="language-C">void step_Motor3(void)
-{
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 0;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 10;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><font color="red">值得注意的是，如果你的步进电机的相序出错的话就会造成左右都懂，这样就要检查一下你的相序是不是对的</font>。</li>
-<li>温馨提示：步进电机运行久了会很烫，不要用手直接触碰</li>
-<li>对步进电机的调速，可以通过每步之间的延时来达到，延时越长，运动越慢。</li>
-</ul>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  示效果的时间到了。从动图中可以看到转的很慢，但是实际上转的比这个快一些，主要是动图丢帧比较严重.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display.gif" alt="运行结果" title="运行结果"></p>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Num <span class="token operator">></span> <span class="token number">2500</span><span class="token punctuation">)</span>                                <span class="token comment" spellcheck="true">//如果2.5秒过去了还没有节拍</span>
+        <span class="token punctuation">{</span>                           
+                thresh <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">//设置默认阈值</span>
+                P <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//设置默认P值</span>
+                T <span class="token operator">=</span> <span class="token number">512</span><span class="token punctuation">;</span>                               <span class="token comment" spellcheck="true">//设置默认T值</span>
+                lastBeatTime <span class="token operator">=</span> sampleCounter<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//把最后的节拍跟上来。       </span>
+                firstBeat <span class="token operator">=</span> true<span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//设置firstBeat为true方便下一次处理</span>
+                secondBeat <span class="token operator">=</span> false<span class="token punctuation">;</span>                    
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>　　我将采集工作与算法处理都放在了定时器里面，初始化了一个2ms的定时器中断，这个工作都是每2ms进行一次</p>
+<p>　　LED、按键和蜂鸣器就不用多说了，很简单，蜂鸣器需要一个三极管进行信号放大，不然的话是驱动不了的。<br>　　　　1、按下按键1，可以进行界面的切换，在界面1的时候回显示西女排的数据值，ADC值等信息。<br>　　　　2、在界面2的时候就是显示波形，在人的手没有放上的时候一般不会显示，手放上之后就会显示心率（人的手放上之后，芯片会有一段时间的空白期(采集到的数据为0)，我就是根据这段时间来判断时候有手放上）<br>　　　　3、当采集到的心率值不在规定的范围之内时蜂鸣器就会报警<br>　　　　4、按下按键2之后蜂鸣器停止报警，知道再次检测到人手放在传感器上面。</p>
+<h1 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/stm32-heart-rate-monitoring/img/Test.jpg" alt="测试" title="测试"></p>
+<h1 id="代码下载"><a href="#代码下载" class="headerlink" title="代码下载"></a>代码下载</h1><p>　　我已经将代码都整理好了，可以在上面直接下载。<br>　　点击此处直接下载：<br><a href="https://cdn.jsdelivr.net/gh/hehung/STM32-heart-rate-monitoring/基于stm32的心率监控装置.zip" target="_blank" rel="noopener" title="点我下载">点我下载</a><br>　　<br>　　去github：<a href="https://github.com/hehung/STM32-heart-rate-monitoring" target="_blank" rel="noopener" title="点我去github">点我去github</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -634,7 +621,7 @@ void step_Motor(void)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/291745225.html">http://hehung.top/2019/291745225.html</a>
+                    <a href="http://hehung.top/2019/e5a76ffe.html">http://hehung.top/2019/e5a76ffe.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,16 +659,20 @@ void step_Motor(void)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                    <span class="chip bg-color">单片机</span>
-                                </a>
-                            
                                 <a href="/tags/C%E8%AF%AD%E8%A8%80/">
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                                    <span class="chip bg-color">步进电机</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
+                                </a>
+                            
+                                <a href="/tags/OLED/">
+                                    <span class="chip bg-color">OLED</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
+                                    <span class="chip bg-color">心率监控</span>
                                 </a>
                             
                         </div>
@@ -1114,23 +1105,23 @@ void step_Motor(void)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/438600446.html">
+                <a href="/2019/be57a96f.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/成品展示１.jpg" class="responsive-img" alt="51单片机的音乐盒(c语言)">
                         
-                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
+                        <span class="card-title">51单片机的音乐盒(c语言)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
+                            使用51单片机做的一个可以播放几种音乐的音乐播放器，能够实现音乐切换，暂停，播放等功能。包含电路设计，焊接与源码分享。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                         </span>
                         <span class="publish-author">
                             
@@ -1147,16 +1138,16 @@ void step_Motor(void)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
-                    </a>
-                    
                     <a href="/tags/C%E8%AF%AD%E8%A8%80/">
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/DS1302/">
-                        <span class="chip bg-color">DS1302</span>
+                    <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">51单片机</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">电路设计</span>
                     </a>
                     
                 </div>
@@ -1170,30 +1161,31 @@ void step_Motor(void)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/3607312496.html">
+                <a href="/2019/91e01a8d.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" class="responsive-img" alt="51单片机PWM驱动LED">
                         
-                        <span class="card-title">51单片机PWM驱动LED</span>
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="我的博客搭建好了">
+                        
+                        <span class="card-title">我的博客搭建好了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机的定时器模拟PWM功能，实现LED的不同亮度的控制。
+                            前言　　很久之前就知道github，但是一直都只是听说，并没有接触过。最近看到了一篇文章说可以使用github来搭建一个博客，处于想拥有一个个人博客的目的也来玩玩。听说博客是基于hexo来搭建的，所以在网上搜索了一下，按照了网友提供的方式下
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
                                 </a>
                             
                             
@@ -1203,16 +1195,16 @@ void step_Motor(void)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
-                    <a href="/tags/PWM/">
-                        <span class="chip bg-color">PWM</span>
+                    <a href="/tags/coding/">
+                        <span class="chip bg-color">coding</span>
                     </a>
                     
                 </div>

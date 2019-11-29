@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机驱动DS1302实时时钟芯片, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="2017贸泽智造大赛-手势控制机械臂, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-很多初学51单片机的小伙伴都喜欢用定时器作为时间模拟显示，这是可以的，对于精度要求不是很高的场合是可以使用的，但是当精度要求很高的时候，使用定时器就不定了，因为51单片机的定时器的精度本来就不高，我们可以使用常见的时钟芯片：DS1302来">
+这是2017年的时候参加的贸泽电子智造大赛的时候发布的帖子，当时得了一个三等奖，😄。点我查看原链接该比赛有许多优秀的作品，点击后面的连接进行跳转：点我查看优秀的项目
+
+项目概述  本系统是采用CC3220s与LPC54608制作的手势控">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机驱动DS1302实时时钟芯片 | Hehung&#39;s Blog</title>
+    <title>2017贸泽智造大赛-手势控制机械臂 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131054nll1cbljcmaljmmq.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机驱动DS1302实时时钟芯片
+                        2017贸泽智造大赛-手势控制机械臂
                     </div>
                 </div>
             </div>
@@ -363,16 +365,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                <span class="chip bg-color">单片机</span>
+                            <a href="/tags/LPC54608/">
+                                <span class="chip bg-color">LPC54608</span>
                             </a>
                         
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">C语言</span>
+                            <a href="/tags/CC3220S/">
+                                <span class="chip bg-color">CC3220S</span>
                             </a>
                         
-                            <a href="/tags/DS1302/">
-                                <span class="chip bg-color">DS1302</span>
+                            <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/">
+                                <span class="chip bg-color">机械臂</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                                <span class="chip bg-color">串口</span>
                             </a>
                         
                     </div>
@@ -383,8 +389,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                51单片机
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
+                                比赛
+                            </a>
+                        
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                LPC系列
                             </a>
                         
                     </div>
@@ -396,21 +406,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-11-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    964
+                    1.4k
                 </div>
                 
 
@@ -434,267 +444,41 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>很多初学51单片机的小伙伴都喜欢用定时器作为时间模拟显示，这是可以的，对于精度要求不是很高的场合是可以使用的，但是当精度要求很高的时候，使用定时器就不定了，因为51单片机的定时器的精度本来就不高，我们可以使用常见的时钟芯片：DS1302来进行时间的显示。</p>
+<p>这是2017年的时候参加的贸泽电子智造大赛的时候发布的帖子，当时得了一个三等奖，😄。<br><a href="http://www.cirmall.com/bbs/thread-99386-1-1.html" target="_blank" rel="noopener">点我查看原链接</a><br>该比赛有许多优秀的作品，点击后面的连接进行跳转：<a href="http://www.cirmall.com/bbs/forum.php?mod=viewthread&amp;ordertype=2&amp;tid=99672" target="_blank" rel="noopener">点我查看优秀的项目</a></p>
 </blockquote>
-<blockquote>
-<p>DS1302会自动进行时间的自加，所以字需要写入初始时间就可以自动就行西东进行时间的获取了，不需要用户进行时间的处理。</p>
-</blockquote>
-<blockquote>
-<p>DS1302可以针对年月日星期时分秒进行处理。我们在程序中通过数码管进行显示时间，由于数码管只有8个，所以时间与年月日信息分开显示，通过独立按键8进行转换。</p>
-</blockquote>
-<blockquote>
-<p>以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100332-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
-</blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看电路原理图，看开发板上的DS1302的引脚，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302.png" alt="DS1302原理图" title="DS1302原理图"></p>
-<p>  本文中使用到了按键，按键的原理图如下所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/key.png" alt="按键原理图" title="按键原理图"></p>
-<p>  本文还使用到了数码管，之前写过数码管的驱动帖子，在这里就不做过多的介绍了，直接移步：<a href="http://hehung.top/archives/9ea6.html">点我移步数码管操作</a></p>
-<p>  从上面的原理图中我们知道了使用到的器件的连线引脚定义如下：</p>
-<pre class="line-numbers language-C"><code class="language-C">
-//DS1302时钟芯片引脚定义
-sbit sck=P3^6;
-sbit io=P3^4;
-sbit rst=P3^5;
-
-//数码管位选引脚定义
-sbit LA = P1^0;
-sbit LB = P1^1;
-sbit LC = P1^2;
-
-//按键引脚定义
-sbit KEY = P2^0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="DS1302"><a href="#DS1302" class="headerlink" title="DS1302"></a>DS1302</h1><h2 id="参考手册"><a href="#参考手册" class="headerlink" title="参考手册"></a>参考手册</h2><p>  DS1302的时序相对而言比较复杂，请看详细的资料文档说明：<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302_chinese_manual.pdf" target="_blank" rel="noopener">点我下载DS1302中文手册</a></p>
-<h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><p>  如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/Sequence_diagram.png" alt="时序图" title="时序图"></p>
-<p>  根据时序图来进行读/写字节，可以看到SCLX在由低变高就是写，由高变低就是读，连续读/写8个字节。</p>
-<h2 id="时间操作寄存器"><a href="#时间操作寄存器" class="headerlink" title="时间操作寄存器"></a>时间操作寄存器</h2><p>  如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/registers.png" alt="时序图" title="时序图"></p>
-<p>可以看到读/写都有不同的寄存器，每个寄存器代表了不同的日期信息，需要哪个日期就读/写哪个寄存器就行了。</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  下面是代码。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
-#include<intrins.h>
-
-#define uchar unsigned char
-#define uint unsigned int
-
-//DS1302时钟芯片引脚定义
-sbit sck=P3^6;
-sbit io=P3^4;
-sbit rst=P3^5;
-
-//数码管位选引脚定义
-sbit LA = P1^0;
-sbit LB = P1^1;
-sbit LC = P1^2;
-
-//按键引脚定义
-sbit KEY = P2^0;
-
-//数码管的数字
-//下面的数组可以显示0-F
-uchar code smg_D[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,~0xbf};
-
-uchar time_data[7]={18,4,4,13,11,59,50};                //年星期月日时分秒
-uchar write_add[7]={0x8c,0x8a,0x88,0x86,0x84,0x82,0x80};                //写地址命令
-uchar read_add[7]={0x8d,0x8b,0x89,0x87,0x85,0x83,0x81};                        //读地址命令
-uchar disp[8];
-
-void delay_ms(uint q)
-{
-     uint w;
-         for(;q>0;q--)
-            for(w=110;w>0;w--);
-}
-
-void delay_us(uint q)
-{
-         for(;q>0;q--);
-}
-
-void delay_nop()
-{
-    _nop_();
-        _nop_();
-        _nop_();
-        _nop_();
-        _nop_();
-}
-
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
-
-void reset() //重置
-{
-        rst=0;_nop_();
-        sck=0;_nop_();
-        rst=1;_nop_();
-}
-
-//写数据函数
-void write_data(uchar dat)
-{
-    uchar i;
-        for(i=0;i<8;i++)
-        {
-            sck=0;
-                io=dat&0x01;
-                delay_nop();delay_nop();delay_nop();
-                dat>>=1;
-                sck=1;
-        }        
-}
-
-//写数据与命令函数
-void write_add_data(uchar add,uchar dat)
-{
-    reset();
-        rst=1;
-        write_data(add);
-        delay_nop();         delay_nop();
-        write_data(dat);
-        rst=0;
-        _nop_();_nop_();_nop_();_nop_();
-        io=0;
-        sck=1;
-}
-
-//阅读数据函数
-uchar read_dat(uchar add)
-{
-    uchar i,v;
-    reset();
-        delay_nop();
-        write_data(add);
-        for(i=0;i<8;i++)
-        {
-            v>>=1;
-                sck=0;
-            if(io)
-                        v|=0x80;
-                sck=1;
-                delay_nop();delay_nop();delay_nop();
-        }
-        rst=0;
-        sck=0;
-        delay_nop();         
-        sck=1;
-        io=1;
-        return v;
-}
-
-//设置时间函数
-void set()
-{
-   uchar i,j;
-   for(i=0;i<7;i++)
-   {
-        j=time_data[i]/10;
-                time_data[i]=time_data[i]%10;
-                time_data[i]=time_data[i]+j*16;
-                delay_nop();
-   }                                          
-   write_add_data(0x8e,0x00);          //去除写保护
-   _nop_();
-   for(i=0;i<7;i++)
-   {
-        write_add_data(write_add[i],time_data[i]);
-                delay_nop();
-   }
-   write_add_data(0x8e,0x80);                           //加写保护
-}
-
-//于都时间函数
-void readtime()
-{
-        uchar i;
-        for(i=0;i<7;i++)
-        {
-            time_data[i]=read_dat(read_add[i]);
-                write_add_data(0x00,0x00);               //重点啊
-        }
-}
-
-//将时分秒处理方便显示
-void chuli()                //处理数据函数
-{
-    disp[0]=time_data[4]/16;
-        disp[1]=time_data[4]%16;  
-        disp[2]=10;
-        disp[3]=time_data[5]/16;
-        disp[4]=time_data[5]%16;
-        disp[5]=10;
-        disp[6]=time_data[6]/16;
-        disp[7]=time_data[6]%16;
-}
-
-//将年月日处理方便显示
-void chuli1()                //处理数据函数
-{
-    disp[0]=time_data[0]/16;
-        disp[1]=time_data[0]%16;  
-        disp[2]=10;
-        disp[3]=time_data[2]/16;
-        disp[4]=time_data[2]%16;
-        disp[5]=10;
-        disp[6]=time_data[3]/16;
-        disp[7]=time_data[3]%16;
-}
-//函数时分秒
-void display()
-{
-    uchar i;
-    for(i=0;i<8;i++)
-        {
-            change(i+1);
-                P0=smg_D[disp[i]];
-                delay_us(50); 
-                P0 = 0;
-                delay_us(10);         //消除暗影            
-        }
-}
-
-//主函数
-void main()
-{                   
-        set();
-        while(1)
-        {
-            readtime();
-                display();
-
-                if(KEY == 0)
-                {
-                        chuli1();                //处理年月日
-                }else
-                {
-                        chuli();                //处理时分秒
-                }        
-        }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="blue">注意：上述程序中，我是用按键8来进行年与日与时分秒的切换，按下按键8（P2.0引脚）就会显示年月日，放开就会显示时间。</font></p>
-<h1 id="运行结果展示"><a href="#运行结果展示" class="headerlink" title="运行结果展示"></a>运行结果展示</h1><p>》时间显示效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display2.jpg" alt="时间显示" title="时间显示"></p>
-<p><font size="2">通过按按键8可以进行时间，日期的切换。</font></p>
-<p>》日期显示效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display3.jpg" alt="时间显示" title="时间显示"></p>
-<p>》时间动态显示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" alt="时间显示" title="时间显示"></p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302_project.zip" target="_blank" rel="noopener">点我下载DS1302工程</a></p>
+<h1 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h1><p>  本系统是采用CC3220s与LPC54608制作的手势控制的机械臂系统。可以完成通过简单的手势对机械臂的控制。手势识别指令采用的是MPU6050以及CC3220S自带的BMA222加速度计组合采集的。CC3220S作为手势端，将采集到的角度值进行分析、滤波、修正之后通过蓝牙发送给LPC54608，其中LPC54608作为控制端，与舵机相连，接收手势命令，通过滤波、限幅与消抖之后控制舵机，进而完成机械臂的运动。通信采用蓝牙进行，CC3220S将需要传输的数据进行处理封装、打包，通过串口进行发送，LPC54608将接收到的数据进行解析，防止出错。近实物验证，功能能够实现。</p>
+<h1 id="作品实物"><a href="#作品实物" class="headerlink" title="作品实物"></a>作品实物</h1><h2 id="整体系统"><a href="#整体系统" class="headerlink" title="整体系统"></a>整体系统</h2><p>   在这些行图中，包含了整个系统的组成图片（4自由度机械臂，LPC54608，CC3220S，MPU6050，蓝牙模块等）</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131054nll1cbljcmaljmmq.png" alt="整体图片" title="整体图片"></p>
+<h2 id="CC3220S的用处"><a href="#CC3220S的用处" class="headerlink" title="CC3220S的用处"></a>CC3220S的用处</h2><p>   CC3220S采集MPU6050与BMA222的数据，进行转换，封装。然后通过蓝牙模块发送出去，其中用到的模块都有标注，LED灯组用来显示连接状态，绿灯与黄灯表明IIC通信是都正常，在正常情况之下常亮，当IIC拦截不正常时会熄灭。红色的LED用来标志状态（<font color="blue">LED说明：此LED有三种闪烁状态，机械臂动作时闪烁周期是1秒，机械手动作时闪烁周期是2秒，空闲阶段闪烁周期是3秒</font>），开关用来进行不同功能的控制转换（开关用途：本来机械臂的机械手是想通过弯曲度传感器来进行识别的，弯曲传感器实际上是一种可变电阻，不同的弯曲度的电阻值不一样，通过采集AD值既可以进行弯曲度的识别了，但是目前在实习，弯曲传感器放在了学校忘带，所以在这里我就<font color="blue">采用了mpu6050来才做，然后用图中所示的开关进行模式切换，区别是控制机械臂还是控制机械手</font>）。</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131056nox0kok052od1xm9.png" alt="CC3220S" title="CC3220S"></p>
+<h2 id="LPC54608的作用"><a href="#LPC54608的作用" class="headerlink" title="LPC54608的作用"></a>LPC54608的作用</h2><p>   LPC54608接受来自CC3220S的数据，结果解析出具体角度数据，然后通过各种数据处理将数值转换成舵机控制数据，控制舵机的转动。同时液晶屏会实时显示接收到的数据，方便调试工作。</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131058k7t5mjv7t7vyr4rx.png" alt="LPC54608" title="LPC54608"></p>
+<h2 id="机械臂"><a href="#机械臂" class="headerlink" title="机械臂"></a>机械臂</h2><p>  机械臂采用了4自由度的小型机械臂，控制舵机的型号是MG90S（控制力度太小，灵敏度太低，别问我为什么选择这个机械臂，想着下学期就要毕业了，提前到公司实习一下，结果这一实习，直接就要吃土了，省吃俭用，靠着蚂蚁花呗才买了一个这个机械臂，没办法呀，自己挖的坑，怎么也得跳进去呀，只能将就着用这个机械臂了。这里还要吐槽一下，组装机械臂花了半天也就算了，调试的时候花了n天，力度还小的不行，灵敏度也特差，小范围的值变动根本就不动作，只能将就着用了）</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131100n6zvhavp86xh9az6.png" alt="机械臂" title="机械臂"></p>
+<h1 id="调试过程"><a href="#调试过程" class="headerlink" title="调试过程"></a>调试过程</h1><p>  放上一些在软件调试过程中的一些图片</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131101q44oohlrrs0ukrkr.png" alt="调试过程" title="调试过程"></p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131101zybtat3z48e39mj9.png" alt="调试过程" title="调试过程"></p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131102b6zd93ddmze30qdr.png" alt="调试过程" title="调试过程"></p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131103m0f8djgjgobtd3f4.png" alt="调试过程" title="调试过程"></p>
+<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>演示视频以前是存在优酷的，但是现在貌似都访问不了了。</p>
+<ol>
+<li>手势控制端CC3220S组成及介绍</li>
+</ol>
+<p>说明：本来这个系统是应该直接待在手上的，但是由于体积有点大，带上之后不好操作，而且我也没有手套。所以我就直接拿着拿着演示了。<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE1ODM4MA==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE1ODM4MA==/v.swf</a></p>
+<ol start="2">
+<li>机械臂控制端LPC54608组成及介绍</li>
+</ol>
+<p>说明：这是LPC54608的控制演示，图中可以看到屏幕显示接收到的数据，只有成功接收后才会显示数据，数据不正确的话是不会读取的，会直接跑跑去不解析。<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE2Mzg5Mg==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE2Mzg5Mg==/v.swf</a></p>
+<ol start="3">
+<li>系统工作演示</li>
+</ol>
+<p>说明：这是系统工作时的演示视频。从视频中可以看出机械臂运动的不是很流畅，其实硬件原因占很大一部分，前面已经说过了，买的这个机械臂我也很后悔，但是没办法，这能将就着调试。这个械臂的最大的缺点就是灵敏度太差，所以会出现运动不流畅的现象，其次就是力度太小，稍微受电力就会出现不能运动的现象。当然，说了这么多，具体的原因还是在我自己。<a href="http://player.youku.com/player.php/sid/XMzM5NTE4ODY3Mg==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE4ODY3Mg==/v.swf</a></p>
+<ol start="3">
+<li>系统工作演示</li>
+</ol>
+<p>说明：这个视频看看就行<br><a href="http://player.youku.com/player.php/sid/XMzM5NTE3NjA0NA==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzM5NTE3NjA0NA==/v.swf</a></p>
+<h1 id="项目文档"><a href="#项目文档" class="headerlink" title="项目文档"></a>项目文档</h1><p>由于文件大小大于了规定大小，所以采用了百度云上传的文件</p>
+<p>链接：<a href="https://pan.baidu.com/s/1htn39sS" target="_blank" rel="noopener">https://pan.baidu.com/s/1htn39sS</a>     密码：7pl5</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -738,7 +522,7 @@ void main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/438600446.html">http://hehung.top/2019/438600446.html</a>
+                    <a href="http://hehung.top/2019/fbbdec93.html">http://hehung.top/2019/fbbdec93.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -776,16 +560,20 @@ void main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                    <span class="chip bg-color">单片机</span>
+                                <a href="/tags/LPC54608/">
+                                    <span class="chip bg-color">LPC54608</span>
                                 </a>
                             
-                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">C语言</span>
+                                <a href="/tags/CC3220S/">
+                                    <span class="chip bg-color">CC3220S</span>
                                 </a>
                             
-                                <a href="/tags/DS1302/">
-                                    <span class="chip bg-color">DS1302</span>
+                                <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/">
+                                    <span class="chip bg-color">机械臂</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                                    <span class="chip bg-color">串口</span>
                                 </a>
                             
                         </div>
@@ -1214,45 +1002,63 @@ void main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/2983120822.html">
+                <a href="/2019/fbbdec93.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg" class="responsive-img" alt="STM32使用之驱动流水灯">
+                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/14/131054nll1cbljcmaljmmq.png" class="responsive-img" alt="2017贸泽智造大赛-手势控制机械臂">
                         
-                        <span class="card-title">STM32使用之驱动流水灯</span>
+                        <span class="card-title">2017贸泽智造大赛-手势控制机械臂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用普中ARM+51单片机开发板进行STM32的开发测试，测试了流水灯以及stm32的使用方式。
+                            这是2017年的时候参加的网络上贸泽智创大赛时做的作品，以LPC54608与CC3220S作为主控，通过蓝牙通信，使用手套控制机械臂的移动。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
+                                    比赛
+                                </a>
+                            
+                            <a href="/categories/%E6%AF%94%E8%B5%9B/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
+                    <a href="/tags/LPC54608/">
+                        <span class="chip bg-color">LPC54608</span>
+                    </a>
+                    
+                    <a href="/tags/CC3220S/">
+                        <span class="chip bg-color">CC3220S</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/">
+                        <span class="chip bg-color">机械臂</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                        <span class="chip bg-color">串口</span>
                     </a>
                     
                 </div>
@@ -1266,30 +1072,30 @@ void main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/291745225.html">
+                <a href="/2019/60f07f02.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg" class="responsive-img" alt="51单片机驱动步进电机">
+                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" class="responsive-img" alt="涂鸦TYDE3.0开发板开箱与程序下载">
                         
-                        <span class="card-title">51单片机驱动步进电机</span>
+                        <span class="card-title">涂鸦TYDE3.0开发板开箱与程序下载</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            51单片机对步进电机的控制，步进电机的最大特点就是速度可控和步数精确，可以实现很慢的转速，对于精确转速和位置控制的设备可以使用。
+                            涂鸦TYDE3.0是一块物联网板卡，板载wifi模块以及三色RGB LED，采用stm32处理器，功能强大，适合用于做物联网板卡。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/%E6%B6%82%E9%B8%A6/" class="post-category">
+                                    涂鸦
                                 </a>
                             
                             
@@ -1299,16 +1105,16 @@ void main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/LPC54608/">
+                        <span class="chip bg-color">LPC54608</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
+                        <span class="chip bg-color">串口</span>
                     </a>
                     
-                    <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                        <span class="chip bg-color">步进电机</span>
+                    <a href="/tags/Keil/">
+                        <span class="chip bg-color">Keil</span>
                     </a>
                     
                 </div>
