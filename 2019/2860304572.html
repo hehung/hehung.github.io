@@ -4,13 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机驱动步进电机, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机数码管显示, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：点我跳转
+上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：点我跳转
 
-原理图  首先查看原理图。
-
-">
+效果展示  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，  由于使用手机自带的gif拍摄的图">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机驱动步进电机 | Hehung&#39;s Blog</title>
+    <title>51单片机数码管显示 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -249,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机驱动步进电机
+                        51单片机数码管显示
                     </div>
                 </div>
             </div>
@@ -375,8 +373,8 @@
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                                <span class="chip bg-color">步进电机</span>
+                            <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                <span class="chip bg-color">数码管</span>
                             </a>
                         
                     </div>
@@ -414,14 +412,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    799
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 				
@@ -438,159 +436,114 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100298-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：<a href="https://bbs.icxbk.com/thread-100110-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/Stepper_motor_Schematic.png" alt="原理图" title="原理图"></p>
-<p>  从上面的原理图中可以看出，该步进电机是四线双极性步进电机，需要四根线控制。</p>
-<p>  在开发板上的接线图如下所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/connect_to_micro_controller.jpg" alt="线路连接" title="线路连接"></p>
-<h1 id="步进电机控制方式"><a href="#步进电机控制方式" class="headerlink" title="步进电机控制方式"></a>步进电机控制方式</h1><p>  这种步进电机可以正反转运动，同时还有三种控制方式：</p>
-<p>1.单相四拍通电驱动时序<br>正转： A- B  A  B-<br>反转： B-  A  B  A-</p>
-<p>2.双相通电四拍驱动时序<br>正转：A-B   AB   AB-  A-B-<br>反转：A-B-  AB-  AB   A-B</p>
-<p>3.半步八拍驱动时序<br>反转：A-  A-B  B  AB  A  AB-  B-  A-B-<br>正转：A-B-  B-  AB-  A  AB  B  A-B  A-</p>
-<p>  上面的控制原理中，A，A_，B，B_分别表示4根控制线。</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  下面是主要代码。</p>
-<h2 id="单相四拍控制方式"><a href="#单相四拍控制方式" class="headerlink" title="单相四拍控制方式"></a>单相四拍控制方式</h2><p>是单相四拍方式,反转（逆时针），如果想正转，安装上方的工作顺序自行切换就可以了。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include "reg52.h"                        
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，<br>  由于使用手机自带的gif拍摄的图片，只能拍摄很短的gif图片，所以就多放了几张。<br>  我是向左滚动的滚动的时间大约500ms左右，随便写的，并不准确，会循环连续的滚动，图中不太容易看出效果。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/2.gif" alt="运行效果" title="运行效果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/3.gif" alt="运行效果" title="运行效果"></p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  在单片机开发中，能看懂原理图是非常重要的，因为单片机的开发一般都是对外设的驱动，知道电路如何连接，才能很好的控制。</p>
+<p>  首先打开原理图，可以看到原理图中所有的数码管都是接在J16上的，而J16又是通过译码器连接到J6，单片机上的A,B,C引脚。所以通过A,B,C可以控制数码管得位选。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/4.png" alt="原理图" title="原理图"></p>
+<p>  同时，原理图还说明了数码管是共阴的，也就是阴极都是连在一起的，如果要控制数码管亮的话，就需要在阳极给高电位，也就是给1。</p>
+<p>  这里说一下我的数码管的链接引脚：<br>A ===  P1.0<br>B ===  P1.1<br>C ===  P1.2<br>然后就是J12口是控制段选的，J12通过P0口控制。</p>
+<h1 id="数码管控制原理"><a href="#数码管控制原理" class="headerlink" title="数码管控制原理"></a>数码管控制原理</h1><h2 id="位选和段选"><a href="#位选和段选" class="headerlink" title="位选和段选"></a>位选和段选</h2><p>  因为单片机的控制引脚有限，一个数码管在操作的时候会使用8个IO口进行控制，为了减少IO口的开销，在电路设计上就是用了段选和位选来用相同的IO口数对多个数码管进行操作。</p>
+<p>  对多个数码管操作的时候有段选和位选：位选就是选择某一个数码管，对其进行操作；段选就是选择数码管的某一段操作，一般数码管有7段，如果数码管有小数点的话就会有8段，就可以通过8个IO口对数码管的每一段的亮灭进行控制。</p>
+<h2 id="位选控制"><a href="#位选控制" class="headerlink" title="位选控制"></a>位选控制</h2><p>  位选是如何工作的呢？这里有8个数码管，但是只有三个控制引脚，因为有译码器，所以给这三个引脚不同的值就会控制打开不同的数码管，比如：</p>
+<ul>
+<li>A=0，B=0，C=0就是控制第1个数码管</li>
+<li>A=0，B=0，C=1就是控制第2个数码管</li>
+<li>…</li>
+</ul>
+<h2 id="段选控制"><a href="#段选控制" class="headerlink" title="段选控制"></a>段选控制</h2><p>  段选使用8个IO口进行控制。如原理图中所示的J12，因为数码管是共阴的，所以控制IO输出为1就会使相应的一段变亮。</p>
+<p>  原理图中对数码管的的每一段都有标注a,b,c,d,e,f,g,dp。如果将J12连接到P0，也就是P0.7控制a，P0.6控制b … P0.0控制dp。</p>
+<p>  所以，如果要控制数码管显示数字，应该给IO口P0赋值下列数字：</p>
+<ul>
+<li>0 – 0x3f </li>
+<li>1 – 0x06 </li>
+<li>2 – 0x5b</li>
+<li>3 – 0x4f</li>
+<li>4 – 0x66</li>
+<li>5 – 0x6d</li>
+<li>6 – 0x7d</li>
+<li>7 – 0x07</li>
+<li>8 – 0x7f</li>
+<li>9 – 0x6f</li>
+<li>A – 0x77</li>
+<li>B – 0x7c</li>
+<li>C – 0x39</li>
+<li>D – 0x5e</li>
+<li>E – 0x79</li>
+<li>F – 0x71 </li>
+</ul>
+<h1 id="程序编辑"><a href="#程序编辑" class="headerlink" title="程序编辑"></a>程序编辑</h1><p>  知道了原理图的连接和控制原理，现在就可以对数码管的显示进行程序程序的编写了。</p>
+<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
 
+#define uchar unsigned char
+#define uint unsigned int
+#define SMG P0                //定义数码管的段选端口
 
-#define uchar unsigned char 
-#define uint  unsigned int
+//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
+sbit LA=P1^0;                
+sbit LB=P1^1;
+sbit LC=P1^2;
 
-sbit SA = P1^0;
-sbit SA_ = P1^1;
-sbit SB = P1^2;
-sbit SB_ = P1^3;         
+//下面的数组可以显示0-F
+uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
+                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
 
-#define time 2000 
+//函数声明
+void delay(int ms);
+void change(int what);
 
-void step_Motor(void);
-void delay(uint ms);
-void step_Motor2(void);
-void step_Motor3(void);
+//延时函数(短延时)
+void delay(int ms)
+{
+        for(;ms>0;ms--);
+}
 
-void main()
-{        
-
-        while(1)
-        {        
-                step_Motor();                
+//该函数可以选择某一个数码管显示
+void change(int what)
+{
+        switch(what)
+        {
+                case 1:LC=0;LB=0;LA=0;break;
+                case 2:LC=0;LB=0;LA=1;break;
+                case 3:LC=0;LB=1;LA=0;break;
+                case 4:LC=0;LB=1;LA=1;break;
+                case 5:LC=1;LB=0;LA=0;break;
+                case 6:LC=1;LB=0;LA=1;break;
+                case 7:LC=1;LB=1;LA=0;break;
+                case 8:LC=1;LB=1;LA=1;break;                
         }
 }
 
-void step_Motor(void)
+int main()
 {
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
+        uchar i;
+        uchar j=0;
+        uint time=50;
 
-        SA = 1;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
+        while(1)
+        {
+                for(;time>0;time--)
+                {
+                        for(i=1;i<=8;i++)
+                        {
+                                change(i);
+                                SMG = number[(j+i)%16];                //使之可以滚动显示的处理        
+                                delay(100);
+                                SMG = 0;
+                                delay(50);         //消除暗影
+                        }                
+                }
+                time = 50;
+                j++;
+                if(j>17)
+                        j = 0;
+        }
 
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="双相通电四拍驱动时序"><a href="#双相通电四拍驱动时序" class="headerlink" title="双相通电四拍驱动时序"></a>双相通电四拍驱动时序</h2><p>  如下，只提供主要操作代码</p>
-<pre class="line-numbers language-C"><code class="language-C">void step_Motor2(void)
-{
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 0;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="半步八拍（正转，顺时针）"><a href="#半步八拍（正转，顺时针）" class="headerlink" title="半步八拍（正转，顺时针）"></a>半步八拍（正转，顺时针）</h2><p>  如下，只提供主要操作代码</p>
-<pre class="line-numbers language-C"><code class="language-C">void step_Motor3(void)
-{
-        SA = 1;
-        SA_ = 0;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 0;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-
-        SA = 0;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 1;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 0;
-        SB = 0;
-        SB_ = 1;
-        delay(time);
-
-        SA = 1;
-        SA_ = 10;
-        SB = 1;
-        SB_ = 1;
-        delay(time);
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><font color="red">值得注意的是，如果你的步进电机的相序出错的话就会造成左右都懂，这样就要检查一下你的相序是不是对的</font>。</li>
-<li>温馨提示：步进电机运行久了会很烫，不要用手直接触碰</li>
-<li>对步进电机的调速，可以通过每步之间的延时来达到，延时越长，运动越慢。</li>
-</ul>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  示效果的时间到了。从动图中可以看到转的很慢，但是实际上转的比这个快一些，主要是动图丢帧比较严重.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display.gif" alt="运行结果" title="运行结果"></p>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上述程序就是实现了对8个数码管显示0-F的滚动显示程序。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -634,7 +587,7 @@ void step_Motor(void)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-qu-dong-bu-jin-dian-ji/">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-qu-dong-bu-jin-dian-ji/</a>
+                    <a href="http://hehung.top/2019/2860304572.html">http://hehung.top/2019/2860304572.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -680,8 +633,8 @@ void step_Motor(void)
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                                    <span class="chip bg-color">步进电机</span>
+                                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                    <span class="chip bg-color">数码管</span>
                                 </a>
                             
                         </div>
@@ -1114,18 +1067,18 @@ void step_Motor(void)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-qu-dong-ds1302-shi-shi-shi-zhong-xin-pian/">
+                <a href="/2019/2510233541.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg" class="responsive-img" alt="51单片机DS18B20获取温度">
                         
-                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
+                        <span class="card-title">51单片机DS18B20获取温度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
+                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
                         
                     </div>
                     <div class="publish-info">
@@ -1155,8 +1108,8 @@ void step_Motor(void)
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/DS1302/">
-                        <span class="chip bg-color">DS1302</span>
+                    <a href="/tags/DS18B20/">
+                        <span class="chip bg-color">DS18B20</span>
                     </a>
                     
                 </div>
@@ -1170,18 +1123,18 @@ void step_Motor(void)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-pwm-qu-dong-led/">
+                <a href="/2019/3594958177.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" class="responsive-img" alt="51单片机PWM驱动LED">
+                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
                         
-                        <span class="card-title">51单片机PWM驱动LED</span>
+                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机的定时器模拟PWM功能，实现LED的不同亮度的控制。
+                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
                         
                     </div>
                     <div class="publish-info">
@@ -1211,8 +1164,8 @@ void step_Motor(void)
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/PWM/">
-                        <span class="chip bg-color">PWM</span>
+                    <a href="/tags/Keil/">
+                        <span class="chip bg-color">Keil</span>
                     </a>
                     
                 </div>

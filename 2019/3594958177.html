@@ -4,13 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机DS18B20获取温度, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机开发环境搭建+流水灯, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：点我跳转
+以前在论坛上获取了一块51单片机的板子，集成了ARM+51单片机两种芯片，包括很多的外设和资料。在使用过程中写了部分教程，如果要看原贴：点我跳转
 
-原理图  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。
-
-  下面是数码管的原">
+创建51单片机工程  编译器选用的是keil 5，keil5相对于keil4更加的好用，同">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机DS18B20获取温度 | Hehung&#39;s Blog</title>
+    <title>51单片机开发环境搭建+流水灯 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -249,13 +247,13 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机DS18B20获取温度
+                        51单片机开发环境搭建+流水灯
                     </div>
                 </div>
             </div>
@@ -375,8 +373,8 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
                                 <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/DS18B20/">
-                                <span class="chip bg-color">DS18B20</span>
+                            <a href="/tags/Keil/">
+                                <span class="chip bg-color">Keil</span>
                             </a>
                         
                     </div>
@@ -414,14 +412,14 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    933
+                    910
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 				
@@ -438,171 +436,64 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时序图也比较简单，最初发帖是在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100156-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>以前在论坛上获取了一块51单片机的板子，集成了ARM+51单片机两种芯片，包括很多的外设和资料。在使用过程中写了部分教程，如果要看原贴：<a href="https://bbs.icxbk.com/thread-100061-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图，从下面的图中可以看出DS18B20是连接在P3.7引脚上面的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20.png" alt="DS18B20接线图" title="DS18B20接线图"></p>
-<p>  下面是数码管的原理图，因为温度数据要通过数码管显示出来。数码管的教程在前面已经写过了，在这里不再做介绍：<a href="http://hehung.top/archives/9ea6.html">点我查看数码管操作</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Tube.png" alt="数码管原理图" title="数码管原理图"></p>
-<p>  从上面的原理图中可以看到，DS18B20的引脚是P3.7<br>  数码管接法：</p>
-<ul>
-<li>J12 —  P0</li>
-<li>A — P1.0</li>
-<li>B — P1.1 </li>
-<li>C — P1.2</li>
-</ul>
-<p>  其中A,B,C是数码管的位选端口，在上一篇帖子里我已经说明了</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  知道了原理图，接下来就是写程序了。<br>  本来像这种函数比较多的程序一般都是要写在不同的文件里面的，使用模块化编程的。但是我为了简单，就写在了一个文件里。<br>  我觉得代码还是写的比较规范的，注释也清楚，有需要的小伙伴直接拿去改下端口就可以用。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
+<h1 id="创建51单片机工程"><a href="#创建51单片机工程" class="headerlink" title="创建51单片机工程"></a>创建51单片机工程</h1><p>  编译器选用的是keil 5，keil5相对于keil4更加的好用，同时支持stm32编程，但是keil5原始的下载安装包中是不带有51单片机的pack包的，所以需要自己在官网上下载一个C51的pack包，安装之后就可以正常给51单片机编程了。<br>下面开始讲解工程创建。</p>
+<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>  如下图所示，选择Project =&gt; New jVision Project…</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/create_project1.png" alt="新建项目" title="新建项目"></p>
+<h2 id="输入工程名字"><a href="#输入工程名字" class="headerlink" title="输入工程名字"></a>输入工程名字</h2><p>  选择一个路径保存你新建的工程，然后输入工程的名字，如下图所示：</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%B7%A5%E7%A8%8B%E5%88%9B%E5%BB%BA2.png" alt="选择项目路径与名字" title="选择项目路径与名字"></p>
+<h2 id="单片机型号选择"><a href="#单片机型号选择" class="headerlink" title="单片机型号选择"></a>单片机型号选择</h2><p>  选择单片机的型号，如下图，选择AT89C52，如果用的是STC89系列的51单片机，也需要选择这个，因为编译器里面没有STC89C51的选项，并且这里的操作方式和使用MDK4的时候是不一样的。</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E9%80%89%E6%8B%A9%E5%8D%95%E7%89%87%E6%9C%BA%E5%9E%8B%E5%8F%B7.png" alt="选择单片机型号" title="选择单片机型号"></p>
+<h2 id="新建一个空白文件"><a href="#新建一个空白文件" class="headerlink" title="新建一个空白文件"></a>新建一个空白文件</h2><p>  点击下图所示的图标，新建一个空白编辑界面，这个就是要用到的.c文件。</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6.png" alt="新建一个空白文件" title="新建一个空白文件"></p>
+<h2 id="另存为-c文件"><a href="#另存为-c文件" class="headerlink" title="另存为.c文件"></a>另存为.c文件</h2><p>  点击另存为，给新建的空杯文件输入一个名字，注意：名字后面的.c不要漏写。等会写的代码就会存放在这个文件里面，一般与工程保存在同一个文件目录下。</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E7%BB%99%E6%96%87%E4%BB%B6%E6%94%B9%E5%90%8D.png" alt="另存为空白文件" title="另存为空白文件"></p>
+<h2 id="将-c文件加入工程"><a href="#将-c文件加入工程" class="headerlink" title="将.c文件加入工程"></a>将.c文件加入工程</h2><p>  新建的空白文件还没有加入到工程中，所以需要将该文件加入到工程中，如下图所示，双击Source Group，在弹出的选择框中选择新建的.c文件</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%B0%86%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E7%A8%8B.png" alt="将新建文件加入工程" title="将新建文件加入工程"></p>
+<h1 id="代码编辑与下载"><a href="#代码编辑与下载" class="headerlink" title="代码编辑与下载"></a>代码编辑与下载</h1><h2 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h2><p>  文件加入工程之后就是编写代码了。</p>
+<p>  因为给单片机编程是要根据你的单片机电路的实际布局来编写的，因为我的单片机的8路LED都是接在P0口上的，所以在程序中用P0来控制LED的亮灭。</p>
+<pre class="line-numbers language-C"><code class="language-C">#include <reg52.h>
 
 #define uchar unsigned char
 #define uint unsigned int
-#define SMG P0                //定义数码管的段选端口
 
-//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
-sbit LA=P1^0;                
-sbit LB=P1^1;
-sbit LC=P1^2;
-
-sbit dq=P3^7;        //DS18B20的引脚
-
-//下面的数组可以显示0-F
-uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
-
-//函数声明
-void delay(int ms);                                                //延时函数
-void change(int what);                                        //位选函数
-void ds18b20_init();                                        //DS18B20初始化函数
-void ds18b20_write_data(uchar dat);                //DS18B20写命令函数
-uchar ds18b20_read_data();                                //DS18B20读数据函数
-void ds18b20_read_temp(int *temp,int *xiao);        //DS18B20读温度函数
-void display(int temp, int xiao);                //数码管显示函数
-
-//主函数
-void main()
+//写一个延时函数
+void delay(uint ms)
 {
-        int temp,xiao;                //定义温度的整数和小数变量
-        ds18b20_init();                //初始化
+    uchar i;
+    for(;ms>0;ms--)
+        for(i=110;i>0;i--);
+}
 
-        while(1)
+int main()
+{
+    uchar kk = 0x01;
+
+    P0 = kk;        
+    while(1)
+    {
+        kk <<= 1;        //左移，如果右移可以改为kk >>= 1;
+        if(kk == 0)
         {
-                ds18b20_read_temp(&temp, &xiao);
-                display(temp, xiao);
+            kk = 0x01;
         }
-}
 
-//延时函数(短延时)
-void delay(int ms)
-{
-        while(ms--);
-}
-
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
-
-//初始化函数
-void ds18b20_init()
-{
-            dq=1;
-         delay(5);
-         dq=0;
-         delay(400);
-         dq=1;
-         delay(300);
-}
-void ds18b20_write_data(uchar dat)
-{
-     uchar i;
-         for(i=0;i<8;i++)
-         {
-             dq=0;
-                 dq=dat&0x01;
-                 delay(2);
-                 dq=1;
-                 dat>>=1;
-         } 
-         delay(4);    
-}
-uchar ds18b20_read_data()
-{
-          uchar i,v;
-          for(i=0;i<8;i++)
-          {
-              dq=0;
-                  v>>=1;
-                  dq=1;
-                  if(dq)
-                     v|=0x80;
-                  delay(4);
-          }
-          return v;
-}
-void ds18b20_read_temp(int *temp,int *xiao)
-{          
-         uchar a,b;
-     ds18b20_init();
-         ds18b20_write_data(0xcc);
-         ds18b20_write_data(0x44);
-         delay(200);
-
-         ds18b20_init();
-         ds18b20_write_data(0xcc);
-         ds18b20_write_data(0xbe);                //读温度
-         a=ds18b20_read_data();          //读出温度低位
-         b=ds18b20_read_data();           //读出温度高位
-         b<<=4;
-         b+=(a&0xf0)>>4;
-         *temp=b;                                //温度整数部分
-         *xiao=a&0x0f;                        
-         *xiao=*xiao/1.6;                //温度小数部分
-}
-
-void display(int temp, int xiao)
-{
-        change(1);
-        SMG=number[temp/10];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(2);
-        SMG=number[temp%10];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(3);
-        SMG=~0x7f;
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-
-        change(4);
-        SMG=number[xiao];
-        delay(100);
-        SMG = 0;
-        delay(30);         //消除暗影
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，首先要知道DS18B20长得什么样的，在单片机的位置，如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20_in_board.png" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
-<p>  可以想办法给DS18B20加热，温度数值就会增加。<br>  如下图，我是用手给它捏住，它的温度就会上升。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic1.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/Display_dynamic2.gif" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
+        P0 = kk;
+        delay(1000);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  程序编写完成之后就是编译了，顺利编译通过就表示没有语法错误了，现在开始下一步，生成hex文件。</p>
+<h2 id="hex文件生成"><a href="#hex文件生成" class="headerlink" title="hex文件生成"></a>hex文件生成</h2><p>  如下图所示。选择该图标，在弹出的对话框中选择Output，将创建HEX文件的对话框前面打上对勾，这样再次编译工程之后就可以在指定目录下生成一个.hex文件。这是一种16进制的文件，直接下载到单片机中运行即可。</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90hex%E6%96%87%E4%BB%B6.png" alt="选择生成hex文件" title="选择生成hex文件"></p>
+<h2 id="下载软件到单片机"><a href="#下载软件到单片机" class="headerlink" title="下载软件到单片机"></a>下载软件到单片机</h2><p>  打开stc-isp-15xx-v6.86F.exe软件，选择相应的单片机型号，我这里得单片机是89C516，这块单片机我以前都没见过，试了很多种型号的都下载不了，最后在89c58里面才找到这个型号。</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6.png" alt="使用工具下载软件" title="使用工具下载软件"></p>
+<p>如果使用同样型号的单片机的小伙伴可以看下图：</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E5%8D%95%E7%89%87%E6%9C%BA%E5%9E%8B%E5%8F%B7%E9%80%89%E6%8B%A9.png" alt="单片机型号选择" title="单片机型号选择"></p>
+<h1 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h1><p>  将程序下载到单片机之后就可以查看运行效果了，如下图所示：</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.gif" alt="运行效果" title="运行效果"></p>
+<p>  附上我的接线图</p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%8F%92%E7%BA%BF%E8%BF%9E%E6%8E%A5.jpg" alt="插线连接" title="插线连接"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -646,7 +537,7 @@ void display(int temp, int xiao)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-ds18b20-wen-du-huo-qu/">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-ds18b20-wen-du-huo-qu/</a>
+                    <a href="http://hehung.top/2019/3594958177.html">http://hehung.top/2019/3594958177.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,8 +583,8 @@ void display(int temp, int xiao)
                                     <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/DS18B20/">
-                                    <span class="chip bg-color">DS18B20</span>
+                                <a href="/tags/Keil/">
+                                    <span class="chip bg-color">Keil</span>
                                 </a>
                             
                         </div>
@@ -1126,18 +1017,18 @@ void display(int temp, int xiao)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-qu-dong-lcd1602/">
+                <a href="/2019/2860304572.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display3.jpg" class="responsive-img" alt="51单片机驱动LCD1602">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg" class="responsive-img" alt="51单片机数码管显示">
                         
-                        <span class="card-title">51单片机驱动LCD1602</span>
+                        <span class="card-title">51单片机数码管显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
+                            使用51单片机完成的一个控制数码管显示的程序，数码管会从右向左滚动显示1-F这些数字和字母。
                         
                     </div>
                     <div class="publish-info">
@@ -1167,8 +1058,8 @@ void display(int temp, int xiao)
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/LCD1602/">
-                        <span class="chip bg-color">LCD1602</span>
+                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                        <span class="chip bg-color">数码管</span>
                     </a>
                     
                 </div>
@@ -1182,30 +1073,31 @@ void display(int temp, int xiao)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi/">
+                <a href="/2019/1375502063.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg" class="responsive-img" alt="51单片机数码管显示">
                         
-                        <span class="card-title">51单片机数码管显示</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python获取5天的天气">
+                        
+                        <span class="card-title">python获取5天的天气</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成的一个控制数码管显示的程序，数码管会从右向左滚动显示1-F这些数字和字母。
+                            利用python获取天气，使用requests模块获取天气json文件，解析json文件提取5天的天气信息以及穿衣指数。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                    51单片机
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -1215,16 +1107,16 @@ void display(int temp, int xiao)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/requests/">
+                        <span class="chip bg-color">requests</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                        <span class="chip bg-color">数码管</span>
+                    <a href="/tags/json/">
+                        <span class="chip bg-color">json</span>
                     </a>
                     
                 </div>

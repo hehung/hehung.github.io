@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LPCXpreso54608开箱运行与keil下的例程烧写, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="lpc11U68利用RTC实现闹钟小应用, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。最开是的帖子是发布在爱板网的。点我跳转到爱板网查看原帖
-
-前">
+该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：点我跳转到NXP社区查看lpc11U68的RTC如">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LPCXpreso54608开箱运行与keil下的例程烧写 | Hehung&#39;s Blog</title>
+    <title>lpc11U68利用RTC实现闹钟小应用 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,13 +245,13 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LPCXpreso54608开箱运行与keil下的例程烧写
+                        lpc11U68利用RTC实现闹钟小应用
                     </div>
                 </div>
             </div>
@@ -365,16 +363,16 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LPC54608/">
-                                <span class="chip bg-color">LPC54608</span>
+                            <a href="/tags/OLED/">
+                                <span class="chip bg-color">OLED</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                <span class="chip bg-color">串口</span>
+                            <a href="/tags/LPC11U68/">
+                                <span class="chip bg-color">LPC11U68</span>
                             </a>
                         
-                            <a href="/tags/Keil/">
-                                <span class="chip bg-color">Keil</span>
+                            <a href="/tags/RTC/">
+                                <span class="chip bg-color">RTC</span>
                             </a>
                         
                     </div>
@@ -398,28 +396,28 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-11-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-11-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    146
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 				
@@ -436,53 +434,8 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。<br>最开是的帖子是发布在爱板网的。<a href="http://www.cirmall.com/bbs/thread-98217-1-1.html" target="_blank" rel="noopener">点我跳转到爱板网查看原帖</a></p>
+<p>该文实现了时间的设置和显示，包括年月日，时分秒等，以及闹钟功能的实现，闹钟时间设置，蜂鸣器操作，OLED显示的等。<br>帖子以前是发送在NXP社区的。我也不想一篇一篇的移植了，就直接附上链接吧：<br><a href="http://www.nxpic.org/module/forum/thread-615806-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看lpc11U68的RTC如何使用</a></p>
 </blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  恩智浦的LPCXpresso54608开发板，外观看起来非常好看，搭载一块4.3寸的液晶屏。</p>
-<p>  通过了解，LPPCXpresso54608新一代基于ARM Cortex-M4的LPC546x系列高性能微控制器。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png" alt="板卡说明" title="板卡说明"></p>
-<p>  插上电源线，可以看到板载的例程，例程可玩性还是很高的，可以体验到一些此开发板的性能。在例程中，我们可以看到，在使用了华丽的界面的情况之下，CPU的占用率依然很低，由此可见你这块开发板的性能。</p>
-<h1 id="资料收集"><a href="#资料收集" class="headerlink" title="资料收集"></a>资料收集</h1><p>  现在玩过了开发板的板载程序之后，就是着手的实际操作了。但是第一次用NXP的开发板，还是不知道该从哪个地方着手。</p>
-<p>  先去官网逛一圈，登上恩智浦的官方网站：<a href="http://www.nxp.com" target="_blank" rel="noopener">http://www.nxp.com</a><br>  然后搜索LPCXpresso54608就可以找到这块开发板的资料,链接如下：<a href="https://www.nxp.com/cn/support/developer-resources/hardware-development-tools/lpcxpresso-boards/lpcxpresso-development-board-for-lpc5460x-mcus:OM13092?lang=cn" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104243d75vqszjjbp52x91.png" alt="官网界面" title="官网界面"></p>
-<p>  在软件和工具中可以找到该开发板的各种软件工具。</p>
-<p>  官网中还有快速入门视频教程，有三个视频，但是一般加载不了，只能加载一点，估计是网站在国外的原因，使用vpn应该可以，但是视频也是英文的，对于我这种英文渣来说，一句都听不懂。</p>
-<h1 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h1><p>  后面提供了工具的下载链接。<a href="https://www.nxp.com/cn/support/developer-resources/hardware-development-tools/lpcxpresso-boards/lpcxpresso-development-board-for-lpc5460x-mcus:OM13092?tab=Design_Tools_Tab" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
-<p>  下面就是需要的开发工具</p>
-<p>  1、开发IDE有三种：官方的MCUXpresso，IAR， keil<br>由于以前没有使用过MCUXpresso，使用过IAR（飞思卡尔k60）和keil（52单片机和STM32），其中对keil使用比较熟悉，所以我就选择了keil<br>  2、SDK：SDK_2.3.0_LPCXpresso54608这个肯定是不可或缺的，其中包含很多例程。<br>  3、MCUXpresso Config Tools：引脚配置工具。<br>  4、使用第三方的开发软件还要用到LPCSCRYPT，下载下来直接安装就可。</p>
-<h1 id="Keil开发环境搭建"><a href="#Keil开发环境搭建" class="headerlink" title="Keil开发环境搭建"></a>Keil开发环境搭建</h1><h2 id="SDK下载"><a href="#SDK下载" class="headerlink" title="SDK下载"></a>SDK下载</h2><p>  keil软件在这里就不过多的介绍了，不会用的自行百度或者使用其他的开发工具（IAR或者MCUXpress）</p>
-<p>  PS：在这里不得不多说一句，一定要使用keil uVision5，低版本的不支持嵌入式的开发板。</p>
-<p>  将下载的SDK解压大一个目录中，方便使用。我是解压到了D:\nxp\SDK_2.3.0_LPCXpresso54608</p>
-<h2 id="keil依赖包安装"><a href="#keil依赖包安装" class="headerlink" title="keil依赖包安装"></a>keil依赖包安装</h2><p>（1）、点击pack installer，一般在中间位置</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104243rhg38eacht22e2aq.png" alt="依赖包安装" title="依赖包安装"></p>
-<p>（2）、在Devices下的搜索框中输入lpc，可以快速搜索到</p>
-<p>（3）选择LPC54000 Series</p>
-<p>（4）在Packs可以看到有Keil：：LPC54000_DFP,就就是安装这个包，点击右面的Install就行安装，慢慢等待，一般国内的网都比较慢。可能还会出现无法连接的情况，多试几次，我就是试了好几次才成功安装的。</p>
-<p>（5）安装好了之后图标就会变成绿色，如下图所示：</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104244yi4s8cy0dszjtdzt.png" alt="安装完成" title="安装完成"></p>
-<h2 id="例程运行"><a href="#例程运行" class="headerlink" title="例程运行"></a>例程运行</h2><p>  上面安装好了以来软件包了之后，就可以进行开发了。是不是有点小激动。打开keil，点击File–&gt;Open,或者直接ctrl+O打开一个文件<br>D:\nxp\SDK_2.3.0_LPCXpresso54608\boards\lpcxpresso54608\demo_apps\hello_world\mdk<br>  我选择的是hello_world，一般都是从  “你好，世界” 开始的，嘿嘿。</p>
-<p>  <font color="red">注意：这是一个串口程序，需要提前准备一个串口软件。也可以选择其他例程。</font></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104245qbebgcoe6o9sbobr.png" alt="SDK程序的选择" title="SDK程序的选择"></p>
-<p>  一定要选择后缀名为<em>.uvproj,</em>.uvprojx 或者 *，不然的话什么都看不见，然后选择hello_world.uvprojx打开。</p>
-<p>  点击Build和rebuild进行编译链接</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104245qyuzuad36q9z36yq.png" alt="编译和链接程序" title="编译和链接程序"></p>
-<h2 id="下载设置"><a href="#下载设置" class="headerlink" title="下载设置"></a>下载设置</h2><p>  打开Options for Target….，然后选择Debug，如图所示：</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104246wbxqiehqgllb4qlg.png" alt="下载方式设置" title="下载方式设置"></p>
-<p>  点击Settings，发现CMSIS-DAP下什么都没有。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104246pbwbk1kkjjawwzax.png" alt="没有下载器" title="没有下载器"></p>
-<p>  可以查看官方的文档，是因为要将跳线帽去掉才可以进行选择，将如图所示的跳线帽去掉。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104725z1nir1ddoxyxduf1.jpg" alt="官方文档找解决方案" title="官方文档找解决方案"></p>
-<p>  跳线帽设置</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104247e9ldo7xiry37rz1n.png" alt="跳线帽设置" title="跳线帽设置"></p>
-<p>  现在关闭Settings窗口在重新打开，会出现LPC-LINK2 CMSIS-DAP，现在就可以正常下载程序了。</p>
-<p>  <font color="red">注意:USB线要插在Debug Link引脚，就是只有一个USB口的那个口。</font></p>
-<p>  点击LOAD按钮进行程序的下载.</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104248bs4xi3ihecfqnzk2.png" alt="下载程序" title="下载程序"></p>
-<p>  现在你会发现除了屏幕是白色的意外还是没有什么变化，还需要点一下开发板上的复位按钮，Target Reset按钮，即SW1按钮。然后打开一个串口调试助手。</p>
-<p>  打开串口，然后发送一个字符串，开发板也会返回一个字符串</p>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  按照上面的方式完成相应的操作之后就可以开始正常的开发自己的程序了。</p>
-<p>  下面是下载的例程的运行结果：</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104249g7j6bbn6k7o6qru6.png" alt="运行结果" title="运行结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -526,7 +479,7 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-29-lpcxpreso54608-kai-xiang-yun-xing-yu-keil-xia-de-li-cheng-shao-xie/">http://hehung.top/2019/2019-11-29-lpcxpreso54608-kai-xiang-yun-xing-yu-keil-xia-de-li-cheng-shao-xie/</a>
+                    <a href="http://hehung.top/2019/2599452483.html">http://hehung.top/2019/2599452483.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -564,16 +517,16 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LPC54608/">
-                                    <span class="chip bg-color">LPC54608</span>
+                                <a href="/tags/OLED/">
+                                    <span class="chip bg-color">OLED</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                    <span class="chip bg-color">串口</span>
+                                <a href="/tags/LPC11U68/">
+                                    <span class="chip bg-color">LPC11U68</span>
                                 </a>
                             
-                                <a href="/tags/Keil/">
-                                    <span class="chip bg-color">Keil</span>
+                                <a href="/tags/RTC/">
+                                    <span class="chip bg-color">RTC</span>
                                 </a>
                             
                         </div>
@@ -1006,63 +959,7 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-29-tu-ya-tyde3.0-kai-fa-ban-kai-xiang-yu-cheng-xu-xia-zai/">
-                    <div class="card-image">
-                        
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" class="responsive-img" alt="涂鸦TYDE3.0开发板开箱与程序下载">
-                        
-                        <span class="card-title">涂鸦TYDE3.0开发板开箱与程序下载</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            涂鸦TYDE3.0是一块物联网板卡，板载wifi模块以及三色RGB LED，采用stm32处理器，功能强大，适合用于做物联网板卡。
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B6%82%E9%B8%A6/" class="post-category">
-                                    涂鸦
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
-                    </a>
-                    
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/2019-11-28-lpc-shuang-he-tiao-zhan-sai-zhi-can-ting-fu-wu-ji-qi-ren/">
+                <a href="/2019/1160223452.html">
                     <div class="card-image">
                         
                         <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" class="responsive-img" alt="LPC双核挑战赛之餐厅服务机器人">
@@ -1077,9 +974,9 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1113,6 +1010,58 @@ LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设�
                     
                     <a href="/tags/ESP8266/">
                         <span class="chip bg-color">ESP8266</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/2013186940.html">
+                    <div class="card-image">
+                        
+                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/09/140430zsbzlgbxxrf4lp7z.png" class="responsive-img" alt="lpc11U68 RTC时钟芯片的使用">
+                        
+                        <span class="card-title">lpc11U68 RTC时钟芯片的使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                    LPC系列
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/LPC11U68/">
+                        <span class="chip bg-color">LPC11U68</span>
+                    </a>
+                    
+                    <a href="/tags/RTC/">
+                        <span class="chip bg-color">RTC</span>
                     </a>
                     
                 </div>

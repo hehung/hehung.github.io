@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机数码管显示, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="python获取5天的天气, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：点我跳转
+以前在学习python的时候用python做了一个可以获取5天天气的一个程序，分享在了CSDN的博客上，现在转载到我的个人博客，原链接请点击：点我跳转
 
-效果展示  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，  由于使用手机自带的gif拍摄的图">
+获取天气网址介绍今天学了学python的json操作，然后就想弄个获取天气的程序试试">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机数码管显示 | Hehung&#39;s Blog</title>
+    <title>python获取5天的天气 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,13 +247,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机数码管显示
+                        python获取5天的天气
                     </div>
                 </div>
             </div>
@@ -365,16 +365,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                <span class="chip bg-color">单片机</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">C语言</span>
+                            <a href="/tags/requests/">
+                                <span class="chip bg-color">requests</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                                <span class="chip bg-color">数码管</span>
+                            <a href="/tags/json/">
+                                <span class="chip bg-color">json</span>
                             </a>
                         
                     </div>
@@ -385,8 +385,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                51单片机
+                            <a href="/categories/python/" class="post-category">
+                                python
                             </a>
                         
                     </div>
@@ -398,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-11-20
                 </div>
                 
 
@@ -412,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.1k
                 </div>
                 
 
@@ -436,114 +436,92 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：<a href="https://bbs.icxbk.com/thread-100110-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
+<p>以前在学习python的时候用python做了一个可以获取5天天气的一个程序，分享在了CSDN的博客上，现在转载到我的个人博客，原链接请点击：<a href="https://blog.csdn.net/hehung/article/details/78229098" target="_blank" rel="noopener" title="点我跳转">点我跳转</a></p>
 </blockquote>
-<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p>  程序实现了动态数码管的显示，滚动显示1-F，如下图所示，<br>  由于使用手机自带的gif拍摄的图片，只能拍摄很短的gif图片，所以就多放了几张。<br>  我是向左滚动的滚动的时间大约500ms左右，随便写的，并不准确，会循环连续的滚动，图中不太容易看出效果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/2.gif" alt="运行效果" title="运行效果"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/3.gif" alt="运行效果" title="运行效果"></p>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  在单片机开发中，能看懂原理图是非常重要的，因为单片机的开发一般都是对外设的驱动，知道电路如何连接，才能很好的控制。</p>
-<p>  首先打开原理图，可以看到原理图中所有的数码管都是接在J16上的，而J16又是通过译码器连接到J6，单片机上的A,B,C引脚。所以通过A,B,C可以控制数码管得位选。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-Digital_tube/4.png" alt="原理图" title="原理图"></p>
-<p>  同时，原理图还说明了数码管是共阴的，也就是阴极都是连在一起的，如果要控制数码管亮的话，就需要在阳极给高电位，也就是给1。</p>
-<p>  这里说一下我的数码管的链接引脚：<br>A ===  P1.0<br>B ===  P1.1<br>C ===  P1.2<br>然后就是J12口是控制段选的，J12通过P0口控制。</p>
-<h1 id="数码管控制原理"><a href="#数码管控制原理" class="headerlink" title="数码管控制原理"></a>数码管控制原理</h1><h2 id="位选和段选"><a href="#位选和段选" class="headerlink" title="位选和段选"></a>位选和段选</h2><p>  因为单片机的控制引脚有限，一个数码管在操作的时候会使用8个IO口进行控制，为了减少IO口的开销，在电路设计上就是用了段选和位选来用相同的IO口数对多个数码管进行操作。</p>
-<p>  对多个数码管操作的时候有段选和位选：位选就是选择某一个数码管，对其进行操作；段选就是选择数码管的某一段操作，一般数码管有7段，如果数码管有小数点的话就会有8段，就可以通过8个IO口对数码管的每一段的亮灭进行控制。</p>
-<h2 id="位选控制"><a href="#位选控制" class="headerlink" title="位选控制"></a>位选控制</h2><p>  位选是如何工作的呢？这里有8个数码管，但是只有三个控制引脚，因为有译码器，所以给这三个引脚不同的值就会控制打开不同的数码管，比如：</p>
-<ul>
-<li>A=0，B=0，C=0就是控制第1个数码管</li>
-<li>A=0，B=0，C=1就是控制第2个数码管</li>
-<li>…</li>
-</ul>
-<h2 id="段选控制"><a href="#段选控制" class="headerlink" title="段选控制"></a>段选控制</h2><p>  段选使用8个IO口进行控制。如原理图中所示的J12，因为数码管是共阴的，所以控制IO输出为1就会使相应的一段变亮。</p>
-<p>  原理图中对数码管的的每一段都有标注a,b,c,d,e,f,g,dp。如果将J12连接到P0，也就是P0.7控制a，P0.6控制b … P0.0控制dp。</p>
-<p>  所以，如果要控制数码管显示数字，应该给IO口P0赋值下列数字：</p>
-<ul>
-<li>0 – 0x3f </li>
-<li>1 – 0x06 </li>
-<li>2 – 0x5b</li>
-<li>3 – 0x4f</li>
-<li>4 – 0x66</li>
-<li>5 – 0x6d</li>
-<li>6 – 0x7d</li>
-<li>7 – 0x07</li>
-<li>8 – 0x7f</li>
-<li>9 – 0x6f</li>
-<li>A – 0x77</li>
-<li>B – 0x7c</li>
-<li>C – 0x39</li>
-<li>D – 0x5e</li>
-<li>E – 0x79</li>
-<li>F – 0x71 </li>
-</ul>
-<h1 id="程序编辑"><a href="#程序编辑" class="headerlink" title="程序编辑"></a>程序编辑</h1><p>  知道了原理图的连接和控制原理，现在就可以对数码管的显示进行程序程序的编写了。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
+<h1 id="获取天气网址介绍"><a href="#获取天气网址介绍" class="headerlink" title="获取天气网址介绍"></a>获取天气网址介绍</h1><p>今天学了学python的json操作，然后就想弄个获取天气的程序试试。</p>
+<p>但是要就行天气获取，就要找到天气的json接口文件。在网上搜集了一圈，发现下面的网址可以提供5天的天气查询的json，很实用。</p>
+<h2 id="获取天气网址"><a href="#获取天气网址" class="headerlink" title="获取天气网址"></a>获取天气网址</h2><p>网址：?<a href="http://wthrcdn.etouch.cn/weather_mini?city=北京" target="_blank" rel="noopener">http://wthrcdn.etouch.cn/weather_mini?city=北京</a></p>
+<p>注意：这个网址的后面的地名可以自己更改，如<a href="http://wthrcdn.etouch.cn/weather_mini?city=上海" target="_blank" rel="noopener">http://wthrcdn.etouch.cn/weather_mini?city=上海</a></p>
+<p>对了，如果打开的页面是乱码，那是因为问个的显示编码方式不对，在网页单击鼠标右键，选择编码 ?，选择?Unicode（UTF-8），用的浏览器不一样，操作方式应该不一样，只要将网站的显示页面的编码方式改成utf-8就行了</p>
+<p>如下图，查找的深圳的天气，直接将后面的北京改成深圳就ok了<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E6%9F%A5%E8%AF%A2%E5%A4%A9%E6%B0%94.png" alt="天气网址" title="天气网址"></p>
+<p>这样子看这个文档很不方便，眼睛都看花了，下面我们就用python程序的pprint模块来美化一些这个字典</p>
+<h1 id="程序实现"><a href="#程序实现" class="headerlink" title="程序实现"></a>程序实现</h1><h2 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> json<span class="token punctuation">,</span> requests<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这两个模块是必须的:<br>1、json可以用来将网页的json解析成python能识别的字典表示。<br>2、requests模块用来获取下载网站，即json的网站页面，用来方便处理。</p>
+<h2 id="导入链接，获取页面"><a href="#导入链接，获取页面" class="headerlink" title="导入链接，获取页面"></a>导入链接，获取页面</h2><p>获取天气查询时候返回的json文本，主要就是对这个文本信息进行处理分析。</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherJsonUrl <span class="token operator">=</span> <span class="token string">"http://wthrcdn.etouch.cn/weather_mini?city=北京"</span>  <span class="token comment" spellcheck="true">#将链接定义为一个字符串</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>weatherJsonUrl<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">#获取并下载页面，其内容会保存在respons.text成员变量里面</span>
+response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#这句代码的意思如果请求失败的话就会抛出异常，请求正常就上面也不会做</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="解析json文件"><a href="#解析json文件" class="headerlink" title="解析json文件"></a>解析json文件</h2><p>需要解析的变量就是上一步的成员变量respons.text。<br>如下所示：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#将json文件格式导入成python的格式</span>
+weatherData <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="使用漂亮打印打印转换后的python字典-weatherData变量"><a href="#使用漂亮打印打印转换后的python字典-weatherData变量" class="headerlink" title="使用漂亮打印打印转换后的python字典(weatherData变量)"></a>使用漂亮打印打印转换后的python字典(weatherData变量)</h2><p>最后我们需要使用print查看一下数据，但是使用原来的语言自带的print不是很方便，看着很难识别字符，所以使用一个模块pprint。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> pprint               <span class="token comment" spellcheck="true">#导入pprint模块</span>
+pprint<span class="token punctuation">.</span>pprint<span class="token punctuation">(</span>weatherData<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#漂亮打印出天气字典</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>执行结果如下图所示：（我只截取了一部分图形，太长了）:<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%8E%B7%E5%8F%96%E7%9A%84%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE.png" alt="获取的json数据" title="获取的json数据"></p>
+<p>从上面的图形可以看出‘data’是字典的第一个键，其值也是一个字典，这个字典中键’forecast’才是表示天气信息的。</p>
+<p>‘date’:表示日期 ……等 。这些应该都看得懂，就不浪费时间解释了……</p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>接下来就是对这个字典（weatherData）的数据进行处理<br>就是平时处理字典与列表的方式即可。</p>
+<p>举例：</p>
+<p>获取今天的天气：</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#输出>> '晴'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>获取今天的温度：</p>
+<pre class="line-numbers language-python"><code class="language-python">weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'wendu'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#输出>> '16'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>原理还是很简单的，用到的只是也不是很多，就是字典数据的处理，json的获取等。</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>下面分享获取天气的源码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#!python3</span>
+<span class="token comment" spellcheck="true">#coding:utf-8</span>
+<span class="token keyword">import</span> json<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> requests
 
-#define uchar unsigned char
-#define uint unsigned int
-#define SMG P0                //定义数码管的段选端口
+<span class="token comment" spellcheck="true">#输入地点</span>
+weatherPlace <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入天气地点："</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> weatherPlace <span class="token operator">==</span> <span class="token string">'E'</span> <span class="token operator">or</span> weatherPlace <span class="token operator">==</span> <span class="token string">'e'</span><span class="token punctuation">:</span>
+    sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">#关闭程序</span>
+<span class="token comment" spellcheck="true">#下载天气JSON</span>
+weatherJsonUrl <span class="token operator">=</span> <span class="token string">"http://wthrcdn.etouch.cn/weather_mini?city=%s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>weatherPlace<span class="token punctuation">)</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>weatherJsonUrl<span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"网址请求出错"</span><span class="token punctuation">)</span>
 
-//下述的A,B,C的信号进过译码器解码后可以控制8个数码管的显示
-sbit LA=P1^0;                
-sbit LB=P1^1;
-sbit LC=P1^2;
+<span class="token comment" spellcheck="true">#将json文件格式导入成python的格式</span>
+weatherData <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
 
-//下面的数组可以显示0-F
-uchar code number[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+<span class="token comment" spellcheck="true">#以好看的形式打印字典与列表表格</span>
+<span class="token comment" spellcheck="true">#import pprint</span>
+<span class="token comment" spellcheck="true">#pprint.pprint(weatherData)</span>
 
-//函数声明
-void delay(int ms);
-void change(int what);
+w <span class="token operator">=</span> weatherData<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"地点：%s"</span> <span class="token operator">%</span> w<span class="token punctuation">[</span><span class="token string">'city'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-//延时函数(短延时)
-void delay(int ms)
-{
-        for(;ms>0;ms--);
-}
+<span class="token comment" spellcheck="true">#日期</span>
+date_a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#最高温与最低温</span>
+highTemp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+lowTemp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#天气</span>
+weather <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#进行五天的天气遍历</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    date_a<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    highTemp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'high'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    lowTemp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'low'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    weather<span class="token punctuation">.</span>append<span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
+    <span class="token comment" spellcheck="true">#输出</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"日期："</span> <span class="token operator">+</span> date_a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t温度：最"</span> <span class="token operator">+</span> lowTemp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'℃~最'</span> <span class="token operator">+</span> highTemp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'℃'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t天气："</span> <span class="token operator">+</span> weather<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
 
-int main()
-{
-        uchar i;
-        uchar j=0;
-        uint time=50;
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n今日着装："</span> <span class="token operator">+</span> w<span class="token punctuation">[</span><span class="token string">'ganmao'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"当前温度："</span> <span class="token operator">+</span> w<span class="token punctuation">[</span><span class="token string">'wendu'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"℃"</span><span class="token punctuation">)</span>
 
-        while(1)
-        {
-                for(;time>0;time--)
-                {
-                        for(i=1;i<=8;i++)
-                        {
-                                change(i);
-                                SMG = number[(j+i)%16];                //使之可以滚动显示的处理        
-                                delay(100);
-                                SMG = 0;
-                                delay(50);         //消除暗影
-                        }                
-                }
-                time = 50;
-                j++;
-                if(j>17)
-                        j = 0;
-        }
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上述程序就是实现了对8个数码管显示0-F的滚动显示程序。</p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>上述代码在运行的时候要输入 &gt;&gt;  地名 &lt;&lt;  ，如下图：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%BE%93%E5%85%A5%E5%9C%B0%E7%82%B9.png" alt="输入地点" title="输入地点"></p>
+<p>运行结果如下图所示：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/python%E8%8E%B7%E5%8F%965%E5%A4%A9%E7%9A%84%E5%A4%A9%E6%B0%94/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果" title="运行结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -587,7 +565,7 @@ int main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi/">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-shu-ma-guan-kong-zhi/</a>
+                    <a href="http://hehung.top/2019/1375502063.html">http://hehung.top/2019/1375502063.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,16 +603,16 @@ int main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                    <span class="chip bg-color">单片机</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
-                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">C语言</span>
+                                <a href="/tags/requests/">
+                                    <span class="chip bg-color">requests</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                                    <span class="chip bg-color">数码管</span>
+                                <a href="/tags/json/">
+                                    <span class="chip bg-color">json</span>
                                 </a>
                             
                         </div>
@@ -1067,18 +1045,18 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-ds18b20-wen-du-huo-qu/">
+                <a href="/2019/3594958177.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources@master/51-DS_18B20_temperature/Display.jpg" class="responsive-img" alt="51单片机DS18B20获取温度">
+                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
                         
-                        <span class="card-title">51单片机DS18B20获取温度</span>
+                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机完成对DS18B20的操作。DS18B20是一个单总线的温度采集芯片，能够学习DS18B20的应用。
+                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
                         
                     </div>
                     <div class="publish-info">
@@ -1108,8 +1086,8 @@ int main()
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/DS18B20/">
-                        <span class="chip bg-color">DS18B20</span>
+                    <a href="/tags/Keil/">
+                        <span class="chip bg-color">Keil</span>
                     </a>
                     
                 </div>
@@ -1123,23 +1101,23 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-kai-fa-huan-jing-da-jian-liu-shui-deng/">
+                <a href="/2019/3193416047.html">
                     <div class="card-image">
                         
-                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E6%95%B4%E4%BD%93%E5%9B%BE.jpg" class="responsive-img" alt="51单片机开发环境搭建+流水灯">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/成品展示１.jpg" class="responsive-img" alt="51单片机的音乐盒(c语言)">
                         
-                        <span class="card-title">51单片机开发环境搭建+流水灯</span>
+                        <span class="card-title">51单片机的音乐盒(c语言)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用51单片机开发套件完成了流水灯控制，能够实现8个LED的流水灯显示效果。
+                            使用51单片机做的一个可以播放几种音乐的音乐播放器，能够实现音乐切换，暂停，播放等功能。包含电路设计，焊接与源码分享。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-16
                             </span>
                         <span class="publish-author">
                             
@@ -1156,16 +1134,16 @@ int main()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                        <span class="chip bg-color">单片机</span>
-                    </a>
-                    
                     <a href="/tags/C%E8%AF%AD%E8%A8%80/">
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
+                    <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">51单片机</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">电路设计</span>
                     </a>
                     
                 </div>

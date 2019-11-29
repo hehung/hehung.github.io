@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机驱动DS1302实时时钟芯片, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="STM32使用之驱动流水灯, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-很多初学51单片机的小伙伴都喜欢用定时器作为时间模拟显示，这是可以的，对于精度要求不是很高的场合是可以使用的，但是当精度要求很高的时候，使用定时器就不定了，因为51单片机的定时器的精度本来就不高，我们可以使用常见的时钟芯片：DS1302来">
+普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。
+
+
+以前发帖在电子芯巴克。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机驱动DS1302实时时钟芯片 | Hehung&#39;s Blog</title>
+    <title>STM32使用之驱动流水灯 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,13 +248,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        51单片机驱动DS1302实时时钟芯片
+                        STM32使用之驱动流水灯
                     </div>
                 </div>
             </div>
@@ -363,16 +366,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                <span class="chip bg-color">单片机</span>
-                            </a>
-                        
-                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">C语言</span>
-                            </a>
-                        
-                            <a href="/tags/DS1302/">
-                                <span class="chip bg-color">DS1302</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
                             </a>
                         
                     </div>
@@ -383,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
-                                51单片机
+                            <a href="/categories/STM32/" class="post-category">
+                                STM32
                             </a>
                         
                     </div>
@@ -410,14 +405,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    964
+                    846
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 				
@@ -434,267 +429,35 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>很多初学51单片机的小伙伴都喜欢用定时器作为时间模拟显示，这是可以的，对于精度要求不是很高的场合是可以使用的，但是当精度要求很高的时候，使用定时器就不定了，因为51单片机的定时器的精度本来就不高，我们可以使用常见的时钟芯片：DS1302来进行时间的显示。</p>
+<p>普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。</p>
 </blockquote>
 <blockquote>
-<p>DS1302会自动进行时间的自加，所以字需要写入初始时间就可以自动就行西东进行时间的获取了，不需要用户进行时间的处理。</p>
+<p>以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100338-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<blockquote>
-<p>DS1302可以针对年月日星期时分秒进行处理。我们在程序中通过数码管进行显示时间，由于数码管只有8个，所以时间与年月日信息分开显示，通过独立按键8进行转换。</p>
-</blockquote>
-<blockquote>
-<p>以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100332-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
-</blockquote>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看电路原理图，看开发板上的DS1302的引脚，如下图。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302.png" alt="DS1302原理图" title="DS1302原理图"></p>
-<p>  本文中使用到了按键，按键的原理图如下所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/key.png" alt="按键原理图" title="按键原理图"></p>
-<p>  本文还使用到了数码管，之前写过数码管的驱动帖子，在这里就不做过多的介绍了，直接移步：<a href="http://hehung.top/archives/9ea6.html">点我移步数码管操作</a></p>
-<p>  从上面的原理图中我们知道了使用到的器件的连线引脚定义如下：</p>
-<pre class="line-numbers language-C"><code class="language-C">
-//DS1302时钟芯片引脚定义
-sbit sck=P3^6;
-sbit io=P3^4;
-sbit rst=P3^5;
-
-//数码管位选引脚定义
-sbit LA = P1^0;
-sbit LB = P1^1;
-sbit LC = P1^2;
-
-//按键引脚定义
-sbit KEY = P2^0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="DS1302"><a href="#DS1302" class="headerlink" title="DS1302"></a>DS1302</h1><h2 id="参考手册"><a href="#参考手册" class="headerlink" title="参考手册"></a>参考手册</h2><p>  DS1302的时序相对而言比较复杂，请看详细的资料文档说明：<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302_chinese_manual.pdf" target="_blank" rel="noopener">点我下载DS1302中文手册</a></p>
-<h2 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h2><p>  如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/Sequence_diagram.png" alt="时序图" title="时序图"></p>
-<p>  根据时序图来进行读/写字节，可以看到SCLX在由低变高就是写，由高变低就是读，连续读/写8个字节。</p>
-<h2 id="时间操作寄存器"><a href="#时间操作寄存器" class="headerlink" title="时间操作寄存器"></a>时间操作寄存器</h2><p>  如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/registers.png" alt="时序图" title="时序图"></p>
-<p>可以看到读/写都有不同的寄存器，每个寄存器代表了不同的日期信息，需要哪个日期就读/写哪个寄存器就行了。</p>
-<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  下面是代码。</p>
-<pre class="line-numbers language-C"><code class="language-C">#include<reg52.h>
-#include<intrins.h>
-
-#define uchar unsigned char
-#define uint unsigned int
-
-//DS1302时钟芯片引脚定义
-sbit sck=P3^6;
-sbit io=P3^4;
-sbit rst=P3^5;
-
-//数码管位选引脚定义
-sbit LA = P1^0;
-sbit LB = P1^1;
-sbit LC = P1^2;
-
-//按键引脚定义
-sbit KEY = P2^0;
-
-//数码管的数字
-//下面的数组可以显示0-F
-uchar code smg_D[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,
-                                        0x7f,0x6f,~0xbf};
-
-uchar time_data[7]={18,4,4,13,11,59,50};                //年星期月日时分秒
-uchar write_add[7]={0x8c,0x8a,0x88,0x86,0x84,0x82,0x80};                //写地址命令
-uchar read_add[7]={0x8d,0x8b,0x89,0x87,0x85,0x83,0x81};                        //读地址命令
-uchar disp[8];
-
-void delay_ms(uint q)
-{
-     uint w;
-         for(;q>0;q--)
-            for(w=110;w>0;w--);
-}
-
-void delay_us(uint q)
-{
-         for(;q>0;q--);
-}
-
-void delay_nop()
-{
-    _nop_();
-        _nop_();
-        _nop_();
-        _nop_();
-        _nop_();
-}
-
-//该函数可以选择某一个数码管显示
-void change(int what)
-{
-        switch(what)
-        {
-                case 1:LC=0;LB=0;LA=0;break;
-                case 2:LC=0;LB=0;LA=1;break;
-                case 3:LC=0;LB=1;LA=0;break;
-                case 4:LC=0;LB=1;LA=1;break;
-                case 5:LC=1;LB=0;LA=0;break;
-                case 6:LC=1;LB=0;LA=1;break;
-                case 7:LC=1;LB=1;LA=0;break;
-                case 8:LC=1;LB=1;LA=1;break;                
-        }
-}
-
-void reset() //重置
-{
-        rst=0;_nop_();
-        sck=0;_nop_();
-        rst=1;_nop_();
-}
-
-//写数据函数
-void write_data(uchar dat)
-{
-    uchar i;
-        for(i=0;i<8;i++)
-        {
-            sck=0;
-                io=dat&0x01;
-                delay_nop();delay_nop();delay_nop();
-                dat>>=1;
-                sck=1;
-        }        
-}
-
-//写数据与命令函数
-void write_add_data(uchar add,uchar dat)
-{
-    reset();
-        rst=1;
-        write_data(add);
-        delay_nop();         delay_nop();
-        write_data(dat);
-        rst=0;
-        _nop_();_nop_();_nop_();_nop_();
-        io=0;
-        sck=1;
-}
-
-//阅读数据函数
-uchar read_dat(uchar add)
-{
-    uchar i,v;
-    reset();
-        delay_nop();
-        write_data(add);
-        for(i=0;i<8;i++)
-        {
-            v>>=1;
-                sck=0;
-            if(io)
-                        v|=0x80;
-                sck=1;
-                delay_nop();delay_nop();delay_nop();
-        }
-        rst=0;
-        sck=0;
-        delay_nop();         
-        sck=1;
-        io=1;
-        return v;
-}
-
-//设置时间函数
-void set()
-{
-   uchar i,j;
-   for(i=0;i<7;i++)
-   {
-        j=time_data[i]/10;
-                time_data[i]=time_data[i]%10;
-                time_data[i]=time_data[i]+j*16;
-                delay_nop();
-   }                                          
-   write_add_data(0x8e,0x00);          //去除写保护
-   _nop_();
-   for(i=0;i<7;i++)
-   {
-        write_add_data(write_add[i],time_data[i]);
-                delay_nop();
-   }
-   write_add_data(0x8e,0x80);                           //加写保护
-}
-
-//于都时间函数
-void readtime()
-{
-        uchar i;
-        for(i=0;i<7;i++)
-        {
-            time_data[i]=read_dat(read_add[i]);
-                write_add_data(0x00,0x00);               //重点啊
-        }
-}
-
-//将时分秒处理方便显示
-void chuli()                //处理数据函数
-{
-    disp[0]=time_data[4]/16;
-        disp[1]=time_data[4]%16;  
-        disp[2]=10;
-        disp[3]=time_data[5]/16;
-        disp[4]=time_data[5]%16;
-        disp[5]=10;
-        disp[6]=time_data[6]/16;
-        disp[7]=time_data[6]%16;
-}
-
-//将年月日处理方便显示
-void chuli1()                //处理数据函数
-{
-    disp[0]=time_data[0]/16;
-        disp[1]=time_data[0]%16;  
-        disp[2]=10;
-        disp[3]=time_data[2]/16;
-        disp[4]=time_data[2]%16;
-        disp[5]=10;
-        disp[6]=time_data[3]/16;
-        disp[7]=time_data[3]%16;
-}
-//函数时分秒
-void display()
-{
-    uchar i;
-    for(i=0;i<8;i++)
-        {
-            change(i+1);
-                P0=smg_D[disp[i]];
-                delay_us(50); 
-                P0 = 0;
-                delay_us(10);         //消除暗影            
-        }
-}
-
-//主函数
-void main()
-{                   
-        set();
-        while(1)
-        {
-            readtime();
-                display();
-
-                if(KEY == 0)
-                {
-                        chuli1();                //处理年月日
-                }else
-                {
-                        chuli();                //处理时分秒
-                }        
-        }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="blue">注意：上述程序中，我是用按键8来进行年与日与时分秒的切换，按下按键8（P2.0引脚）就会显示年月日，放开就会显示时间。</font></p>
-<h1 id="运行结果展示"><a href="#运行结果展示" class="headerlink" title="运行结果展示"></a>运行结果展示</h1><p>》时间显示效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display2.jpg" alt="时间显示" title="时间显示"></p>
-<p><font size="2">通过按按键8可以进行时间，日期的切换。</font></p>
-<p>》日期显示效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display3.jpg" alt="时间显示" title="时间显示"></p>
-<p>》时间动态显示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" alt="时间显示" title="时间显示"></p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/DS1302_project.zip" target="_blank" rel="noopener">点我下载DS1302工程</a></p>
+<h1 id="STM32核心"><a href="#STM32核心" class="headerlink" title="STM32核心"></a>STM32核心</h1><p>  这个STM32的最小系统板长这样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg" alt="STM32核心" title="STM32核心"></p>
+<p>  方向插对，之后就可以正常的进行开发了，从图中可以看到明显的J_LINK插口，可以方便的使用J_LINK进行程序的下载，但是一个J_LINK也是极贵的所，所以本文选择使用USB串口下载程序。</p>
+<h1 id="程序下载"><a href="#程序下载" class="headerlink" title="程序下载"></a>程序下载</h1><h2 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h2><p>  如下图所示，<font color="red">stm32最小系统上的RTS与DTR粉笔与开发板上面的RTS与DTR相连接</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_Download_Pin.jpg" alt="连接USB下载线" title="连接USB下载线"></p>
+<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><p>  连接好后就可以通过USB下载程序了，与51单片机的使用方式是一样的，利用hex文件下载软件，直接下载hx文件吗，官方已经给我们提供了一个普中的下载软件。</p>
+<p>  软件的名字叫做：PZ-ISP普中自动下载软件.exe，提供给你们附件如下，有需要的小伙伴可以下载使用.<br><a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载普中开发板下载器</a></p>
+<h2 id="下载方式"><a href="#下载方式" class="headerlink" title="下载方式"></a>下载方式</h2><p>  具体的下载方式如下所示：<br>  <font color="red">这里还有以下是需要注意的，就是供电跳线帽要打到3.3V的位置，因为STM32是3.3V供电的，如果不改变跳线帽的话可能回烧坏stm32。</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/Download_setting.jpg" alt="下载方式" title="下载方式"></p>
+<ul>
+<li>打开下载器软件，连接USB线。</li>
+<li>选择单片机型号，如下图所示；</li>
+<li>选择串口，这个一般是不需要选择的，如果没有显示可用的串口的话，应该是驱动没有安装好，下载一个USB_ttl驱动安装就可以了；</li>
+<li>选择波特率115200；</li>
+<li>选择hex文件，编译程序生成的hex文件；</li>
+<li>最后就是下载程序了，直接点击下载即可，在程序代码量比较下的时候，直接使用USB进行下载还是挺快的，但是当程序变得很大的时候，下载就会很慢，有可能还会达到几分钟。所以有JLINK的伙伴还是使用J_LINK进行下载吧。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/download_select.jpg" alt="选择单片机型号" title="选择单片机型号"></p>
+<p>  程序下载好了就可以进行演示查看了，我选择的是流水灯的程序。直接使用的官方的流水灯程序。P0口连线如下：<br><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/wire_connect.jpg" alt="连线" title="连线"></p>
+<p>emsp; 其实STM32的开发与51单片机的的开发还是比较相似的，只不过STM32的运行速度很快，而STM32还提供许多内置设备，如PWM，AD/DA等。还有一点就是STM32进行GPIO扣得初始化还是比较复杂的。</p>
+<p>emsp; <font color="red" size="2">开发STM32必须使用KEIL5(MDK5)软件进行，并且软件是不内置芯片支持库的，需要自行安装，可以到官网去下载stm32f103的支持包就可以正常的编译程序了，不然程序只能查看是不能进行编译运行的。</font></p>
+<h1 id="演示结果展示"><a href="#演示结果展示" class="headerlink" title="演示结果展示"></a>演示结果展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display1.gif" alt="演示效果" title="演示效果"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/display2.gif" alt="演示效果" title="演示效果"></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/PZ-ISP_Download_tool.zip" target="_blank" rel="noopener">点我下载STM32流水灯程序</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -738,7 +501,7 @@ void main()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-23-51-dan-pian-ji-qu-dong-ds1302-shi-shi-shi-zhong-xin-pian/">http://hehung.top/2019/2019-11-23-51-dan-pian-ji-qu-dong-ds1302-shi-shi-shi-zhong-xin-pian/</a>
+                    <a href="http://hehung.top/2019/2983120822.html">http://hehung.top/2019/2983120822.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -776,16 +539,8 @@ void main()
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
-                                    <span class="chip bg-color">单片机</span>
-                                </a>
-                            
-                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">C语言</span>
-                                </a>
-                            
-                                <a href="/tags/DS1302/">
-                                    <span class="chip bg-color">DS1302</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
                                 </a>
                             
                         </div>
@@ -1218,18 +973,18 @@ void main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-23-stm32-shi-yong-zhi-qu-dong-liu-shui-deng/">
+                <a href="/2019/1695708248.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/stm32-Running_water_light/STM32_core.jpg" class="responsive-img" alt="STM32使用之驱动流水灯">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/display_oled.jpg" class="responsive-img" alt="STM32使用之OLED显示屏驱动">
                         
-                        <span class="card-title">STM32使用之驱动流水灯</span>
+                        <span class="card-title">STM32使用之OLED显示屏驱动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用普中ARM+51单片机开发板进行STM32的开发测试，测试了流水灯以及stm32的使用方式。
+                            OLED12864是一个基于OLED技术的128X64的显示屏，通过IIC进行驱动，本文介绍了如何通过STM32来驱动OLED模块。
                         
                     </div>
                     <div class="publish-info">
@@ -1255,6 +1010,14 @@ void main()
                         <span class="chip bg-color">STM32</span>
                     </a>
                     
+                    <a href="/tags/OLED/">
+                        <span class="chip bg-color">OLED</span>
+                    </a>
+                    
+                    <a href="/tags/IIC/">
+                        <span class="chip bg-color">IIC</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1266,18 +1029,18 @@ void main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-23-51-dan-pian-ji-qu-dong-bu-jin-dian-ji/">
+                <a href="/2019/438600446.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg" class="responsive-img" alt="51单片机驱动步进电机">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
                         
-                        <span class="card-title">51单片机驱动步进电机</span>
+                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            51单片机对步进电机的控制，步进电机的最大特点就是速度可控和步数精确，可以实现很慢的转速，对于精确转速和位置控制的设备可以使用。
+                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
                         
                     </div>
                     <div class="publish-info">
@@ -1307,8 +1070,8 @@ void main()
                         <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
-                        <span class="chip bg-color">步进电机</span>
+                    <a href="/tags/DS1302/">
+                        <span class="chip bg-color">DS1302</span>
                     </a>
                     
                 </div>

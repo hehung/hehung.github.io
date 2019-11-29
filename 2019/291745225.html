@@ -4,14 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="涂鸦TYDE3.0开发板开箱与程序下载, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="51单片机驱动步进电机, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
- 涂鸦TYDE3.0是一块基于物联网的开发板，2018年的时候在爱板网上试用申请的。查看原网址：点我跳转查看原帖
+拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：点我跳转
 
-开箱  直接上图。
+原理图  首先查看原理图。
 
-
-  开发板的结构很简介明了，给人看到的第一印象是好多引脚，结果仔细一看，有三组的引脚都是下载口，可">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>涂鸦TYDE3.0开发板开箱与程序下载 | Hehung&#39;s Blog</title>
+    <title>51单片机驱动步进电机 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -250,13 +249,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        涂鸦TYDE3.0开发板开箱与程序下载
+                        51单片机驱动步进电机
                     </div>
                 </div>
             </div>
@@ -368,16 +367,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LPC54608/">
-                                <span class="chip bg-color">LPC54608</span>
+                            <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                <span class="chip bg-color">单片机</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                <span class="chip bg-color">串口</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/Keil/">
-                                <span class="chip bg-color">Keil</span>
+                            <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
+                                <span class="chip bg-color">步进电机</span>
                             </a>
                         
                     </div>
@@ -388,8 +387,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B6%82%E9%B8%A6/" class="post-category">
-                                涂鸦
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                51单片机
                             </a>
                         
                     </div>
@@ -401,28 +400,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-11-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-11-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    775
+                    799
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 				
@@ -439,42 +438,159 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p> 涂鸦TYDE3.0是一块基于物联网的开发板，2018年的时候在爱板网上试用申请的。查看原网址：<a href="http://www.cirmall.com/bbs/thread-99261-1-1.html" target="_blank" rel="noopener">点我跳转查看原帖</a></p>
+<p>拿到开发板还没有使用过电机与步进电机呢，但是电机的控制太简单了，在这里就不演示了，直接用IO口的高低电平就可以正常控制了，所以就来操作一下稍微难一点而的步进电机。以前发帖在电子芯巴克。原帖子链接：<a href="https://bbs.icxbk.com/thread-100298-1-1.html" target="_blank" rel="noopener">点我跳转</a></p>
 </blockquote>
-<h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p>  直接上图。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" alt="正面" title="正面"></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111823m3x4b442bvv6jt62.png" alt="反面" title="反面"></p>
-<p>  开发板的结构很简介明了，给人看到的第一印象是好多引脚，结果仔细一看，有三组的引脚都是下载口，可以支持多种下载模式。还有wifi模块也很显眼。<br>  另外还有一个USB口，一个RGB彩色灯，两个复位按键，两个BOOT按键以及连个用户自定义按键。<br>  3个LED灯。这些都是传统的物联网开发板的标配，但是有一点很好地就是没有引脚在旁边都给了名字说明，不用再胡原理图一个一个的找对应的引脚了，有时候找一个引脚真的很头疼。</p>
-<p>  开发板的背部的设计简单明了。整个开发板给人的印象还不错，在加上STM32的主控，对于多数的物联网开发已经足够，运行速度也能得到保障。</p>
-<h1 id="例程下载"><a href="#例程下载" class="headerlink" title="例程下载"></a>例程下载</h1><h2 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h2><p>  到官网下载必要工具。</p>
-<p><a href="https://docs.tuya.com/cn/mcu/download.html" target="_blank" rel="noopener">点我跳转到官网下载</a></p>
-<p>  反正我将这个页面能下载的都下载了一遍。说一说必要下载的工具，看下图。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105303lhf7hah060abd3dh.png" alt="必要的工具" title="必要的工具"></p>
-<p>  安装Flash Loader Demo，这个过程很简单，一路next就行了。然后将下载的名为1476783423-tuya_dev_demo_v3的压缩包解压就是我们要下载的官方最开始的例程。</p>
-<h2 id="下载工具下载程序"><a href="#下载工具下载程序" class="headerlink" title="下载工具下载程序"></a>下载工具下载程序</h2><p>  参考 <a href="http://www.eeboard.com/bbs/thread-98467-1-1.html" target="_blank" rel="noopener">http://www.eeboard.com/bbs/thread-98467-1-1.html</a> 这个帖子，挺详细的。</p>
-<p>1、首先是跳线帽的链接。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="跳线帽连接" title="跳线帽连接"></p>
-<p>  先按住BOOT，再按住RESET,然后先松开RESET，再松开BOOT就可以进行下载模式了，不行的话就多试几次。<br>  知道能不能下载的最重要的一点就是打开Flash Loader Demo，点击NEXT，看看会不会出现下面的界面。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105304v3pzfrubuh5hurcb.png" alt="未连接界面" title="未连接界面"></p>
-<p>  如果卡住的话就不行再试一次，直到正常进行下一页面。一般情况下操作正常就可以正常下载了。</p>
-<p>2、然后一路NEXT，选择下载的bin程序</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105305xv136usvka3yykkb.png" alt="选择bin文件" title="选择bin文件"></p>
-<p>3、点击NEXT，等待几十秒就会下载成功</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306ke2202f6a220za3o.png" alt="程序下载中..." title="程序下载中..."></p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105306sz3cccczfxmzfzjc.png" alt="程序下载完成" title="程序下载完成"></p>
-<h2 id="使用keil下载下载程序"><a href="#使用keil下载下载程序" class="headerlink" title="使用keil下载下载程序"></a>使用keil下载下载程序</h2><p>1、打开例程</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105656iururgtx9vpxjnj0.png" alt="选择例程" title="选择例程"></p>
-<p>2、安装ST_link驱动程序</p>
-<p>  我在网上随便下载了一个win版本的，可以正常使用，直接安装好了就行。</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/105937tatrnj4qtt7a2ju8.png" alt="选择ST-Link安装包" title="选择ST-Link安装包"></p>
-<p>3、打开工程</p>
-<p>  如果没有安装stm32f103xxx的pdf的话就会自动弹出选择安装，直接默认安装就可以了，这个过程会比较慢，大概会等十几分钟。</p>
-<p>  然后执行下面过程，重要</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110350hao2a33u3ufcc8c1.png" alt="选择下载器" title="选择下载器"></p>
-<p>3、现在就可以成功下载了，按如下方式操作</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/110552zs9kq9t7qkrfr7pz.png" alt="下载" title="下载"></p>
-<p>  可以看到已经在正常下载了。<br>  注意：使用ST-Link下载需要一个ST-Link下载器</p>
-<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/18/111034wd1ovfbbfs4b98fb.png" alt="下载软件" title="下载软件"></p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>  首先查看原理图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/Stepper_motor_Schematic.png" alt="原理图" title="原理图"></p>
+<p>  从上面的原理图中可以看出，该步进电机是四线双极性步进电机，需要四根线控制。</p>
+<p>  在开发板上的接线图如下所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/connect_to_micro_controller.jpg" alt="线路连接" title="线路连接"></p>
+<h1 id="步进电机控制方式"><a href="#步进电机控制方式" class="headerlink" title="步进电机控制方式"></a>步进电机控制方式</h1><p>  这种步进电机可以正反转运动，同时还有三种控制方式：</p>
+<p>1.单相四拍通电驱动时序<br>正转： A- B  A  B-<br>反转： B-  A  B  A-</p>
+<p>2.双相通电四拍驱动时序<br>正转：A-B   AB   AB-  A-B-<br>反转：A-B-  AB-  AB   A-B</p>
+<p>3.半步八拍驱动时序<br>反转：A-  A-B  B  AB  A  AB-  B-  A-B-<br>正转：A-B-  B-  AB-  A  AB  B  A-B  A-</p>
+<p>  上面的控制原理中，A，A_，B，B_分别表示4根控制线。</p>
+<h1 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h1><p>  下面是主要代码。</p>
+<h2 id="单相四拍控制方式"><a href="#单相四拍控制方式" class="headerlink" title="单相四拍控制方式"></a>单相四拍控制方式</h2><p>是单相四拍方式,反转（逆时针），如果想正转，安装上方的工作顺序自行切换就可以了。</p>
+<pre class="line-numbers language-C"><code class="language-C">#include "reg52.h"                        
+
+
+#define uchar unsigned char 
+#define uint  unsigned int
+
+sbit SA = P1^0;
+sbit SA_ = P1^1;
+sbit SB = P1^2;
+sbit SB_ = P1^3;         
+
+#define time 2000 
+
+void step_Motor(void);
+void delay(uint ms);
+void step_Motor2(void);
+void step_Motor3(void);
+
+void main()
+{        
+
+        while(1)
+        {        
+                step_Motor();                
+        }
+}
+
+void step_Motor(void)
+{
+        SA = 1;
+        SA_ = 0;
+        SB = 1;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 1;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="双相通电四拍驱动时序"><a href="#双相通电四拍驱动时序" class="headerlink" title="双相通电四拍驱动时序"></a>双相通电四拍驱动时序</h2><p>  如下，只提供主要操作代码</p>
+<pre class="line-numbers language-C"><code class="language-C">void step_Motor2(void)
+{
+        SA = 1;
+        SA_ = 0;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 0;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="半步八拍（正转，顺时针）"><a href="#半步八拍（正转，顺时针）" class="headerlink" title="半步八拍（正转，顺时针）"></a>半步八拍（正转，顺时针）</h2><p>  如下，只提供主要操作代码</p>
+<pre class="line-numbers language-C"><code class="language-C">void step_Motor3(void)
+{
+        SA = 1;
+        SA_ = 0;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 1;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 0;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 1;
+        SB_ = 1;
+        delay(time);
+
+        SA = 0;
+        SA_ = 1;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 1;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 0;
+        SB = 0;
+        SB_ = 1;
+        delay(time);
+
+        SA = 1;
+        SA_ = 10;
+        SB = 1;
+        SB_ = 1;
+        delay(time);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li><font color="red">值得注意的是，如果你的步进电机的相序出错的话就会造成左右都懂，这样就要检查一下你的相序是不是对的</font>。</li>
+<li>温馨提示：步进电机运行久了会很烫，不要用手直接触碰</li>
+<li>对步进电机的调速，可以通过每步之间的延时来达到，延时越长，运动越慢。</li>
+</ul>
+<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  示效果的时间到了。从动图中可以看到转的很慢，但是实际上转的比这个快一些，主要是动图丢帧比较严重.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-stepper_motor/display.gif" alt="运行结果" title="运行结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -518,7 +634,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/2019-11-29-tu-ya-tyde3.0-kai-fa-ban-kai-xiang-yu-cheng-xu-xia-zai/">http://hehung.top/2019/2019-11-29-tu-ya-tyde3.0-kai-fa-ban-kai-xiang-yu-cheng-xu-xia-zai/</a>
+                    <a href="http://hehung.top/2019/291745225.html">http://hehung.top/2019/291745225.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,16 +672,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/LPC54608/">
-                                    <span class="chip bg-color">LPC54608</span>
+                                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                                    <span class="chip bg-color">单片机</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                                    <span class="chip bg-color">串口</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/Keil/">
-                                    <span class="chip bg-color">Keil</span>
+                                <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/">
+                                    <span class="chip bg-color">步进电机</span>
                                 </a>
                             
                         </div>
@@ -998,34 +1114,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/2019-11-29-2017-mao-ze-zhi-zao-da-sai-shou-shi-kong-zhi-ji-jie-bi/">
+                <a href="/2019/438600446.html">
                     <div class="card-image">
                         
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201802/06/111820ds6ii4vq8iyihzsy.png" class="responsive-img" alt="2017贸泽智造大赛-手势控制机械臂">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display.gif" class="responsive-img" alt="51单片机驱动DS1302实时时钟芯片">
                         
-                        <span class="card-title">2017贸泽智造大赛-手势控制机械臂</span>
+                        <span class="card-title">51单片机驱动DS1302实时时钟芯片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是2017年的时候参加的网络上贸泽智创大赛时做的作品，以LPC54608与CC3220S作为主控，通过蓝牙通信，使用手套控制机械臂的移动。
+                            DS1302是一个高精度低功耗的实时时钟芯片，使用纽扣电池供电可以在单片机掉电的情况下保证时间的正常运行，该文讲述了使用51单片机来控制DS1302。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
-                                    比赛
-                                </a>
-                            
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1035,20 +1147,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/CC3220S/">
-                        <span class="chip bg-color">CC3220S</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/">
-                        <span class="chip bg-color">机械臂</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/DS1302/">
+                        <span class="chip bg-color">DS1302</span>
                     </a>
                     
                 </div>
@@ -1062,30 +1170,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/2019-11-29-lpcxpreso54608-kai-xiang-yun-xing-yu-keil-xia-de-li-cheng-shao-xie/">
+                <a href="/2019/3607312496.html">
                     <div class="card-image">
                         
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png" class="responsive-img" alt="LPCXpreso54608开箱运行与keil下的例程烧写">
+                        <img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-PWM//display1.gif" class="responsive-img" alt="51单片机PWM驱动LED">
                         
-                        <span class="card-title">LPCXpreso54608开箱运行与keil下的例程烧写</span>
+                        <span class="card-title">51单片机PWM驱动LED</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。
+                            使用51单片机的定时器模拟PWM功能，实现LED的不同亮度的控制。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-category">
+                                    51单片机
                                 </a>
                             
                             
@@ -1095,16 +1203,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
+                    <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">
+                        <span class="chip bg-color">单片机</span>
                     </a>
                     
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
                     </a>
                     
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
+                    <a href="/tags/PWM/">
+                        <span class="chip bg-color">PWM</span>
                     </a>
                     
                 </div>
