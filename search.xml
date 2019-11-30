@@ -13,9 +13,9 @@
       
       <categories>
           
-          <category> 比赛 </category>
-          
           <category> LPC系列 </category>
+          
+          <category> 比赛 </category>
           
       </categories>
       
@@ -146,9 +146,9 @@
             
             <tag> OLED </tag>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> RTC </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       
@@ -173,9 +173,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> RTC </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       

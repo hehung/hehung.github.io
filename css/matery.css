@@ -946,9 +946,14 @@ article a {
 }
 
 article a:hover {
-    font-weight: bold;
+    font-weight: bold;    
+    color: #FF6347;
+/*    text-decoration: underline; */
+}
+
+article .summary a:hover { 
+    font-weight: normal; 
     color: #09C;
-    text-decoration: underline;
 }
 
 .articles .row {
@@ -1395,11 +1400,12 @@ thead {
     width: 80px;
     height: 80px;
     margin: 10px 0 50px -20px;
-    padding: 21px 10px;
+    padding: 21px 14px;
     background-color: #ff5722;
     color: #fff;
     font-size: 1.8rem;
     font-weight: 600;
+    text-align: center;
 }
 
 #cd-timeline .year a {
@@ -1411,11 +1417,12 @@ thead {
     width: 60px;
     height: 60px;
     margin: 10px 0 30px -10px;
-    padding: 14px 16px;
+    padding: 11px 16px;
     background-color: #ef6c00;
     color: #fff;
     font-size: 1.7rem;
     font-weight: 600;
+    text-align: center;
 }
 
 #cd-timeline .month a {
@@ -1429,6 +1436,7 @@ thead {
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
+    text-align: center;
 }
 
 #cd-timeline {
@@ -1463,12 +1471,12 @@ thead {
 
     #cd-timeline .year {
         margin: 10px 0 50px -40px;
-        padding: 22px 11px;
+        padding: 19px 14px;
     }
 
     #cd-timeline .month {
         margin: 10px 0 30px -30px;
-        padding: 14px 16px;
+        padding: 11px 16px;
     }
 }
 
