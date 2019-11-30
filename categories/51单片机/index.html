@@ -63,34 +63,35 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/archives" class="waves-effect waves-light">
+
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -122,7 +123,18 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/gallery" class="waves-effect waves-light">
+      
+      <i class="fa fa-image" style="zoom: 0.6;"></i>
+      
+      <span>图库</span>
     </a>
     
   </li>
@@ -165,34 +177,36 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="javascript:;" target="_blank" rel="noopener">
 			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
+				<i class="fa-fw fas fa-archive"></i>
 			
 			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -229,6 +243,17 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/gallery" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-image"></i>
+			
+			图库
+		</a>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -257,7 +282,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['I am the loser, I am serious','I am the loser, I am serious'],
+                        strings: ['I am the loser...','I am serious...'],
                         startDelay: 300,
                         typeSpeed: 80,
                         loop: true,
@@ -295,19 +320,19 @@
                 
                 
                 
-                <a href="/categories/LPC%E7%B3%BB%E5%88%97/" title="LPC系列: 8">
+                <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" title="51单片机: 8">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">LPC系列
+                             chip-active "
+                            style="background-color: #F9EBEA;">51单片机
                         <span class="tag-length">8</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/" title="51单片机: 8">
+                <a href="/categories/LPC%E7%B3%BB%E5%88%97/" title="LPC系列: 8">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">51单片机
+                             chip-default "
+                            style="background-color: #F5EEF8;">LPC系列
                         <span class="tag-length">8</span>
                     </span>
                 </a>
@@ -340,19 +365,19 @@
                 </a>
                 
                 
-                <a href="/categories/hexo/" title="hexo: 1">
+                <a href="/categories/%E6%B6%82%E9%B8%A6/" title="涂鸦: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">hexo
+                            style="background-color: #F8F9F9;">涂鸦
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%B6%82%E9%B8%A6/" title="涂鸦: 1">
+                <a href="/categories/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #82E0AA;">涂鸦
+                            style="background-color: #82E0AA;">hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>

@@ -63,34 +63,35 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/archives" class="waves-effect waves-light">
+
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -122,7 +123,18 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/gallery" class="waves-effect waves-light">
+      
+      <i class="fa fa-image" style="zoom: 0.6;"></i>
+      
+      <span>图库</span>
     </a>
     
   </li>
@@ -165,34 +177,36 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="javascript:;" target="_blank" rel="noopener">
 			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
+				<i class="fa-fw fas fa-archive"></i>
 			
 			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -225,6 +239,17 @@
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/gallery" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-image"></i>
+			
+			图库
 		</a>
           
         </li>
@@ -264,7 +289,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['I am the loser, I am serious','I am the loser, I am serious'],
+                        strings: ['I am the loser...','I am serious...'],
                         startDelay: 300,
                         typeSpeed: 80,
                         loop: true,
@@ -527,7 +552,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"LPC系列","value":8},{"name":"51单片机","value":8},{"name":"比赛","value":2},{"name":"STM32","value":3},{"name":"python","value":1},{"name":"hexo","value":1},{"name":"涂鸦","value":1}],
+                data: [{"name":"51单片机","value":8},{"name":"LPC系列","value":8},{"name":"比赛","value":2},{"name":"STM32","value":3},{"name":"python","value":1},{"name":"涂鸦","value":1},{"name":"hexo","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -551,7 +576,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["C语言","单片机","OLED","LPC11U68","串口","LPC54608","STM32","Keil","IIC","RTC"]
+                data: ["C语言","单片机","LPC11U68","串口","OLED","LPC54608","Keil","STM32","RTC","IIC"]
             }
         ],
         yAxis: [
@@ -692,6 +717,16 @@
         <div class="tag-chips center-align">
             
             
+            
+            
+            
+            
+            <a href="/tags/PWM/">
+                <span class="chip center-align waves-effect waves-light chip-default">PWM</span>
+            </a>
+            
+            
+            
             <a href="/tags/LPC54608/">
                 <span class="chip center-align waves-effect waves-light chip-default">LPC54608</span>
             </a>
@@ -716,22 +751,6 @@
             
             
             
-            
-            
-            
-            
-            <a href="/tags/PWM/">
-                <span class="chip center-align waves-effect waves-light chip-default">PWM</span>
-            </a>
-            
-            
-            
-            <a href="/tags/DS18B20/">
-                <span class="chip center-align waves-effect waves-light chip-default">DS18B20</span>
-            </a>
-            
-            
-            
             <a href="/tags/Keil/">
                 <span class="chip center-align waves-effect waves-light chip-default">Keil</span>
             </a>
@@ -744,6 +763,12 @@
             
             
             
+            <a href="/tags/DS18B20/">
+                <span class="chip center-align waves-effect waves-light chip-default">DS18B20</span>
+            </a>
+            
+            
+            
             <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/">
                 <span class="chip center-align waves-effect waves-light chip-default">51单片机</span>
             </a>
@@ -752,12 +777,6 @@
             
             <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/">
                 <span class="chip center-align waves-effect waves-light chip-default">电路设计</span>
-            </a>
-            
-            
-            
-            <a href="/tags/LCD1602/">
-                <span class="chip center-align waves-effect waves-light chip-default">LCD1602</span>
             </a>
             
             
@@ -782,8 +801,8 @@
             
             
             
-            <a href="/tags/RTC/">
-                <span class="chip center-align waves-effect waves-light chip-default">RTC</span>
+            <a href="/tags/LCD1602/">
+                <span class="chip center-align waves-effect waves-light chip-default">LCD1602</span>
             </a>
             
             
@@ -818,6 +837,12 @@
             
             
             
+            <a href="/tags/RTC/">
+                <span class="chip center-align waves-effect waves-light chip-default">RTC</span>
+            </a>
+            
+            
+            
             <a href="/tags/hexo/">
                 <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
             </a>
@@ -842,6 +867,12 @@
             
             
             
+            <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
+                <span class="chip center-align waves-effect waves-light chip-default">心率监控</span>
+            </a>
+            
+            
+            
             <a href="/tags/LPC54114/">
                 <span class="chip center-align waves-effect waves-light chip-default">LPC54114</span>
             </a>
@@ -856,12 +887,6 @@
             
             <a href="/tags/ESP8266/">
                 <span class="chip center-align waves-effect waves-light chip-default">ESP8266</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/">
-                <span class="chip center-align waves-effect waves-light chip-default">心率监控</span>
             </a>
             
             

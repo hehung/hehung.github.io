@@ -63,34 +63,35 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/archives" class="waves-effect waves-light">
+
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -122,7 +123,18 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>友情链接</span>
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/gallery" class="waves-effect waves-light">
+      
+      <i class="fa fa-image" style="zoom: 0.6;"></i>
+      
+      <span>图库</span>
     </a>
     
   </li>
@@ -165,34 +177,36 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/tags" class="waves-effect waves-light">
+		<a href="javascript:;" target="_blank" rel="noopener">
 			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
+				<i class="fa-fw fas fa-archive"></i>
 			
 			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -225,6 +239,17 @@
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/gallery" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-image"></i>
+			
+			图库
 		</a>
           
         </li>
@@ -314,7 +339,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['I am the loser, I am serious','I am the loser, I am serious'],
+                        strings: ['I am the loser...','I am serious...'],
                         startDelay: 300,
                         typeSpeed: 80,
                         loop: true,
@@ -766,12 +791,12 @@ $(function () {
                             <span class="chip bg-color">OLED</span>
                         </a>
                         
-                        <a href="/tags/RTC/">
-                            <span class="chip bg-color">RTC</span>
-                        </a>
-                        
                         <a href="/tags/LPC11U68/">
                             <span class="chip bg-color">LPC11U68</span>
+                        </a>
+                        
+                        <a href="/tags/RTC/">
+                            <span class="chip bg-color">RTC</span>
                         </a>
                         
                     </div>
@@ -818,12 +843,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/RTC/">
-                            <span class="chip bg-color">RTC</span>
-                        </a>
-                        
                         <a href="/tags/LPC11U68/">
                             <span class="chip bg-color">LPC11U68</span>
+                        </a>
+                        
+                        <a href="/tags/RTC/">
+                            <span class="chip bg-color">RTC</span>
                         </a>
                         
                     </div>
