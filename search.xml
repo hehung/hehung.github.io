@@ -144,11 +144,11 @@
       
         <tags>
             
-            <tag> OLED </tag>
+            <tag> RTC </tag>
             
             <tag> LPC11U68 </tag>
             
-            <tag> RTC </tag>
+            <tag> OLED </tag>
             
         </tags>
       
@@ -173,9 +173,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> RTC </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       
@@ -200,11 +200,11 @@
       
         <tags>
             
-            <tag> OLED </tag>
+            <tag> LPC11U68 </tag>
             
             <tag> IIC </tag>
             
-            <tag> LPC11U68 </tag>
+            <tag> OLED </tag>
             
         </tags>
       
@@ -287,9 +287,9 @@
             
             <tag> STM32 </tag>
             
-            <tag> OLED </tag>
-            
             <tag> IIC </tag>
+            
+            <tag> OLED </tag>
             
         </tags>
       
