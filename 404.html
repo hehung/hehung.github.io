@@ -271,186 +271,37 @@
         /* height: 75vh; */
         height: 88vh;
     }
+
+    #svgContainer {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
 </style>
 
-<link rel="stylesheet" href="/libs/my404/horse.css">
-<link rel="stylesheet" href="/libs/my404/style.css">
+
+<script src="/libs/my404/bodymovin.js"></script>
+<script src="/libs/my404/data.js"></script>
 
 <div class="bg-cover pd-header page404-cover">
-    
-  <label for="toggle">
+    <div id="svgContainer"></div>
 
-          <div class="floor"></div>
-          
-          <div class="🐴 animate">
-            <div class="front-leg right">
-              <div class="shoulder">
-                <div class="upper">
-                  <div class="knee">
-                    <div class="lower">
-                      <div class="ankle">
-                        <div class="foot">
-                          <div class="hoof"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="back-leg right">
-              <div class="top">
-                <div class="thigh">
-                  <div class="lower-leg">
-                    <div class="foot">
-                      <div class="hoof"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tail">
-              <div class="nub">
-                <div class="section">
-                <div class="section">
-                <div class="section">
-                <div class="section">
-                <div class="section">
-                <div class="section last">
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="section">
-              <div class="section">
-              <div class="section">
-              <div class="section">
-              <div class="section last">
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              <div class="back-side"></div>
-            </div>
-            
-            <div class="neck">
-              <div class="under"></div>
-              <div class="front"></div>
-              <div class="base"></div>
-              <div class="top"></div>
-              <div class="shoulder"></div>
-            </div>
-            <div class="front-leg left">
-              <div class="shoulder">
-                <div class="upper">
-                  <div class="knee">
-                    <div class="lower">
-                      <div class="ankle">
-                        <div class="foot">
-                          <div class="hoof"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="back-leg left">
-              <div class="top">
-                <div class="thigh">
-                  <div class="lower-leg">
-                    <div class="foot">
-                      <div class="hoof"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="head">
-              <div class="skull"></div>
-              <div class="nose"></div>
-              <div class="face"></div>
-              <div class="lip"></div>
-              <div class="jaw"></div>
-              <div class="chin"></div>
-              <div class="ear"></div>
-              <div class="eye"></div>
-            </div>
-          </div>  
-          
-          <div class="dust front">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-          <div class="dust back">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-        </label>
+        <script type="text/javascript">
+            var svgContainer = document.getElementById('svgContainer');
+            var animItem = bodymovin.loadAnimation({
+              wrapper: svgContainer,
+              animType: 'svg',
+              loop: true,
+              animationData: JSON.parse(animationData)
+            });
+        </script>
+
      <!--
     <div class="container">
 
