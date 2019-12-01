@@ -80,11 +80,11 @@
       
         <tags>
             
-            <tag> Keil </tag>
-            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
             
         </tags>
       
@@ -109,11 +109,11 @@
       
         <tags>
             
-            <tag> Keil </tag>
-            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
             
         </tags>
       
@@ -173,9 +173,9 @@
             
             <tag> OLED </tag>
             
-            <tag> RTC </tag>
-            
             <tag> LPC11U68 </tag>
+            
+            <tag> RTC </tag>
             
         </tags>
       
@@ -200,9 +200,9 @@
       
         <tags>
             
-            <tag> RTC </tag>
-            
             <tag> LPC11U68 </tag>
+            
+            <tag> RTC </tag>
             
         </tags>
       

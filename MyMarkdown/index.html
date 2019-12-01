@@ -287,11 +287,16 @@
 
 </header>
 
-    <style type="text/css">
+    <link rel="stylesheet" href="/libs/editorMd/css/editormd.css"/>
+<style type="text/css">
     /* don't remove. */
-    .page404-cover {
+    .page-cover {
         /* height: 75vh; */
         height: 88vh;
+    }
+
+    .editormd {
+      top: 40px;
     }
 
     header .brand-logo .logo-span {
@@ -309,42 +314,73 @@
     header .button-collapse i {
       color: #222;
     }
+
+    pre {
+      padding: 0;
+    }
+
+    .editormd-menu > li.divider {
+      overflow: inherit; 
+      padding: 5px 0px;
+    }
+
+    .CodeMirror-scroll {
+      height: 111%;
+    }
+
+    header .nav-transparent {
+        background-image: linear-gradient(to right, #0EBAB8 0%, #0B6AA0 100%);
+    }
+
+
 </style>
 
-<!-- 加载CSS文件和JS文件 -->
-<link rel="stylesheet" href=""/>
-<script src="/libs/jquery/jquery.min.js"></script>
-<script src="/libs/editorMd/editormd.min.js"></script>
-
-<div class="bg-cover pd-header page404-cover">
-
-      
-
+<div class="bg-cover pd-header page-cover">
+      <div class="editormd" id="my-editormd">
+          <textarea style="display:none;">
+[TOC]
+#### Disabled options
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+#### Editor.md directory
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/     
+            editormd.js
+            ...
+```html
+&lt;!-- English --&gt;
+&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+&lt;!-- 繁體中文 --&gt;
+&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+```
+          </textarea>
+      </div>
 </div>
 
-
-<script>
-    var testEditor;
-    testEditor = editormd("test-editormd", {
-      placeholder:'本编辑器支持Markdown编辑，左边编写，右边预览',  //默认显示的文字，这里就不解释了
-      width: "90%",
-      height: 640,
-      syncScrolling: "single",  
-      path: "lib/js/editor.md-master/lib/",   //你的path路径（原资源文件中lib包在我们项目中所放的位置）
-      theme: "dark",//工具栏主题
-      previewTheme: "dark",//预览主题
-      editorTheme: "pastel-on-dark",//编辑主题
-      saveHTMLToTextarea: true,
-      emoji: false,
-      taskList: true, 
-      tocm: true,         // Using [TOCM]
-      tex: true,                   // 开启科学公式TeX语言支持，默认关闭
-      flowChart: true,             // 开启流程图支持，默认关闭
-      sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
-      toolbarIcons : function() {  //自定义工具栏，后面有详细介绍
-         return editormd.toolbarModes['simple']; // full, simple, mini
-      },
+<script src="/libs/jquery/jquery.min.js"></script>
+<script src="/libs/editorMd/editormd.min.js"></script>
+<script  type="text/javascript">
+  var myEditor;
+  $(function() {  
+      myEditor = editormd("my-editormd", {
+        width   : "90%",
+        height  : "88%",
+        syncScrolling : "single",
+        path    : "/libs/editorMd/lib/",
+        emoji   : true,
     });
+  });
 </script>
 
 
