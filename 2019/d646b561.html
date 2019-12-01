@@ -437,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    928
+                    910
                 </div>
                 
 
@@ -487,8 +487,8 @@
 void delay(uint ms)
 {
     uchar i;
-    for(;ms&gt;0;ms--)
-        for(i=110;i&gt;0;i--);
+    for(;ms>0;ms--)
+        for(i=110;i>0;i--);
 }
 
 int main()
@@ -498,7 +498,7 @@ int main()
     P0 = kk;        
     while(1)
     {
-        kk &lt;&lt;= 1;        //左移，如果右移可以改为kk &gt;&gt;= 1;
+        kk <<= 1;        //左移，如果右移可以改为kk >>= 1;
         if(kk == 0)
         {
             kk = 0x01;
@@ -507,7 +507,7 @@ int main()
         P0 = kk;
         delay(1000);
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></reg52.h></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>  程序编写完成之后就是编译了，顺利编译通过就表示没有语法错误了，现在开始下一步，生成hex文件。</p>
 <h2 id="hex文件生成"><a href="#hex文件生成" class="headerlink" title="hex文件生成"></a>hex文件生成</h2><p>  如下图所示。选择该图标，在弹出的对话框中选择Output，将创建HEX文件的对话框前面打上对勾，这样再次编译工程之后就可以在指定目录下生成一个.hex文件。这是一种16进制的文件，直接下载到单片机中运行即可。</p>
 <p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/51_project_create_and_water_light/%E9%80%89%E6%8B%A9%E7%94%9F%E6%88%90hex%E6%96%87%E4%BB%B6.png" alt="选择生成hex文件" title="选择生成hex文件"></p>
@@ -1327,15 +1327,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             

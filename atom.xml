@@ -206,11 +206,11 @@
       <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
     
     
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
       <category term="RTC" scheme="http://hehung.top/tags/RTC/"/>
     
       <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
-    
-      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
     
   </entry>
   
@@ -268,11 +268,11 @@
       <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
+      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
     
       <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
     
-      <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+      <category term="LPC11U68" scheme="http://hehung.top/tags/LPC11U68/"/>
     
   </entry>
   
@@ -365,9 +365,9 @@
     
       <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
     
-      <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
-    
       <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
+    
+      <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
     
   </entry>
   

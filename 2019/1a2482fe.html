@@ -435,14 +435,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    964
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 				
@@ -529,13 +529,13 @@ uchar disp[8];
 void delay_ms(uint q)
 {
      uint w;
-         for(;q&gt;0;q--)
-            for(w=110;w&gt;0;w--);
+         for(;q>0;q--)
+            for(w=110;w>0;w--);
 }
 
 void delay_us(uint q)
 {
-         for(;q&gt;0;q--);
+         for(;q>0;q--);
 }
 
 void delay_nop()
@@ -574,12 +574,12 @@ void reset() //重置
 void write_data(uchar dat)
 {
     uchar i;
-        for(i=0;i&lt;8;i++)
+        for(i=0;i<8;i++)
         {
             sck=0;
-                io=dat&amp;0x01;
+                io=dat&0x01;
                 delay_nop();delay_nop();delay_nop();
-                dat&gt;&gt;=1;
+                dat>>=1;
                 sck=1;
         }        
 }
@@ -605,9 +605,9 @@ uchar read_dat(uchar add)
     reset();
         delay_nop();
         write_data(add);
-        for(i=0;i&lt;8;i++)
+        for(i=0;i<8;i++)
         {
-            v&gt;&gt;=1;
+            v>>=1;
                 sck=0;
             if(io)
                         v|=0x80;
@@ -626,7 +626,7 @@ uchar read_dat(uchar add)
 void set()
 {
    uchar i,j;
-   for(i=0;i&lt;7;i++)
+   for(i=0;i<7;i++)
    {
         j=time_data[i]/10;
                 time_data[i]=time_data[i]%10;
@@ -635,7 +635,7 @@ void set()
    }                                          
    write_add_data(0x8e,0x00);          //去除写保护
    _nop_();
-   for(i=0;i&lt;7;i++)
+   for(i=0;i<7;i++)
    {
         write_add_data(write_add[i],time_data[i]);
                 delay_nop();
@@ -647,7 +647,7 @@ void set()
 void readtime()
 {
         uchar i;
-        for(i=0;i&lt;7;i++)
+        for(i=0;i<7;i++)
         {
             time_data[i]=read_dat(read_add[i]);
                 write_add_data(0x00,0x00);               //重点啊
@@ -683,7 +683,7 @@ void chuli1()                //处理数据函数
 void display()
 {
     uchar i;
-    for(i=0;i&lt;8;i++)
+    for(i=0;i<8;i++)
         {
             change(i+1);
                 P0=smg_D[disp[i]];
@@ -710,7 +710,7 @@ void main()
                         chuli();                //处理时分秒
                 }        
         }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></intrins.h></reg52.h></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font color="blue">注意：上述程序中，我是用按键8来进行年与日与时分秒的切换，按下按键8（P2.0引脚）就会显示年月日，放开就会显示时间。</font></p>
 <h1 id="运行结果展示"><a href="#运行结果展示" class="headerlink" title="运行结果展示"></a>运行结果展示</h1><p>》时间显示效果</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS1302/display2.jpg" alt="时间显示" title="时间显示"></p>
@@ -1519,15 +1519,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             

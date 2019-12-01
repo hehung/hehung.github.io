@@ -394,12 +394,12 @@
                                 <span class="chip bg-color">STM32</span>
                             </a>
                         
-                            <a href="/tags/IIC/">
-                                <span class="chip bg-color">IIC</span>
-                            </a>
-                        
                             <a href="/tags/OLED/">
                                 <span class="chip bg-color">OLED</span>
+                            </a>
+                        
+                            <a href="/tags/IIC/">
+                                <span class="chip bg-color">IIC</span>
                             </a>
                         
                     </div>
@@ -437,14 +437,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    770
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 				
@@ -481,13 +481,13 @@
 void IIC_Init(void)
 {                                             
         GPIO_InitTypeDef GPIO_InitStructure;
-        //RCC-&gt;APB2ENR|=1&lt;&lt;4;//先使能外设IO PORTA时钟 
+        //RCC->APB2ENR|=1<<4;//先使能外设IO PORTA时钟 
         RCC_APB2PeriphClockCmd(        RCC_APB2Periph_GPIOB, ENABLE );        
 
         GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7;
         GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP ;   //推挽输出
         GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-        GPIO_Init(GPIOB, &amp;GPIO_InitStructure);
+        GPIO_Init(GPIOB, &GPIO_InitStructure);
 
         IIC_SCL=1;
         IIC_SDA=1;
@@ -503,7 +503,7 @@ void SDA_OUT(void)
     GPIO_InitStructer.GPIO_Pin= GPIO_Pin_7;
     GPIO_InitStructer.GPIO_Speed=GPIO_Speed_50MHz;
     GPIO_InitStructer.GPIO_Mode=GPIO_Mode_Out_PP;
-    GPIO_Init(GPIOB, &amp;GPIO_InitStructer);
+    GPIO_Init(GPIOB, &GPIO_InitStructer);
 }
 
 
@@ -516,7 +516,7 @@ void SDA_IN(void)
     GPIO_InitStructer.GPIO_Pin= GPIO_Pin_7;
     GPIO_InitStructer.GPIO_Speed=GPIO_Speed_50MHz;
     GPIO_InitStructer.GPIO_Mode=GPIO_Mode_IPU;
-    GPIO_Init(GPIOB, &amp;GPIO_InitStructer);
+    GPIO_Init(GPIOB, &GPIO_InitStructer);
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="OLED初始化"><a href="#OLED初始化" class="headerlink" title="OLED初始化"></a>OLED初始化</h2><pre class="line-numbers language-C"><code class="language-C">void OLED_Init(void)
 {
@@ -536,8 +536,8 @@ void SDA_IN(void)
         OLED_WrCmd(0x14); //bit2，开启/关闭
         OLED_WrCmd(0x20); //设置内存地址模式
         OLED_WrCmd(0x02); //[1:0],00，列地址模式;01，行地址模式;10,页地址模式;默认10;
-        OLED_WrCmd(0xA1); //段重定义设置,bit0:0,0-&gt;0;1,0-&gt;127;
-        OLED_WrCmd(0xC0); //设置COM扫描方向;bit3:0,普通模式;1,重定义模式 COM[N-1]-&gt;COM0;N:驱动路数
+        OLED_WrCmd(0xA1); //段重定义设置,bit0:0,0->0;1,0->127;
+        OLED_WrCmd(0xC0); //设置COM扫描方向;bit3:0,普通模式;1,重定义模式 COM[N-1]->COM0;N:驱动路数
         OLED_WrCmd(0xDA); //设置COM硬件引脚配置
         OLED_WrCmd(0x12); //[5:4]配置
 
@@ -576,7 +576,25 @@ void OLED_ShowHz(u8 x,u8 y,u8 chr,u8 mode)
         u8 y0=y;
         u8 csize=32;                //得到字体一个字符对应点阵集所占的字节数
         chr=chr*2;//得到偏移后的值                 
-    for(t=0;t<csize;t++) {="" temp="Hz[chr][t];" for(t1="0;t1<8;t1++)" if(temp&0x80)="" oled_drawpoint(x,y,mode);="" else="" oled_drawpoint(x,y,!mode);="" temp<<="1;" y++;="" if((y-y0)="=16)" y="y0;" x++;="" break;="" }="" }<span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></csize;t++)></code></pre>
+    for(t=0;t<csize;t++)
+    {   
+                temp=Hz[chr][t];        
+        for(t1=0;t1<8;t1++)
+                {
+                        if(temp&0x80)
+                                OLED_DrawPoint(x,y,mode);
+                        else OLED_DrawPoint(x,y,!mode);
+                        temp<<=1;
+                        y++;
+                        if((y-y0)==16)
+                        {
+                                y=y0;
+                                x++;
+                                break;
+                        }
+                }           
+    }                   
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意：汉字字库（也就是刚才使用汉字生成工具生成的数据）的名字就是Hz[][16]。</p>
 <h1 id="演示结果展示"><a href="#演示结果展示" class="headerlink" title="演示结果展示"></a>演示结果展示</h1><p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/generate_hanzi.png" alt="演示效果" title="演示效果"></p>
 <h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>附上程序：<a href="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/STM32-OLED/OLED_Project.7z" target="_blank" rel="noopener">点我下载STM32 OLED驱动程序</a></p>
@@ -666,12 +684,12 @@ void OLED_ShowHz(u8 x,u8 y,u8 chr,u8 mode)
                                     <span class="chip bg-color">STM32</span>
                                 </a>
                             
-                                <a href="/tags/IIC/">
-                                    <span class="chip bg-color">IIC</span>
-                                </a>
-                            
                                 <a href="/tags/OLED/">
                                     <span class="chip bg-color">OLED</span>
+                                </a>
+                            
+                                <a href="/tags/IIC/">
+                                    <span class="chip bg-color">IIC</span>
                                 </a>
                             
                         </div>
@@ -1375,15 +1393,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             

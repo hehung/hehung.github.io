@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    622
+                    445
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 				
@@ -499,8 +499,8 @@ uchar table[]={0x01,0x03,0x07,0x08,0x1f,0x3f,0x7f,0xff};
 void yan(uint ms)
 {
      uint w;
-         for(;ms&gt;0;ms--)
-            for(w=110;w&gt;0;w--);
+         for(;ms>0;ms--)
+            for(w=110;w>0;w--);
 }
 void xzl(uchar com)
 {
@@ -537,26 +537,26 @@ void main()
      uchar i;
      init();
          xzl(0x80+0x16);
-         for(i=0;i&lt;16;i++)
+         for(i=0;i<16;i++)
          {
              xsj(xs1[i]);                //显示第一行数据
                  yan(30);
          }
          xzl(0x80+0x40+0x16);
-         for(i=0;i&lt;16;i++)
+         for(i=0;i<16;i++)
          {
              xsj(xs2[i]);                //显示第二行数据
                  yan(30);
          }
           while(1)
           {
-                 for(i=0;i&lt;40;i++)
+                 for(i=0;i<40;i++)
                  {
                       xzl(0x1c);                //右移命令
                           yan(300);
                  }          
           }                  
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></reg52.h></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，由于使用了右移命令，所以文字连续向右移动，感兴趣的小伙伴可以试一下，如下图所示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/Display1.gif" alt="运行结果" title="运行结果"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-LCD1602/display2.gif" alt="运行结果" title="运行结果"></p>
@@ -1368,15 +1368,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             

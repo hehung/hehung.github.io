@@ -523,7 +523,7 @@ void change(int what);
 //延时函数(短延时)
 void delay(int ms)
 {
-        for(;ms&gt;0;ms--);
+        for(;ms>0;ms--);
 }
 
 //该函数可以选择某一个数码管显示
@@ -550,9 +550,9 @@ int main()
 
         while(1)
         {
-                for(;time&gt;0;time--)
+                for(;time>0;time--)
                 {
-                        for(i=1;i&lt;=8;i++)
+                        for(i=1;i<=8;i++)
                         {
                                 change(i);
                                 SMG = number[(j+i)%16];                //使之可以滚动显示的处理        
@@ -563,11 +563,11 @@ int main()
                 }
                 time = 50;
                 j++;
-                if(j&gt;17)
+                if(j>17)
                         j = 0;
         }
 
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></reg52.h></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述程序就是实现了对8个数码管显示0-F的滚动显示程序。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1376,15 +1376,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             

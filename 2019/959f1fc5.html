@@ -439,7 +439,7 @@ DS18B20是一个高精度的温度获取芯片，该芯片是单总线的，时�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    970
+                    933
                 </div>
                 
 
@@ -512,7 +512,7 @@ void main()
 
         while(1)
         {
-                ds18b20_read_temp(&amp;temp, &amp;xiao);
+                ds18b20_read_temp(&temp, &xiao);
                 display(temp, xiao);
         }
 }
@@ -552,23 +552,23 @@ void ds18b20_init()
 void ds18b20_write_data(uchar dat)
 {
      uchar i;
-         for(i=0;i&lt;8;i++)
+         for(i=0;i<8;i++)
          {
              dq=0;
-                 dq=dat&amp;0x01;
+                 dq=dat&0x01;
                  delay(2);
                  dq=1;
-                 dat&gt;&gt;=1;
+                 dat>>=1;
          } 
          delay(4);    
 }
 uchar ds18b20_read_data()
 {
           uchar i,v;
-          for(i=0;i&lt;8;i++)
+          for(i=0;i<8;i++)
           {
               dq=0;
-                  v&gt;&gt;=1;
+                  v>>=1;
                   dq=1;
                   if(dq)
                      v|=0x80;
@@ -589,10 +589,10 @@ void ds18b20_read_temp(int *temp,int *xiao)
          ds18b20_write_data(0xbe);                //读温度
          a=ds18b20_read_data();          //读出温度低位
          b=ds18b20_read_data();           //读出温度高位
-         b&lt;&lt;=4;
-         b+=(a&amp;0xf0)&gt;&gt;4;
+         b<<=4;
+         b+=(a&0xf0)>>4;
          *temp=b;                                //温度整数部分
-         *xiao=a&amp;0x0f;                        
+         *xiao=a&0x0f;                        
          *xiao=*xiao/1.6;                //温度小数部分
 }
 
@@ -622,7 +622,7 @@ void display(int temp, int xiao)
         SMG = 0;
         delay(30);         //消除暗影
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></reg52.h></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>  写好了程序之后就是验证我们的实验结果了，首先要知道DS18B20长得什么样的，在单片机的位置，如下图所示：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hehung/cdn-jsDelivr-hehung-blog-sources/51-DS_18B20_temperature/DS18B20_in_board.png" alt="DS18B20在单片机中的位置" title="DS18B20在单片机中的位置"></p>
 <p>  可以想办法给DS18B20加热，温度数值就会增加。<br>  如下图，我是用手给它捏住，它的温度就会上升。</p>
@@ -1435,15 +1435,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由在
-            <span id="year">年份</span>年由&nbsp;&copy;
+        	Copyright&nbsp;&copy;
+            <span id="year">年份</span>
             <a href="http://hehung.top" target="_blank">hehung</a>
-            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            | Power by <a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;|&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.7k</span>&nbsp;字
+                class="white-color">21.5k</span>&nbsp;字
             
             
             
