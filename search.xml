@@ -37,6 +37,33 @@
     
     
     <entry>
+      <title>如何做一个好看的404界面</title>
+      <link href="/2019/fbbdec93.html"/>
+      <url>/2019/fbbdec93.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>hexo的是支持404界面的，使用起来很简单，只需要在hexo的source文件里面创建一个404.md 以及在主题的layout文件夹下创建一个404.ejs文件，然后想显示的内容直接填写在404.ejs里面就行了。<br>在404界面是在matery主题上做的，对于不同的主题方法类似，要根据具体的主题而定。</p></blockquote><blockquote><p>先展示一下效果</p></blockquote><h1 id="新建一个404-md文件"><a href="#新建一个404-md文件" class="headerlink" title="新建一个404.md文件"></a>新建一个404.md文件</h1><p>  在hexo的souce文件夹下创建一个404.md，之后输入如下内容：</p><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>title: 404date: 2019-11-23 21:10:10type: "404"<span class="token title important">layout: "404"<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>  如下图所示：</p><h1 id="新建一个404-ejs文件"><a href="#新建一个404-ejs文件" class="headerlink" title="新建一个404.ejs文件"></a>新建一个404.ejs文件</h1><p>  在layout文件夹下创建404.ejs文件，可以在这里写入html，CSS和JS内容，也就是要在网页上进行显示的页面。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>涂鸦TYDE3.0开发板开箱与程序下载</title>
       <link href="/2019/60f07f02.html"/>
       <url>/2019/60f07f02.html</url>
@@ -53,11 +80,11 @@
       
         <tags>
             
+            <tag> Keil </tag>
+            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
-            
-            <tag> Keil </tag>
             
         </tags>
       
@@ -82,11 +109,11 @@
       
         <tags>
             
+            <tag> Keil </tag>
+            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
-            
-            <tag> Keil </tag>
             
         </tags>
       
