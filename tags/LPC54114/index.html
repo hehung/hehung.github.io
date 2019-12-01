@@ -1,2 +1,905 @@
-<!-- build time:Sun Dec 01 2019 15:30:18 GMT+0800 (GMT+08:00) --><!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="标签: LPC54114, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式"><meta name="description" content="标签: LPC54114 | Hehung&#39;s Blog"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>标签: LPC54114 | Hehung&#39;s Blog</title><link rel="icon" type="image/png" href="/favicon.png"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><link rel="stylesheet" href="/css/prism.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Hehung's Blog" type="application/atom+xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">Hehung's Blog</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span> <i class="fas fa-chevron-down" aria-hidden="true" style="zoom:.6"></i></a><ul class="sub-nav menus_item_child"><li><a href="/tags"><i class="fas fa-tags" style="margin-top:-20px;zoom:.6"></i> <span>标签</span></a></li><li><a href="/categories"><i class="fas fa-bookmark" style="margin-top:-20px;zoom:.6"></i> <span>分类</span></a></li></ul></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/gallery" class="waves-effect waves-light"><i class="fa fa-image" style="zoom:.6"></i> <span>图库</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友链</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="/medias/logo.png" class="logo-img responsive-img"><div class="logo-name">Hehung's Blog</div><div class="logo-desc">hehung的博客|嵌入式开发|STM32|单片机|NXP|LPC</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="javascript:;" target="_blank" rel="noopener"><i class="fa-fw fas fa-archive"></i> 归档 <span class="m-icon"><i class="fas fa-chevron-right"></i></span></a><ul><li><a href="/tags" style="margin-left:75px" ;><i class="fa fas fa-tags" style="position:absolute;left:50px"></i> <span>标签</span></a></li><li><a href="/categories" style="margin-left:75px" ;><i class="fa fas fa-bookmark" style="position:absolute;left:50px"></i> <span>分类</span></a></li></ul></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言板</a></li><li class="m-nav-item"><a href="/gallery" class="waves-effect waves-light"><i class="fa-fw fa fa-image"></i> 图库</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><div class="bg-cover pd-header about-cover"><div class="container"><div class="row"><div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2"><div class="brand"><div class="title center-align">生命不息 折腾不止</div><div class="description center-align"><span id="subtitle"></span><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script><script>var typed=new Typed("#subtitle",{strings:["I am a loser...","I am serious..."],startDelay:300,typeSpeed:80,loop:!0,backSpeed:100,showCursor:!1})</script></div></div></div></div><script>$(".bg-cover").css("background-image","url(/medias/banner/"+(new Date).getDay()+".jpg)")</script></div></div><main class="content"><div id="tags" class="container chip-container"><div class="card"><div class="card-content"><div class="tag-title center-align"><i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签</div><div class="tag-chips"><a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" title="单片机: 7"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="单片机" style="background-color:#F9EBEA">单片机 <span class="tag-length">7</span> </span></a><a href="/tags/C%E8%AF%AD%E8%A8%80/" title="C语言: 9"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="C语言" style="background-color:#F5EEF8">C语言 <span class="tag-length">9</span> </span></a><a href="/tags/DS18B20/" title="DS18B20: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="DS18B20" style="background-color:#D5F5E3">DS18B20 <span class="tag-length">1</span> </span></a><a href="/tags/LPC54608/" title="LPC54608: 3"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="LPC54608" style="background-color:#E8F8F5">LPC54608 <span class="tag-length">3</span> </span></a><a href="/tags/CC3220S/" title="CC3220S: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="CC3220S" style="background-color:#FEF9E7">CC3220S <span class="tag-length">1</span> </span></a><a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/" title="机械臂: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="机械臂" style="background-color:#F8F9F9">机械臂 <span class="tag-length">1</span> </span></a><a href="/tags/%E4%B8%B2%E5%8F%A3/" title="串口: 5"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="串口" style="background-color:#82E0AA">串口 <span class="tag-length">5</span> </span></a><a href="/tags/Keil/" title="Keil: 3"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="Keil" style="background-color:#D7BDE2">Keil <span class="tag-length">3</span> </span></a><a href="/tags/PWM/" title="PWM: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="PWM" style="background-color:#A3E4D7">PWM <span class="tag-length">1</span> </span></a><a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/" title="数码管: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="数码管" style="background-color:#85C1E9">数码管 <span class="tag-length">1</span> </span></a><a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" title="51单片机: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="51单片机" style="background-color:#F8C471">51单片机 <span class="tag-length">1</span> </span></a><a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/" title="电路设计: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="电路设计" style="background-color:#F9E79F">电路设计 <span class="tag-length">1</span> </span></a><a href="/tags/LCD1602/" title="LCD1602: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="LCD1602" style="background-color:#F8F9F9">LCD1602 <span class="tag-length">1</span> </span></a><a href="/tags/STM32/" title="STM32: 3"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="STM32" style="background-color:#A3E4D7">STM32 <span class="tag-length">3</span> </span></a><a href="/tags/OLED/" title="OLED: 5"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="OLED" style="background-color:#D7BDE2">OLED <span class="tag-length">5</span> </span></a><a href="/tags/IIC/" title="IIC: 2"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="IIC" style="background-color:#A3E4D7">IIC <span class="tag-length">2</span> </span></a><a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/" title="步进电机: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="步进电机" style="background-color:#F5EEF8">步进电机 <span class="tag-length">1</span> </span></a><a href="/tags/LPC11U68/" title="LPC11U68: 5"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="LPC11U68" style="background-color:#F5EEF8">LPC11U68 <span class="tag-length">5</span> </span></a><a href="/tags/RTC/" title="RTC: 2"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="RTC" style="background-color:#D5F5E3">RTC <span class="tag-length">2</span> </span></a><a href="/tags/LED/" title="LED: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="LED" style="background-color:#EEE">LED <span class="tag-length">1</span> </span></a><a href="/tags/python/" title="python: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="python" style="background-color:#F8C471">python <span class="tag-length">1</span> </span></a><a href="/tags/requests/" title="requests: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="requests" style="background-color:#F9EBEA">requests <span class="tag-length">1</span> </span></a><a href="/tags/json/" title="json: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="json" style="background-color:#D7BDE2">json <span class="tag-length">1</span> </span></a><a href="/tags/html/" title="html: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="html" style="background-color:#FEF9E7">html <span class="tag-length">1</span> </span></a><a href="/tags/css/" title="css: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="css" style="background-color:#82E0AA">css <span class="tag-length">1</span> </span></a><a href="/tags/hexo/" title="hexo: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="hexo" style="background-color:#EEE">hexo <span class="tag-length">1</span> </span></a><a href="/tags/github/" title="github: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="github" style="background-color:#F5EEF8">github <span class="tag-length">1</span> </span></a><a href="/tags/coding/" title="coding: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="coding" style="background-color:#F8F9F9">coding <span class="tag-length">1</span> </span></a><a href="/tags/LPC54114/" title="LPC54114: 1"><span class="chip center-align waves-effect waves-light chip-active" data-tagname="LPC54114" style="background-color:#F8F9F9">LPC54114 <span class="tag-length">1</span> </span></a><a href="/tags/ADC/" title="ADC: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="ADC" style="background-color:#FEF9E7">ADC <span class="tag-length">1</span> </span></a><a href="/tags/ESP8266/" title="ESP8266: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="ESP8266" style="background-color:#F5EEF8">ESP8266 <span class="tag-length">1</span> </span></a><a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/" title="心率监控: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="心率监控" style="background-color:#F8F9F9">心率监控 <span class="tag-length">1</span> </span></a><a href="/tags/DS1302/" title="DS1302: 1"><span class="chip center-align waves-effect waves-light chip-default" data-tagname="DS1302" style="background-color:#F5EEF8">DS1302 <span class="tag-length">1</span></span></a></div></div></div></div><article id="articles" class="container articles"><div class="row tags-posts"><div class="article tag-post col s12 m6 l4" data-tags="OLED, LPC54114, ADC, ESP8266" data-aos="fade-up"><div class="card"><a href="/2019/45279adc.html"><div class="card-image tag-image"><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" class="responsive-img" alt="LPC双核挑战赛之餐厅服务机器人"> <span class="card-title">LPC双核挑战赛之餐厅服务机器人</span></div></a><div class="card-content article-content"><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2019-11-28 </span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">LPC系列 </a><a href="/categories/LPC%E7%B3%BB%E5%88%97/%E6%AF%94%E8%B5%9B/" class="post-category">比赛</a></span></div></div></div></div></div></article></main><footer class="page-footer bg-color"><div class="container row center-align"><div class="col s12 m8 l8 copy-right">本站由在 <span id="year">年份</span>年由&nbsp;&copy; <a href="http://hehung.top" target="_blank">hehung</a> &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建<br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">21.5k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span><span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="sitetime">载入运行时间...</span><script>function siteTime(){window.setTimeout("siteTime()",1e3);var e=1e3,t=60*e,n=60*t,o=24*n,i=365*o,r=new Date,a="2019",m="11",l="16",M="16",d="0",g="0",s=r.getFullYear(),T=r.getMonth()+1,u=r.getDate(),c=r.getHours(),f=r.getMinutes(),h=r.getSeconds(),y=Date.UTC(a,m,l,M,d,g),H=Date.UTC(s,T,u,c,f,h),I=H-y,B=Math.floor(I/i),D=Math.floor(I/o-365*B),E=Math.floor((I-(365*B+D)*o)/n),L=Math.floor((I-(365*B+D)*o-E*n)/t),w=Math.floor((I-(365*B+D)*o-E*n-L*t)/e);a==s?(document.getElementById("year").innerHTML=s,document.getElementById("sitetime").innerHTML="本站已勉强运行了 "+D+" 天 "+E+" 小时 "+L+" 分钟 "+w+" 秒"):(document.getElementById("year").innerHTML=a+" - "+s,document.getElementById("sitetime").innerHTML="本站已安全运行 "+B+" 年 "+D+" 天 "+E+" 小时 "+L+" 分钟 "+w+" 秒")}setInterval(siteTime,1e3)</script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/hehung" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i> </a><a href="mailto:1398660197@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1398660197" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1398660197" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="/js/search.js"></script><script type="text/javascript">$(function(){searchFunc("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="back-top-btn waves-effect waves-light" href="#!"><i class="fas fa-rocket"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?0b6e6e293444510a4756f43d653a8add";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),s=window.location.protocol.split(":")[0];"https"===s?t.src="https://zz.bdstatic.com/linksubmit/push.js":t.src="http://push.zhanzhang.baidu.com/push.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}()</script><script>!function(){var s="https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";document.write('<script src="'+s+'" id="sozz"><\/script>')}()</script><script type="text/javascript">var windowWidth=$(window).width();windowWidth>992&&document.write('<script type="text/javascript" src="/js/mouse_click_wenzi.js"><\/script>')</script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script type="text/javascript" color="70, 160, 82" pointcolor="0,0,255" opacity="0.7" zindex="-1" count="99" src="/libs/background/canvas-nest.js"></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script></body></html><!-- rebuild by neat -->
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="标签: LPC54114, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="description" content="标签: LPC54114 | Hehung&#39;s Blog">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>标签: LPC54114 | Hehung&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Hehung's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">Hehung's Blog</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/gallery" class="waves-effect waves-light">
+      
+      <i class="fa fa-image" style="zoom: 0.6;"></i>
+      
+      <span>图库</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img responsive-img">
+        
+        <div class="logo-name">Hehung's Blog</div>
+        <div class="logo-desc">
+            
+            hehung的博客|嵌入式开发|STM32|单片机|NXP|LPC
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;" target="_blank" rel="noopener">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/gallery" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-image"></i>
+			
+			图库
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                生命不息 折腾不止
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['I am a loser...','I am serious...'],
+                        startDelay: 300,
+                        typeSpeed: 80,
+                        loop: true,
+                        backSpeed: 100,
+                        showCursor: false
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" title="单片机: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="单片机" style="background-color: #F9EBEA;">单片机
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C%E8%AF%AD%E8%A8%80/" title="C语言: 9">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C语言" style="background-color: #F5EEF8;">C语言
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PWM/" title="PWM: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="PWM" style="background-color: #D5F5E3;">PWM
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/LPC54608/" title="LPC54608: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="LPC54608" style="background-color: #E8F8F5;">LPC54608
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CC3220S/" title="CC3220S: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CC3220S" style="background-color: #FEF9E7;">CC3220S
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/" title="机械臂: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="机械臂" style="background-color: #F8F9F9;">机械臂
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%B8%B2%E5%8F%A3/" title="串口: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="串口" style="background-color: #82E0AA;">串口
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DS18B20/" title="DS18B20: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="DS18B20" style="background-color: #D7BDE2;">DS18B20
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Keil/" title="Keil: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Keil" style="background-color: #A3E4D7;">Keil
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/" title="数码管: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="数码管" style="background-color: #85C1E9;">数码管
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/LCD1602/" title="LCD1602: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="LCD1602" style="background-color: #F8C471;">LCD1602
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" title="51单片机: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="51单片机" style="background-color: #F9E79F;">51单片机
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1/" title="电路设计: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="电路设计" style="background-color: #82E0AA;">电路设计
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/" title="步进电机: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="步进电机" style="background-color: #F5EEF8;">步进电机
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/STM32/" title="STM32: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="STM32" style="background-color: #A3E4D7;">STM32
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/RTC/" title="RTC: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="RTC" style="background-color: #D5F5E3;">RTC
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/LPC11U68/" title="LPC11U68: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="LPC11U68" style="background-color: #F5EEF8;">LPC11U68
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/IIC/" title="IIC: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="IIC" style="background-color: #A3E4D7;">IIC
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/OLED/" title="OLED: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="OLED" style="background-color: #D7BDE2;">OLED
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/LED/" title="LED: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="LED" style="background-color: #EEE;">LED
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/python/" title="python: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="python" style="background-color: #F8C471;">python
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/requests/" title="requests: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="requests" style="background-color: #F9EBEA;">requests
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/json/" title="json: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="json" style="background-color: #D7BDE2;">json
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/html/" title="html: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="html" style="background-color: #FEF9E7;">html
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="css" style="background-color: #82E0AA;">css
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/hexo/" title="hexo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="hexo" style="background-color: #EEE;">hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/github/" title="github: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="github" style="background-color: #F5EEF8;">github
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/coding/" title="coding: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="coding" style="background-color: #F8F9F9;">coding
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/DS1302/" title="DS1302: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="DS1302" style="background-color: #F5EEF8;">DS1302
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/LPC54114/" title="LPC54114: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="LPC54114" style="background-color: #F8F9F9;">LPC54114
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ADC/" title="ADC: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ADC" style="background-color: #FEF9E7;">ADC
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ESP8266/" title="ESP8266: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ESP8266" style="background-color: #F5EEF8;">ESP8266
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BF%83%E7%8E%87%E7%9B%91%E6%8E%A7/" title="心率监控: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="心率监控" style="background-color: #F8F9F9;">心率监控
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="OLED, LPC54114, ADC, ESP8266" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2019/45279adc.html">
+                        <div class="card-image tag-image">
+                            
+                            <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" class="responsive-img" alt="LPC双核挑战赛之餐厅服务机器人">
+                            
+                            <span class="card-title">LPC双核挑战赛之餐厅服务机器人</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
+                                LPC系列
+                                </a>
+                                
+                                <a href="/categories/LPC%E7%B3%BB%E5%88%97/%E6%AF%94%E8%B5%9B/" class="post-category">
+                                比赛
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由在
+            <span id="year">年份</span>年由&nbsp;&copy;
+            <a href="http://hehung.top" target="_blank">hehung</a>
+            &nbsp;基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            &nbsp;的主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>搭建
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">22.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "16";
+                    var startHour = "16";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行了 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hehung" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1398660197@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1398660197" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1398660197" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="back-top-btn waves-effect waves-light" href="#!">
+        <i class="fas fa-rocket"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0b6e6e293444510a4756f43d653a8add";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+    
+
+    <script type="text/javascript">
+        //只在桌面版网页启用特效 | Enable this function only on PC
+        
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/js/mouse_click_wenzi.js"><\/script>');
+            }
+        
+    </script>
+
+    
+
+    
+  
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="70, 160, 82"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
