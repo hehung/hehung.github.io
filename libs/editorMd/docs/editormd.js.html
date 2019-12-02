@@ -1,20 +1,50 @@
-/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: editormd.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+<link rel="alternate" href="/atom.xml" title="Hehung's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: editormd.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
  * Editor.md
  *
- * @file        editormd.amd.js 
- * @version     v1.5.0 
+ * @file        editormd.js 
+ * @version     v1.4.5 
  * @description Open source online markdown editor.
  * @license     MIT License
  * @author      Pandao
  * {@link       https://github.com/pandao/editor.md}
- * @updateTime  2015-06-09
+ * @updateTime  2015-06-02
  */
 
 ;(function(factory) {
     "use strict";
     
 	// CommonJS/Node.js
-	if (typeof require === "function" && typeof exports === "object" && typeof module === "object")
+	if (typeof require === "function" &amp;&amp; typeof exports === "object" &amp;&amp; typeof module === "object")
     { 
         module.exports = factory;
     }
@@ -22,68 +52,7 @@
 	{
         if (define.amd) // for Require.js
         {
-            var cmModePath  = "./lib/codemirror/mode/";
-            var cmAddonPath = "./lib/codemirror/addon/";
-
-            var codeMirrorModules = [
-                "jquery", "marked", "prettify",
-                "katex", "raphael", "underscore", "flowchart",  "jqueryflowchart",  "sequenceDiagram",
-
-                "./lib/codemirror/lib/codemirror",
-                cmModePath + "css/css",
-                cmModePath + "sass/sass",
-                cmModePath + "shell/shell",
-                cmModePath + "sql/sql",
-                cmModePath + "clike/clike",
-                cmModePath + "php/php",
-                cmModePath + "xml/xml",
-                cmModePath + "markdown/markdown",
-                cmModePath + "javascript/javascript",
-                cmModePath + "htmlmixed/htmlmixed",
-                cmModePath + "gfm/gfm",
-                cmModePath + "http/http",
-                cmModePath + "go/go",
-                cmModePath + "dart/dart",
-                cmModePath + "coffeescript/coffeescript",
-                cmModePath + "nginx/nginx",
-                cmModePath + "python/python",
-                cmModePath + "perl/perl",
-                cmModePath + "lua/lua",
-                cmModePath + "r/r", 
-                cmModePath + "ruby/ruby", 
-                cmModePath + "rst/rst",
-                cmModePath + "smartymixed/smartymixed",
-                cmModePath + "vb/vb",
-                cmModePath + "vbscript/vbscript",
-                cmModePath + "velocity/velocity",
-                cmModePath + "xquery/xquery",
-                cmModePath + "yaml/yaml",
-                cmModePath + "erlang/erlang",
-                cmModePath + "jade/jade",
-
-                cmAddonPath + "edit/trailingspace", 
-                cmAddonPath + "dialog/dialog", 
-                cmAddonPath + "search/searchcursor", 
-                cmAddonPath + "search/search", 
-                cmAddonPath + "scroll/annotatescrollbar", 
-                cmAddonPath + "search/matchesonscrollbar", 
-                cmAddonPath + "display/placeholder", 
-                cmAddonPath + "edit/closetag", 
-                cmAddonPath + "fold/foldcode",
-                cmAddonPath + "fold/foldgutter",
-                cmAddonPath + "fold/indent-fold",
-                cmAddonPath + "fold/brace-fold",
-                cmAddonPath + "fold/xml-fold", 
-                cmAddonPath + "fold/markdown-fold",
-                cmAddonPath + "fold/comment-fold", 
-                cmAddonPath + "mode/overlay", 
-                cmAddonPath + "selection/active-line", 
-                cmAddonPath + "edit/closebrackets", 
-                cmAddonPath + "display/fullscreen",
-                cmAddonPath + "search/match-highlighter"
-            ];
-
-            define(codeMirrorModules, factory);
+            /* Require.js define replace */
         } 
         else 
         {
@@ -97,16 +66,7 @@
     
 }(function() {    
 
-    if (typeof define == "function" && define.amd) {
-       $          = arguments[0];
-       marked     = arguments[1];
-       prettify   = arguments[2];
-       katex      = arguments[3];
-       Raphael    = arguments[4];
-       _          = arguments[5];
-       flowchart  = arguments[6];
-       CodeMirror = arguments[9];
-   }
+    /* Require.js assignment replace */
     
     "use strict";
     
@@ -129,7 +89,7 @@
     };
     
     editormd.title        = editormd.$name = "Editor.md";
-    editormd.version      = "1.5.0";
+    editormd.version      = "1.4.5";
     editormd.homePage     = "https://pandao.github.io/editor.md/";
     editormd.classPrefix  = "editormd-";
     
@@ -160,12 +120,10 @@
     
     editormd.defaults     = {
         mode                 : "gfm",          //gfm or markdown
-        name                 : "",             // Form element name
+        theme                : "default",
+        name                 : "",
         value                : "",             // value for CodeMirror, if mode not gfm/markdown
-        theme                : "",             // Editor.md self themes, before v1.5.0 is CodeMirror theme, default empty
-        editorTheme          : "default",      // Editor area, this is CodeMirror theme at v1.5.0
-        previewTheme         : "",             // Preview area theme, default empty
-        markdown             : "",             // Markdown source code
+        markdown             : "",
         appendMarkdown       : "",             // if in init textarea value not empty, append markdown to textarea
         width                : "100%",
         height               : "100%",
@@ -181,7 +139,7 @@
 		autoFocus            : true,
         autoCloseTags        : true,
         searchReplace        : true,
-        syncScrolling        : true,           // true | false | "single", default true
+        syncScrolling        : true,
         readOnly             : false,
         tabSize              : 4,
 		indentUnit           : 4,
@@ -252,9 +210,9 @@
                 return editormd.toolbarHandlers.lowercase;
             }
         },
-        toolbarCustomIcons   : {               // using html tag create toolbar icon, unused default <a> tag.
-            lowercase        : "<a href=\"javascript:;\" title=\"Lowercase\" unselectable=\"on\"><i class=\"fa\" name=\"lowercase\" style=\"font-size:24px;margin-top: -10px;\">a</i></a>",
-            "ucwords"        : "<a href=\"javascript:;\" title=\"ucwords\" unselectable=\"on\"><i class=\"fa\" name=\"ucwords\" style=\"font-size:20px;margin-top: -3px;\">Aa</i></a>"
+        toolbarCustomIcons   : {               // using html tag create toolbar icon, unused default &lt;a> tag.
+            lowercase        : "&lt;a href=\"javascript:;\" title=\"Lowercase\" unselectable=\"on\">&lt;i class=\"fa\" name=\"lowercase\" style=\"font-size:24px;margin-top: -10px;\">a&lt;/i>&lt;/a>",
+            "ucwords"        : "&lt;a href=\"javascript:;\" title=\"ucwords\" unselectable=\"on\">&lt;i class=\"fa\" name=\"ucwords\" style=\"font-size:20px;margin-top: -3px;\">Aa&lt;/i>&lt;/a>"
         }, 
         toolbarIconsClass    : {
             undo             : "fa-undo",
@@ -298,7 +256,7 @@
         
         lang : {
             name        : "zh-cn",
-            description : "开源在线Markdown编辑器<br/>Open source online Markdown editor.",
+            description : "开源在线Markdown编辑器&lt;br/>Open source online Markdown editor.",
             tocTitle    : "目录",
             toolbar     : {
                 undo             : "撤销（Ctrl+Z）",
@@ -471,9 +429,9 @@
                         
             var markdownTextarea = this.markdownTextarea = editor.children("textarea");
             
-            if (markdownTextarea.length < 1)
+            if (markdownTextarea.length &lt; 1)
             {
-                editor.append("<textarea></textarea>");
+                editor.append("&lt;textarea>&lt;/textarea>");
                 markdownTextarea = this.markdownTextarea = editor.children("textarea");
             }
             
@@ -485,19 +443,14 @@
             }
             
             var appendElements = [
-                (!settings.readOnly) ? "<a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "preview-close-btn\"></a>" : "",
-                ( (settings.saveHTMLToTextarea) ? "<textarea class=\"" + classNames.textarea.html + "\" name=\"" + id + "-html-code\"></textarea>" : "" ),
-                "<div class=\"" + classPrefix + "preview\"><div class=\"markdown-body " + classPrefix + "preview-container\"></div></div>",
-                "<div class=\"" + classPrefix + "container-mask\" style=\"display:block;\"></div>",
-                "<div class=\"" + classPrefix + "mask\"></div>"
+                (!settings.readOnly) ? "&lt;a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "preview-close-btn\">&lt;/a>" : "",
+                ( (settings.saveHTMLToTextarea) ? "&lt;textarea class=\"" + classNames.textarea.html + "\" name=\"" + id + "-html-code\">&lt;/textarea>" : "" ),
+                "&lt;div class=\"" + classPrefix + "preview\">&lt;div class=\"markdown-body " + classPrefix + "preview-container\">&lt;/div>&lt;/div>",
+                "&lt;div class=\"" + classPrefix + "container-mask\" style=\"display:block;\">&lt;/div>",
+                "&lt;div class=\"" + classPrefix + "mask\">&lt;/div>"
             ].join("\n");
             
             editor.append(appendElements).addClass(classPrefix + "vertical");
-            
-            if (settings.theme !== "") 
-            {
-                editor.addClass(classPrefix + "theme-" + settings.theme);
-            }
             
             this.mask          = editor.children("." + classPrefix + "mask");    
             this.containerMask = editor.children("." + classPrefix  + "container-mask");
@@ -516,26 +469,21 @@
             this.preview          = editor.children("." + classPrefix + "preview");
             this.previewContainer = this.preview.children("." + classPrefix + "preview-container");
             
-            if (settings.previewTheme !== "") 
-            {
-                this.preview.addClass(classPrefix + "preview-theme-" + settings.previewTheme);
-            }
-            
-            if (typeof define === "function" && define.amd)
+            if (typeof define === "function" &amp;&amp; define.amd)
             {
                 if (typeof katex !== "undefined") 
                 {
                     editormd.$katex = katex;
                 }
                 
-                if (settings.searchReplace && !settings.readOnly) 
+                if (settings.searchReplace &amp;&amp; !settings.readOnly) 
                 {
                     editormd.loadCSS(settings.path + "codemirror/addon/dialog/dialog");
                     editormd.loadCSS(settings.path + "codemirror/addon/search/matchesonscrollbar");
                 }
             }
             
-            if ((typeof define === "function" && define.amd) || !settings.autoLoadModules)
+            if ((typeof define === "function" &amp;&amp; define.amd) || !settings.autoLoadModules)
             {
                 if (typeof CodeMirror !== "undefined") {
                     editormd.$CodeMirror = CodeMirror;
@@ -582,13 +530,13 @@
 
                         editormd.loadScript(loadPath + "underscore.min", function() {  
 
-                            if (!settings.flowChart && settings.sequenceDiagram) 
+                            if (!settings.flowChart &amp;&amp; settings.sequenceDiagram) 
                             {
                                 editormd.loadScript(loadPath + "sequence-diagram.min", function() {
                                     _this.loadedDisplay();
                                 });
                             }
-                            else if (settings.flowChart && !settings.sequenceDiagram) 
+                            else if (settings.flowChart &amp;&amp; !settings.sequenceDiagram) 
                             {      
                                 editormd.loadScript(loadPath + "flowchart.min", function() {  
                                     editormd.loadScript(loadPath + "jquery.flowchart.min", function() {
@@ -596,7 +544,7 @@
                                     });
                                 });
                             }
-                            else if (settings.flowChart && settings.sequenceDiagram) 
+                            else if (settings.flowChart &amp;&amp; settings.sequenceDiagram) 
                             {  
                                 editormd.loadScript(loadPath + "flowchart.min", function() {  
                                     editormd.loadScript(loadPath + "jquery.flowchart.min", function() {
@@ -618,7 +566,7 @@
 
             editormd.loadCSS(loadPath + "codemirror/codemirror.min");
             
-            if (settings.searchReplace && !settings.readOnly)
+            if (settings.searchReplace &amp;&amp; !settings.readOnly)
             {
                 editormd.loadCSS(loadPath + "codemirror/addon/dialog/dialog");
                 editormd.loadCSS(loadPath + "codemirror/addon/search/matchesonscrollbar");
@@ -638,7 +586,7 @@
                         
                         _this.setCodeMirror();
                         
-                        if (settings.mode !== "gfm" && settings.mode !== "markdown") 
+                        if (settings.mode !== "gfm" &amp;&amp; settings.mode !== "markdown") 
                         {
                             _this.loadedDisplay();
                             
@@ -673,73 +621,22 @@
         },
         
         /**
-         * 设置 Editor.md 的整体主题，主要是工具栏
-         * Setting Editor.md theme
+         * 设置CodeMirror的主题
+         * Setting CodeMirror theme
          * 
          * @returns {editormd}  返回editormd的实例对象
          */
         
-        setTheme : function(theme) {
-            var editor      = this.editor;
-            var oldTheme    = this.settings.theme;
-            var themePrefix = this.classPrefix + "theme-";
-            
-            editor.removeClass(themePrefix + oldTheme).addClass(themePrefix + theme);
-            
-            this.settings.theme = theme;
-            
-            return this;
-        },
-        
-        /**
-         * 设置 CodeMirror（编辑区）的主题
-         * Setting CodeMirror (Editor area) theme
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
-        
-        setEditorTheme : function(theme) {  
+        setTheme : function(theme) {  
             var settings   = this.settings;  
-            settings.editorTheme = theme;  
+            settings.theme = theme;  
             
             if (theme !== "default")
             {
-                editormd.loadCSS(settings.path + "codemirror/theme/" + settings.editorTheme);
+                editormd.loadCSS(settings.path + "codemirror/theme/" + settings.theme);
             }
             
             this.cm.setOption("theme", theme);
-            
-            return this;
-        },
-        
-        /**
-         * setEditorTheme() 的别名
-         * setEditorTheme() alias
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
-        
-        setCodeMirrorTheme : function (theme) {            
-            this.setEditorTheme(theme);
-            
-            return this;
-        },
-        
-        /**
-         * 设置 Editor.md 的主题
-         * Setting Editor.md theme
-         * 
-         * @returns {editormd}  返回editormd的实例对象
-         */
-        
-        setPreviewTheme : function(theme) {  
-            var preview     = this.preview;
-            var oldTheme    = this.settings.previewTheme;
-            var themePrefix = this.classPrefix + "preview-theme-";
-            
-            preview.removeClass(themePrefix + oldTheme).addClass(themePrefix + theme);
-            
-            this.settings.previewTheme = theme;
             
             return this;
         },
@@ -755,14 +652,14 @@
             var settings         = this.settings;
             var editor           = this.editor;
             
-            if (settings.editorTheme !== "default")
+            if (settings.theme !== "default")
             {
-                editormd.loadCSS(settings.path + "codemirror/theme/" + settings.editorTheme);
+                editormd.loadCSS(settings.path + "codemirror/theme/" + settings.theme);
             }
             
             var codeMirrorConfig = {
                 mode                      : settings.mode,
-                theme                     : settings.editorTheme,
+                theme                     : settings.theme,
                 tabSize                   : settings.tabSize,
                 dragDrop                  : false,
                 autofocus                 : settings.autoFocus,
@@ -804,11 +701,6 @@
             {
                 this.codeMirror.css("height", "auto");
                 this.cm.setOption("viewportMargin", Infinity);
-            }
-            
-            if (!settings.lineNumbers)
-            {
-                this.codeMirror.find(".CodeMirror-gutters").css("border-right", "none");
             }
 
             return this;
@@ -967,7 +859,7 @@
                 this[arguments[0]] = arguments[1];
             }
             
-            if (typeof arguments[0] === "object" && typeof arguments[0].length === "undefined")
+            if (typeof arguments[0] === "object" &amp;&amp; typeof arguments[0].length === "undefined")
             {
                 $.extend(true, this, arguments[0]);
             }
@@ -986,7 +878,7 @@
         
         set : function (key, value) {
             
-            if (typeof value !== "undefined" && typeof value === "function")
+            if (typeof value !== "undefined" &amp;&amp; typeof value === "function")
             {
                 value = $.proxy(value, this);
             }
@@ -1078,7 +970,7 @@
                 return this;
             }
             
-            if (settings.toolbar && (this.toolbar.length < 1 || this.toolbar.find("." + this.classPrefix + "menu").html() === "") )
+            if (settings.toolbar &amp;&amp; (this.toolbar.length &lt; 1 || this.toolbar.find("." + this.classPrefix + "menu").html() === "") )
             {
                 this.setToolbar();
             }
@@ -1141,7 +1033,7 @@
                     return false;
                 }
 
-                if (top - editor.offset().top > 10 && top < editor.height())
+                if (top - editor.offset().top > 10 &amp;&amp; top &lt; editor.height())
                 {
                     toolbar.css({
                         position : "fixed",
@@ -1159,7 +1051,7 @@
                 }
             };
             
-            if (!state.fullscreen && !state.preview && settings.toolbar && settings.toolbarAutoFixed)
+            if (!state.fullscreen &amp;&amp; !state.preview &amp;&amp; settings.toolbar &amp;&amp; settings.toolbarAutoFixed)
             {
                 $(window).bind("scroll", autoFixedHandle);
             }
@@ -1187,9 +1079,9 @@
             
             var toolbar     = this.toolbar = editor.children("." + classPrefix + "toolbar");
             
-            if (settings.toolbar && toolbar.length < 1)
+            if (settings.toolbar &amp;&amp; toolbar.length &lt; 1)
             {            
-                var toolbarHTML = "<div class=\"" + classPrefix + "toolbar\"><div class=\"" + classPrefix + "toolbar-container\"><ul class=\"" + classPrefix + "menu\"></ul></div></div>";
+                var toolbarHTML = "&lt;div class=\"" + classPrefix + "toolbar\">&lt;div class=\"" + classPrefix + "toolbar-container\">&lt;ul class=\"" + classPrefix + "menu\">&lt;/ul>&lt;/div>&lt;/div>";
                 
                 editor.append(toolbarHTML);
                 toolbar = this.toolbar = editor.children("." + classPrefix + "toolbar");
@@ -1210,7 +1102,7 @@
             var toolbarMenu = toolbar.find("." + this.classPrefix + "menu"), menu = "";
             var pullRight   = false;
             
-            for (var i = 0, len = icons.length; i < len; i++)
+            for (var i = 0, len = icons.length; i &lt; len; i++)
             {
                 var name = icons[i];
 
@@ -1220,14 +1112,14 @@
                 } 
                 else if (name === "|")
                 {
-                    menu += "<li class=\"divider\" unselectable=\"on\">|</li>";
+                    menu += "&lt;li class=\"divider\" unselectable=\"on\">|&lt;/li>";
                 }
                 else
                 {
                     var isHeader = (/h(\d)/.test(name));
                     var index    = name;
                     
-                    if (name === "watch" && !settings.watch) {
+                    if (name === "watch" &amp;&amp; !settings.watch) {
                         index = "unwatch";
                     }
                     
@@ -1239,20 +1131,20 @@
                     iconTexts = (typeof iconTexts === "undefined") ? "" : iconTexts;
                     iconClass = (typeof iconClass === "undefined") ? "" : iconClass;
 
-                    var menuItem = pullRight ? "<li class=\"pull-right\">" : "<li>";
+                    var menuItem = pullRight ? "&lt;li class=\"pull-right\">" : "&lt;li>";
                     
-                    if (typeof settings.toolbarCustomIcons[name] !== "undefined" && typeof settings.toolbarCustomIcons[name] !== "function")
+                    if (typeof settings.toolbarCustomIcons[name] !== "undefined" &amp;&amp; typeof settings.toolbarCustomIcons[name] !== "function")
                     {
                         menuItem += settings.toolbarCustomIcons[name];
                     }
                     else 
                     {
-                        menuItem += "<a href=\"javascript:;\" title=\"" + title + "\" unselectable=\"on\">";
-                        menuItem += "<i class=\"fa " + iconClass + "\" name=\""+name+"\" unselectable=\"on\">"+((isHeader) ? name.toUpperCase() : ( (iconClass === "") ? iconTexts : "") ) + "</i>";
-                        menuItem += "</a>";
+                        menuItem += "&lt;a href=\"javascript:;\" title=\"" + title + "\" unselectable=\"on\">";
+                        menuItem += "&lt;i class=\"fa " + iconClass + "\" name=\""+name+"\" unselectable=\"on\">"+((isHeader) ? name.toUpperCase() : ( (iconClass === "") ? iconTexts : "") ) + "&lt;/i>";
+                        menuItem += "&lt;/a>";
                     }
 
-                    menuItem += "</li>";
+                    menuItem += "&lt;/li>";
 
                     menu = pullRight ? menuItem + menu : menu + menuItem;
                 }
@@ -1293,7 +1185,7 @@
         getToolbarHandles : function(name) {  
             var toolbarHandlers = this.toolbarHandlers = editormd.toolbarHandlers;
             
-            return (name && typeof toolbarIconHandlers[name] !== "undefined") ? toolbarHandlers[name] : toolbarHandlers;
+            return (name &amp;&amp; typeof toolbarIconHandlers[name] !== "undefined") ? toolbarHandlers[name] : toolbarHandlers;
         },
         
         /**
@@ -1342,8 +1234,8 @@
                     }
                 }
                 
-                if (name !== "link" && name !== "reference-link" && name !== "image" && name !== "code-block" && 
-                    name !== "preformatted-text" && name !== "watch" && name !== "preview" && name !== "search" && name !== "fullscreen" && name !== "info") 
+                if (name !== "link" &amp;&amp; name !== "reference-link" &amp;&amp; name !== "image" &amp;&amp; name !== "code-block" &amp;&amp; 
+                    name !== "preformatted-text" &amp;&amp; name !== "watch" &amp;&amp; name !== "preview" &amp;&amp; name !== "search" &amp;&amp; name !== "fullscreen" &amp;&amp; name !== "info") 
                 {
                     cm.focus();
                 }
@@ -1380,15 +1272,15 @@
             var classPrefix  = this.classPrefix;  
             
             var infoDialogHTML = [
-                "<div class=\"" + classPrefix + "dialog " + classPrefix + "dialog-info\" style=\"\">",
-                "<div class=\"" + classPrefix + "dialog-container\">",
-                "<h1><i class=\"editormd-logo editormd-logo-lg editormd-logo-color\"></i> " + editormd.title + "<small>v" + editormd.version + "</small></h1>",
-                "<p>" + this.lang.description + "</p>",
-                "<p style=\"margin: 10px 0 20px 0;\"><a href=\"" + editormd.homePage + "\" target=\"_blank\">" + editormd.homePage + " <i class=\"fa fa-external-link\"></i></a></p>",
-                "<p style=\"font-size: 0.85em;\">Copyright &copy; 2015 <a href=\"https://github.com/pandao\" target=\"_blank\" class=\"hover-link\">Pandao</a>, The <a href=\"https://github.com/pandao/editor.md/blob/master/LICENSE\" target=\"_blank\" class=\"hover-link\">MIT</a> License.</p>",
-                "</div>",
-                "<a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "dialog-close\"></a>",
-                "</div>"
+                "&lt;div class=\"" + classPrefix + "dialog " + classPrefix + "dialog-info\" style=\"\">",
+                "&lt;div class=\"" + classPrefix + "dialog-container\">",
+                "&lt;h1>&lt;i class=\"editormd-logo editormd-logo-lg editormd-logo-color\">&lt;/i> " + editormd.title + "&lt;small>v" + editormd.version + "&lt;/small>&lt;/h1>",
+                "&lt;p>" + this.lang.description + "&lt;/p>",
+                "&lt;p style=\"margin: 10px 0 20px 0;\">&lt;a href=\"" + editormd.homePage + "\" target=\"_blank\">" + editormd.homePage + " &lt;i class=\"fa fa-external-link\">&lt;/i>&lt;/a>&lt;/p>",
+                "&lt;p style=\"font-size: 0.85em;\">Copyright &amp;copy; 2015 &lt;a href=\"https://github.com/pandao\" target=\"_blank\" class=\"hover-link\">Pandao&lt;/a>, The &lt;a href=\"https://github.com/pandao/editor.md/blob/master/LICENSE\" target=\"_blank\" class=\"hover-link\">MIT&lt;/a> License.&lt;/p>",
+                "&lt;/div>",
+                "&lt;a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "dialog-close\">&lt;/a>",
+                "&lt;/div>"
             ].join("\n");
 
             editor.append(infoDialogHTML);
@@ -1446,7 +1338,7 @@
             var settings    = this.settings;         
 			var infoDialog  = this.infoDialog = editor.children("." + this.classPrefix + "dialog-info");
             
-            if (infoDialog.length < 1)
+            if (infoDialog.length &lt; 1)
             {
                 this.createInfoDialog();
             }
@@ -1491,7 +1383,6 @@
         
         lockScreen : function(lock) {
             editormd.lockScreen(lock);
-            this.resize();
 
             return this;
         },
@@ -1571,8 +1462,6 @@
             this.previewContainer.find("." + editormd.classNames.tex).each(function(){
                 var tex  = $(this);
                 editormd.$katex.render(tex.text(), tex[0]);
-                
-                tex.find(".katex").css("font-size", "1.6em");
             });   
 
             return this;
@@ -1586,7 +1475,7 @@
          */
         
         flowChartAndSequenceDiagramRender : function() {
-            var $this            = this;
+            
             var settings         = this.settings;
             var previewContainer = this.previewContainer;
             
@@ -1604,35 +1493,6 @@
 
             if (settings.sequenceDiagram) {
                 previewContainer.find(".sequence-diagram").sequenceDiagram({theme: "simple"});
-            }
-                    
-            var preview    = $this.preview;
-            var codeMirror = $this.codeMirror;
-            var codeView   = codeMirror.find(".CodeMirror-scroll");
-
-            var height    = codeView.height();
-            var scrollTop = codeView.scrollTop();                    
-            var percent   = (scrollTop / codeView[0].scrollHeight);
-            var tocHeight = 0;
-
-            preview.find(".markdown-toc-list").each(function(){
-                tocHeight += $(this).height();
-            });
-
-            var tocMenuHeight = preview.find(".editormd-toc-menu").height(); 
-            tocMenuHeight = (!tocMenuHeight) ? 0 : tocMenuHeight;
-
-            if (scrollTop === 0) 
-            {
-                preview.scrollTop(0);
-            } 
-            else if (scrollTop + height >= codeView[0].scrollHeight - 16)
-            { 
-                preview.scrollTop(preview[0].scrollHeight);                        
-            } 
-            else
-            {                  
-                preview.scrollTop((preview[0].scrollHeight + tocHeight + tocMenuHeight) * percent);
             }
 
             return this;
@@ -1660,7 +1520,7 @@
             {
                 for (var i in keyMap)
                 {
-                    if ($.inArray(i, disabledKeyMaps) < 0)
+                    if ($.inArray(i, disabledKeyMaps) &lt; 0)
                     {
                         var map = {};
                         map[i]  = keyMap[i];
@@ -1676,7 +1536,7 @@
                     var _keyMap = editormd.keyMaps[k];
                     var handle = (typeof _keyMap === "string") ? $.proxy(toolbarHandlers[_keyMap], _this) : $.proxy(_keyMap, _this);
                     
-                    if ($.inArray(k, ["F9", "F10", "F11"]) < 0 && $.inArray(k, disabledKeyMaps) < 0)
+                    if ($.inArray(k, ["F9", "F10", "F11"]) &lt; 0 &amp;&amp; $.inArray(k, disabledKeyMaps) &lt; 0)
                     {
                         var _map = {};
                         _map[k] = handle;
@@ -1693,7 +1553,7 @@
                         "122" : "F11"
                     };
                     
-                    if ( $.inArray(keymaps[event.keyCode], disabledKeyMaps) < 0 )
+                    if ( $.inArray(keymaps[event.keyCode], disabledKeyMaps) &lt; 0 )
                     {
                         switch (event.keyCode)
                         {
@@ -1722,12 +1582,6 @@
             return this;
         },
         
-        /**
-         * 绑定同步滚动
-         * 
-         * @returns {editormd} return this
-         */
-        
         bindScrollEvent : function() {
             
             var _this            = this;
@@ -1745,15 +1599,6 @@
                     var height    = $(this).height();
                     var scrollTop = $(this).scrollTop();                    
                     var percent   = (scrollTop / $(this)[0].scrollHeight);
-                    
-                    var tocHeight = 0;
-                    
-                    preview.find(".markdown-toc-list").each(function(){
-                        tocHeight += $(this).height();
-                    });
-                    
-                    var tocMenuHeight = preview.find(".editormd-toc-menu").height();
-                    tocMenuHeight = (!tocMenuHeight) ? 0 : tocMenuHeight;
 
                     if (scrollTop === 0) 
                     {
@@ -1764,8 +1609,8 @@
                         preview.scrollTop(preview[0].scrollHeight);                        
                     } 
                     else
-                    {
-                        preview.scrollTop((preview[0].scrollHeight  + tocHeight + tocMenuHeight) * percent);
+                    {                    
+                        preview.scrollTop(preview[0].scrollHeight * percent);
                     }
                     
                     $.proxy(settings.onscroll, _this)(event);
@@ -1813,10 +1658,6 @@
 				touchend   : cmUnbindScroll
 			});
             
-            if (settings.syncScrolling === "single") {
-                return this;
-            }
-            
 			preview.bind({
 				mouseover  : previewBindScroll,
 				mouseout   : previewUnbindScroll,
@@ -1840,7 +1681,7 @@
             cm.on("change", function(_cm, changeObj) {
                 
                 if (settings.watch)
-                {
+                {           
                     _this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : "20px");
                 }
                 
@@ -1958,7 +1799,7 @@
                 editor.css("width", (typeof width  === "number") ? width  + "px" : width);
             }
             
-            if (settings.autoHeight && !state.fullscreen && !state.preview)
+            if (settings.autoHeight &amp;&amp; !state.fullscreen &amp;&amp; !state.preview)
             {
                 editor.css("height", "auto");
                 codeMirror.css("height", "auto");
@@ -1975,7 +1816,7 @@
                     editor.height($(window).height());
                 }
 
-                if (settings.toolbar && !settings.readOnly) 
+                if (settings.toolbar &amp;&amp; !settings.readOnly) 
                 {
                     codeMirror.css("margin-top", toolbar.height() + 1).height(editor.height() - toolbar.height());
                 } 
@@ -1992,24 +1833,22 @@
                 
                 this.previewContainer.css("padding", settings.autoHeight ? "20px 20px 50px 40px" : "20px");
                 
-                if (settings.toolbar && !settings.readOnly) 
+                if (settings.toolbar &amp;&amp; !settings.readOnly) 
                 {
-                    preview.css("top", toolbar.height() + 1);
+                    preview.css("top", toolbar.height());
                 } 
                 else 
                 {
                     preview.css("top", 0);
                 }
                 
-                if (settings.autoHeight && !state.fullscreen && !state.preview)
+                if (settings.autoHeight &amp;&amp; !state.fullscreen &amp;&amp; !state.preview)
                 {
                     preview.height("");
                 }
                 else
                 {                
-                    var previewHeight = (settings.toolbar && !settings.readOnly) ? editor.height() - toolbar.height() : editor.height();
-                    
-                    preview.height(previewHeight);
+                    preview.height((settings.toolbar &amp;&amp; !settings.readOnly) ? editor.height() - toolbar.height() : editor.height());
                 }
             } 
             else 
@@ -2028,7 +1867,7 @@
         
         /**
          * 解析和保存Markdown代码
-         * Parse & Saving Markdown source code
+         * Parse &amp; Saving Markdown source code
          * 
          * @returns {editormd}     返回editormd的实例对象
          */
@@ -2047,7 +1886,7 @@
             var cmValue          = cm.getValue();
             var previewContainer = this.previewContainer;
 
-            if (settings.mode !== "gfm" && settings.mode !== "markdown") 
+            if (settings.mode !== "gfm" &amp;&amp; settings.mode !== "markdown") 
             {
                 this.markdownTextarea.val(cmValue);
                 
@@ -2083,14 +1922,12 @@
             };
             
             marked.setOptions(markedOptions);
-                    
+        
+            cmValue            = editormd.filterHTMLTags(cmValue, settings.htmlDecode);
+            
             var newMarkdownDoc = editormd.$marked(cmValue, markedOptions);
             
-            //console.info("cmValue", cmValue, newMarkdownDoc);
-            
-            newMarkdownDoc = editormd.filterHTMLTags(newMarkdownDoc, settings.htmlDecode);
-            
-            //console.error("cmValue", cmValue, newMarkdownDoc);
+            //console.log("cmValue", cmValue, this.markdownTextarea, this.htmlTextarea);
             
             this.markdownTextarea.text(cmValue);
             
@@ -2101,7 +1938,7 @@
                 this.htmlTextarea.text(newMarkdownDoc);
             }
             
-            if(settings.watch || (!settings.watch && state.preview))
+            if(settings.watch || (!settings.watch &amp;&amp; state.preview))
             {
                 previewContainer.html(newMarkdownDoc);
 
@@ -2114,7 +1951,7 @@
                     
                     tocContainer.attr("previewContainer", (settings.tocContainer === "") ? "true" : "false");
                     
-                    if (settings.tocContainer !== "" && tocMenu.length > 0)
+                    if (settings.tocContainer !== "" &amp;&amp; tocMenu.length > 0)
                     {
                         tocMenu.remove();
                     }
@@ -2134,7 +1971,7 @@
                 
                 if (settings.tex)
                 {
-                    if (!editormd.kaTeXLoaded && settings.autoLoadModules) 
+                    if (!editormd.kaTeXLoaded &amp;&amp; settings.autoLoadModules) 
                     {
                         editormd.loadKaTeX(function() {
                             editormd.$katex = katex;
@@ -2425,7 +2262,7 @@
         watch : function(callback) {     
             var settings        = this.settings;
             
-            if ($.inArray(settings.mode, ["gfm", "markdown"]) < 0)
+            if ($.inArray(settings.mode, ["gfm", "markdown"]) &lt; 0)
             {
                 return this;
             }
@@ -2548,13 +2385,12 @@
             var toolbar          = this.toolbar;
             var settings         = this.settings;
             var codeMirror       = this.codeMirror;
-            var previewContainer = this.previewContainer;
             
-            if ($.inArray(settings.mode, ["gfm", "markdown"]) < 0) {
+            if ($.inArray(settings.mode, ["gfm", "markdown"]) &lt; 0) {
                 return this;
             }
             
-            if (settings.toolbar && toolbar) {
+            if (settings.toolbar &amp;&amp; toolbar) {
                 toolbar.toggle();
                 toolbar.find(".fa[name=preview]").toggleClass("active");
             }
@@ -2562,7 +2398,7 @@
             codeMirror.toggle();
             
             var escHandle = function(event) {
-                if (event.shiftKey && event.keyCode === 27) {
+                if (event.shiftKey &amp;&amp; event.keyCode === 27) {
                     _this.previewed();
                 }
             };
@@ -2582,19 +2418,13 @@
                 if (!settings.watch)
                 {
                     this.save();
-                } 
-                else 
-                {
-                    previewContainer.css("padding", "");
                 }
-                
-                previewContainer.addClass(this.classPrefix + "preview-active");
 
                 preview.show().css({
-                    position  : "",
+                    position  : "static",
                     top       : 0,
                     width     : editor.width(),
-                    height    : (settings.autoHeight && !this.state.fullscreen) ? "auto" : editor.height()
+                    height    : (settings.autoHeight &amp;&amp; !this.state.fullscreen) ? "auto" : editor.height()
                 });
                 
                 if (this.state.loaded)
@@ -2624,7 +2454,6 @@
             var preview          = this.preview;
             var toolbar          = this.toolbar;
             var settings         = this.settings;
-            var previewContainer = this.previewContainer;
             var previewCloseBtn  = editor.find("." + this.classPrefix + "preview-close-btn");
 
             this.state.preview   = false;
@@ -2638,19 +2467,12 @@
             preview[(settings.watch) ? "show" : "hide"]();
             
             previewCloseBtn.hide().unbind(editormd.mouseOrTouch("click", "touchend"));
-                
-            previewContainer.removeClass(this.classPrefix + "preview-active");
-                
-            if (settings.watch)
-            {
-                previewContainer.css("padding", "20px");
-            }
             
             preview.css({ 
                 background : null,
                 position   : "absolute",
                 width      : editor.width() / 2,
-                height     : (settings.autoHeight && !this.state.fullscreen) ? "auto" : editor.height() - toolbar.height(),
+                height     : (settings.autoHeight &amp;&amp; !this.state.fullscreen) ? "auto" : editor.height() - toolbar.height(),
                 top        : (settings.toolbar)    ? toolbar.height() : 0
             });
 
@@ -2684,7 +2506,7 @@
             }
             
             var escHandle = function(event) {
-                if (!event.shiftKey && event.keyCode === 27) 
+                if (!event.shiftKey &amp;&amp; event.keyCode === 27) 
                 {
                     if (state.fullscreen)
                     {
@@ -2700,6 +2522,11 @@
                 $("html,body").css("overflow", "hidden");
                 
                 editor.css({
+                    position : "fixed", 
+                    top      : 0, 
+                    left     : 0, 
+                    margin   : 0, 
+                    border   : "none",
                     width    : $(window).width(),
                     height   : $(window).height()
                 }).addClass(fullscreenClass);
@@ -2742,8 +2569,13 @@
             $("html,body").css("overflow", "");
 
             editor.css({
+                position : "", 
+                top      : "",
+                left     : "", 
+                margin   : "0 auto 15px", 
                 width    : editor.data("oldWidth"),
-                height   : editor.data("oldHeight")
+                height   : editor.data("oldHeight"),
+                border   : "1px solid #ddd"
             }).removeClass(fullscreenClass);
 
             this.resize();
@@ -2784,7 +2616,7 @@
                 return this;
             }
             
-            if ($.inArray(path, editormd.loadFiles.plugin) < 0)
+            if ($.inArray(path, editormd.loadFiles.plugin) &lt; 0)
             {
                 editormd.loadPlugin(path, function() {
                     editormd.loadPlugins[name] = _this[name];
@@ -2801,7 +2633,7 @@
                 
         /**
          * 搜索替换
-         * Search & replace
+         * Search &amp; replace
          * 
          * @param   {String}     command    CodeMirror serach commands, "find, fintNext, fintPrev, clearSearch, replace, replaceAll"
          * @returns {editormd}              return this
@@ -2850,9 +2682,8 @@
         var settings = this.settings || {dialogLockScreen : true};
         
         if (settings.dialogLockScreen) 
-        {            
+        {
             $("html,body").css("overflow", "hidden");
-            this.resize();
         }
     };
    
@@ -2928,19 +2759,8 @@
             var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("> " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 2);
-            }
-            else
-            {
-                cm.replaceSelection("> " + selection);
-            }
-
-            //cm.replaceSelection("> " + selection);
-            //cm.setCursor(cursor.line, (selection === "") ? cursor.ch + 2 : cursor.ch + selection.length + 2);
+            cm.replaceSelection("> " + selection);
+            cm.setCursor(cursor.line, (selection === "") ? cursor.ch + 2 : cursor.ch + selection.length + 2);
         },
         
         ucfirst : function() {
@@ -2982,104 +2802,44 @@
 
         h1 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("# " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 2);
-            }
-            else
-            {
-                cm.replaceSelection("# " + selection);
-            }
+            cm.replaceSelection("# " + selection);
         },
 
         h2 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("## " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 3);
-            }
-            else
-            {
-                cm.replaceSelection("## " + selection);
-            }
+            cm.replaceSelection("## " + selection);
         },
 
         h3 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("### " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 4);
-            }
-            else
-            {
-                cm.replaceSelection("### " + selection);
-            }
+            cm.replaceSelection("### " + selection);
         },
 
         h4 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("#### " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 5);
-            }
-            else
-            {
-                cm.replaceSelection("#### " + selection);
-            }
+            cm.replaceSelection("#### " + selection);
         },
 
         h5 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("##### " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 6);
-            }
-            else
-            {
-                cm.replaceSelection("##### " + selection);
-            }
+            cm.replaceSelection("##### " + selection);
         },
 
         h6 : function() {
             var cm        = this.cm;
-            var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            if (cursor.ch !== 0)
-            {
-                cm.setCursor(cursor.line, 0);
-                cm.replaceSelection("###### " + selection);
-                cm.setCursor(cursor.line, cursor.ch + 7);
-            }
-            else
-            {
-                cm.replaceSelection("###### " + selection);
-            }
+            cm.replaceSelection("###### " + selection);
         },
 
         "list-ul" : function() {
@@ -3095,7 +2855,7 @@
             {
                 var selectionText = selection.split("\n");
 
-                for (var i = 0, len = selectionText.length; i < len; i++) 
+                for (var i = 0, len = selectionText.length; i &lt; len; i++) 
                 {
                     selectionText[i] = (selectionText[i] === "") ? "" : "- " + selectionText[i];
                 }
@@ -3117,7 +2877,7 @@
             {
                 var selectionText = selection.split("\n");
 
-                for (var i = 0, len = selectionText.length; i < len; i++) 
+                for (var i = 0, len = selectionText.length; i &lt; len; i++) 
                 {
                     selectionText[i] = (selectionText[i] === "") ? "" : (i+1) + ". " + selectionText[i];
                 }
@@ -3131,7 +2891,7 @@
             var cursor    = cm.getCursor();
             var selection = cm.getSelection();
 
-            cm.replaceSelection(((cursor.ch !== 0) ? "\n\n" : "\n") + "------------\n\n");
+            cm.replaceSelection("------------");
         },
 
         tex : function() {
@@ -3485,7 +3245,7 @@
         markedRenderer.emoji = function(text) {
             
             text = text.replace(editormd.regexs.emojiDatetime, function($1) {           
-                return $1.replace(/:/g, "&#58;");
+                return $1.replace(/:/g, "&amp;#58;");
             });
             
             var matchs = text.match(emojiReg);
@@ -3494,7 +3254,7 @@
                 return text;
             }
 
-            for (var i = 0, len = matchs.length; i < len; i++)
+            for (var i = 0, len = matchs.length; i &lt; len; i++)
             {            
                 if (matchs[i] === ":+1:") {
                     matchs[i] = ":\\+1:";
@@ -3506,11 +3266,11 @@
 
                     if (faMatchs)
                     {                        
-                        for (var fa = 0, len1 = faMatchs.length; fa < len1; fa++)
+                        for (var fa = 0, len1 = faMatchs.length; fa &lt; len1; fa++)
                         {
                             var faName = faMatchs[fa].replace(/:/g, "");
                             
-                            return "<i class=\"fa " + faName + " fa-emoji\" title=\"" + faName.replace("fa-", "") + "\"></i>";
+                            return "&lt;i class=\"fa " + faName + " fa-emoji\" title=\"" + faName.replace("fa-", "") + "\">&lt;/i>";
                         }
                     }
                     else
@@ -3520,27 +3280,26 @@
 
                         if (emdlogoMathcs)                                        
                         {                            
-                            for (var x = 0, len2 = emdlogoMathcs.length; x < len2; x++)
+                            for (var x = 0, len2 = emdlogoMathcs.length; x &lt; len2; x++)
                             {
                                 var logoName = emdlogoMathcs[x].replace(/:/g, "");
-                                return "<i class=\"" + logoName + "\" title=\"Editor.md logo (" + logoName + ")\"></i>";
+                                return "&lt;i class=\"" + logoName + "\" title=\"Editor.md logo (" + logoName + ")\">&lt;/i>";
                             }
                         }
                         else if (twemojiMatchs) 
                         {
-                            for (var t = 0, len3 = twemojiMatchs.length; t < len3; t++)
+                            for (var t = 0, len3 = twemojiMatchs.length; t &lt; len3; t++)
                             {
                                 var twe = twemojiMatchs[t].replace(/:/g, "").replace("tw-", "");
-                                return "<img src=\"" + editormd.twemoji.path + twe + editormd.twemoji.ext + "\" title=\"twemoji-" + twe + "\" alt=\"twemoji-" + twe + "\" class=\"emoji twemoji\" />";
+                                return "&lt;img src=\"" + editormd.twemoji.path + twe + editormd.twemoji.ext + "\" title=\"twemoji-" + twe + "\" alt=\"twemoji-" + twe + "\" class=\"emoji twemoji\" />";
                             }
                         }
                         else
                         {
                             var src = (name === "+1") ? "plus1" : name;
                             src     = (src === "black_large_square") ? "black_square" : src;
-                            src     = (src === "moon") ? "waxing_gibbous_moon" : src;
 
-                            return "<img src=\"" + editormd.emoji.path + src + editormd.emoji.ext + "\" class=\"emoji\" title=\"&#58;" + name + "&#58;\" alt=\"&#58;" + name + "&#58;\" />";
+                            return "&lt;img src=\"" + editormd.emoji.path + src + editormd.emoji.ext + "\" class=\"emoji\" title=\"&amp;#58;" + name + "&amp;#58;\" alt=\"&amp;#58;" + name + "&amp;#58;\" />";
                         }
                     }
                 });
@@ -3556,18 +3315,18 @@
                 if (settings.atLink) 
                 {
                     text = text.replace(emailReg, function($1, $2, $3, $4) {
-                        return $1.replace(/@/g, "_#_&#64;_#_");
+                        return $1.replace(/@/g, "_#_&amp;#64;_#_");
                     });
 
                     text = text.replace(atLinkReg, function($1, $2) {
-                        return "<a href=\"" + editormd.urls.atLinkBase + "" + $2 + "\" title=\"&#64;" + $2 + "\" class=\"at-link\">" + $1 + "</a>";
-                    }).replace(/_#_&#64;_#_/g, "@");
+                        return "&lt;a href=\"" + editormd.urls.atLinkBase + "" + $2 + "\" title=\"&amp;#64;" + $2 + "\" class=\"at-link\">" + $1 + "&lt;/a>";
+                    }).replace(/_#_&amp;#64;_#_/g, "@");
                 }
                 
                 if (settings.emailLink)
                 {
                     text = text.replace(emailLinkReg, function($1, $2, $3, $4, $5) {
-                        return (!$2 && $.inArray($5, "jpg|jpeg|png|gif|webp|ico|icon|pdf".split("|")) < 0) ? "<a href=\"mailto:" + $1 + "\">"+$1+"</a>" : $1;
+                        return (!$2 &amp;&amp; $.inArray($5, "jpg|jpeg|png|gif|webp|ico|icon|pdf".split("|")) &lt; 0) ? "&lt;a href=\"mailto:" + $1 + "\">"+$1+"&lt;/a>" : $1;
                     });
                 }
 
@@ -3591,23 +3350,23 @@
                 }
             }
 
-            var out = "<a href=\"" + href + "\"";
+            var out = "&lt;a href=\"" + href + "\"";
             
             if (atLinkReg.test(title) || atLinkReg.test(text))
             {
                 if (title)
                 {
-                    out += " title=\"" + title.replace(/@/g, "&#64;");
+                    out += " title=\"" + title.replace(/@/g, "&amp;#64;");
                 }
                 
-                return out + "\">" + text.replace(/@/g, "&#64;") + "</a>";
+                return out + "\">" + text.replace(/@/g, "&amp;#64;") + "&lt;/a>";
             }
 
             if (title) {
                 out += " title=\"" + title + "\"";
             }
 
-            out += ">" + text + "</a>";
+            out += ">" + text + "&lt;/a>";
 
             return out;
         };
@@ -3615,15 +3374,15 @@
         markedRenderer.heading = function(text, level, raw) {
                     
             var linkText       = text;
-            var hasLinkReg     = /\s*\<a\s*href\=\"(.*)\"\s*([^\>]*)\>(.*)\<\/a\>\s*/;
-            var getLinkTextReg = /\s*\<a\s*([^\>]+)\>([^\>]*)\<\/a\>\s*/g;
+            var hasLinkReg     = /\s*\&lt;a\s*href\=\"(.*)\"\s*([^\>]*)\>(.*)\&lt;\/a\>\s*/;
+            var getLinkTextReg = /\s*\&lt;a\s*([^\>]+)\>([^\>]*)\&lt;\/a\>\s*/g;
 
             if (hasLinkReg.test(text)) 
             {
                 var tempText = [];
-                text         = text.split(/\<a\s*([^\>]+)\>([^\>]*)\<\/a\>/);
+                text         = text.split(/\&lt;a\s*([^\>]+)\>([^\>]*)\&lt;\/a\>/);
 
-                for (var i = 0, len = text.length; i < len; i++)
+                for (var i = 0, len = text.length; i &lt; len; i++)
                 {
                     tempText.push(text[i].replace(/\s*href\=\"(.*)\"\s*/g, ""));
                 }
@@ -3645,20 +3404,20 @@
 
             markdownToC.push(toc);
             
-            var headingHTML = "<h" + level + " id=\"h"+ level + "-" + this.options.headerPrefix + id +"\">";
+            var headingHTML = "&lt;h" + level + " id=\"h"+ level + "-" + this.options.headerPrefix + id +"\">";
             
-            headingHTML    += "<a name=\"" + text + "\" class=\"reference-link\"></a>";
-            headingHTML    += "<span class=\"header-link octicon octicon-link\"></span>";
+            headingHTML    += "&lt;a name=\"" + text + "\" class=\"reference-link\">&lt;/a>";
+            headingHTML    += "&lt;span class=\"header-link octicon octicon-link\">&lt;/span>";
             headingHTML    += (hasLinkReg) ? this.atLink(this.emoji(linkText)) : this.atLink(this.emoji(text));
-            headingHTML    += "</h" + level + ">";
+            headingHTML    += "&lt;/h" + level + ">";
 
             return headingHTML;
         };
         
         markedRenderer.pageBreak = function(text) {
-            if (pageBreakReg.test(text) && settings.pageBreak)
+            if (pageBreakReg.test(text) &amp;&amp; settings.pageBreak)
             {
-                text = "<hr style=\"page-break-after:always;\" class=\"page-break editormd-page-break\" />";
+                text = "&lt;hr style=\"page-break-after:always;\" class=\"page-break editormd-page-break\" />";
             }
             
             return text;
@@ -3671,10 +3430,10 @@
             var isToC           = (settings.tocm) ? /^(\[TOC\]|\[TOCM\])$/.test(text) : /^\[TOC\]$/.test(text);
             var isToCMenu       = /^\[TOCM\]$/.test(text);
             
-            if (!isTeXLine && isTeXInline) 
+            if (!isTeXLine &amp;&amp; isTeXInline) 
             {
                 text = text.replace(/(\$\$([^\$]*)\$\$)+/g, function($1, $2) {
-                    return "<span class=\"" + editormd.classNames.tex + "\">" + $2.replace(/\$/g, "") + "</span>";
+                    return "&lt;span class=\"" + editormd.classNames.tex + "\">" + $2.replace(/\$/g, "") + "&lt;/span>";
                 });
             } 
             else 
@@ -3682,25 +3441,21 @@
                 text = (isTeXLine) ? text.replace(/\$/g, "") : text;
             }
             
-            var tocHTML = "<div class=\"markdown-toc editormd-markdown-toc\">" + text + "</div>";
+            var tocHTML = "&lt;div class=\"markdown-toc editormd-markdown-toc\">" + text + "&lt;/div>";
             
-            return (isToC) ? ( (isToCMenu) ? "<div class=\"editormd-toc-menu\">" + tocHTML + "</div><br/>" : tocHTML )
-                           : ( (pageBreakReg.test(text)) ? this.pageBreak(text) : "<p" + isTeXAddClass + ">" + this.atLink(this.emoji(text)) + "</p>\n" );
+            return (isToC) ? ( (isToCMenu) ? "&lt;div class=\"editormd-toc-menu\">" + tocHTML + "&lt;/div>&lt;br/>" : tocHTML )
+                           : ( (pageBreakReg.test(text)) ? this.pageBreak(text) : "&lt;p" + isTeXAddClass + ">" + this.atLink(this.emoji(text)) + "&lt;/p>\n" );
         };
 
         markedRenderer.code = function (code, lang, escaped) { 
 
             if (lang === "seq" || lang === "sequence")
             {
-                return "<div class=\"sequence-diagram\">" + code + "</div>";
+                return "&lt;div class=\"sequence-diagram\">" + code + "&lt;/div>";
             } 
             else if ( lang === "flow")
             {
-                return "<div class=\"flowchart\">" + code + "</div>";
-            } 
-            else if ( lang === "math" || lang === "latex" || lang === "katex")
-            {
-                return "<p class=\"" + editormd.classNames.tex + "\">" + code + "</p>";
+                return "&lt;div class=\"flowchart\">" + code + "&lt;/div>";
             } 
             else 
             {
@@ -3711,22 +3466,22 @@
 
         markedRenderer.tablecell = function(content, flags) {
             var type = (flags.header) ? "th" : "td";
-            var tag  = (flags.align)  ? "<" + type +" style=\"text-align:" + flags.align + "\">" : "<" + type + ">";
+            var tag  = (flags.align)  ? "&lt;" + type +" style=\"text-align:" + flags.align + "\">" : "&lt;" + type + ">";
             
-            return tag + this.atLink(this.emoji(content)) + "</" + type + ">\n";
+            return tag + this.atLink(this.emoji(content)) + "&lt;/" + type + ">\n";
         };
 
         markedRenderer.listitem = function(text) {
-            if (settings.taskList && /^\s*\[[x\s]\]\s*/.test(text)) 
+            if (settings.taskList &amp;&amp; /^\s*\[[x\s]\]\s*/.test(text)) 
             {
-                text = text.replace(/^\s*\[\s\]\s*/, "<input type=\"checkbox\" class=\"task-list-item-checkbox\" /> ")
-                           .replace(/^\s*\[x\]\s*/,  "<input type=\"checkbox\" class=\"task-list-item-checkbox\" checked disabled /> ");
+                text = text.replace(/^\s*\[\s\]\s*/, "&lt;input type=\"checkbox\" class=\"task-list-item-checkbox\" /> ")
+                           .replace(/^\s*\[x\]\s*/,  "&lt;input type=\"checkbox\" class=\"task-list-item-checkbox\" checked disabled /> ");
 
-                return "<li style=\"list-style: none;\">" + this.atLink(this.emoji(text)) + "</li>";
+                return "&lt;li style=\"list-style: none;\">" + this.atLink(this.emoji(text)) + "&lt;/li>";
             }
             else 
             {
-                return "<li>" + this.atLink(this.emoji(text)) + "</li>";
+                return "&lt;li>" + this.atLink(this.emoji(text)) + "&lt;/li>";
             }
         };
         
@@ -3752,12 +3507,12 @@
         
         startLevel      = startLevel  || 1;
         
-        for (var i = 0, len = toc.length; i < len; i++) 
+        for (var i = 0, len = toc.length; i &lt; len; i++) 
         {
             var text  = toc[i].text;
             var level = toc[i].level;
             
-            if (level < startLevel) {
+            if (level &lt; startLevel) {
                 continue;
             }
             
@@ -3765,26 +3520,26 @@
             {
                 html += "";
             }
-            else if (level < lastLevel) 
+            else if (level &lt; lastLevel) 
             {
-                html += (new Array(lastLevel - level + 2)).join("</ul></li>");
+                html += (new Array(lastLevel - level + 2)).join("&lt;/ul>&lt;/li>");
             } 
             else 
             {
-                html += "</ul></li>";
+                html += "&lt;/ul>&lt;/li>";
             }
 
-            html += "<li><a class=\"toc-level-" + level + "\" href=\"#" + text + "\" level=\"" + level + "\">" + text + "</a><ul>";
+            html += "&lt;li>&lt;a class=\"toc-level-" + level + "\" href=\"#" + text + "\" level=\"" + level + "\">" + text + "&lt;/a>&lt;ul>";
             lastLevel = level;
         }
         
         var tocContainer = container.find(".markdown-toc");
         
-        if ((tocContainer.length < 1 && container.attr("previewContainer") === "false"))
+        if (tocContainer.length &lt; 1 &amp;&amp; container.attr("previewContainer") === "false")
         {
-            var tocHTML = "<div class=\"markdown-toc " + classPrefix + "markdown-toc\"></div>";
+            var tocHTML = "&lt;div class=\"markdown-toc " + classPrefix + "markdown-toc\">&lt;/div>";
             
-            tocHTML = (tocDropdown) ? "<div class=\"" + classPrefix + "toc-menu\">" + tocHTML + "</div>" : tocHTML;
+            tocHTML = (tocDropdown) ? "&lt;div class=\"" + classPrefix + "toc-menu\">" + tocHTML + "&lt;/div>" : tocHTML;
             
             container.html(tocHTML);
             
@@ -3793,10 +3548,10 @@
         
         if (tocDropdown)
         {
-            tocContainer.wrap("<div class=\"" + classPrefix + "toc-menu\"></div><br/>");
+            tocContainer.wrap("&lt;div class=\"" + classPrefix + "toc-menu\">&lt;/div>&lt;br/>");
         }
         
-        tocContainer.html("<ul class=\"markdown-toc-list\"></ul>").children(".markdown-toc-list").html(html.replace(/\r?\n?\<ul\>\<\/ul\>/g, ""));
+        tocContainer.html("&lt;ul class=\"markdown-toc-list\">&lt;/ul>").children(".markdown-toc-list").html(html.replace(/\r?\n?\&lt;ul\>\&lt;\/ul\>/g, ""));
         
         return tocContainer;
     };
@@ -3821,14 +3576,14 @@
         tocMenus.each(function() {
             var $this  = $(this);
             var toc    = $this.children(".markdown-toc");
-            var icon   = "<i class=\"fa fa-angle-down\"></i>";
-            var btn    = "<a href=\"javascript:;\" class=\"toc-menu-btn\">" + icon + tocTitle + "</a>";
+            var icon   = "&lt;i class=\"fa fa-angle-down\">&lt;/i>";
+            var btn    = "&lt;a href=\"javascript:;\" class=\"toc-menu-btn\">" + icon + tocTitle + "&lt;/a>";
             var menu   = toc.children("ul");            
             var list   = menu.find("li");
             
             toc.append(btn);
             
-            list.first().before("<li><h1>" + tocTitle + " " + icon + "</h1></li>");
+            list.first().before("&lt;li>&lt;h1>" + tocTitle + " " + icon + "&lt;/h1>&lt;/li>");
             
             $this.mouseover(function(){
                 menu.show();
@@ -3842,11 +3597,11 @@
                         ul.remove();
                     }
 
-                    if (ul.length > 0 && ul.html() !== "")
+                    if (ul.length > 0 &amp;&amp; ul.html() !== "")
                     {
                         var firstA = li.children("a").first();
 
-                        if (firstA.children(".fa").length < 1)
+                        if (firstA.children(".fa").length &lt; 1)
                         {
                             firstA.append( $(icon).css({ float:"right", paddingTop:"4px" }) );
                         }
@@ -3890,47 +3645,43 @@
         var filterTags = expression[0].split(",");
         var attrs      = expression[1];
 
-        for (var i = 0, len = filterTags.length; i < len; i++)
+        for (var i = 0, len = filterTags.length; i &lt; len; i++)
         {
             var tag = filterTags[i];
 
-            html = html.replace(new RegExp("\<\s*" + tag + "\s*([^\>]*)\>([^\>]*)\<\s*\/" + tag + "\s*\>", "igm"), "");
+            html = html.replace(new RegExp("\&lt;\s*" + tag + "\s*([^\>]*)\>([^\>]*)\&lt;\s*\/" + tag + "\s*\>", "igm"), "");
         }
-        
-        //return html;
 
         if (typeof attrs !== "undefined")
         {
-            var htmlTagRegex = /\<(\w+)\s*([^\>]*)\>([^\>]*)\<\/(\w+)\>/ig;
+            var htmlTagRegex = /\&lt;(\w+)\s*([^\>]*)\>([^\>]*)\&lt;\/(\w+)\>/ig;
 
             if (attrs === "*")
             {
                 html = html.replace(htmlTagRegex, function($1, $2, $3, $4, $5) {
-                    return "<" + $2 + ">" + $4 + "</" + $5 + ">";
+                    return "&lt;" + $2 + ">" + $4 + "&lt;/" + $5 + ">";
                 });         
             }
             else if (attrs === "on*")
             {
                 html = html.replace(htmlTagRegex, function($1, $2, $3, $4, $5) {
-                    var el = $("<" + $2 + ">" + $4 + "</" + $5 + ">");
+                    var el = $("&lt;" + $2 + ">" + $4 + "&lt;/" + $5 + ">");
                     var _attrs = $($1)[0].attributes;
                     var $attrs = {};
                     
                     $.each(_attrs, function(i, e) {
-                        if (e.nodeName !== '"') $attrs[e.nodeName] = e.nodeValue;
+                        $attrs[e.nodeName] = e.nodeValue;
                     });
                     
-                    $.each($attrs, function(i) {                        
+                    $.each($attrs, function(i) {                
                         if (i.indexOf("on") === 0) {
                             delete $attrs[i];
                         }
                     });
                     
                     el.attr($attrs);
-                    
-                    var text = (typeof el[1] !== "undefined") ? $(el[1]).text() : "";
 
-                    return el[0].outerHTML + text;
+                    return el[0].outerHTML;
                 });
             }
             else
@@ -3969,9 +3720,7 @@
             tocStartLevel        : 1,
             tocTitle             : "目录",
             tocDropdown          : false,
-            tocContainer         : "",
             markdown             : "",
-            markdownSourceCode   : false,
             htmlDecode           : false,
             autoLoadKaTeX        : true,
             pageBreak            : true,
@@ -3991,9 +3740,9 @@
         var settings      = div.settings = $.extend(true, defaults, options || {});
         var saveTo        = div.find("textarea");
         
-        if (saveTo.length < 1)
+        if (saveTo.length &lt; 1)
         {
-            div.append("<textarea></textarea>");
+            div.append("&lt;textarea>&lt;/textarea>");
             saveTo        = div.find("textarea");
         }        
         
@@ -4027,38 +3776,21 @@
         };
         
 		markdownDoc = new String(markdownDoc);
+        markdownDoc = editormd.filterHTMLTags(markdownDoc, settings.htmlDecode);
         
         var markdownParsed = marked(markdownDoc, markedOptions);
         
-        markdownParsed = editormd.filterHTMLTags(markdownParsed, settings.htmlDecode);
-        
-        if (settings.markdownSourceCode) {
-            saveTo.text(markdownDoc);
-        } else {
-            saveTo.remove();
-        }
+        saveTo.val(markdownDoc);
         
         div.addClass("markdown-body " + this.classPrefix + "html-preview").append(markdownParsed);
-        
-        var tocContainer = (settings.tocContainer !== "") ? $(settings.tocContainer) : div;
-        
-        if (settings.tocContainer !== "")
-        {
-            tocContainer.attr("previewContainer", false);
-        }
          
         if (settings.toc) 
         {
-            div.tocContainer = this.markdownToCRenderer(markdownToC, tocContainer, settings.tocDropdown, settings.tocStartLevel);
+            div.tocContainer = this.markdownToCRenderer(markdownToC, div, settings.tocDropdown, settings.tocStartLevel);
             
             if (settings.tocDropdown || div.find("." + this.classPrefix + "toc-menu").length > 0)
             {
                 this.tocDropdownMenu(div, settings.tocTitle);
-            }
-            
-            if (settings.tocContainer !== "")
-            {
-                div.find(".editormd-toc-menu, .editormd-markdown-toc").remove();
             }
         }
             
@@ -4083,13 +3815,12 @@
         {
             var katexHandle = function() {
                 div.find("." + editormd.classNames.tex).each(function(){
-                    var tex  = $(this);                    
-                    katex.render(tex.html().replace(/&lt;/g, "<").replace(/&gt;/g, ">"), tex[0]);                    
-                    tex.find(".katex").css("font-size", "1.6em");
+                    var tex  = $(this);
+                    katex.render(tex.html().replace(/&amp;lt;/g, "&lt;").replace(/&amp;gt;/g, ">"), tex[0]);
                 });
             };
             
-            if (settings.autoLoadKaTeX && !editormd.$katex && !editormd.kaTeXLoaded)
+            if (settings.autoLoadKaTeX &amp;&amp; !editormd.$katex &amp;&amp; !editormd.kaTeXLoaded)
             {
                 this.loadKaTeX(function() {
                     editormd.$katex      = katex;
@@ -4110,17 +3841,7 @@
         return div;
     };
     
-    // Editor.md themes, change toolbar themes etc.
-    // added @1.5.0
-    editormd.themes        = ["default", "dark"];
-    
-    // Preview area themes
-    // added @1.5.0
-    editormd.previewThemes = ["default", "dark"];
-    
-    // CodeMirror / editor area themes
-    // @1.5.0 rename -> editorThemes, old version -> themes
-    editormd.editorThemes = [
+    editormd.themes = [
         "default", "3024-day", "3024-night",
         "ambiance", "ambiance-mobile",
         "base16-dark", "base16-light", "blackboard",
@@ -4194,7 +3915,7 @@
     };
     
     editormd.isIE    = (navigator.appName == "Microsoft Internet Explorer");
-    editormd.isIE8   = (editormd.isIE && navigator.appVersion.match(/8./i) == "8.");
+    editormd.isIE8   = (editormd.isIE &amp;&amp; navigator.appVersion.match(/8./i) == "8.");
 
     /**
      * 动态加载JS文件的方法
@@ -4307,40 +4028,39 @@
         };
 
         options          = $.extend(true, defaults, options);
-        
-        var $this        = this;
+
         var editor       = this.editor;
         var classPrefix  = editormd.classPrefix;
         var guid         = (new Date()).getTime();
         var dialogName   = ( (options.name === "") ? classPrefix + "dialog-" + guid : options.name);
         var mouseOrTouch = editormd.mouseOrTouch;
 
-        var html         = "<div class=\"" + classPrefix + "dialog " + dialogName + "\">";
+        var html         = "&lt;div class=\"" + classPrefix + "dialog " + dialogName + "\">";
 
         if (options.title !== "")
         {
-            html += "<div class=\"" + classPrefix + "dialog-header\"" + ( (options.drag) ? " style=\"cursor: move;\"" : "" ) + ">";
-            html += "<strong class=\"" + classPrefix + "dialog-title\">" + options.title + "</strong>";
-            html += "</div>";
+            html += "&lt;div class=\"" + classPrefix + "dialog-header\"" + ( (options.drag) ? " style=\"cursor: move;\"" : "" ) + ">";
+            html += "&lt;strong class=\"" + classPrefix + "dialog-title\">" + options.title + "&lt;/strong>";
+            html += "&lt;/div>";
         }
 
         if (options.closed)
         {
-            html += "<a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "dialog-close\"></a>";
+            html += "&lt;a href=\"javascript:;\" class=\"fa fa-close " + classPrefix + "dialog-close\">&lt;/a>";
         }
 
-        html += "<div class=\"" + classPrefix + "dialog-container\">" + options.content;                    
+        html += "&lt;div class=\"" + classPrefix + "dialog-container\">" + options.content;                    
 
         if (options.footer || typeof options.footer === "string") 
         {
-            html += "<div class=\"" + classPrefix + "dialog-footer\">" + ( (typeof options.footer === "boolean") ? "" : options.footer) + "</div>";
+            html += "&lt;div class=\"" + classPrefix + "dialog-footer\">" + ( (typeof options.footer === "boolean") ? "" : options.footer) + "&lt;/div>";
         }
 
-        html += "</div>";
+        html += "&lt;/div>";
 
-        html += "<div class=\"" + classPrefix + "dialog-mask " + classPrefix + "dialog-mask-bg\"></div>";
-        html += "<div class=\"" + classPrefix + "dialog-mask " + classPrefix + "dialog-mask-con\"></div>";
-        html += "</div>";
+        html += "&lt;div class=\"" + classPrefix + "dialog-mask " + classPrefix + "dialog-mask-bg\">&lt;/div>";
+        html += "&lt;div class=\"" + classPrefix + "dialog-mask " + classPrefix + "dialog-mask-con\">&lt;/div>";
+        html += "&lt;/div>";
 
         editor.append(html);
 
@@ -4350,7 +4070,6 @@
             if (options.lockScreen)
             {                
                 $("html,body").css("overflow", (lock) ? "hidden" : "");
-                $this.resize();
             }
 
             return dialog;
@@ -4413,13 +4132,13 @@
                 var btn = options.buttons[key];
                 var btnClassName = classPrefix + key + "-btn";
 
-                footer.append("<button class=\"" + classPrefix + "btn " + btnClassName + "\">" + btn[0] + "</button>");
+                footer.append("&lt;button class=\"" + classPrefix + "btn " + btnClassName + "\">" + btn[0] + "&lt;/button>");
                 btn[1] = $.proxy(btn[1], dialog);
                 footer.children("." + btnClassName).bind(mouseOrTouch("click", "touchend"), btn[1]);
             }
         }
 
-        if (options.title !== "" && options.drag)
+        if (options.title !== "" &amp;&amp; options.drag)
         {                        
             var posX, posY;
             var dialogHeader = dialog.children("." + classPrefix + "dialog-header");
@@ -4455,7 +4174,7 @@
                 var left, top, nowLeft = parseInt(dialog[0].style.left), nowTop = parseInt(dialog[0].style.top);
 
                 if( nowLeft >= 0 ) {
-                    if( nowLeft + dialog.width() <= $(window).width()) {
+                    if( nowLeft + dialog.width() &lt;= $(window).width()) {
                         left = e.clientX - posX;
                     } else {	
                         left = $(window).width() - dialog.width();
@@ -4560,7 +4279,7 @@
         format      = format || "";
 
         var addZero = function(d) {
-            return (d < 10) ? "0" + d : d;
+            return (d &lt; 10) ? "0" + d : d;
         };
 
         var date    = new Date(); 
@@ -4665,3 +4384,26 @@
     return editormd;
 
 }));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc" target="_blank" rel="noopener">JSDoc 3.3.0</a> on Mon Jun 08 2015 01:07:40 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
