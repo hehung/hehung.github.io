@@ -80,11 +80,11 @@
       
         <tags>
             
-            <tag> Keil </tag>
-            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
             
         </tags>
       
@@ -109,11 +109,11 @@
       
         <tags>
             
-            <tag> Keil </tag>
-            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
+            
+            <tag> Keil </tag>
             
         </tags>
       
@@ -171,9 +171,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> OLED </tag>
+            
+            <tag> LPC11U68 </tag>
             
             <tag> RTC </tag>
             
@@ -227,11 +227,11 @@
       
         <tags>
             
+            <tag> OLED </tag>
+            
             <tag> IIC </tag>
             
             <tag> LPC11U68 </tag>
-            
-            <tag> OLED </tag>
             
         </tags>
       
@@ -312,11 +312,11 @@
       
         <tags>
             
-            <tag> IIC </tag>
+            <tag> STM32 </tag>
             
             <tag> OLED </tag>
             
-            <tag> STM32 </tag>
+            <tag> IIC </tag>
             
         </tags>
       
@@ -629,9 +629,9 @@
             
             <tag> C语言 </tag>
             
-            <tag> OLED </tag>
-            
             <tag> STM32 </tag>
+            
+            <tag> OLED </tag>
             
             <tag> 心率监控 </tag>
             
