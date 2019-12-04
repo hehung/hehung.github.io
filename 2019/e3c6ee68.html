@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LPC双核挑战赛之餐厅服务机器人, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
+    <meta name="keywords" content="涂鸦TYDE3.0开发板试用5-DHT11读取温湿度, 单片机,FreeRTOS,STM32,NPX,GD32,嵌入式">
     <meta name="description" content="
-LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到的比赛，然后参加的。当时是在NXP论坛上参加的，所以帖子也是发布在NXP论坛上的，可以通过后面的链接进入：点我跳转到NXP社区查看该贴
+DHT11是温湿度传感器，单总线通信，精度还是很高的，本文讲述了如何通过DHT11来读取温湿度信息，该文原本发布在电路城。点我跳转到原帖
 
-
-这次比赛还是有不少的网友参加的，做的项目都">
+代码废话不多说，直接上代码：DHT11.c
+#include &#34;dht11.h&#34;
+#include">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LPC双核挑战赛之餐厅服务机器人 | Hehung&#39;s Blog</title>
+    <title>涂鸦TYDE3.0开发板试用5-DHT11读取温湿度 | Hehung&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -367,13 +368,13 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.cirmall.com/bbs/data/attachment/forum/201803/03/220724mroxr2iriutruo7t.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LPC双核挑战赛之餐厅服务机器人
+                        涂鸦TYDE3.0开发板试用5-DHT11读取温湿度
                     </div>
                 </div>
             </div>
@@ -489,16 +490,12 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                                 <span class="chip bg-color">OLED</span>
                             </a>
                         
-                            <a href="/tags/LPC54114/">
-                                <span class="chip bg-color">LPC54114</span>
+                            <a href="/tags/%E6%B6%82%E9%B8%A63-0/">
+                                <span class="chip bg-color">涂鸦3.0</span>
                             </a>
                         
-                            <a href="/tags/ADC/">
-                                <span class="chip bg-color">ADC</span>
-                            </a>
-                        
-                            <a href="/tags/ESP8266/">
-                                <span class="chip bg-color">ESP8266</span>
+                            <a href="/tags/DHT11/">
+                                <span class="chip bg-color">DHT11</span>
                             </a>
                         
                     </div>
@@ -509,12 +506,8 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                LPC系列
-                            </a>
-                        
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/%E6%AF%94%E8%B5%9B/" class="post-category">
-                                比赛
+                            <a href="/categories/STM32/" class="post-category">
+                                STM32
                             </a>
                         
                     </div>
@@ -526,28 +519,28 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-28
+                    2019-12-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-29
+                    2019-12-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.6k
+                    217
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    1 分
                 </div>
                 
 				
@@ -564,74 +557,169 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到的比赛，然后参加的。<br>当时是在NXP论坛上参加的，所以帖子也是发布在NXP论坛上的，可以通过后面的链接进入：<a href="http://www.nxpic.org/module/forum/thread-614243-1-1.html" target="_blank" rel="noopener">点我跳转到NXP社区查看该贴</a></p>
+<p>DHT11是温湿度传感器，单总线通信，精度还是很高的，本文讲述了如何通过DHT11来读取温湿度信息，该文原本发布在电路城。<a href="http://www.cirmall.com/bbs/thread-99501-1-1.html" target="_blank" rel="noopener" title="点我跳转到原帖">点我跳转到原帖</a></p>
 </blockquote>
-<blockquote>
-<p>这次比赛还是有不少的网友参加的，做的项目都挺不错，值得好好学习。点击后面的链接查看其他网友的项目：<a href="https://www.nxpic.org/activity/LPCcontest/vote" target="_blank" rel="noopener">点我跳转到双核大赛汇总区</a></p>
-</blockquote>
-<h1 id="一、项目名称"><a href="#一、项目名称" class="headerlink" title="一、项目名称"></a>一、项目名称</h1><pre><code>餐厅服务机器人</code></pre><p>下图是整体图片，请忽略它的外观，😄，太丑了</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/200104h3yu8u5iommrpudu.png" alt="项目整体图" title="项目整体图"></p>
-<h1 id="一、项目概述"><a href="#一、项目概述" class="headerlink" title="一、项目概述"></a>一、项目概述</h1><p>  该项目是基于LPC54114双核芯片的餐厅服务机器人的设计。</p>
-<p>  项目功能：通过该设计，当有人在桌子上坐下时，接触开关检测到之后会通过ESP8266发送信息到服务器，服务器会传输信息到机器人，机器人通过电磁传感器寻迹到达指定的服务桌子为客人提供服务。餐厅服务机器人有红外避障传感器，人体红外传感器可以进行避障，有语音播放模块可以播放预先设定的语音提醒客人的操作，与服务器的通信使用ESP8266 WIFI模块。该设计中有一块OLED显示屏为可以方便客人点餐，会自动计算价格上传服务器，并且在此过程中可以随时再点菜。通过最终的测试，机器人可以完成基本的实现预定的服务功能，细节部分还有待改进。</p>
-<p>  项目特点：该项目使用到了双核系统，M4内核用于进行ESP8266与服务器的通信，OLED液晶显示，点菜操作，处理一些较为复杂的功能；M0+内核用于机器人的运动，语音播放，避障等功能，两个核之间通过mailbox中断进行数据通信。</p>
-<p>  该项目包括单片机软件，服务器软件，服务器软件通过易语言编写。整个系统的硬件部分均采用了模块和手工焊接的方式来搭建完成的，软件部分通过MDK5调试完成。</p>
-<h1 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h1><h2 id="1-OLED显示"><a href="#1-OLED显示" class="headerlink" title="1 OLED显示"></a>1 OLED显示</h2><h3 id="OLED各个界面显示"><a href="#OLED各个界面显示" class="headerlink" title="OLED各个界面显示"></a>OLED各个界面显示</h3><p>  OLED会显示wifi连接信息，操作方式以及菜单等一些信息，如下图所示，该OLED是通过IIC总线进行驱动的，使用了软件IIC。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/151938t7szj5m5wkqj7m07.png" alt="Wifi连接中..." title="Wifi连接中..."></p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/151938g76ci9mgdc7m7xz6.png" alt="使用说明" title="使用说明"></p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201805/30/203623k9est5t8feo7t56v.png" alt="点菜显示界面" title="点菜显示界面"></p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/151939qi8lkcgtlmg0zwx9.png" alt="显示金额" title="显示金额"></p>
-<h3 id="OLED接线"><a href="#OLED接线" class="headerlink" title="OLED接线"></a>OLED接线</h3><p>  使用了IIC控制的OLED模块，IIC与GPIO的接线<br>SCL – PIO023<br>SDA – PIO024</p>
-<h2 id="2-电磁轨道循迹"><a href="#2-电磁轨道循迹" class="headerlink" title="2 电磁轨道循迹"></a>2 电磁轨道循迹</h2><h3 id="电磁传感器"><a href="#电磁传感器" class="headerlink" title="电磁传感器"></a>电磁传感器</h3><p>  由于最近学校有恩智浦智能车大赛，有电磁组的赛道，所以我就直接使用电磁组的赛道用于餐厅服务机器人的寻迹，相比较于传统的黑线寻迹的优势很明显，不受环境光线的干扰，同时在运动过程中不容易出错，放在车子的最前端，由于标志桌子座位号还是采用了黑线，使用电磁传感器需要铺设特定的路径，没有此条件，所以用了一个红外避障传感器用于编辑是否到达指定的桌子座位号。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201805/30/203625few4w4679z9xqdjl.png" alt="电磁传感器" title="电磁传感器"></p>
-<h3 id="放大器"><a href="#放大器" class="headerlink" title="放大器"></a>放大器</h3><p>  电磁传感器读取的是ADC值，但是，通过放大器进行放大，放大器将采集到的微弱信号放大到0-3.3V可以使用MCU拿来使用。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/154816iq46kupxddzqukzk.png" alt="电磁传感器放大器" title="电磁传感器放大器"></p>
-<h3 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h3><p>  使用了2路电磁传感器，接线如下所示：<br>OUT1 – PIO1.1<br>OUT2 – PIO1.2</p>
-<h2 id="3-ESP8266无限通信模块"><a href="#3-ESP8266无限通信模块" class="headerlink" title="3 ESP8266无限通信模块"></a>3 ESP8266无限通信模块</h2><p>  通过ESP8266与服务器连接。与服务器通信，服务器会发送“取菜”，“送菜”，“桌位号”等命令，客户端会接受这些命令，会发送菜单命令等。<br>  ESP8266通过串口用AT指令进行工作，串口发送指令给ESP8266，ESP8266再将指令通过WiFi发送出去，发送特殊的指令可以进行不同的操作。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201805/30/203625yvwvkkkqkkcnkk3k.png" alt="电磁传感器放大器" title="电磁传感器放大器"></p>
-<p>PS：虽然是进行串口发送数据，但是这个串口的数据处理还是花了我很多的时间，最开始使用的是例程中的串口发送与接收程序，但是对ESP8266不适用，例程中的串口只能发送特定的为16的字符数据，有一个宏定义字符可以进行发送长度的修改，但是我试着修改了数据的长度，发现并没有用，而AT指令有时候大于这个数，并且发送指令也会大于这个成都，我的处理方式是进行分段发送，将一个很长的数据通过分段进行发送，通过最终的测试，数据可以正常的发送处理，可以发送任意长度的数据，通过对例程中的程序进行修改之后在进行发送长度的处理之后才能够就行数据的正常发送。</p>
-<p>  该ESP8266是使用串口进行通信的，处理器与该芯片的连接方式如下：<br>  ESP8266使用的是串口5（USART5）<br>连线：<br>RXD – PIO0.20<br>TXD – PIO0.18</p>
-<h2 id="4-自动避障功能的实现"><a href="#4-自动避障功能的实现" class="headerlink" title="4 自动避障功能的实现"></a>4 自动避障功能的实现</h2><p>  通过两个红外避障模块和一个人体红外模块进行避障功能，人体红外检测是否有人挡住了赛道，进行语音提醒。红外避障进行障碍物的避让，在路被挡住的情况下也可以进行简单避障运行。</p>
-<p>  该模块使用起来比较简单，就是检测传感器返回的高低电平信号</p>
-<p>接线：<br>第一个：PIO1.11<br>第二个：PIO1.10<br>第三个：PIO1.5</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201805/30/203624o0060a990ba82qa0.png" alt="红外避障模块" title="红外避障模块"></p>
-<p>  当只有一个红外避障模块检测到障碍物的时候，就会自动避障，当两个红外避障模块同时检测到障碍物的时候就会启动蜂鸣器报警和语音提示借过一下。</p>
-<h2 id="5-语音播放功能的实现"><a href="#5-语音播放功能的实现" class="headerlink" title="5 语音播放功能的实现"></a>5 语音播放功能的实现</h2><p>  当可以点菜时进行语音提示，点餐完毕进行语音提示，有人挡住障碍物进行语音提示。语音播放模块如下图。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201805/30/203623nvkuvgikosutjjub.png" alt="语音播放模块" title="语音播放模块"></p>
-<p>  该语音播放模块采用的是蓝马科技的语音录放模块，其共有8个通道，每个通道控制一个语音，当给一个低电平的时候就会触发语音播放，控制方式建较为简单，由于我所控制的语音较少，所以就直接采用的单片机的IO口进行控制，如果控制得我语音较多的时候可以采用译码器进行控制。</p>
-<p>接线：<br>第一段：PIO0.15<br>第二段：PIO0.19<br>第三段：PIO0.21</p>
-<h2 id="6-主控"><a href="#6-主控" class="headerlink" title="6 主控"></a>6 主控</h2><p>  主控模块为lpc54110，由于我多次操作不当，这块单片机已经损坏了很多，第一个micro-USB口已经不能供电了，经过测试，是板载的KL26二极管坏掉了，我就采用的micro-USB2进行供电的，又一次不小心将小车从高空中摔落， 麦克风孔与耳机孔就壮烈牺牲了。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/152813niyoffipa1mmimgz.png" alt="主控模块" title="主控模块"></p>
-<p>  本设计采用的双核进行工作，M0+核主要负责机器人的运动，采集电磁传感器的信号，处理并控制小车的运动，其中机器人是否运动则由M4核传输过来的控制信号决定，M4内核会传输送菜，取菜，有客人来了，停止，运动等信号。双核的信号通过MailBox中断进行，其中主要内核为M4。</p>
-<h2 id="7-自制的服务器软件"><a href="#7-自制的服务器软件" class="headerlink" title="7 自制的服务器软件"></a>7 自制的服务器软件</h2><p>  该项目需要一个服务器软件参与控制，网上虽然有服务器软件，但是都不和我意，所以我就自己做了一个服务器软件。采用易语言编写，因为易语言见简单，中文编写。哈哈，下面就是我写的服务器软件的截图。<br>  我将所有的控制都设置成了按钮的形式。并且菜单也展示了出来，当接收到机器人发送过来的菜单信息时，马上对菜单进行分析，提取出客人所点的菜的信息，显示在最左边。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/153104ji74zzn44fahre4h.png" alt="服务器界面" title="服务器界面"></p>
-<p>  菜名变成了绿色，表示客人点过这个菜了。如下图。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/153333mdbszwceeb0b44qn.png" alt="服务器界面" title="服务器界面"></p>
-<h2 id="8-按键"><a href="#8-按键" class="headerlink" title="8 按键"></a>8 按键</h2><p>  该项目用到了lpc54110开发板上的板载的4个按键</p>
-<ul>
-<li>按键1：用于停止和启动M0+内核，由于主内核为M4，设置了一个按键用于对从内核的+ 汽艇进行控制；</li>
-<li>按键2：用于控制菜单选择时的下一个菜名的选择；</li>
-<li>按键3：用于菜单选择时的上一个菜名的选择；</li>
-<li>按键4：单击用于进入菜单选择界面，选择某一个菜名，和再次进入菜单选择界面。</li>
-<li>长按（大于2s）为确定选择的菜单信息并进行WIFI传送</li>
-</ul>
-<h2 id="LED"><a href="#LED" class="headerlink" title="LED"></a>LED</h2><p>  该项目中用到了两个LED等，分别为LED7，LED6</p>
-<ul>
-<li>LED7为M0+内核的工作指示灯，没500ms闪烁一次</li>
-<li>LED6为M4内核的工作指示灯，每隔1s中闪烁一次，当灯没有闪烁的时候表示内核没有工作或者程序卡死在哪个地方，在进行调试的时候非常有用，很多的时候M0+内核工作不正常都可以通过这种方式发现。</li>
-</ul>
-<h1 id="四、作品展示"><a href="#四、作品展示" class="headerlink" title="四、作品展示"></a>四、作品展示</h1><p>  整体如下图所示，有LPC54110双核单片机，12V电池，稳压模块，电机驱动，红外避障模块，人体红外模块，OLED 屏幕液晶，ESP8266模块，语音播放模块，蜂鸣器开关等期间组成：</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/152815l4wlytwzqyybqudy.png" alt="整体展示" title="整体展示"></p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/152815s2hhjbjbkjkuujje.png" alt="整体展示" title="整体展示"></p>
-<p>  该项目几乎用到了lpc54110的所有IO口，不得不说的是IO口确实有点少。</p>
-<p><img src="http://www.nxpic.org/module/forum/data/attachment/forum/201806/04/161924wafpe4mg3qn0nsna.png" alt="整体展示" title="整体展示"></p>
-<h1 id="项目实现功能"><a href="#项目实现功能" class="headerlink" title="项目实现功能"></a>项目实现功能</h1><p>  1、当有客人在饭桌上坐下时，会发送一个命令“座位号：xx”到服务器，服务器接收到该命令就会再次将命令发送给机器人（该命令在本设计中是直接通过服务器发送的，直接进行模拟，本设计的重点是在餐厅服务机器人上，所以这部分只是进行了模拟）；<br>  2、机器人收到了“座位号：xx”命令就会自动运动到指定座位，然后停下，提示客人点餐，客人可以通过单片机上的OLED显示屏和按键选择所需要的菜名，然后确定之后发送给服务器；<br>  3、服务器收到机器人发送过来的菜单命令之后会自动解析出点的那些菜，并且在客人所点的菜的背景变成绿色，表示这个菜被客人所确定的；<br>  4、当厨师将才做好了之后会发送“取菜”命令，机器人获取到取菜命令之后会自动运动到厨房，然后停止，等待下一条指令；<br>  5、厨师将菜放好了之后，发送一个“送菜”命令，机器人获取到命令之后就会自动运动到客人座位旁边。<br>  6、然后依次循环，当客人走后，可以点击服务器上的清楚命令，恢复成初始值。</p>
-<h1 id="五、视频演示"><a href="#五、视频演示" class="headerlink" title="五、视频演示"></a>五、视频演示</h1><p>不知道怎么了，以前的视频是上传到优酷的，但是现在好像访问不了了。<br>目前仅有一个ESP8266通信的视频，其他视频待整体组装之后拍摄<br><a href="http://player.youku.com/player.php/sid/XMzYzMzkxMDA0NA==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzYzMzkxMDA0NA==/v.swf</a></p>
-<p>这个是完整的项目视频：<br><a href="http://player.youku.com/player.php/sid/XMzY0NTA3NDc5Ng==/v.swf" target="_blank" rel="noopener">http://player.youku.com/player.php/sid/XMzY0NTA3NDc5Ng==/v.swf</a></p>
-<h1 id="六、项目文档"><a href="#六、项目文档" class="headerlink" title="六、项目文档"></a>六、项目文档</h1><p>关于代码，已经上传到了NXP论坛，感兴的话可以到该论坛上去下载：<br><a href="http://www.nxpic.org/module/forum/thread-614243-1-1.html" target="_blank" rel="noopener">http://www.nxpic.org/module/forum/thread-614243-1-1.html</a></p>
-<h1 id="七、制作心得"><a href="#七、制作心得" class="headerlink" title="七、制作心得"></a>七、制作心得</h1><pre><code>通过几个月的设计与制作，该作品总算是初步完成了。最开始使用lpc54110芯片的时候，还不不太会操作，通过上论坛看了一些大神的帖子之后才慢慢明白了芯片的开发方式。由于一直使用keil进行单片机的开发，用的比较顺手，所以，这制作此项目的时候同样使用的是keil5。在项目往常的过程中，遇到过很多的问题，最后有一步一步的解决完成。最开始遇到的问题有硬件IIC驱动不去来，通过多次测试没有成功，最后切换成了软件IIC进行控制。还遇到了一些其他的问题，比如引脚驱动不起来，ADC值读取不出来等问题。通过软件与硬件结合的调试方式，最终这些问题都得以解决。
-对于本设计而言，外观确实比较简陋，甚至有点chou，也是出于无奈，学生党，没什么余钱，加上毕业在即，经济紧张，就用了一些以前的器件来制作的。该设计的软件与硬件方面都下了十足的功夫（不要以为他不好看就认为我在敷衍，其实打这个硬件也是花了一段时间的）。
-第一次使用双核开发板，还是挺有意思的，一块芯片集成了两个核，之间还可以进行通信，对于本设计而言也是很重要的，由于要求实时性，所以双核通信对于本设计用处非常大。
-最后说一下本兮比赛带给我的体验：1、获得了一块lpc54110开发板（虽然开发板现在已经残废了，USB1供不上电，以及麦克风插口和耳机插口掉了）；2、增加了自己的耐性，为了完成这次比赛我可以耐性十足呀，有时候一个问题硬是花了一天才解决（比如说ESP8266通信程序，由于是采用的串口通信，一些解析程序都是自己写的，这方面就足足花了我3天的时间，在整个过程中还在不断修改与完善）；3、增加了自己解决问题的能力，遇到了很多问题，有解决了很多问题；4、获得了经验，无论比赛的结果如何，总之收获了许多的经验。</code></pre><script>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>废话不多说，直接上代码：<br><font color="red">DHT11.c</font></p>
+<pre class="line-numbers language-C"><code class="language-C">#include "dht11.h"
+#include "delay.h"
+
+/**
+**  DHT11输出
+**/
+void DHT11_IO_OUT(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructer;
+    GPIO_InitStructer.GPIO_Pin= GPIO_Pin_6;
+    GPIO_InitStructer.GPIO_Speed=GPIO_Speed_50MHz;
+    GPIO_InitStructer.GPIO_Mode=GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOA, &GPIO_InitStructer);
+}
+
+
+/**
+** DHT11输入
+**/
+void DHT11_IO_IN(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructer;
+    GPIO_InitStructer.GPIO_Pin= GPIO_Pin_6;
+    GPIO_InitStructer.GPIO_Speed=GPIO_Speed_50MHz;
+    GPIO_InitStructer.GPIO_Mode=GPIO_Mode_IPU;
+    GPIO_Init(GPIOA, &GPIO_InitStructer);
+}
+
+//复位DHT11
+void DHT11_Rst(void)           
+{                 
+        DHT11_IO_OUT();         //SET OUTPUT
+  DHT11_DQ_OUT=0;         //拉低DQ
+  delay_ms(20);            //拉低至少18ms
+  DHT11_DQ_OUT=1;         //DQ=1 
+        delay_us(30);             //主机拉高20~40us
+}
+//等待DHT11的回应
+//返回1:未检测到DHT11的存在
+//返回0:存在
+u8 DHT11_Check(void)            
+{   
+        u8 retry=0;
+        DHT11_IO_IN();//SET INPUT         
+    while (DHT11_DQ_IN&&retry<100)//DHT11会拉低40~80us
+        {
+                retry++;
+                delay_us(1);
+        };         
+        if(retry>=100)return 1;
+        else retry=0;
+    while (!DHT11_DQ_IN&&retry<100)//DHT11拉低后会再次拉高40~80us
+        {
+                retry++;
+                delay_us(1);
+        };
+        if(retry>=100)return 1;            
+        return 0;
+}
+//从DHT11读取一个位
+//返回值：1/0
+u8 DHT11_Read_Bit(void)                          
+{
+        u8 retry=0;
+        while(DHT11_DQ_IN&&retry<100)//等待变为低电平
+        {
+                retry++;
+                delay_us(1);
+        }
+        retry=0;
+        while(!DHT11_DQ_IN&&retry<100)//等待变高电平
+        {
+                retry++;
+                delay_us(1);
+        }
+        delay_us(40);//等待40us
+        if(DHT11_DQ_IN)return 1;
+        else return 0;                   
+}
+//从DHT11读取一个字节
+//返回值：读到的数据
+u8 DHT11_Read_Byte(void)    
+{        
+    u8 i,dat;
+    dat=0;
+        for (i=0;i<8;i++) 
+        {
+                   dat<<=1; 
+            dat|=DHT11_Read_Bit();
+    }                                                    
+    return dat;
+}
+//从DHT11读取一次数据
+//temp:温度值(范围:0~50°)
+//humi:湿度值(范围:20%~90%)
+//返回值：0,正常;1,读取失败
+u8 DHT11_Read_Data(u8 *temp,u8 *humi)    
+{        
+        u8 buf[5];
+        u8 i;
+        DHT11_Rst();
+        if(DHT11_Check()==0)
+        {
+                for(i=0;i<5;i++)//读取40位数据
+                {
+                        buf[i]=DHT11_Read_Byte();
+                }
+                if((buf[0]+buf[1]+buf[2]+buf[3])==buf[4])
+                {
+                        *humi=buf[0];
+                        *temp=buf[2];
+                }
+        }else return 1;
+        return 0;            
+}
+//初始化DHT11的IO口 DQ 同时检测DHT11的存在
+//返回1:不存在
+//返回0:存在             
+u8 DHT11_Init(void)
+{
+        GPIO_InitTypeDef  GPIO_InitStructure;
+
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);//使能GPIOG时钟
+
+  //GPIOF9,F10初始化设置
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 ;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;//推挽输出
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
+  GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化
+
+        DHT11_Rst();
+
+        return DHT11_Check();
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font color="red">DHT11.h</font></p>
+<pre class="line-numbers language-C"><code class="language-C">#ifndef __DHT11_H
+#define __DHT11_H 
+#include "sys.h"? ?
+
+////IO操作函数? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?? ? 
+#define? ? ? ? DHT11_DQ_OUT PAout(6) //数据端口
+#define? ? ? ? DHT11_DQ_IN??PAin(6)??//数据端口
+
+u8 DHT11_Init(void);//初始化DHT11
+u8 DHT11_Read_Data(u8 *temp,u8 *humi);//读取温湿度
+u8 DHT11_Read_Byte(void);//读出一个字节
+u8 DHT11_Read_Bit(void);//读出一个位
+u8 DHT11_Check(void);//检测是否存在DHT11
+void DHT11_Rst(void);//复位DHT11? ? 
+
+void DHT11_IO_OUT(void);
+void DHT11_IO_IN(void);
+
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>#演示效果</p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201803/03/220724mroxr2iriutruo7t.png" alt="室内温度" title="室内温度"></p>
+<p><img src="http://www.cirmall.com/bbs/data/attachment/forum/201803/03/220719truvsrxrs3ysa7ys.png" alt="温度变化" title="温度变化"></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>点击下载附件<br><a href="http://www.cirmall.com/bbs/forum.php?mod=attachment&amp;aid=MTE3NDkwOHw3YmU3MGZmM3wxNTc1MzU5NDUxfDE0OTgyMXw5OTUwMQ%3D%3D" target="_blank" rel="noopener">点我下载附件</a></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -675,7 +763,7 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hehung.top/2019/45279adc.html">http://hehung.top/2019/45279adc.html</a>
+                    <a href="http://hehung.top/2019/e3c6ee68.html">http://hehung.top/2019/e3c6ee68.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -717,16 +805,12 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                                     <span class="chip bg-color">OLED</span>
                                 </a>
                             
-                                <a href="/tags/LPC54114/">
-                                    <span class="chip bg-color">LPC54114</span>
+                                <a href="/tags/%E6%B6%82%E9%B8%A63-0/">
+                                    <span class="chip bg-color">涂鸦3.0</span>
                                 </a>
                             
-                                <a href="/tags/ADC/">
-                                    <span class="chip bg-color">ADC</span>
-                                </a>
-                            
-                                <a href="/tags/ESP8266/">
-                                    <span class="chip bg-color">ESP8266</span>
+                                <a href="/tags/DHT11/">
+                                    <span class="chip bg-color">DHT11</span>
                                 </a>
                             
                         </div>
@@ -1161,90 +1245,32 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/a44af509.html">
+                <a href="/2019/e703bc0a.html">
                     <div class="card-image">
                         
-                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201712/15/104232z9no27mu1wi7oukn.png" class="responsive-img" alt="LPCXpreso54608开箱运行与keil下的例程烧写">
+                        <img src="http://www.cirmall.com/bbs/data/attachment/forum/201803/03/200519ddd4d4e41p0p4lvp.png" class="responsive-img" alt="涂鸦TYDE3.0开发板试用5-OLED驱动">
                         
-                        <span class="card-title">LPCXpreso54608开箱运行与keil下的例程烧写</span>
+                        <span class="card-title">涂鸦TYDE3.0开发板试用5-OLED驱动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
-                        <a href="/2019/a44af509.html">
+                        <a href="/2019/e703bc0a.html">
                             
-                                LPCXpresso54608是一块功能十分强大的处理器，加上丰富的外设，可玩性很高，并且板载了4.3寸的液晶屏，本文讲述了使用keil对该开发板进行开发的准备工作以及程序下载。
+                                给自己的博客增加一个404页面，因为经常会有一些链接失效，所以添加一个这个页面特效对于网站的交互体验很好。
                             
                         </a>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-04
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/LPC54608/">
-                        <span class="chip bg-color">LPC54608</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                        <span class="chip bg-color">串口</span>
-                    </a>
-                    
-                    <a href="/tags/Keil/">
-                        <span class="chip bg-color">Keil</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/9af07f43.html">
-                    <div class="card-image">
-                        
-                        <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201812/15/143722f95ccmo6419m2d71.png" class="responsive-img" alt="lpc11U68利用RTC实现闹钟小应用">
-                        
-                        <span class="card-title">lpc11U68利用RTC实现闹钟小应用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        <a href="/2019/9af07f43.html">
-                            
-                                RTC是每个单片机基本上内置的时钟芯片，本文讲述了如何操作lpc11u68的RTC时钟芯片进行时间的显示
-                            
-                        </a>
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
+                            <a href="/categories/STM32/" class="post-category">
+                                    STM32
                                 </a>
                             
                             
@@ -1258,12 +1284,62 @@ LPC双核大赛是我还在本科阶段，大四的时候自己在网上看到�
                         <span class="chip bg-color">OLED</span>
                     </a>
                     
-                    <a href="/tags/LPC11U68/">
-                        <span class="chip bg-color">LPC11U68</span>
+                    <a href="/tags/%E6%B6%82%E9%B8%A63-0/">
+                        <span class="chip bg-color">涂鸦3.0</span>
                     </a>
                     
-                    <a href="/tags/RTC/">
-                        <span class="chip bg-color">RTC</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/89541f63.html">
+                    <div class="card-image">
+                        
+                        <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/404-page/3.jpg" class="responsive-img" alt="如何做一个好看的404界面">
+                        
+                        <span class="card-title">如何做一个好看的404界面</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        <a href="/2019/89541f63.html">
+                            
+                                给自己的博客增加一个404页面，因为经常会有一些链接失效，所以添加一个这个页面特效对于网站的交互体验很好。
+                            
+                        </a>
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hehung.top/"/>
-  <updated>2019-12-04T14:00:50.395Z</updated>
+  <updated>2019-12-04T14:11:29.583Z</updated>
   <id>http://hehung.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ͿѻTYDE3.0����������5-OLED����</title>
-    <link href="http://hehung.top/2019/89541f63.html"/>
-    <id>http://hehung.top/2019/89541f63.html</id>
+    <title>涂鸦TYDE3.0开发板试用5-OLED驱动</title>
+    <link href="http://hehung.top/2019/e703bc0a.html"/>
+    <id>http://hehung.top/2019/e703bc0a.html</id>
     <published>2019-12-04T13:58:34.701Z</published>
-    <updated>2019-12-04T14:00:50.395Z</updated>
+    <updated>2019-12-04T14:11:29.583Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,7 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;ԭ���ӷ����ڵ�·�ǣ�&lt;a href=&quot;http://www.cirmall.com/bbs/thread-99499-1-1.html&quot; target=&quot;_blank&quot;
+&lt;p&gt;原帖子发布在电路城，&lt;a href=&quot;http://www.cirmall.com/bbs/thread-99499-1-1.html&quot; target=&quot;_blank&quot;
         
       
     
@@ -42,16 +42,16 @@
     
       <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
     
-      <category term="Ϳѻ3.0" scheme="http://hehung.top/tags/%CD%BF%D1%BB3-0/"/>
+      <category term="涂鸦3.0" scheme="http://hehung.top/tags/%E6%B6%82%E9%B8%A63-0/"/>
     
   </entry>
   
   <entry>
-    <title>ͿѻTYDE3.0����������5-DHT11��ȡ��ʪ��</title>
-    <link href="http://hehung.top/2019/89541f63.html"/>
-    <id>http://hehung.top/2019/89541f63.html</id>
+    <title>涂鸦TYDE3.0开发板试用5-DHT11读取温湿度</title>
+    <link href="http://hehung.top/2019/e3c6ee68.html"/>
+    <id>http://hehung.top/2019/e3c6ee68.html</id>
     <published>2019-12-04T13:58:34.687Z</published>
-    <updated>2019-12-04T14:01:36.250Z</updated>
+    <updated>2019-12-04T14:11:41.870Z</updated>
     
     <summary type="html">
     
@@ -60,7 +60,7 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;DHT11����ʪ�ȴ�������������ͨ�ţ����Ȼ��Ǻܸߵģ����Ľ��������ͨ��DHT11����ȡ��ʪ����Ϣ������ԭ�������ڵ�·�ǡ�&lt;a
+&lt;p&gt;DHT11是温湿度传感器，单总线通信，精度还是很高的，本文讲述了如何通过DHT11来读取温湿度信息，该文原本发布在电路城。&lt;a href=&quot;http://www.cirmall.com/bbs/thread-99501-1-1.html&quot;
         
       
     
@@ -72,7 +72,7 @@
     
       <category term="OLED" scheme="http://hehung.top/tags/OLED/"/>
     
-      <category term="Ϳѻ3.0" scheme="http://hehung.top/tags/%CD%BF%D1%BB3-0/"/>
+      <category term="涂鸦3.0" scheme="http://hehung.top/tags/%E6%B6%82%E9%B8%A63-0/"/>
     
       <category term="DHT11" scheme="http://hehung.top/tags/DHT11/"/>
     
