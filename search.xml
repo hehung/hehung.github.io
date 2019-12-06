@@ -13,12 +13,14 @@
       
       <categories>
           
-          <category> STM32 </category>
+          <category> 涂鸦3.0 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> STM32 </tag>
             
             <tag> OLED </tag>
             
@@ -40,12 +42,14 @@
       
       <categories>
           
-          <category> STM32 </category>
+          <category> 涂鸦3.0 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> STM32 </tag>
             
             <tag> OLED </tag>
             
@@ -129,18 +133,16 @@
       
       <categories>
           
-          <category> 涂鸦 </category>
+          <category> 涂鸦3.0 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> LPC54608 </tag>
-            
-            <tag> 串口 </tag>
-            
             <tag> Keil </tag>
+            
+            <tag> STM32 </tag>
             
         </tags>
       
@@ -165,11 +167,11 @@
       
         <tags>
             
+            <tag> Keil </tag>
+            
             <tag> LPC54608 </tag>
             
             <tag> 串口 </tag>
-            
-            <tag> Keil </tag>
             
         </tags>
       
@@ -229,9 +231,9 @@
             
             <tag> OLED </tag>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> RTC </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       
@@ -256,9 +258,9 @@
       
         <tags>
             
-            <tag> LPC11U68 </tag>
-            
             <tag> RTC </tag>
+            
+            <tag> LPC11U68 </tag>
             
         </tags>
       
