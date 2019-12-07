@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hehung.top/"/>
-  <updated>2019-12-06T13:55:55.860Z</updated>
+  <updated>2019-12-07T03:59:07.718Z</updated>
   <id>http://hehung.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在网站中嵌入markdown编辑器</title>
+    <link href="http://hehung.top/2019/7b469cf8.html"/>
+    <id>http://hehung.top/2019/7b469cf8.html</id>
+    <published>2019-12-07T02:41:35.000Z</published>
+    <updated>2019-12-07T03:59:07.718Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;最近在网上查找markdown编辑器的时候，找到了一款比较好的编辑器 editor.md, 开源免费的。&lt;br&gt;&lt;a href=&quot;http://editor.md.ipandao.com/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://hehung.top/categories/hexo/"/>
+    
+    
+      <category term="html" scheme="http://hehung.top/tags/html/"/>
+    
+      <category term="css" scheme="http://hehung.top/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>涂鸦TYDE3.0开发板试用5-OLED驱动</title>
@@ -87,7 +117,7 @@
     <link href="http://hehung.top/2019/89541f63.html"/>
     <id>http://hehung.top/2019/89541f63.html</id>
     <published>2019-12-01T06:18:52.000Z</published>
-    <updated>2019-12-02T14:24:49.396Z</updated>
+    <updated>2019-12-07T02:40:12.417Z</updated>
     
     <summary type="html">
     
@@ -202,11 +232,11 @@
       <category term="LPC系列" scheme="http://hehung.top/categories/LPC%E7%B3%BB%E5%88%97/"/>
     
     
-      <category term="Keil" scheme="http://hehung.top/tags/Keil/"/>
-    
       <category term="LPC54608" scheme="http://hehung.top/tags/LPC54608/"/>
     
       <category term="串口" scheme="http://hehung.top/tags/%E4%B8%B2%E5%8F%A3/"/>
+    
+      <category term="Keil" scheme="http://hehung.top/tags/Keil/"/>
     
   </entry>
   
@@ -622,38 +652,6 @@
       <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
       <category term="DS18B20" scheme="http://hehung.top/tags/DS18B20/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>51单片机数码管显示</title>
-    <link href="http://hehung.top/2019/aa7cc8bc.html"/>
-    <id>http://hehung.top/2019/aa7cc8bc.html</id>
-    <published>2019-11-23T06:30:30.000Z</published>
-    <updated>2019-11-29T13:48:54.715Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;上一次做了一个流水灯，现在还是从基础做起，做一个可以滚动显示的数码管。废话不多说，首先展示一下滚动显示的效果，原帖子链接：&lt;a href=&quot;https://bbs.icxbk.com/thread-100110-1-1.html&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="51单片机" scheme="http://hehung.top/categories/51%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    
-      <category term="单片机" scheme="http://hehung.top/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-      <category term="C语言" scheme="http://hehung.top/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-      <category term="数码管" scheme="http://hehung.top/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/"/>
     
   </entry>
   
