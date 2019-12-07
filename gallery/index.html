@@ -419,842 +419,134 @@
     </div>
 </div>
 
-<link rel="stylesheet" type="text/css" href="/libs/MyGallery/component.css">
-<script src="/libs/MyGallery/modernizr.custom.js"></script>
+<style>
+    .text_des{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        color: #000;
+        display: inline-block;
+        opacity: 0;
+        overflow: hidden;
+    }
+    .text_des h3{
+        margin: 5px 0 8px 0px;
+        right: 40px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+        position: absolute;
+        top: 10%;
+        font-style: italic;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        transform: translateX(200px);
+    }
+    .text_des p{
+        left: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-200px); 
+        transition-delay: 0.2s;
+    }
+    .img-item {
+        transition: all 0.4s ease-out;
+    }
+    .img-item img{
+        transition: all 0.4s ease-out;
+    }
+    .img-item a:hover img{
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+    .img-item a:hover .text_des{
+        opacity: 1;
+        transform: scale(1.05); 
+    }
+    .img-item a:hover .animate-text{
+        transform: translateX(0); opacity: 1; 
+    }
+    .animate-text {
+        transition: all 0.6s ease-in-out; 
+    }
+</style>
 
 <main class="content">
     <div class="container chip-container">
         <div class="card">
             <div class="card-content">
                 <div class="tag-title center-align">
-                    <i class="fa fa-image"></i>
+                    <i class="fa fa-images"></i>
                     &nbsp;&nbsp;我的图库
                 </div>
-
-                <div id="grid-gallery" class="grid-gallery">
-                <section class="grid-wrap">
-                    <ul class="grid">
-                        <!-- <li class="grid-sizer"></li> --><!-- for Masonry column width -->
+                <div class="my-gallery">
+                    <div class="row">
+                    <!-- <li class="grid-sizer"></li> --><!-- for Masonry column width -->
+                    
+                        
                         
                             
                             
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145317.jpg" alt="img"+0/>
+                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
+                                <div class="img-item">
+                                    <a href="./韩国之行">
+                                        <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145721.jpg" class="responsive-img" alt="img"+0 />
+                                        <div class="text_des">
                                             
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145619.jpg" alt="img"+1/>
+                                                <h3 class="animate-text">韩国之行</h3>
+                                                <p class="animate-text">到韩国出差的时候出去逛了一趟，去了首尔塔，景福宫，明洞等地</p>
                                             
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145721.jpg" alt="img"+2/>
                                             
-                                        </figure>
-                                    </li>
-                                
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                             
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_150330.jpg" alt="img"+3/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183509.jpg" alt="img"+4/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183602.jpg" alt="img"+5/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183629.jpg" alt="img"+6/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183957.jpg" alt="img"+7/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_184622.jpg" alt="img"+8/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185017.jpg" alt="img"+9/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185234.jpg" alt="img"+10/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185317.jpg" alt="img"+11/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185800.jpg" alt="img"+12/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190140.jpg" alt="img"+13/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190144.jpg" alt="img"+14/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190347.jpg" alt="img"+15/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_194456.jpg" alt="img"+16/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_194617.jpg" alt="img"+17/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_114541.jpg" alt="img"+18/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115237.jpg" alt="img"+19/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115422.jpg" alt="img"+20/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115549.jpg" alt="img"+21/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_120236.jpg" alt="img"+22/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_121244.jpg" alt="img"+23/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li data-aos="zoom-in-up">
-                                        <figure>
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_130035.jpg" alt="img"+24/>
-                                            
-                                        </figure>
-                                    </li>
-                                
-                            
-                        
-                    </ul>
-                </section><!-- // grid-wrap -->
-                <section class="slideshow">
-                    <ul>
                         
                             
                             
-                                
-                                
-                                    <li>
-                                        <figure>
+                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
+                                <div class="img-item">
+                                    <a href="./青海湖和茶卡盐湖">
+                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9D%92%E6%B5%B7%E6%B9%96/9.jpg" class="responsive-img" alt="img"+1 />
+                                        <div class="text_des">
                                             
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145317.jpg" alt="img"+0/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
+                                                <h3 class="animate-text">青海湖+茶卡盐湖</h3>
+                                                <p class="animate-text">大学毕业去了青海湖和茶卡盐湖，并没有想象中的好看，哈哈</p>
                                             
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145619.jpg" alt="img"+1/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
                                             
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_145721.jpg" alt="img"+2/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_150330.jpg" alt="img"+3/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183509.jpg" alt="img"+4/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183602.jpg" alt="img"+5/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183629.jpg" alt="img"+6/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_183957.jpg" alt="img"+7/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_184622.jpg" alt="img"+8/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185017.jpg" alt="img"+9/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185234.jpg" alt="img"+10/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185317.jpg" alt="img"+11/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_185800.jpg" alt="img"+12/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190140.jpg" alt="img"+13/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190144.jpg" alt="img"+14/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_190347.jpg" alt="img"+15/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_194456.jpg" alt="img"+16/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191012_194617.jpg" alt="img"+17/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_114541.jpg" alt="img"+18/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115237.jpg" alt="img"+19/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115422.jpg" alt="img"+20/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_115549.jpg" alt="img"+21/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_120236.jpg" alt="img"+22/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_121244.jpg" alt="img"+23/>
-                                        </figure>
-                                    </li>
-                                
-                            
-                                
-                                
-                                    <li>
-                                        <figure>
-                                            
-                                            <img src="https://hehung-photos.oss-cn-beijing.aliyuncs.com/kroea_business_trip/IMG_20191013_130035.jpg" alt="img"+24/>
-                                        </figure>
-                                    </li>
-                                
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                             
                         
-                  </ul>
-                    <nav>f
-                        <span class="icon nav-prev "><i class="fa fa-angle-left"></i></span>
-                        <span class="icon nav-next"><i class="fa fa-angle-right"></i></span>
-                        <span class="icon nav-close"><i class="fa fa-times"></i></span>
-                    </nav>
-                    <!-- <div class="info-keys icon">按左右按钮可以切换图片</div> -->
-                </section><!-- // slideshow -->
-            </div><!-- // grid-gallery -->
-
-            <script src="/libs/MyGallery/cbpGridGallery.js"></script>
-            <script src="/libs/MyGallery/imagesloaded.pkgd.min.js"></script>
-            <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-            <script src="/libs/MyGallery/classie.js"></script>
-  
+                            
+                            
+                            <div class="photo col s12 m6 l4" data-aos="zoom-in-up">
+                                <div class="img-item">
+                                    <a href="./秦皇岛">
+                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E7%A7%A6%E7%9A%87%E5%B2%9B/10.jpg" class="responsive-img" alt="img"+2 />
+                                        <div class="text_des">
+                                            
+                                                <h3 class="animate-text">秦皇岛老龙头</h3>
+                                                <p class="animate-text">公司部门团建去了秦皇岛，老龙头玩了一圈</p>
+                                            
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        
+                    
+                </div>
             </div>
         </div>
-<!--        <div class="card">
-            <div class="card-content">
-               
-            </div>
-        </div>
--->
-<!--        <div class="card">
-
-            
-
-            
-
-            
-
-            
-
-            
-            <style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
     </div>
-    <div id="vcomments" class="card-content" style="display: grid">
-    </div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: '3RowM6DbEPhesuNvwVBtADfX-gzGzoHsz',
-        appKey: 'x3w0HPCluU2pTSYpII015rbo',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: '期待你的评论哦'
-    });
-</script>
-
-            
-
-        </div>
--->
-    </div>
-
-
-<script>
-    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-</script>
 
 </main>
+
 
 
 
