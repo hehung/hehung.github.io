@@ -437,61 +437,33 @@
 </div>
 
 <link rel="stylesheet" href="/libs/MyGallery/css/baguetteBox.css">
-
-<style>
-    /*列表布局*/
-/*    .gallery{
-        display: flex;
-        flex-wrap: wrap;
-           &::after {//处理最后一行
-          content: '';
-          flex-grow: 999999999;
-        }
-        
-    }
-    .gallery div{
-        flex-grow: 1;   
-        margin:5px;
-        background-color: #fff;
-        height:200px;
-    }
-    .gallery img{
-        height:200px;
-        object-fit: cover;
-        max-width: 100%;
-        min-width: 100%;
-        vertical-align: bottom;
-    }
-
-    .gallery div a:hover img{
-        opacity: 0.6;
-    }
-*/
-
-    .albums {
-        position: relative;
-
-    }
-    .myAlbum {
-        margin:auto;
-        font-size:0px;
-        
-    }
-    .myAlbum .albums img {
-        opacity: 1;
-        transition: all 0.1s ease-out;
-    }
-    .myAlbum .albums:hover img {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
-
-    /*结束*/
-</style>
+<!-- 该主题自带的lightGallery.js在图片多的时候会很卡，所以弃用，使用了一个我在网上找的baguetteBox，很轻量级，就是功能少了点 -->
 <script src="/libs/MyGallery/js/baguetteBox.js"></script> 
-
-<script src="https://cdn.jsdelivr.net/gh/jquery/jquery@1.11.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.xgallerify/latest/jquery.xgallerify.min.js"></script> 
+<style>
+/*    img.mat {
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+        width: 98%; 
+        height: 220px; 
+        display: block; 
+        padding: 4%;
+        background-color: #A67B5B; 
+        background-image: url(cardboard.jpg);  
+        background-repeat: no-repeat; 
+        background-size: cover;
+        border: 6px double #483C32;
+        box-shadow: 0 0 0 50px rgba(244,240,236,0.4) inset,
+        0 0 0 11px rgb(180, 130, 90),
+        0 0 30px rgba(0,0,0,0.8) inset;
+        -webkit-box-shadow: 0 0 0 50px rgba(244,240,236,0.4) inset,
+        0 0 0 11px rgb(180, 130, 90),
+        0 0 30px rgba(0,0,0,0.8) inset,
+        0 30px 20px rgba(0,0,0,0.3);
+        outline: 2px solid #333; 
+        outline-offset: 0px;
+    }  
+ */                      
+</style>
 
 <main class="content">
     <div class="container chip-container">
@@ -502,223 +474,225 @@
                     &nbsp;&nbsp;韩国之行
                 </div>
 
-                <!-- 瀑布流 -->
+                <!-- 相册 -->
                 <section class="gallery">
-                    <div class="myAlbum">
-                        
-                            
-                            
-                                
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/0.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/0.jpg" alt="img"+0 >
-                                    </a>
-                                </div>
+                    <div id="myGallery" class="my-gallery">
+                        <div class="row">
                             
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/1.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/1.jpg" alt="img"+1 >
-                                    </a>
-                                </div>
-                            
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/2.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/2.jpg" alt="img"+2 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/0.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/0.jpg" alt="img"+0 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/3.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/3.jpg" alt="img"+3 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/1.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/1.jpg" alt="img"+1 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/4.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/4.jpg" alt="img"+4 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/2.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/2.jpg" alt="img"+2 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/5.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/5.jpg" alt="img"+5 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/3.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/3.jpg" alt="img"+3 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/6.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/6.jpg" alt="img"+6 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/4.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/4.jpg" alt="img"+4 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/7.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/7.jpg" alt="img"+7 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/5.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/5.jpg" alt="img"+5 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/8.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/8.jpg" alt="img"+8 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/6.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/6.jpg" alt="img"+6 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/9.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/9.jpg" alt="img"+9 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/7.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/7.jpg" alt="img"+7 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/10.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/10.jpg" alt="img"+10 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/8.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/8.jpg" alt="img"+8 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/11.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/11.jpg" alt="img"+11 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/9.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/9.jpg" alt="img"+9 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/12.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/12.jpg" alt="img"+12 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/10.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/10.jpg" alt="img"+10 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/13.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/13.jpg" alt="img"+13 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/11.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/11.jpg" alt="img"+11 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/14.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/14.jpg" alt="img"+14 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/12.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/12.jpg" alt="img"+12 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/15.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/15.jpg" alt="img"+15 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/13.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/13.jpg" alt="img"+13 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/16.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/16.jpg" alt="img"+16 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/14.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/14.jpg" alt="img"+14 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/17.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/17.jpg" alt="img"+17 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/15.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/15.jpg" alt="img"+15 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/18.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/18.jpg" alt="img"+18 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/16.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/16.jpg" alt="img"+16 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/19.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/19.jpg" alt="img"+19 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/17.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/17.jpg" alt="img"+17 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/24.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/24.jpg" alt="img"+20 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/18.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/18.jpg" alt="img"+18 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/20.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/20.jpg" alt="img"+21 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/19.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/19.jpg" alt="img"+19 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/21.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/21.jpg" alt="img"+22 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/24.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/24.jpg" alt="img"+20 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/26.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/26.jpg" alt="img"+23 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/20.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/20.jpg" alt="img"+21 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/27.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/27.jpg" alt="img"+24 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/21.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/21.jpg" alt="img"+22 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/28.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/28.jpg" alt="img"+25 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/26.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/26.jpg" alt="img"+23 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/29.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/29.jpg" alt="img"+26 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/27.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/27.jpg" alt="img"+24 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/22.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/22.jpg" alt="img"+27 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/28.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/28.jpg" alt="img"+25 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/23.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/23.jpg" alt="img"+28 >
-                                    </a>
-                                </div>
-                            
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/29.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/29.jpg" alt="img"+26 >
+                                        </a>
+                                    </div>
                                 
-                                <div class="albums">
-                                    <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/25.jpg" target="_blank" rel="noopener" data-caption="">
-                                        <img src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/25.jpg" alt="img"+29 >
-                                    </a>
-                                </div>
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/22.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/22.jpg" alt="img"+27 >
+                                        </a>
+                                    </div>
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/23.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/23.jpg" alt="img"+28 >
+                                        </a>
+                                    </div>
+                                
+                                    
+                                    <div class="photo col s12 m6 l4" data-aos="fade-up">
+                                        <a href="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/25.jpg" target="_blank" rel="noopener" data-caption="">
+                                            <img class="mat" src="/medias/loading.gif" data-src="https://hehung-photo.oss-cn-beijing.aliyuncs.com/%E9%9F%A9%E5%9B%BD%E4%B9%8B%E8%A1%8C/25.jpg" alt="img"+29 >
+                                        </a>
+                                    </div>
+                                
                             
-                        
+                        </div>
                     </div>
                 </section>
             </div>
@@ -745,17 +719,10 @@
         */
     });
 
-    var gallery = $('.myAlbum').gallerify({
-        margin:10,
-        mode:'bootstrapv4',  //default, bootstrap, bootstrapv4, flickr 或 small
-        lastRow:'adjust',
-        debounceLoad: 10,
-    }); 
-
     start()
         $(window).on('scroll', function(){
          start();
-    });
+    })
 
     function start(){
           //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
@@ -778,6 +745,7 @@
         $img.attr('src', $img.attr('data-src')); //把data-src的值 赋值给src
         $img.attr('data-isLoaded', 1);//已加载的图片做标记
     }
+
 </script>
 
 </main>
