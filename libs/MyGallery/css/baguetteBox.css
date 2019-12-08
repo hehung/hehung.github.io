@@ -154,7 +154,8 @@
 .baguetteBox-button#previous-button svg {
     position: absolute;
     left: 4px;
-    top: 18px;
+    /*top: 18px;*/
+    top: calc(50% - 30px);
 }}
 
 .baguetteBox-spinner {
