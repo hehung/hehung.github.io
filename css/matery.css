@@ -328,6 +328,7 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 2rem;
+    font-family: "Segoe Script", "Ink Free", "Segoe Print";
 }
 
 @media only screen and (max-width: 992px) {
@@ -650,6 +651,7 @@ header .go-back i {
     line-height: 1.85em;
     margin-bottom: -20px;
     position: relative;
+    font-family: "楷体","KaiTi","宋体";
 }
 
 .bg-cover .description {
@@ -657,6 +659,7 @@ header .go-back i {
     font-size: 1.25rem;
     line-height: 1.4em;
     color: #eee;
+    font-family: "Ink Free", "Segoe Print", "Segoe Script";
 }
 
 .bg-cover .post-title {
