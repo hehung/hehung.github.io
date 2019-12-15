@@ -570,6 +570,37 @@ $(function () {
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'true' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#13A2B1',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'false' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"红色高跟鞋","artist":"蔡健雅","url":"http://music.163.com/song/media/outer/url?id=208902.mp3","cover":"http://p2.music.126.net/2toWuH2oD6c0dM6QLdThzg==/109951163165824418.jpg"},{"name":"攀登 (Live)","artist":"潘玮柏,G.E.M.邓紫棋,艾热 AIR","url":"http://music.163.com/song/media/outer/url?id=1313107926.mp3","cover":"http://p2.music.126.net/WlkSXIjLZcenMU1g0anGeg==/109951163589728383.jpg"},{"name":"Monsters","artist":"Katie Sky","url":"http://music.163.com/song/media/outer/url?id=28481189.mp3","cover":"http://p2.music.126.net/YPh291Jw4Lzy7x1iT_Aw5A==/109951163510035145.jpg"}]')
+    });
+});
+</script>
+                    
 
                     
 
@@ -586,7 +617,31 @@ $(function () {
 
     
     
-    <div class="col s12" >
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/add_album_paper/999.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        <a href="" class="category">Hexo</a>
+                    
+                </div>
+                <a href="https://hehung.top/2019/14ec1095.html">
+                    <h3 class="post-title">hexo网页相册页面的制作</h3>
+                </a>
+                <p class="post-description">
+                    
+                        有些时候希望在网页中嵌入一些生活中的照片，需要我们自己制作一个照片显示的页面，该文章基于matery主题添加照片显示的页面，支持相册以及照片显示，和相册内容加密等。
+                    
+                </p>
+                <a href="https://hehung.top/2019/14ec1095.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/editor.md/GIF.gif')">
             <div class="post-body">
                 <div class="post-categories">
@@ -597,8 +652,12 @@ $(function () {
                 <a href="https://hehung.top/2019/7b469cf8.html">
                     <h3 class="post-title">在网站中嵌入markdown编辑器</h3>
                 </a>
-                <p class="post-description">hexo的博客的文章支持markdown编辑，每次编辑的时候都需要打开一个markdown编辑器查看效果，不如直接在自己的网站中嵌入一个markdown编辑器，方便我们进行文章的编辑</p>
-                <a href="https://hehung.top/2019/7b469cf8.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                <p class="post-description">
+                    
+                        hexo的博客的文章支持markdown编辑，每次编辑的时候都需要打开一个markdown编辑器查看效果，不如直接在自己的网站中嵌入一个markdown编辑器，方便我们进行文章的编辑
+                    
+                </p>
+                <a href="https://hehung.top/2019/7b469cf8.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -617,8 +676,12 @@ $(function () {
                 <a href="https://hehung.top/2019/e5a76ffe.html">
                     <h3 class="post-title">基于stm32的心率监控装置</h3>
                 </a>
-                <p class="post-description">基于stm32的心率监控装置。以STM32作为主控，OLED作为显示屏，结合心率传感器和按键完成的一个可以实时监控心率的设备，支持心率图形的显示。</p>
-                <a href="https://hehung.top/2019/e5a76ffe.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                <p class="post-description">
+                    
+                        基于stm32的心率监控装置。以STM32作为主控，OLED作为显示屏，结合心率传感器和按键完成的一个可以实时监控心率的设备，支持心率图形的显示。
+                    
+                </p>
+                <a href="https://hehung.top/2019/e5a76ffe.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -637,8 +700,12 @@ $(function () {
                 <a href="https://hehung.top/2019/89541f63.html">
                     <h3 class="post-title">如何做一个好看的404界面</h3>
                 </a>
-                <p class="post-description">给自己的博客增加一个404页面，因为经常会有一些链接失效，所以添加一个好看的404页面特效有利于网站的交互体验</p>
-                <a href="https://hehung.top/2019/89541f63.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
+                <p class="post-description">
+                    
+                        给自己的博客增加一个404页面，因为经常会有一些链接失效，所以添加一个好看的404页面特效有利于网站的交互体验
+                    
+                </p>
+                <a href="https://hehung.top/2019/89541f63.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -661,6 +728,107 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/2d73fb49.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="实用网站与工具集合">
+                            
+                            <span class="card-title">实用网站与工具集合</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            <a href="/2019/2d73fb49.html">
+                                
+                                    一些在生活和学习中能够用到的一些实用的网站与工具，都在这个页面进行集合。
+                                
+                            </a>
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                            <span class="chip bg-color">工具</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/14ec1095.html">
+                        <div class="card-image">
+                            
+                            <img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/add_album_paper/999.jpg" class="responsive-img" alt="hexo网页相册页面的制作">
+                            
+                            <span class="card-title">hexo网页相册页面的制作</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            <a href="/2019/14ec1095.html">
+                                
+                                    有些时候希望在网页中嵌入一些生活中的照片，需要我们自己制作一个照片显示的页面，该文章基于matery主题添加照片显示的页面，支持相册以及照片显示，和相册内容加密等。
+                                
+                            </a>
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/html/">
+                            <span class="chip bg-color">html</span>
+                        </a>
+                        
+                        <a href="/tags/css/">
+                            <span class="chip bg-color">css</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1226,119 +1394,6 @@ $(function () {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/9dbc05f0.html">
-                        <div class="card-image">
-                            
-                            <img src="http://www.nxpic.org/module/forum/data/attachment/forum/201811/24/123018nmmsdt0mg0l3s5hg.png" class="responsive-img" alt="lpc11U68 IIC控制OLED">
-                            
-                            <span class="card-title">lpc11U68 IIC控制OLED</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            <a href="/2019/9dbc05f0.html">
-                                
-                                    使用lpc11U68的IIC控制OLED显示中文字符，该文使用了模拟IIC通信协议，控制OLED显示中文。
-                                
-                            </a>
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/OLED/">
-                            <span class="chip bg-color">OLED</span>
-                        </a>
-                        
-                        <a href="/tags/IIC/">
-                            <span class="chip bg-color">IIC</span>
-                        </a>
-                        
-                        <a href="/tags/LPC11U68/">
-                            <span class="chip bg-color">LPC11U68</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/d53273e5.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="lpc11U68串口控制RGB LED">
-                            
-                            <span class="card-title">lpc11U68串口控制RGB LED</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            <a href="/2019/d53273e5.html">
-                                
-                                    LPC11U68带有三个LED，本文讲述了如何通过串口来控制LED，包括控制每个LED的亮灭以及三种颜色的LED交替显示。
-                                
-                            </a>
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/LPC%E7%B3%BB%E5%88%97/" class="post-category">
-                                    LPC系列
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E4%B8%B2%E5%8F%A3/">
-                            <span class="chip bg-color">串口</span>
-                        </a>
-                        
-                        <a href="/tags/LPC11U68/">
-                            <span class="chip bg-color">LPC11U68</span>
-                        </a>
-                        
-                        <a href="/tags/LED/">
-                            <span class="chip bg-color">LED</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1382,7 +1437,7 @@ $(function () {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">23.5k</span>&nbsp;字
+                class="white-color">26.4k</span>&nbsp;字
             
             
             
