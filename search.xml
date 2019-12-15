@@ -4,23 +4,27 @@
   
     
     <entry>
-      <title>实用网站与工具集合</title>
-      <link href="/2019/2d73fb49.html"/>
-      <url>/2019/2d73fb49.html</url>
+      <title>GD32E231使用之贪吃蛇小游戏</title>
+      <link href="/2019/d3c0959c.html"/>
+      <url>/2019/d3c0959c.html</url>
       
-        <content type="html"><![CDATA[<h1 id="免费音乐"><a href="#免费音乐" class="headerlink" title="免费音乐"></a>免费音乐</h1><h2 id="音乐搜索器"><a href="#音乐搜索器" class="headerlink" title="音乐搜索器"></a>音乐搜索器</h2><blockquote><p>提供免费的音乐下载与链接，可以直接从这上面找歌。</p></blockquote><font color="red">网站地址：http://www.musictool.top</font><p><font color="red"><a href="http://www.musictool.top" target="_blank" rel="noopener">点我跳转</a><br></font></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="工具123"><a href="#工具123" class="headerlink" title="工具123"></a>工具123</h2><blockquote><p>提供常用的工具，可以满足生活中大多数的需求</p></blockquote><font color="red">网站地址：http://www.gjw123.com/</font><p><font color="red"><a href="http://www.gjw123.com/" target="_blank" rel="noopener">点我跳转</a><br></font></p><h1 id="免版权图片"><a href="#免版权图片" class="headerlink" title="免版权图片"></a>免版权图片</h1><h2 id="logosc"><a href="#logosc" class="headerlink" title="logosc"></a>logosc</h2><blockquote><p>聚合多家免版权图库，你只需要一键搜索，就可以得到多个免版权图库的聚合搜索结果，让你不用担心商用图片侵权。</p></blockquote><font color="red">网站地址：https://www.logosc.cn/so/</font><p><font color="red"><a href="https://www.logosc.cn/so/" target="_blank" rel="noopener">点我跳转</a><br></font></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>原帖子发布在EEWORLD: <a href="http://bbs.eeworld.com.cn/thread-1078169-1-1.html" target="_blank" rel="noopener">点我跳转</a></p></blockquote><p>花了2个周末，终于调试完了。这是第一次在单片机上尝试写一个小游戏，效果还行，只不过我是用的屏幕有点太小了，看得眼睛疼，玩起来费劲。</p><h1 id="作品介绍"><a href="#作品介绍" class="headerlink" title="作品介绍"></a>作品介绍</h1><p>该作品主要完成了贪吃蛇小游戏，和以前在非智能机上外的那种是差不多的，主要功能就是可以调节速度，控制贪吃蛇尽可能多吃点小食物。在复位之后首先会显示EEWorld的图片，之后显示兆易创新的图标，最后显示我自己的logo。之后就进入到游戏中了。在游戏的主界面提供了 开始游戏 和 速度调节 这两个选项，在速度调节中有1-9这九种速度供选择，数字越大，速度越大。整个作品设计只用了三个按键（GD32E231板子上面的一个KEY1和我的stm32板子上面的2个KEY2，KEY3），在游戏中，KEY1可以用来暂停游戏，KEY2和KEY3用来控制贪吃蛇方向，KEY2控制蛇顺时针方向转动，KEY3控制蛇你是正方向转动。下面会详细介绍。</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/143720zqb996yjysiifczz.jpg.thumb.jpg" alt="原理图" title="原理图"></p><h1 id="使用器件"><a href="#使用器件" class="headerlink" title="使用器件"></a>使用器件</h1><p>游戏中使用了LED和OLED，以及3个按键<br>连接：</p><ul><li>LED1 – 板载LED1</li><li>KEY1 – 板载KEY(wake-up key)</li><li>KEY2 – 外接按键，PA4</li><li>KEY3 – 外接按键，PA5</li><li>OLED – IIC操作，（SCL–PB10，SDA–PB11）</li><li>蜂鸣器 – 本来打算使用的，程序中有驱动，但是最后想着还是取消了，听着有点吵，也没有必要。</li></ul><h1 id="软件功能介绍"><a href="#软件功能介绍" class="headerlink" title="软件功能介绍"></a>软件功能介绍</h1><p>软件使用了定时器2，使用定时器2来获取2ms的定时任务，之后我的程序都是运行在这个2ms的任务中的，任务分为了2ms任务，50ms任务，500ms任务，1s任务（没用到）。</p><h2 id="2ms任务"><a href="#2ms任务" class="headerlink" title="2ms任务"></a>2ms任务</h2><p>用来检测按键是否按下，并进行消抖（在程序中没有延时，都是使用这种小系统来实现的，所以不会造成按下按键之后导致其他功能不能使用的情况）；<br>设置随机函数的种子（C语言的随机函数必须要种子数，随机数种子没2ms会变化一次，这样可以做到充分的随机数的产生），随机数是用来产生贪吃蛇的小食物用的。</p><h2 id="50ms任务"><a href="#50ms任务" class="headerlink" title="50ms任务"></a>50ms任务</h2><p>用来控制贪吃蛇的移动，1-9这几种等级的移动速度都是在这个里面做的。<br>还用来控制OLED的显示，集中显示界面都在这里面完成。</p><h2 id="500ms任务"><a href="#500ms任务" class="headerlink" title="500ms任务"></a>500ms任务</h2><p>用来控制LED1闪烁，表明程序运行正常，其实没什么实际用处。</p><p>##KEY1的作用</p><p>1.暂停和开始游戏，游戏进入的时候总是暂停，需要短按来开始。<br>2.主界面的选项切换，按下之后切选选项<br>3.长按1-2秒选择选中选项，如上图，长按2秒以内大于短按时间的话会进入游戏。<br>4.退出到主界面。当按下时间大于2秒的之后会退出到主界面。</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409f0l4frbrqbxgqr6l.jpg.thumb.jpg" alt="选择界面" title="选择界面"></p><h2 id="KEY2-的作用"><a href="#KEY2-的作用" class="headerlink" title="KEY2 的作用"></a>KEY2 的作用</h2><p>1.在游戏中顺时针方向控制蛇的移动<br>2.在速度调节界面，使速度减小</p><h2 id="KEY3-的作用"><a href="#KEY3-的作用" class="headerlink" title="KEY3 的作用"></a>KEY3 的作用</h2><p>1.在游戏中逆时针方向控制蛇的移动<br>2.在速度调节界面，使速度增大</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142410r5hc53x8jc73ja5v.jpg.thumb.jpg" alt="控制贪吃蛇移动" title="控制贪吃蛇移动"></p><h2 id="LED的作用"><a href="#LED的作用" class="headerlink" title="LED的作用"></a>LED的作用</h2><p>LED1就是用来500ms闪烁一次的，没有其他用处了。</p><h1 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h1><h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>游戏启动的时候会显示eeworld，兆易创新和我自己的游戏logo，如下图：</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409j7y8v7se2sgp07ie.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409zrcmzvrllch7d7vs.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409rwuo7u6pchwv6zrh.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><h2 id="菜单选择："><a href="#菜单选择：" class="headerlink" title="菜单选择："></a>菜单选择：</h2><p>菜单分为【开始游戏】和【速度调节】两个选项</p><ul><li>开始游戏  中可以正式开始贪吃蛇游戏。</li><li>速度调节界面可以调节速度的大小。</li></ul><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142410fgj4qvs5jpdwmqy4.jpg.thumb.jpg" alt="速度调节" title="速度调节"></p><h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><p>在游戏中，食物的位置会随机出现，使用了C语言的随机函数，当然随机函数需要有一个变化的种子才能真的实现随机。所以在2ms的定时任务中有一个随机数种子会变量，在实物被吃掉的时候装载这个随机数可以实现随机产生食物。</p><p>##游戏特色</p><p>游戏中，贪吃蛇只有撞到自己的身体再会结束游戏，没有设置撞到墙结束游戏，因为OLED的屏幕太小，这样的设定会经常撞墙，导致可玩性大大降低（主要是我菜），当蛇运动超过屏幕尺寸之后会从屏幕的另一边出现。</p><h1 id="视频链接"><a href="#视频链接" class="headerlink" title="视频链接"></a>视频链接</h1><p>视频放在B站</p><p>这个整个作品的显示<br><a href="https://www.bilibili.com/video/av53539154/" target="_blank" rel="noopener">https://www.bilibili.com/video/av53539154/</a></p><p>这个是我自己玩的游戏的视频，不知道你们有没有兴趣看，主要是一只手拿手机拍，一只手控制贪吃蛇移动，导致很快就game over了。</p><p><a href="https://www.bilibili.com/video/av53539154/?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av53539154/?p=2</a></p><h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>需要附件请前往eeworld下载试验。</p><p><a href="http://bbs.eeworld.com.cn/forum.php?mod=attachment&amp;aid=NDE1MTc4fGQ0ZDg3ODQ5fDE1NzYzOTI1Mzh8NzgyNzUxfDEwNzgxNjk%3D" target="_blank" rel="noopener">点我下载</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> 工具 </category>
+          <category> GD32系列 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 工具 </tag>
+            <tag> GD32E231 </tag>
+            
+            <tag> OLED </tag>
+            
+            <tag> 贪吃蛇 </tag>
             
         </tags>
       
@@ -85,25 +89,23 @@
     
     
     <entry>
-      <title>GD32E231使用之贪吃蛇小游戏</title>
-      <link href="/2019/d3c0959c.html"/>
-      <url>/2019/d3c0959c.html</url>
+      <title>实用网站与工具集合</title>
+      <link href="/2019/2d73fb49.html"/>
+      <url>/2019/2d73fb49.html</url>
       
-        <content type="html"><![CDATA[<blockquote><p>原帖子发布在EEWORLD: <a href="http://bbs.eeworld.com.cn/thread-1078169-1-1.html" target="_blank" rel="noopener">点我跳转</a></p></blockquote><p>花了2个周末，终于调试完了。这是第一次在单片机上尝试写一个小游戏，效果还行，只不过我是用的屏幕有点太小了，看得眼睛疼，玩起来费劲。</p><h1 id="作品介绍"><a href="#作品介绍" class="headerlink" title="作品介绍"></a>作品介绍</h1><p>该作品主要完成了贪吃蛇小游戏，和以前在非智能机上外的那种是差不多的，主要功能就是可以调节速度，控制贪吃蛇尽可能多吃点小食物。在复位之后首先会显示EEWorld的图片，之后显示兆易创新的图标，最后显示我自己的logo。之后就进入到游戏中了。在游戏的主界面提供了 开始游戏 和 速度调节 这两个选项，在速度调节中有1-9这九种速度供选择，数字越大，速度越大。整个作品设计只用了三个按键（GD32E231板子上面的一个KEY1和我的stm32板子上面的2个KEY2，KEY3），在游戏中，KEY1可以用来暂停游戏，KEY2和KEY3用来控制贪吃蛇方向，KEY2控制蛇顺时针方向转动，KEY3控制蛇你是正方向转动。下面会详细介绍。</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/143720zqb996yjysiifczz.jpg.thumb.jpg" alt="原理图" title="原理图"></p><h1 id="使用器件"><a href="#使用器件" class="headerlink" title="使用器件"></a>使用器件</h1><p>游戏中使用了LED和OLED，以及3个按键<br>连接：</p><ul><li>LED1 – 板载LED1</li><li>KEY1 – 板载KEY(wake-up key)</li><li>KEY2 – 外接按键，PA4</li><li>KEY3 – 外接按键，PA5</li><li>OLED – IIC操作，（SCL–PB10，SDA–PB11）</li><li>蜂鸣器 – 本来打算使用的，程序中有驱动，但是最后想着还是取消了，听着有点吵，也没有必要。</li></ul><h1 id="软件功能介绍"><a href="#软件功能介绍" class="headerlink" title="软件功能介绍"></a>软件功能介绍</h1><p>软件使用了定时器2，使用定时器2来获取2ms的定时任务，之后我的程序都是运行在这个2ms的任务中的，任务分为了2ms任务，50ms任务，500ms任务，1s任务（没用到）。</p><h2 id="2ms任务"><a href="#2ms任务" class="headerlink" title="2ms任务"></a>2ms任务</h2><p>用来检测按键是否按下，并进行消抖（在程序中没有延时，都是使用这种小系统来实现的，所以不会造成按下按键之后导致其他功能不能使用的情况）；<br>设置随机函数的种子（C语言的随机函数必须要种子数，随机数种子没2ms会变化一次，这样可以做到充分的随机数的产生），随机数是用来产生贪吃蛇的小食物用的。</p><h2 id="50ms任务"><a href="#50ms任务" class="headerlink" title="50ms任务"></a>50ms任务</h2><p>用来控制贪吃蛇的移动，1-9这几种等级的移动速度都是在这个里面做的。<br>还用来控制OLED的显示，集中显示界面都在这里面完成。</p><h2 id="500ms任务"><a href="#500ms任务" class="headerlink" title="500ms任务"></a>500ms任务</h2><p>用来控制LED1闪烁，表明程序运行正常，其实没什么实际用处。</p><p>##KEY1的作用</p><p>1.暂停和开始游戏，游戏进入的时候总是暂停，需要短按来开始。<br>2.主界面的选项切换，按下之后切选选项<br>3.长按1-2秒选择选中选项，如上图，长按2秒以内大于短按时间的话会进入游戏。<br>4.退出到主界面。当按下时间大于2秒的之后会退出到主界面。</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409f0l4frbrqbxgqr6l.jpg.thumb.jpg" alt="选择界面" title="选择界面"></p><h2 id="KEY2-的作用"><a href="#KEY2-的作用" class="headerlink" title="KEY2 的作用"></a>KEY2 的作用</h2><p>1.在游戏中顺时针方向控制蛇的移动<br>2.在速度调节界面，使速度减小</p><h2 id="KEY3-的作用"><a href="#KEY3-的作用" class="headerlink" title="KEY3 的作用"></a>KEY3 的作用</h2><p>1.在游戏中逆时针方向控制蛇的移动<br>2.在速度调节界面，使速度增大</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142410r5hc53x8jc73ja5v.jpg.thumb.jpg" alt="控制贪吃蛇移动" title="控制贪吃蛇移动"></p><h2 id="LED的作用"><a href="#LED的作用" class="headerlink" title="LED的作用"></a>LED的作用</h2><p>LED1就是用来500ms闪烁一次的，没有其他用处了。</p><h1 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h1><h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>游戏启动的时候会显示eeworld，兆易创新和我自己的游戏logo，如下图：</p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409j7y8v7se2sgp07ie.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409zrcmzvrllch7d7vs.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142409rwuo7u6pchwv6zrh.jpg.thumb.jpg" alt="开机界面" title="开机界面"></p><h2 id="菜单选择："><a href="#菜单选择：" class="headerlink" title="菜单选择："></a>菜单选择：</h2><p>菜单分为【开始游戏】和【速度调节】两个选项</p><ul><li>开始游戏  中可以正式开始贪吃蛇游戏。</li><li>速度调节界面可以调节速度的大小。</li></ul><p><img src="http://bbs.eeworld.com.cn/data/attachment/forum/201905/25/142410fgj4qvs5jpdwmqy4.jpg.thumb.jpg" alt="速度调节" title="速度调节"></p><h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><p>在游戏中，食物的位置会随机出现，使用了C语言的随机函数，当然随机函数需要有一个变化的种子才能真的实现随机。所以在2ms的定时任务中有一个随机数种子会变量，在实物被吃掉的时候装载这个随机数可以实现随机产生食物。</p><p>##游戏特色</p><p>游戏中，贪吃蛇只有撞到自己的身体再会结束游戏，没有设置撞到墙结束游戏，因为OLED的屏幕太小，这样的设定会经常撞墙，导致可玩性大大降低（主要是我菜），当蛇运动超过屏幕尺寸之后会从屏幕的另一边出现。</p><h1 id="视频链接"><a href="#视频链接" class="headerlink" title="视频链接"></a>视频链接</h1><p>视频放在B站</p><p>这个整个作品的显示<br><a href="https://www.bilibili.com/video/av53539154/" target="_blank" rel="noopener">https://www.bilibili.com/video/av53539154/</a></p><p>这个是我自己玩的游戏的视频，不知道你们有没有兴趣看，主要是一只手拿手机拍，一只手控制贪吃蛇移动，导致很快就game over了。</p><p><a href="https://www.bilibili.com/video/av53539154/?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av53539154/?p=2</a></p><h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>需要附件请前往eeworld下载试验。</p><p><a href="http://bbs.eeworld.com.cn/forum.php?mod=attachment&amp;aid=NDE1MTc4fGQ0ZDg3ODQ5fDE1NzYzOTI1Mzh8NzgyNzUxfDEwNzgxNjk%3D" target="_blank" rel="noopener">点我下载</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="免费音乐"><a href="#免费音乐" class="headerlink" title="免费音乐"></a>免费音乐</h1><h2 id="音乐搜索器"><a href="#音乐搜索器" class="headerlink" title="音乐搜索器"></a>音乐搜索器</h2><blockquote><p>提供免费的音乐下载与链接，可以直接从这上面找歌。</p></blockquote><font color="red">网站地址：http://www.musictool.top</font><p><font color="red"><a href="http://www.musictool.top" target="_blank" rel="noopener">点我跳转</a><br></font></p><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="工具123"><a href="#工具123" class="headerlink" title="工具123"></a>工具123</h2><blockquote><p>提供常用的工具，可以满足生活中大多数的需求</p></blockquote><font color="red">网站地址：http://www.gjw123.com/</font><p><font color="red"><a href="http://www.gjw123.com/" target="_blank" rel="noopener">点我跳转</a><br></font></p><h1 id="免版权图片"><a href="#免版权图片" class="headerlink" title="免版权图片"></a>免版权图片</h1><h2 id="logosc"><a href="#logosc" class="headerlink" title="logosc"></a>logosc</h2><blockquote><p>聚合多家免版权图库，你只需要一键搜索，就可以得到多个免版权图库的聚合搜索结果，让你不用担心商用图片侵权。</p></blockquote><font color="red">网站地址：https://www.logosc.cn/so/</font><p><font color="red"><a href="https://www.logosc.cn/so/" target="_blank" rel="noopener">点我跳转</a><br></font></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
           
-          <category> GD32系列 </category>
+          <category> 工具 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> GD32E231 </tag>
-            
-            <tag> OLED </tag>
+            <tag> 工具 </tag>
             
         </tags>
       
@@ -802,6 +804,35 @@
     
     
     <entry>
+      <title>51单片机的音乐盒(c语言)</title>
+      <link href="/2019/be57a96f.html"/>
+      <url>/2019/be57a96f.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　该文章是我在2016年的时候发布在电子发烧友论坛上面的，但是还是在校大学生，没有个人博客，现在搭建了一个个人博客，所以就把文章转到了个人博客上了。该文章在电子发烧友上的链接：<a href="http://bbs.elecfans.com/jishu_1102723_1_1.html" target="_blank" rel="noopener" title="[经验] 51单片机的音乐盒(c语言)">[经验] 51单片机的音乐盒(c语言)</a></p><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>　　以前也用各种单片机做个一些东西，但都没想过发帖，最近比较关注这个论坛，所以也来发过帖子玩玩。</p><p>　　到期末了。这学期学了单片机这门课，用的是汇编语言，但是说实话，学了一个学期的汇编语言，对汇编语言还是不太会用。期末了要单片机的实验考试，老师要求可以做一个音乐盒或者汉字点阵就免考，虽然考试也很简单，但是我还是决定做一个实物，显得”高大上”,本人大一的时候就学会了C语言对单片机的编程，这次课程设计当然也要用C语言来完成了。</p><p>　　最开始本来是想做一个显示汉字的点阵的，但是网上一搜电路图，太复杂了，如果要显示汉字就必须要使用4块8*8的点阵，电路图复杂的可怕，如果要手焊的话，估计每个两三天完成不了，本着简单快速的原则，我就做一个音乐盒算了。</p><p>　　既然想好了做音乐盒，接下来就是准备元器件了，要用到的元器件有：1602液晶，52单片机，,按键，各种电容，电阻，三极管，无源蜂鸣器等，是不是废话有点多了，哈哈…</p><h1 id="电路设计"><a href="#电路设计" class="headerlink" title="电路设计"></a>电路设计</h1><p>　　音乐盒所要用到的原理图都是我从网上搜的，所以与我所做的实物的线路连接还是有一些区别的，还是贴一下图吧。</p><h2 id="52单片机最小系统板电路图"><a href="#52单片机最小系统板电路图" class="headerlink" title="52单片机最小系统板电路图　"></a>52单片机最小系统板电路图　</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/51%E5%8D%95%E7%89%87%E6%9C%BA%E6%9C%80%E5%B0%8F%E7%94%B5%E8%B7%AF.jpg" alt="51单片机最小电路" title="51单片机最小电路"></p><h2 id="1602液晶电路图"><a href="#1602液晶电路图" class="headerlink" title="1602液晶电路图"></a>1602液晶电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/LCD1602%E6%B6%B2%E6%99%B6%E5%B1%8F%E7%94%B5%E8%B7%AF.jpg" alt="LCD1602液晶屏电路" title="LCD1602液晶屏电路"></p><h2 id="蜂鸣器驱动电路图"><a href="#蜂鸣器驱动电路图" class="headerlink" title="蜂鸣器驱动电路图"></a>蜂鸣器驱动电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E8%9C%82%E9%B8%A3%E5%99%A8%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF.jpg" alt="蜂鸣器驱动电路" title="蜂鸣器驱动电路"></p><h2 id="按键电路图"><a href="#按键电路图" class="headerlink" title="按键电路图"></a>按键电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%8C%89%E9%94%AE%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1.jpg" alt="按键电路设计" title="按键电路设计"></p><p>　　 这里有两种案件的连接方式，我采用的是第一种，这样写程序的时候，当按键按下时，相应的IO口就会变成低电平，而第二种相应的IO口会变成高电平。</p><h1 id="电路焊接"><a href="#电路焊接" class="headerlink" title="电路焊接"></a>电路焊接</h1><p>　　接下来就开始焊接了，但是我是在吧实物做好了之后才想起来要发帖的，所以焊接的过程就yy一下就行了….其实焊接的过程很简单，花了我一个下午加晚上的时间，不要问我为什么花费这么久，看图。</p><p>先上一张正面图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E5%AE%8C%E6%88%90%E4%BD%9C%E5%93%81%E6%AD%A3%E9%9D%A2.jpg" alt="完成作品正面" title="完成作品正面"></p><p>背面图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E5%AE%8C%E6%88%90%E4%BD%9C%E5%93%81%E8%83%8C%E9%9D%A2%E5%9B%BE.jpg" alt="完成作品背面图" title="完成作品背面图"></p><h1 id="引脚连接"><a href="#引脚连接" class="headerlink" title="引脚连接"></a>引脚连接</h1><p>　　背面的电路图看着有点乱，但是仔细焊接的话，还是不复杂的。<br>　　你们可能会疑惑我为什么会加一排LED灯，那是我无聊加上的，用来配合音乐播放时的节拍，很low…….haha<br>下面说一下我的实物图的接线<br>＝＝》蜂鸣器——–&gt;P1^3<br>＝＝》暂停按键——&gt;P3^7，按下暂停后会在右上角显示pause，表示已经暂停了<br>＝＝》下一首按键—-&gt;P3^6<br>＝＝》上一首按键—-&gt;P3^5<br>　　这样就完成了，其实做的这个还是很low的，实在无聊就发个帖子玩玩。</p><h1 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h1><p>　　说一下缺陷：这个蜂鸣器有个毛病，就是声音大了就很有很多杂音，最开始的时候本来没串接电阻，声音是很大，只不过杂音太大了，基本上听不到音乐，之后接了一个大一点的电阻，音乐是有了，但是声音又太小了，没办法，我就串接了一个电位器，可以用来调节音量的大小，但是声音大了还是会有杂音。所以最好还是有个喇叭。</p><p>　　在附几张图。我用的是1602，不能显示中文（能显示，只不过没花时间去弄，期末了，要复习），如果想方便显示中文的话害的要一个12864液晶，显示中文很方便。</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%88%90%E5%93%81%E5%B1%95%E7%A4%BA%EF%BC%91.jpg" alt="成品展示１" title="成品展示１"></p><p>来张动态图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%88%90%E5%93%81%E5%B1%95%E7%A4%BA%EF%BC%92.gif" alt="成品展示２" title="成品展示２"></p><h1 id="代码下载"><a href="#代码下载" class="headerlink" title="代码下载"></a>代码下载</h1><p>　　这个程序的歌词代码也是我从网上搜集来的，只不过网上的代码都没怎么集合，很零散，而且每个代码的写法都不同，经过我几个小时的整合，我把一些代码都集合了起来，目前放了5首歌在里面，包含了，暂停，上一曲和下一曲的功能。功能都能够实现。</p><p>代码我已经整合到了，如果感兴趣可以下载：<br><a href="https://cdn.jsdelivr.net/gh/hehung/51_music_player/音乐播放器.7z" target="_blank" rel="noopener" title="直接下载">直接下载</a></p><p>去github：<a href="https://github.com/hehung/51_music_player" target="_blank" rel="noopener" title="点此处去github">点击此处去github</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 51单片机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 51单片机 </tag>
+            
+            <tag> 电路设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于stm32的心率监控装置</title>
       <link href="/2019/e5a76ffe.html"/>
       <url>/2019/e5a76ffe.html</url>
@@ -825,35 +856,6 @@
             <tag> STM32 </tag>
             
             <tag> 心率监控 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>51单片机的音乐盒(c语言)</title>
-      <link href="/2019/be57a96f.html"/>
-      <url>/2019/be57a96f.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>　　该文章是我在2016年的时候发布在电子发烧友论坛上面的，但是还是在校大学生，没有个人博客，现在搭建了一个个人博客，所以就把文章转到了个人博客上了。该文章在电子发烧友上的链接：<a href="http://bbs.elecfans.com/jishu_1102723_1_1.html" target="_blank" rel="noopener" title="[经验] 51单片机的音乐盒(c语言)">[经验] 51单片机的音乐盒(c语言)</a></p><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>　　以前也用各种单片机做个一些东西，但都没想过发帖，最近比较关注这个论坛，所以也来发过帖子玩玩。</p><p>　　到期末了。这学期学了单片机这门课，用的是汇编语言，但是说实话，学了一个学期的汇编语言，对汇编语言还是不太会用。期末了要单片机的实验考试，老师要求可以做一个音乐盒或者汉字点阵就免考，虽然考试也很简单，但是我还是决定做一个实物，显得”高大上”,本人大一的时候就学会了C语言对单片机的编程，这次课程设计当然也要用C语言来完成了。</p><p>　　最开始本来是想做一个显示汉字的点阵的，但是网上一搜电路图，太复杂了，如果要显示汉字就必须要使用4块8*8的点阵，电路图复杂的可怕，如果要手焊的话，估计每个两三天完成不了，本着简单快速的原则，我就做一个音乐盒算了。</p><p>　　既然想好了做音乐盒，接下来就是准备元器件了，要用到的元器件有：1602液晶，52单片机，,按键，各种电容，电阻，三极管，无源蜂鸣器等，是不是废话有点多了，哈哈…</p><h1 id="电路设计"><a href="#电路设计" class="headerlink" title="电路设计"></a>电路设计</h1><p>　　音乐盒所要用到的原理图都是我从网上搜的，所以与我所做的实物的线路连接还是有一些区别的，还是贴一下图吧。</p><h2 id="52单片机最小系统板电路图"><a href="#52单片机最小系统板电路图" class="headerlink" title="52单片机最小系统板电路图　"></a>52单片机最小系统板电路图　</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/51%E5%8D%95%E7%89%87%E6%9C%BA%E6%9C%80%E5%B0%8F%E7%94%B5%E8%B7%AF.jpg" alt="51单片机最小电路" title="51单片机最小电路"></p><h2 id="1602液晶电路图"><a href="#1602液晶电路图" class="headerlink" title="1602液晶电路图"></a>1602液晶电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/LCD1602%E6%B6%B2%E6%99%B6%E5%B1%8F%E7%94%B5%E8%B7%AF.jpg" alt="LCD1602液晶屏电路" title="LCD1602液晶屏电路"></p><h2 id="蜂鸣器驱动电路图"><a href="#蜂鸣器驱动电路图" class="headerlink" title="蜂鸣器驱动电路图"></a>蜂鸣器驱动电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E8%9C%82%E9%B8%A3%E5%99%A8%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF.jpg" alt="蜂鸣器驱动电路" title="蜂鸣器驱动电路"></p><h2 id="按键电路图"><a href="#按键电路图" class="headerlink" title="按键电路图"></a>按键电路图</h2><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%8C%89%E9%94%AE%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1.jpg" alt="按键电路设计" title="按键电路设计"></p><p>　　 这里有两种案件的连接方式，我采用的是第一种，这样写程序的时候，当按键按下时，相应的IO口就会变成低电平，而第二种相应的IO口会变成高电平。</p><h1 id="电路焊接"><a href="#电路焊接" class="headerlink" title="电路焊接"></a>电路焊接</h1><p>　　接下来就开始焊接了，但是我是在吧实物做好了之后才想起来要发帖的，所以焊接的过程就yy一下就行了….其实焊接的过程很简单，花了我一个下午加晚上的时间，不要问我为什么花费这么久，看图。</p><p>先上一张正面图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E5%AE%8C%E6%88%90%E4%BD%9C%E5%93%81%E6%AD%A3%E9%9D%A2.jpg" alt="完成作品正面" title="完成作品正面"></p><p>背面图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E5%AE%8C%E6%88%90%E4%BD%9C%E5%93%81%E8%83%8C%E9%9D%A2%E5%9B%BE.jpg" alt="完成作品背面图" title="完成作品背面图"></p><h1 id="引脚连接"><a href="#引脚连接" class="headerlink" title="引脚连接"></a>引脚连接</h1><p>　　背面的电路图看着有点乱，但是仔细焊接的话，还是不复杂的。<br>　　你们可能会疑惑我为什么会加一排LED灯，那是我无聊加上的，用来配合音乐播放时的节拍，很low…….haha<br>下面说一下我的实物图的接线<br>＝＝》蜂鸣器——–&gt;P1^3<br>＝＝》暂停按键——&gt;P3^7，按下暂停后会在右上角显示pause，表示已经暂停了<br>＝＝》下一首按键—-&gt;P3^6<br>＝＝》上一首按键—-&gt;P3^5<br>　　这样就完成了，其实做的这个还是很low的，实在无聊就发个帖子玩玩。</p><h1 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h1><p>　　说一下缺陷：这个蜂鸣器有个毛病，就是声音大了就很有很多杂音，最开始的时候本来没串接电阻，声音是很大，只不过杂音太大了，基本上听不到音乐，之后接了一个大一点的电阻，音乐是有了，但是声音又太小了，没办法，我就串接了一个电位器，可以用来调节音量的大小，但是声音大了还是会有杂音。所以最好还是有个喇叭。</p><p>　　在附几张图。我用的是1602，不能显示中文（能显示，只不过没花时间去弄，期末了，要复习），如果想方便显示中文的话害的要一个12864液晶，显示中文很方便。</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%88%90%E5%93%81%E5%B1%95%E7%A4%BA%EF%BC%91.jpg" alt="成品展示１" title="成品展示１"></p><p>来张动态图</p><p><img src="https://cdn.jsdelivr.net/gh/hehung/51_music_player/img/%E6%88%90%E5%93%81%E5%B1%95%E7%A4%BA%EF%BC%92.gif" alt="成品展示２" title="成品展示２"></p><h1 id="代码下载"><a href="#代码下载" class="headerlink" title="代码下载"></a>代码下载</h1><p>　　这个程序的歌词代码也是我从网上搜集来的，只不过网上的代码都没怎么集合，很零散，而且每个代码的写法都不同，经过我几个小时的整合，我把一些代码都集合了起来，目前放了5首歌在里面，包含了，暂停，上一曲和下一曲的功能。功能都能够实现。</p><p>代码我已经整合到了，如果感兴趣可以下载：<br><a href="https://cdn.jsdelivr.net/gh/hehung/51_music_player/音乐播放器.7z" target="_blank" rel="noopener" title="直接下载">直接下载</a></p><p>去github：<a href="https://github.com/hehung/51_music_player" target="_blank" rel="noopener" title="点此处去github">点击此处去github</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 51单片机 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C语言 </tag>
-            
-            <tag> 51单片机 </tag>
-            
-            <tag> 电路设计 </tag>
             
         </tags>
       
