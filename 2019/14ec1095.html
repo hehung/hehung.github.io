@@ -678,17 +678,7 @@ password:
         <span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="json文件内容解析"><a href="#json文件内容解析" class="headerlink" title="json文件内容解析"></a>json文件内容解析</h2><font color="blue">
-- "name":相册名字
-- "cover":相册封面
-- "description":相册的描述
-- "url_name":相册名字，这个名字需要与你的网页名字一样，便于后面编程的时候进行判断
-- "album":照片的数组，数组里面的内容根据你的相片的数量决定，不一定是两个，可以任意多个
-- "img_url":照片的链接
-- "title":照片标题，没有使用，留作备用
-- "describe":照片描述，没有使用，留作备用
-</font>
-
+<h2 id="json文件内容解析"><a href="#json文件内容解析" class="headerlink" title="json文件内容解析"></a>json文件内容解析</h2><p>1 “name”:相册名字<br>2 “cover”:相册封面<br>3 “description”:相册的描述<br>4 “url_name”:相册名字，这个名字需要与你的网页名字一样，便于后面编程的时候进行判断<br>5 “album”:照片的数组，数组里面的内容根据你的相片的数量决定，不一定是两个，可以任意多个<br>6 “img_url”:照片的链接<br>7 “title”:照片标题，没有使用，留作备用<br>8 “describe”:照片描述，没有使用，留作备用</p>
 <p>PS: 你们在测试的时候可以在百度找一些照片的链接使用</p>
 <h1 id="创建照片的json"><a href="#创建照片的json" class="headerlink" title="创建照片的json"></a>创建照片的json</h1><blockquote>
 <p>因为我们的网站是存放在github上面的，同时是轻量级的静态网站，空间有限，所以像照片这个大内存的文件一般都是存在云平台的，使用将相应的链接放在json文件里面，通过解析json文件就可以访问了。</p>
