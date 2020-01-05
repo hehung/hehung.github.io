@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hehung.top/"/>
-  <updated>2019-12-15T07:13:56.499Z</updated>
+  <updated>2020-01-05T02:47:09.739Z</updated>
   <id>http://hehung.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js操作Mysql数据库</title>
+    <link href="http://hehung.top/2019/d1584cb0.html"/>
+    <id>http://hehung.top/2019/d1584cb0.html</id>
+    <published>2020-01-05T02:41:35.000Z</published>
+    <updated>2020-01-05T02:47:09.739Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;原文链接请访问：&lt;a href=&quot;https://developer.baidu.com/forum/topic/show/306161?pageNo=2&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="http://hehung.top/categories/node-js/"/>
+    
+    
+      <category term="node.js" scheme="http://hehung.top/tags/node-js/"/>
+    
+      <category term="mysql" scheme="http://hehung.top/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>GD32E231使用之贪吃蛇小游戏</title>
@@ -618,36 +648,6 @@
       <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
     
       <category term="IIC" scheme="http://hehung.top/tags/IIC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32使用之驱动流水灯</title>
-    <link href="http://hehung.top/2019/b1cecfb6.html"/>
-    <id>http://hehung.top/2019/b1cecfb6.html</id>
-    <published>2019-11-23T11:11:00.000Z</published>
-    <updated>2019-11-29T13:48:54.782Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;普中的这个开发板除了可以使用51单片机进行开发之外，还可以使用开发套件提供的STM32核心进行开发，提供的STM32的最小系统板采用的是STM32F103C8T6，这是一种最普片使用的低成本的STM32单片机。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-        
-      
-    
-    </summary>
-    
-    
-      <category term="STM32" scheme="http://hehung.top/categories/STM32/"/>
-    
-    
-      <category term="STM32" scheme="http://hehung.top/tags/STM32/"/>
     
   </entry>
   
