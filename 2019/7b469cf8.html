@@ -553,7 +553,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-07
+                    2020-02-01
                 </div>
                 
 
@@ -604,11 +604,13 @@
 <pre class="line-numbers language-hexo"><code class="language-hexo">hexo new page MyMarkdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后在hexo的source文件夹下会有一个index.md文件，修改里面的内容如下：</p>
 <pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+
 title: editor.md
 date: 2019-11-16 11:20:03
 type: "MyMarkdown"
-<span class="token title important">layout: "MyMarkdown"
-<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+layout: "MyMarkdown"
+
+<span class="token hr punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>PS:<br>title里面的内容是你打开这个页面的时候会在控制栏上显示的内容，修改成你想要显示的内容<br>layout里面的内容就是你创建的这个页面的html代码的保存文件MyMarkdown.ejs，在主题的layout文件夹下，可以修改文件名。</p>
 <h2 id="导入editor-md文件，编辑代码"><a href="#导入editor-md文件，编辑代码" class="headerlink" title="导入editor.md文件，编辑代码"></a>导入editor.md文件，编辑代码</h2><p>做完上面的工作之后就可以开始对页面的显示代码进行编辑了</p>
 <h3 id="创建ejs文件"><a href="#创建ejs文件" class="headerlink" title="创建ejs文件"></a>创建ejs文件</h3><p>在主题的layout文件夹下创建一个文件，名字和上面填写index.md文件的时候的layout后面的内容一样，如下所示。</p>
