@@ -553,7 +553,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-01
+                    2020-02-09
                 </div>
                 
 
@@ -652,7 +652,7 @@ layout: "MyMarkdown"
 <h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>使用如下命令，重新编译，在本地运行试验一下。</p>
 <pre class="line-numbers language-hexo"><code class="language-hexo">hexo cl && hexo g && hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>会发现显示效果如下所示，比较乱，其中的罪魁祸首就是materialize.min.css文件下的选择器样式对editor.md的选择器样式进行的修改，我也不知道如何进行避免，不光如此，打开图片，链接等按钮的时候显示效果也很不好。</p>
-<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/editor.md/3.jpg" alt="导入js和css" title="导入js和css"></p>
+<p><img src="https://hehung-blog-respurces.oss-cn-beijing.aliyuncs.com/editor.md/6.jpg" alt="导入js和css" title="显示问题"></p>
 <p>从上面的显示效果可以看出，很乱，而且主题导航栏还把我们的编辑器给遮挡了，所以需要修改CSS样式让他好看与正常</p>
 <h1 id="样式修改"><a href="#样式修改" class="headerlink" title="样式修改"></a>样式修改</h1><h2 id="修改CSS样式"><a href="#修改CSS样式" class="headerlink" title="修改CSS样式"></a>修改CSS样式</h2><p>调试查看显示不正常的原因的时候，发现是materialize.min.css下的样式对编辑器样式的干扰，所以在这里对有影响的样式进行重编辑。<br>完整的主题样式如下。</p>
 <pre class="line-numbers language-html"><code class="language-html">
